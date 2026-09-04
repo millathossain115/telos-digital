@@ -41,7 +41,7 @@ export function FaqSection() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-300 text-xs font-mono uppercase tracking-wider mb-4">
             Clarity & Expectations
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight sm:tracking-tighter">
+          <h2 className="text-3xl sm:text-5xl font-semibold text-white tracking-tight sm:tracking-tighter">
             Frequently Asked Questions
           </h2>
           <p className="mt-4 text-slate-400 text-sm sm:text-base">

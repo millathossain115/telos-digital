@@ -76,7 +76,7 @@ export function FeaturedWork() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-950/60 border border-cyan-800/40 text-cyan-400 text-xs font-mono uppercase tracking-wider mb-4">
               Selected Proof
             </div>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight sm:tracking-tighter">
+            <h2 className="text-3xl sm:text-5xl font-semibold text-white tracking-tight sm:tracking-tighter">
               Featured Work
             </h2>
           </div>

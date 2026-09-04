@@ -70,7 +70,7 @@ export function ServicesBento() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-indigo-950/60 border border-indigo-800/40 text-indigo-400 text-xs font-mono uppercase tracking-wider mb-4">
               Core Capabilities
             </div>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight sm:tracking-tighter">
+            <h2 className="text-3xl sm:text-5xl font-semibold text-white tracking-tight sm:tracking-tighter">
               Bespoke systems, <br className="hidden sm:inline" />
               <span className="text-slate-400 font-normal">engineered from zero to production.</span>
             </h2>

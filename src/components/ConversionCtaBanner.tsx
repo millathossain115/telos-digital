@@ -18,7 +18,7 @@ export function ConversionCtaBanner() {
               <span>Direct Engineering Consult</span>
             </div>
 
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight sm:tracking-tighter leading-[1.1] text-balance">
+            <h2 className="text-3xl sm:text-5xl font-semibold text-white tracking-tight sm:tracking-tighter leading-[1.1] text-balance">
               Have a product in mind? <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-white to-cyan-300">
                 Let’s map out the technical roadmap.
