@@ -1,5 +1,11 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
+import { TechMarquee } from "@/components/TechMarquee";
+import { ServicesBento } from "@/components/ServicesBento";
+import { FeaturedWork } from "@/components/FeaturedWork";
+import { ProcessSection } from "@/components/ProcessSection";
+import { FaqSection } from "@/components/FaqSection";
+import { ConversionCtaBanner } from "@/components/ConversionCtaBanner";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
@@ -8,6 +14,12 @@ export default function Home() {
       <Navbar />
       <main className="flex-1">
         <Hero />
+        <TechMarquee />
+        <ServicesBento />
+        <FeaturedWork />
+        <ProcessSection />
+        <FaqSection />
+        <ConversionCtaBanner />
       </main>
       <Footer />
     </div>
