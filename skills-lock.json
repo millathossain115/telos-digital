@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "skills": {
+    "antigravity-design-expert": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "sourceType": "github",
+      "skillPath": "skills/antigravity-design-expert/SKILL.md",
+      "computedHash": "f8734db94f0d7372bc0ae58ff3082b9572cd77b15cff8dd2265cb3b2606c5ce6"
+    },
+    "apple-ui-designer": {
+      "source": "heyman333/atelier-ui",
+      "sourceType": "github",
+      "skillPath": "skills/apple-ui-designer/SKILL.md",
+      "computedHash": "26d43c0a38e7a0ad8cf2cd5418d48ca7525873cc60f203ac67fcf024ce577eb3"
+    },
+    "framer-motion": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/framer-motion/SKILL.md",
+      "computedHash": "40a05a1671ae7dbba9bf4d483d37927e593a2b4b569a4388d29ce922cc54c2c6"
+    },
+    "typescript": {
+      "source": "mrsombre/typescript-skills",
+      "sourceType": "github",
+      "skillPath": "skills/typescript/SKILL.md",
+      "computedHash": "cea50c18841ca0eebcbef66e59ef3b341a82b568bac3575eb92760d637013f5d"
+    }
+  }
+}
