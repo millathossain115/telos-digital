@@ -97,6 +97,13 @@ export function Footer() {
             <a href="#" className="hover:text-slate-400 transition-colors">Security</a>
           </div>
         </div>
+
+        {/* Thematic Big Brand Title (Option 2: Telos Digital calibrated) */}
+        <div className="pt-16 pb-4 flex items-center justify-center select-none pointer-events-none overflow-hidden w-full">
+          <span className="font-extrabold text-[10.2vw] leading-none tracking-tight sm:tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-slate-800/40 via-slate-900/30 to-slate-950/10 text-center uppercase whitespace-nowrap">
+            Telos Digital
+          </span>
+        </div>
       </div>
     </footer>
   );
