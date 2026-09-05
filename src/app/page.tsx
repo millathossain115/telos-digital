@@ -2,7 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { TechMarquee } from "@/components/TechMarquee";
 import { ServicesBento } from "@/components/ServicesBento";
-import { FeaturedWork } from "@/components/FeaturedWork";
+import { ComparisonMatrix } from "@/components/ComparisonMatrix";
 import { ProcessSection } from "@/components/ProcessSection";
 import { FaqSection } from "@/components/FaqSection";
 import { ConversionCtaBanner } from "@/components/ConversionCtaBanner";
@@ -16,7 +16,7 @@ export default function Home() {
         <Hero />
         {/* <TechMarquee /> */}
         <ServicesBento />
-        <FeaturedWork />
+        <ComparisonMatrix />
         <ProcessSection />
         <FaqSection />
         <ConversionCtaBanner />
