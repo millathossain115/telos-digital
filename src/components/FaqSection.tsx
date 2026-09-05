@@ -1,26 +1,33 @@
 "use client";
 
 import { useState } from "react";
-import { Plus, Minus } from "lucide-react";
+import { ChevronDown, MessageSquareQuote, ArrowRight, HelpCircle } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const FAQS = [
   {
+    id: "mvp-timeline",
     q: "How long does a production MVP typically take to build?",
     a: "Most scoped MVPs ship within 6 to 10 weeks. We structure work into 2-week continuous delivery sprints, meaning you have a testable staging build in your hands starting on Week 2, not at the very end.",
   },
   {
+    id: "pricing-model",
     q: "How does your pricing and engagement model work?",
     a: "We work on transparent sprint-based retainers or fixed-scope milestones for clearly architected projects. No hidden change orders or billable hour surprises. You know exactly what you are paying and what is shipping every two weeks.",
   },
   {
+    id: "ip-ownership",
     q: "Do we retain 100% ownership of the code and design assets?",
     a: "Yes, unconditionally. All repositories, Figma design tokens, infrastructure setups, and intellectual property belong to your organization from Day 1. We hand over comprehensive runbooks upon completion.",
   },
   {
+    id: "cadence-comm",
     q: "What is your communication and sprint cadence?",
     a: "We integrate directly into your workflow via dedicated Slack/Discord channels, asynchronous Loom walk-throughs, and weekly live demo checkpoints. You communicate directly with the senior engineers writing your code.",
   },
   {
+    id: "legacy-code",
     q: "Can you take over and refactor an existing legacy codebase?",
     a: "Yes. We start with a 5-day Architectural Audit to evaluate security vulnerabilities, technical debt, and test coverage before recommending whether an incremental strangler refactor or dedicated rewrite is most capital-efficient.",
   },
@@ -34,60 +41,131 @@ export function FaqSection() {
   };
 
   return (
-    <section className="py-28 relative bg-[#FAF8F5]">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-black/[0.08] text-amber-700 text-xs font-mono uppercase tracking-wider mb-4 shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
-            Clarity & Expectations
-          </div>
-          <h2 className="text-3xl sm:text-5xl font-semibold text-[#141312] tracking-tight sm:tracking-tighter">
-            Frequently Asked Questions
-          </h2>
-          <p className="mt-4 text-neutral-600 text-sm sm:text-base">
-            Everything you need to know about partnering with Telos Digital.
-          </p>
-        </div>
+    <section className="py-24 sm:py-32 relative bg-[#FAF8F5] overflow-hidden border-t border-black/[0.04]">
+      {/* Background ambient radial glow */}
+      <div
+        className="pointer-events-none absolute top-1/4 right-0 w-[500px] h-[500px] rounded-full opacity-40 blur-3xl -z-10"
+        style={{
+          background: "radial-gradient(circle, rgba(217, 119, 6, 0.08) 0%, transparent 70%)",
+        }}
+      />
 
-        {/* Accordion List */}
-        <div className="space-y-4">
-          {FAQS.map((faq, idx) => {
-            const isOpen = openIndex === idx;
-            return (
-              <div
-                key={faq.q}
-                className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
-                  isOpen
-                    ? "bg-white border-amber-500/40 shadow-md shadow-black/[0.03]"
-                    : "bg-white/80 border-black/[0.07] hover:border-black/[0.15] shadow-sm"
-                }`}
-              >
-                <button
-                  onClick={() => toggleFaq(idx)}
-                  className="w-full py-5 px-6 flex items-center justify-between text-left gap-4 focus:outline-none"
-                  aria-expanded={isOpen}
-                >
-                  <span className="text-base sm:text-lg font-semibold text-[#141312] tracking-tight">
-                    {faq.q}
-                  </span>
-                  <div className={`w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-colors ${
-                    isOpen ? "bg-[#141312] text-amber-300 border-[#141312]" : "bg-[#FAF8F5] text-neutral-700 border-black/[0.08]"
-                  }`}>
-                    {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
-                  </div>
-                </button>
-
-                {isOpen && (
-                  <div className="px-6 pb-6 pt-1 text-sm sm:text-base text-neutral-600 leading-relaxed border-t border-black/[0.05]">
-                    {faq.a}
-                  </div>
-                )}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
+          {/* Left Column: Heading + Context Info */}
+          <div className="lg:col-span-5 flex flex-col justify-between">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-black/[0.08] text-amber-700 text-xs font-mono uppercase tracking-wider mb-5 shadow-sm">
+                <HelpCircle className="w-3.5 h-3.5 text-amber-600" />
+                <span>Clarity & Transparency</span>
               </div>
-            );
-          })}
+
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#141312] tracking-tight sm:tracking-tighter leading-[1.12]">
+                Frequently Asked <br className="hidden sm:inline" />
+                Questions.
+              </h2>
+
+              <p className="mt-4 text-neutral-600 text-sm sm:text-base leading-relaxed max-w-md">
+                Everything you need to know about our sprint cadence, delivery guarantees, and how we engineer products from day one.
+              </p>
+            </div>
+
+            {/* Direct Contact Card - Anchored at bottom */}
+            <div className="mt-8 p-5 sm:p-6 rounded-2xl bg-white border border-black/[0.07] shadow-sm relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-amber-500/5 rounded-bl-full pointer-events-none transition-transform group-hover:scale-110" />
+              
+              <div className="flex items-center gap-3 mb-2.5">
+                <div className="w-9 h-9 rounded-xl bg-amber-50 border border-amber-200/60 flex items-center justify-center text-amber-700 shrink-0">
+                  <MessageSquareQuote className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-semibold text-[#141312]">Have a custom question?</h4>
+                  <p className="text-[11px] text-neutral-500 font-mono">Response within 24 hours</p>
+                </div>
+              </div>
+
+              <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed mb-3.5">
+                Can’t find the exact answer you need? Chat directly with our engineering leadership.
+              </p>
+
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#141312] hover:text-amber-700 transition-colors group/link"
+              >
+                <span>Speak with an Architect</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Right Column: FAQs Accordion List */}
+          <div className="lg:col-span-7 flex flex-col justify-between gap-3">
+            {FAQS.map((faq, idx) => {
+              const isOpen = openIndex === idx;
+
+              return (
+                <div
+                  key={faq.id}
+                  className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
+                    isOpen
+                      ? "bg-white border-amber-500/40 shadow-lg shadow-amber-900/[0.03]"
+                      : "bg-white/80 hover:bg-white border-black/[0.07] hover:border-black/[0.14] shadow-sm"
+                  }`}
+                >
+                  <button
+                    type="button"
+                    onClick={() => toggleFaq(idx)}
+                    className="w-full py-4.5 sm:py-5 px-6 sm:px-7 flex items-center justify-between text-left gap-4 focus:outline-none cursor-pointer select-none"
+                    aria-expanded={isOpen}
+                  >
+                    <div className="flex items-center gap-4">
+                      <span className="font-mono text-xs text-amber-600/80 shrink-0 font-medium">
+                        {String(idx + 1).padStart(2, "0")}
+                      </span>
+                      <span className="text-base sm:text-[17px] font-semibold text-[#141312] tracking-tight leading-snug">
+                        {faq.q}
+                      </span>
+                    </div>
+
+                    <div
+                      className={`w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${
+                        isOpen
+                          ? "bg-[#141312] text-amber-300 border-[#141312] shadow-sm"
+                          : "bg-[#FAF8F5] text-neutral-600 border-black/[0.08] hover:bg-neutral-100"
+                      }`}
+                    >
+                      <ChevronDown
+                        className={`w-4 h-4 transition-transform duration-300 ease-out ${
+                          isOpen ? "rotate-180" : "rotate-0"
+                        }`}
+                      />
+                    </div>
+                  </button>
+
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        key="content"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-6 sm:px-7 pb-5 pt-1 text-sm sm:text-base text-neutral-600 leading-relaxed border-t border-black/[0.05]">
+                          <p className="pl-7 sm:pl-8">{faq.a}</p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
   );
 }
+
+
