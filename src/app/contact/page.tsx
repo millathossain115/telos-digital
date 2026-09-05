@@ -13,23 +13,41 @@ import {
   Loader2,
   ShieldCheck,
   Send,
-  MessageSquare,
   Sparkles,
 } from "lucide-react";
+import { motion, type Variants } from "framer-motion";
 
 interface FormState {
   name: string;
   email: string;
-  company: string;
-  details: string;
+  message: string;
 }
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.05,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+  },
+};
 
 export default function ContactPage() {
   const [form, setForm] = useState<FormState>({
     name: "",
     email: "",
-    company: "",
-    details: "",
+    message: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -40,181 +58,192 @@ export default function ContactPage() {
     e.preventDefault();
     setErrorMessage("");
 
-    if (!form.name.trim() || !form.email.trim()) {
-      setErrorMessage("Please fill in your name and email address.");
+    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
+      setErrorMessage("Please fill in your name, email, and message.");
       return;
     }
 
     setIsSubmitting(true);
 
-    // Simulate reliable API pipeline submission
+    // Simulate API delivery
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
-    }, 1200);
+    }, 1000);
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] text-[#141312] flex flex-col font-sans selection:bg-indigo-500 selection:text-white">
+    <div className="min-h-screen bg-[#FAF8F5] text-[#141312] flex flex-col font-sans selection:bg-amber-500 selection:text-white">
       <Navbar />
 
       <main className="flex-1 pt-32 pb-24 relative overflow-hidden">
-        {/* Antigravity Ambient Background */}
+        {/* Warm ambient glows matching homepage */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-20 left-1/4 w-[600px] h-[600px] bg-indigo-600/10 blur-[150px] rounded-full" />
-          <div className="absolute bottom-20 right-1/4 w-[600px] h-[600px] bg-cyan-600/10 blur-[150px] rounded-full" />
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#33415510_1px,transparent_1px),linear-gradient(to_bottom,#33415510_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_75%_55%_at_50%_40%,#000_70%,transparent_100%)]" />
+          <div
+            className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full opacity-30 blur-3xl"
+            style={{
+              background: "radial-gradient(circle, rgba(217, 119, 6, 0.12) 0%, transparent 70%)",
+            }}
+          />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          
-          {/* Header */}
-          <div className="max-w-3xl mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 border border-black/[0.08] text-xs font-mono text-indigo-400 mb-4">
-              <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse" />
-              <span>Direct Project Intake // Q4 Open</span>
-            </div>
-            <h1 className="text-4xl sm:text-6xl font-semibold tracking-tight sm:tracking-tighter text-white leading-[1.08] text-balance">
-              Let’s build something{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-indigo-200 to-cyan-300">
-                uncompromising
-              </span>
-              .
-            </h1>
-            <p className="mt-4 text-base sm:text-lg text-neutral-600 leading-relaxed text-pretty">
-              Tell us about your technical goals, constraints, and timeline. You’ll speak directly with our principal engineers—zero sales reps.
-            </p>
-          </div>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {/* Header */}
+            <motion.div variants={itemVariants} className="max-w-3xl mb-14">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-black/[0.08] text-amber-700 text-xs font-mono uppercase tracking-wider mb-5 shadow-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+                <span>Direct Engineering Intake</span>
+              </div>
 
-          {/* 2-Column Split: Left Agency Details + Right Intake Form */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
-            
-            {/* Left Column: Agency Details & Direct Booking */}
-            <div className="lg:col-span-5 space-y-8">
-              
-              {/* Card 1: Direct Contacts & SLA */}
-              <div className="p-7 sm:p-8 rounded-3xl bg-white/80 border border-black/[0.08]/80 backdrop-blur-xl shadow-xl space-y-6">
-                <div className="flex items-center justify-between pb-4 border-b border-black/[0.08]/70">
-                  <span className="text-xs font-mono text-neutral-500 uppercase tracking-wider">
-                    Agency Coordinates
-                  </span>
-                  <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-950/70 border border-emerald-800/50 text-emerald-400 flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                    24h Response SLA
-                  </span>
-                </div>
+              <h1 className="text-4xl sm:text-6xl font-semibold tracking-tight sm:tracking-tighter text-[#141312] leading-[1.08] text-balance">
+                Let’s build something{" "}
+                <span className="italic font-serif font-normal text-transparent bg-clip-text bg-gradient-to-r from-amber-700 via-amber-600 to-amber-500">
+                  uncompromising
+                </span>
+                .
+              </h1>
 
-                <div className="space-y-4">
-                  <a
-                    href="mailto:hello@telosdigital.io"
-                    className="group flex items-start gap-4 p-3.5 rounded-2xl bg-[#FAF8F5]/60 border border-black/[0.08]/60 hover:border-indigo-500/50 transition-colors"
-                  >
-                    <div className="w-10 h-10 rounded-xl bg-indigo-950/50 border border-indigo-800/40 flex items-center justify-center text-indigo-400 group-hover:scale-105 transition-transform shrink-0">
-                      <Mail className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-mono text-neutral-500">Direct Inquiries</div>
-                      <div className="text-sm font-semibold text-white group-hover:text-indigo-300 transition-colors">
-                        hello@telosdigital.io
-                      </div>
-                    </div>
-                  </a>
+              <p className="mt-4 text-base sm:text-lg text-neutral-600 leading-relaxed text-pretty max-w-2xl">
+                Tell us about your product goals, constraints, and timeline. You’ll speak directly with our principal engineers—zero sales fluff.
+              </p>
+            </motion.div>
 
-                  <div className="flex items-start gap-4 p-3.5 rounded-2xl bg-[#FAF8F5]/60 border border-black/[0.08]/60">
-                    <div className="w-10 h-10 rounded-xl bg-cyan-950/50 border border-cyan-800/40 flex items-center justify-center text-cyan-400 shrink-0">
-                      <MapPin className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-mono text-neutral-500">Headquarters & Reach</div>
-                      <div className="text-sm font-medium text-neutral-300">
-                        Dhaka based, working globally across GMT+6, EST, and CET.
-                      </div>
-                    </div>
+            {/* 2-Column Split */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+              {/* Left Column: Coordinates + Cal.com Card */}
+              <motion.div variants={itemVariants} className="lg:col-span-5 space-y-6">
+                {/* Coordinates Box */}
+                <div className="p-6 sm:p-7 rounded-3xl bg-[#F3EFEA] border border-black/[0.08] shadow-[0_12px_36px_rgba(20,19,18,0.03)] space-y-5">
+                  <div className="flex items-center justify-between pb-4 border-b border-black/[0.07]">
+                    <span className="text-xs font-mono text-neutral-600 uppercase tracking-wider font-medium">
+                      Studio Details
+                    </span>
+                    <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-900 flex items-center gap-1.5 font-medium">
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+                      24h Response SLA
+                    </span>
                   </div>
 
-                  <div className="flex items-start gap-4 p-3.5 rounded-2xl bg-[#FAF8F5]/60 border border-black/[0.08]/60">
-                    <div className="w-10 h-10 rounded-xl bg-purple-950/50 border border-purple-800/40 flex items-center justify-center text-purple-400 shrink-0">
-                      <Clock className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-mono text-neutral-500">Working Cadence</div>
-                      <div className="text-sm font-medium text-neutral-300">
-                        Synchronous sprint demos & asynchronous daily Slack updates.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Card 2: Instant 15-Min Architectural Consult Option */}
-              <div className="p-7 sm:p-8 rounded-3xl bg-gradient-to-br from-indigo-950/40 via-neutral-900/50 to-neutral-900/30 border border-indigo-900/40 shadow-xl backdrop-blur-xl space-y-4">
-                <div className="flex items-center gap-2 text-indigo-400 text-xs font-mono">
-                  <Calendar className="w-4 h-4" />
-                  <span>Prefer to skip email?</span>
-                </div>
-                <h3 className="text-xl font-semibold text-white tracking-tight">
-                  Book a 15-minute technical discovery call
-                </h3>
-                <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
-                  Have an existing codebase or tight product timeline? Jump on a direct video call with our lead architect to evaluate feasibility.
-                </p>
-                <a
-                  href="https://cal.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center justify-center w-full py-3 px-5 rounded-xl bg-neutral-100 hover:bg-white text-neutral-950 font-semibold text-sm shadow-md hover:-tranneutral-y-0.5 active:tranneutral-y-0 transition-all duration-200 gap-2 font-sans"
-                >
-                  <span>Select Time on Cal.com</span>
-                  <ArrowRight className="w-4 h-4 text-neutral-950" />
-                </a>
-              </div>
-
-              {/* Trust Badge */}
-              <div className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-white/70 border border-black/[0.08]/60 text-xs font-mono text-neutral-600">
-                <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>NDA signed upfront upon request. Full IP protection.</span>
-              </div>
-
-            </div>
-
-            {/* Right Column: Interactive Intake Form */}
-            <div className="lg:col-span-7">
-              <div className="p-8 sm:p-12 rounded-3xl bg-white/80 border border-black/[0.08]/90 shadow-2xl backdrop-blur-xl relative">
-                
-                {isSubmitted ? (
-                  <div className="py-12 flex flex-col items-center text-center space-y-4 animate-in fade-in zoom-in duration-300">
-                    <div className="w-16 h-16 rounded-2xl bg-emerald-950/70 border border-emerald-800/50 flex items-center justify-center text-emerald-400 shadow-xl shadow-emerald-950/40">
-                      <CheckCircle2 className="w-8 h-8" />
-                    </div>
-                    <h3 className="text-2xl font-semibold text-white tracking-tight">
-                      Message Received
-                    </h3>
-                    <p className="text-neutral-600 max-w-md text-sm leading-relaxed">
-                      Thank you, <span className="text-neutral-200 font-medium">{form.name}</span>. Our engineering team will review your specification and reply within 24 hours with architectural feedback.
-                    </p>
-                    <button
-                      onClick={() => {
-                        setIsSubmitted(false);
-                        setForm({
-                          name: "",
-                          email: "",
-                          company: "",
-                          details: "",
-                        });
-                      }}
-                      className="mt-6 px-5 py-2.5 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-xs font-mono text-neutral-300 transition-colors"
+                  <div className="space-y-3.5">
+                    <a
+                      href="mailto:hello@telosdigital.io"
+                      className="group flex items-start gap-3.5 p-3.5 rounded-2xl bg-white border border-black/[0.06] hover:border-amber-500/40 transition-all shadow-xs"
                     >
-                      Send another specification
-                    </button>
+                      <div className="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-800 shrink-0 group-hover:scale-105 transition-transform">
+                        <Mail className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <div className="text-[11px] font-mono text-neutral-500">Direct Inquiries</div>
+                        <div className="text-sm font-semibold text-[#141312] group-hover:text-amber-800 transition-colors">
+                          hello@telosdigital.io
+                        </div>
+                      </div>
+                    </a>
+
+                    <div className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white border border-black/[0.06] shadow-xs">
+                      <div className="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-800 shrink-0">
+                        <MapPin className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <div className="text-[11px] font-mono text-neutral-500">Global Reach</div>
+                        <div className="text-sm font-medium text-neutral-700 leading-snug">
+                          Operating across GMT+6, EST, and CET timezones.
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white border border-black/[0.06] shadow-xs">
+                      <div className="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-800 shrink-0">
+                        <Clock className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <div className="text-[11px] font-mono text-neutral-500">Cadence</div>
+                        <div className="text-sm font-medium text-neutral-700 leading-snug">
+                          Bi-weekly staging demos with continuous Slack integration.
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-7">
-                    
-                    {/* Basic Info Grid */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                </div>
+
+                {/* Direct Call Card */}
+                <div className="p-6 sm:p-7 rounded-3xl bg-[#141312] text-white border border-black shadow-lg relative overflow-hidden group">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-bl-full pointer-events-none transition-transform group-hover:scale-110" />
+
+                  <div className="flex items-center gap-2 text-amber-400 text-xs font-mono mb-3">
+                    <Calendar className="w-3.5 h-3.5" />
+                    <span>Prefer to talk directly?</span>
+                  </div>
+
+                  <h3 className="text-lg sm:text-xl font-semibold text-white tracking-tight">
+                    Book a 15-minute technical discovery call
+                  </h3>
+
+                  <p className="mt-2 text-xs sm:text-sm text-neutral-300 leading-relaxed mb-5">
+                    Have an existing codebase or tight milestone? Jump on a direct call with our lead architect.
+                  </p>
+
+                  <a
+                    href="https://cal.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center w-full py-3 px-5 rounded-xl bg-white text-[#141312] hover:bg-neutral-100 font-semibold text-sm transition-all duration-200 gap-2 shadow-sm"
+                  >
+                    <span>Select Time on Cal.com</span>
+                    <ArrowRight className="w-4 h-4 text-amber-600" />
+                  </a>
+                </div>
+              </motion.div>
+
+              {/* Right Column: 3-Field Intake Form */}
+              <motion.div variants={itemVariants} className="lg:col-span-7">
+                <div className="p-7 sm:p-10 rounded-3xl bg-gradient-to-br from-[#FAF6F0] via-[#F4ECE2] to-[#E9DFD0] border border-amber-900/10 shadow-[0_16px_40px_rgba(30,20,10,0.06)] relative overflow-hidden">
+                  {/* Subtle top-right warm ambient light */}
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+
+                  {isSubmitted ? (
+                    <div className="py-12 flex flex-col items-center text-center space-y-4 animate-in fade-in zoom-in duration-300 relative z-10">
+                      <div className="w-14 h-14 rounded-2xl bg-white/90 border border-emerald-300 flex items-center justify-center text-emerald-600 shadow-sm">
+                        <CheckCircle2 className="w-7 h-7" />
+                      </div>
+                      <h3 className="text-2xl font-semibold text-[#141312] tracking-tight">
+                        Message Received
+                      </h3>
+                      <p className="text-neutral-600 max-w-md text-sm leading-relaxed">
+                        Thank you, <span className="text-[#141312] font-semibold">{form.name}</span>. Our lead architect will review your message and reply to <span className="text-[#141312] font-semibold">{form.email}</span> within 24 hours.
+                      </p>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setIsSubmitted(false);
+                          setForm({ name: "", email: "", message: "" });
+                        }}
+                        className="mt-4 px-5 py-2.5 rounded-xl bg-white/80 hover:bg-white border border-amber-900/15 text-xs font-mono text-neutral-800 transition-colors cursor-pointer shadow-xs"
+                      >
+                        Send another message
+                      </button>
+                    </div>
+                  ) : (
+                    <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
+                      <div className="flex items-center justify-between pb-3.5 border-b border-amber-900/10">
+                        <h2 className="text-lg font-semibold text-[#141312] tracking-tight">
+                          Project Intake
+                        </h2>
+                        <span className="text-xs font-mono text-amber-900/60 font-medium">
+                          Direct to engineering
+                        </span>
+                      </div>
+
+                      {/* Name */}
                       <div className="space-y-2">
-                        <label className="text-xs font-mono text-neutral-300 flex items-center gap-1">
-                          Your Name <span className="text-indigo-400">*</span>
+                        <label className="text-xs font-mono text-neutral-700 flex items-center gap-1 font-medium">
+                          <span>Your Name</span>
+                          <span className="text-amber-700">*</span>
                         </label>
                         <input
                           type="text"
@@ -222,13 +251,15 @@ export default function ContactPage() {
                           value={form.name}
                           onChange={(e) => setForm({ ...form, name: e.target.value })}
                           placeholder="e.g. Alex Vance"
-                          className="w-full px-4 py-3 rounded-xl bg-[#FAF8F5]/80 border border-black/[0.08] text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
+                          className="w-full px-4 py-3 rounded-xl bg-[#FAF7F2]/90 hover:bg-[#FAF7F2] border border-amber-900/15 text-sm text-[#141312] placeholder-neutral-400 focus:outline-none focus:bg-white focus:border-amber-600 focus:ring-2 focus:ring-amber-500/20 shadow-inner/5 transition-all"
                         />
                       </div>
 
+                      {/* Email */}
                       <div className="space-y-2">
-                        <label className="text-xs font-mono text-neutral-300 flex items-center gap-1">
-                          Business Email <span className="text-indigo-400">*</span>
+                        <label className="text-xs font-mono text-neutral-700 flex items-center gap-1 font-medium">
+                          <span>Email Address</span>
+                          <span className="text-amber-700">*</span>
                         </label>
                         <input
                           type="email"
@@ -236,76 +267,63 @@ export default function ContactPage() {
                           value={form.email}
                           onChange={(e) => setForm({ ...form, email: e.target.value })}
                           placeholder="alex@company.com"
-                          className="w-full px-4 py-3 rounded-xl bg-[#FAF8F5]/80 border border-black/[0.08] text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
+                          className="w-full px-4 py-3 rounded-xl bg-[#FAF7F2]/90 hover:bg-[#FAF7F2] border border-amber-900/15 text-sm text-[#141312] placeholder-neutral-400 focus:outline-none focus:bg-white focus:border-amber-600 focus:ring-2 focus:ring-amber-500/20 shadow-inner/5 transition-all"
                         />
                       </div>
-                    </div>
 
-                    {/* Company Name */}
-                    <div className="space-y-2">
-                      <label className="text-xs font-mono text-neutral-300">
-                        Company or Project Name
-                      </label>
-                      <input
-                        type="text"
-                        value={form.company}
-                        onChange={(e) => setForm({ ...form, company: e.target.value })}
-                        placeholder=""
-                        className="w-full px-4 py-3 rounded-xl bg-[#FAF8F5]/80 border border-black/[0.08] text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
-                      />
-                    </div>
-
-                    {/* Project Details */}
-                    <div className="space-y-2">
-                      <label className="text-xs font-mono text-neutral-300 flex items-center justify-between">
-                        <span>Project Details</span>
-                        <span className="text-neutral-500 text-[11px]">Goals & Timeline</span>
-                      </label>
-                      <textarea
-                        rows={4}
-                        value={form.details}
-                        onChange={(e) => setForm({ ...form, details: e.target.value })}
-                        placeholder="Tell us about the product you want to build, existing stack, and ideal target launch date..."
-                        className="w-full px-4 py-3 rounded-xl bg-[#FAF8F5]/80 border border-black/[0.08] text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors resize-none leading-relaxed"
-                      />
-                    </div>
-
-                    {errorMessage && (
-                      <div className="text-xs font-mono text-rose-400 p-3 rounded-lg bg-rose-950/40 border border-rose-900/60">
-                        {errorMessage}
+                      {/* Message Text Field */}
+                      <div className="space-y-2">
+                        <label className="text-xs font-mono text-neutral-700 flex items-center justify-between font-medium">
+                          <span className="flex items-center gap-1">
+                            <span>How can we help?</span>
+                            <span className="text-amber-700">*</span>
+                          </span>
+                          <span className="text-neutral-500 text-[11px] font-normal">Scope, goals or timeline</span>
+                        </label>
+                        <textarea
+                          required
+                          rows={5}
+                          value={form.message}
+                          onChange={(e) => setForm({ ...form, message: e.target.value })}
+                          placeholder="Tell us about the product you want to build, challenges with your existing stack, or your target launch date..."
+                          className="w-full px-4 py-3 rounded-xl bg-[#FAF7F2]/90 hover:bg-[#FAF7F2] border border-amber-900/15 text-sm text-[#141312] placeholder-neutral-400 focus:outline-none focus:bg-white focus:border-amber-600 focus:ring-2 focus:ring-amber-500/20 shadow-inner/5 transition-all resize-none leading-relaxed"
+                        />
                       </div>
-                    )}
 
-                    {/* Submit Button */}
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full py-4 px-6 rounded-xl font-semibold text-sm bg-indigo-600 hover:bg-indigo-500 text-white shadow-xl shadow-indigo-600/30 hover:shadow-indigo-600/45 hover:-tranneutral-y-0.5 active:tranneutral-y-0 disabled:opacity-50 disabled:pointer-events-none transition-all duration-200 flex items-center justify-center gap-2 font-sans"
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <Loader2 className="w-4 h-4 animate-spin text-white" />
-                          <span>Transmitting Specification...</span>
-                        </>
-                      ) : (
-                        <>
-                          <span>Submit Project Specification</span>
-                          <Send className="w-4 h-4 text-indigo-200" />
-                        </>
+                      {errorMessage && (
+                        <div className="text-xs font-mono text-rose-700 p-3 rounded-xl bg-rose-50 border border-rose-200">
+                          {errorMessage}
+                        </div>
                       )}
-                    </button>
 
-                    <p className="text-[11px] font-mono text-neutral-500 text-center">
-                      🔒 No spam. Your information is strictly used for technical consultation.
-                    </p>
+                      {/* Submit Button */}
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="w-full py-3.5 px-6 rounded-xl font-semibold text-sm bg-[#141312] hover:bg-black text-white shadow-sm hover:shadow-md hover:scale-[1.005] active:scale-[0.995] disabled:opacity-50 disabled:pointer-events-none transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
+                      >
+                        {isSubmitting ? (
+                          <>
+                            <Loader2 className="w-4 h-4 animate-spin text-white" />
+                            <span>Sending message...</span>
+                          </>
+                        ) : (
+                          <>
+                            <span>Send Message</span>
+                            <Send className="w-4 h-4 text-amber-400" />
+                          </>
+                        )}
+                      </button>
 
-                  </form>
-                )}
-
-              </div>
+                      <p className="text-[11px] font-mono text-neutral-500 text-center">
+                        Strictly confidential. Direct engineering response within 24 hours.
+                      </p>
+                    </form>
+                  )}
+                </div>
+              </motion.div>
             </div>
-
-          </div>
+          </motion.div>
         </div>
       </main>
 
@@ -313,3 +331,4 @@ export default function ContactPage() {
     </div>
   );
 }
+

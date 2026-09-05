@@ -1,0 +1,20 @@
+[
+  {
+    "id": "direct-engineer-access",
+    "title": "Direct Engineer Access",
+    "desc": "No middlemen or account executives playing telephone. You communicate directly with the senior developers writing your code.",
+    "icon": "zap"
+  },
+  {
+    "id": "live-staging-previews",
+    "title": "Live Staging Previews",
+    "desc": "Never wait weeks to see work. Every pull request automatically generates a live, interactive preview URL you can test immediately.",
+    "icon": "gitBranch"
+  },
+  {
+    "id": "day-one-ip-ownership",
+    "title": "Day-One IP Ownership",
+    "desc": "All repositories, Figma files, database schemas, and intellectual property belong to you unconditionally from day one.",
+    "icon": "shieldCheck"
+  }
+]

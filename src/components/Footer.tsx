@@ -80,17 +80,17 @@ export function Footer() {
               Empowering global organizations with enterprise-grade cloud architecture, intelligent AI automation, and digital engineering excellence.
             </p>
             <div className="flex items-center gap-4 text-neutral-600 pt-2">
-              <a href="#" className="w-9 h-9 rounded-lg bg-white border border-black/[0.08] flex items-center justify-center hover:text-black hover:border-black/20 hover:bg-[#FAF8F5] transition-colors shadow-sm" aria-label="Twitter">
+              <a href="#" className="w-9 h-9 rounded-lg bg-white border border-black/[0.08] flex items-center justify-center hover:text-amber-700 hover:border-amber-500/30 hover:bg-[#FAF8F5] transition-all shadow-sm" aria-label="Twitter">
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                   <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.936 9.936 0 0024 4.59z"/>
                 </svg>
               </a>
-              <a href="#" className="w-9 h-9 rounded-lg bg-white border border-black/[0.08] flex items-center justify-center hover:text-black hover:border-black/20 hover:bg-[#FAF8F5] transition-colors shadow-sm" aria-label="GitHub">
+              <a href="#" className="w-9 h-9 rounded-lg bg-white border border-black/[0.08] flex items-center justify-center hover:text-amber-700 hover:border-amber-500/30 hover:bg-[#FAF8F5] transition-all shadow-sm" aria-label="GitHub">
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                   <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
                 </svg>
               </a>
-              <a href="#" className="w-9 h-9 rounded-lg bg-white border border-black/[0.08] flex items-center justify-center hover:text-black hover:border-black/20 hover:bg-[#FAF8F5] transition-colors shadow-sm" aria-label="LinkedIn">
+              <a href="#" className="w-9 h-9 rounded-lg bg-white border border-black/[0.08] flex items-center justify-center hover:text-amber-700 hover:border-amber-500/30 hover:bg-[#FAF8F5] transition-all shadow-sm" aria-label="LinkedIn">
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                   <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                 </svg>
@@ -102,11 +102,11 @@ export function Footer() {
           <div>
             <h4 className="text-sm font-semibold text-[#141312] tracking-wider uppercase mb-4">Solutions</h4>
             <ul className="space-y-2.5 text-sm">
-              <li><a href="#" className="hover:text-black transition-colors">Cloud Migration</a></li>
-              <li><a href="#" className="hover:text-black transition-colors">AI & Automation</a></li>
-              <li><a href="#" className="hover:text-black transition-colors">DevOps Pipeline</a></li>
-              <li><a href="#" className="hover:text-black transition-colors">Data Analytics</a></li>
-              <li><a href="#" className="hover:text-black transition-colors">Cybersecurity</a></li>
+              <li><a href="#" className="hover:text-amber-700 transition-colors">Cloud Migration</a></li>
+              <li><a href="#" className="hover:text-amber-700 transition-colors">AI & Automation</a></li>
+              <li><a href="#" className="hover:text-amber-700 transition-colors">DevOps Pipeline</a></li>
+              <li><a href="#" className="hover:text-amber-700 transition-colors">Data Analytics</a></li>
+              <li><a href="#" className="hover:text-amber-700 transition-colors">Cybersecurity</a></li>
             </ul>
           </div>
 
@@ -114,11 +114,11 @@ export function Footer() {
           <div>
             <h4 className="text-sm font-semibold text-[#141312] tracking-wider uppercase mb-4">Company</h4>
             <ul className="space-y-2.5 text-sm">
-              <li><a href="#" className="hover:text-black transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-black transition-colors">Careers</a></li>
-              <li><a href="#" className="hover:text-black transition-colors">Press & Media</a></li>
-              <li><a href="#" className="hover:text-black transition-colors">Partners</a></li>
-              <li><a href="#" className="hover:text-black transition-colors">Contact</a></li>
+              <li><a href="#" className="hover:text-amber-700 transition-colors">About Us</a></li>
+              <li><a href="#" className="hover:text-amber-700 transition-colors">Careers</a></li>
+              <li><a href="#" className="hover:text-amber-700 transition-colors">Press & Media</a></li>
+              <li><a href="#" className="hover:text-amber-700 transition-colors">Partners</a></li>
+              <li><a href="#" className="hover:text-amber-700 transition-colors">Contact</a></li>
             </ul>
           </div>
 
@@ -145,9 +145,9 @@ export function Footer() {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
           <p>© {new Date().getFullYear()} Telos Digital Inc. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-black transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-black transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-black transition-colors">Security</a>
+            <a href="#" className="hover:text-amber-700 transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-amber-700 transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-amber-700 transition-colors">Security</a>
           </div>
         </div>
 

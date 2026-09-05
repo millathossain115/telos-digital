@@ -26,7 +26,17 @@ const itemVariants: Variants = {
   },
 };
 
-export function ConversionCtaBanner() {
+interface ConversionCtaBannerProps {
+  badge?: string;
+  title?: React.ReactNode;
+  subtitle?: string;
+}
+
+export function ConversionCtaBanner({
+  badge = "Direct Engineering Consult",
+  title,
+  subtitle = "Book a 30-minute architectural assessment with our principal engineer. We’ll evaluate feasibility, recommend the exact stack, and outline sprint milestones.",
+}: ConversionCtaBannerProps) {
   return (
     <section className="py-20 sm:py-28 relative bg-[#FAF8F5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,24 +67,28 @@ export function ConversionCtaBanner() {
               className="inline-flex items-center gap-2 text-xs font-mono tracking-wider uppercase text-amber-400 mb-6"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
-              <span>Direct Engineering Consult</span>
+              <span>{badge}</span>
             </motion.div>
 
             <motion.h2
               variants={itemVariants}
               className="text-3xl sm:text-5xl font-semibold tracking-tight sm:tracking-tighter leading-[1.12] text-white"
             >
-              Have a product in mind? <br />
-              <span className="text-amber-200">
-                Let’s map out the technical roadmap.
-              </span>
+              {title || (
+                <>
+                  Have a product in mind? <br />
+                  <span className="text-amber-200">
+                    Let’s map out the technical roadmap.
+                  </span>
+                </>
+              )}
             </motion.h2>
 
             <motion.p
               variants={itemVariants}
               className="mt-6 text-base sm:text-lg text-neutral-300 leading-relaxed max-w-2xl font-normal"
             >
-              Book a 30-minute architectural assessment with our principal engineer. We’ll evaluate feasibility, recommend the exact stack, and outline sprint milestones.
+              {subtitle}
             </motion.p>
 
             <motion.div

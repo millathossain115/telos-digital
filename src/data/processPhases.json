@@ -1,0 +1,83 @@
+[
+  {
+    "id": "phase-01",
+    "step": "PHASE 01",
+    "timeframe": "Weeks 1–2",
+    "title": "Discovery, Technical Architecture & Data Modeling",
+    "summary": "We eliminate ambiguity before writing code. We dissect your business logic, evaluate technical feasibility, and produce an explicit architectural blueprint.",
+    "icon": "compass",
+    "deliverables": [
+      "Interactive system architecture diagram & data flow topology",
+      "PostgreSQL / database schema definition & migration strategy",
+      "API contract specifications (REST, GraphQL, or tRPC)",
+      "Threat modeling, rate limiting & enterprise RBAC plan"
+    ],
+    "clientTouchpoints": [
+      "Initial 90-minute architecture workshop",
+      "Async Loom review of proposed entity relationships",
+      "Formal specification sign-off"
+    ],
+    "tooling": ["Figma Architecture", "dbdiagram.io", "Notion Spec", "GitHub Projects"]
+  },
+  {
+    "id": "phase-02",
+    "step": "PHASE 02",
+    "timeframe": "Weeks 2–3",
+    "title": "High-Fidelity UI/UX Prototyping & Design Systems",
+    "summary": "No placeholder designs or aesthetic vanity. We design directly against real-world frontend constraints, producing tokenized component systems ready for React.",
+    "icon": "penTool",
+    "deliverables": [
+      "Click-through interactive prototype in Figma covering all primary user journeys",
+      "Complete design token library: typography, semantic colors, spacing scales",
+      "Zero-ambiguity auto-layout components with hover, active, and error states",
+      "WCAG 2.1 AA accessibility & contrast validation audit"
+    ],
+    "clientTouchpoints": [
+      "Weekly design walkthrough demo",
+      "Direct Figma comment review & approval",
+      "Prototype test session with team stakeholders"
+    ],
+    "tooling": ["Figma Enterprise", "Radix UI Primitives", "Tailwind CSS Tokens"]
+  },
+  {
+    "id": "phase-03",
+    "step": "PHASE 03",
+    "timeframe": "Weeks 3–8",
+    "title": "Sprint Execution, Continuous Staging & Automated Testing",
+    "summary": "Rapid bi-weekly delivery cycles. Every pull request triggers an automated preview deployment, strict TypeScript validation, and end-to-end integration tests.",
+    "icon": "code2",
+    "deliverables": [
+      "Bi-weekly staging environment updates on live URLs for hands-on review",
+      "100% strictly typed TypeScript codebase with zero runtime type leaks",
+      "Automated Playwright integration tests covering mission-critical user paths",
+      "GitHub Actions CI/CD pipelines executing linting, unit tests, and build audits"
+    ],
+    "clientTouchpoints": [
+      "Every 14 days: live milestone demo & sprint retrospective",
+      "Direct engineer Slack/Discord channel for async questions",
+      "Live preview deployment links for every active feature branch"
+    ],
+    "tooling": ["Next.js 16", "React Native", "Playwright", "GitHub Actions", "Vercel / AWS"]
+  },
+  {
+    "id": "phase-04",
+    "step": "PHASE 04",
+    "timeframe": "Launch & Beyond",
+    "title": "Production Cutover, Security Audit & IP Handover",
+    "summary": "We orchestrate a seamless zero-downtime release to production cloud infrastructure, followed by complete transfer of all code repositories and documentation runbooks.",
+    "icon": "rocket",
+    "deliverables": [
+      "Zero-downtime DNS cutover and CDN edge caching configuration",
+      "Cloud infrastructure provisioning (AWS, Supabase, Vercel, Redis)",
+      "Comprehensive engineering runbook, environment setup & deploy guide",
+      "Unconditional transfer of repository ownership and all API keys",
+      "30-day post-launch warranty and bug-fix SLA guarantee"
+    ],
+    "clientTouchpoints": [
+      "Final pre-flight security and load testing review",
+      "Live production deployment monitoring session",
+      "Formal handoff walkthrough & team training session"
+    ],
+    "tooling": ["AWS CloudFormation", "Terraform", "Cloudflare", "Datadog / Sentry"]
+  }
+]
