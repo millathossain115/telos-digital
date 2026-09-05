@@ -131,7 +131,7 @@ const COMPARISON_ROWS: MetricRow[] = [
 
 export function ComparisonMatrix() {
   return (
-    <section id="comparison" className="py-28 relative bg-[#FAF8F5] border-t border-black/[0.06] overflow-hidden">
+    <section id="comparison" className="py-28 relative bg-[#FAF8F5] overflow-hidden">
       {/* Background warm ambient bloom */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-amber-100/30 rounded-full blur-[130px]" />

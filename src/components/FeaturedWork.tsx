@@ -68,7 +68,7 @@ const PROJECTS = [
 
 export function FeaturedWork() {
   return (
-    <section id="work" className="py-28 relative bg-[#FAF8F5] border-t border-black/[0.06]">
+    <section id="work" className="py-28 relative bg-[#FAF8F5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">

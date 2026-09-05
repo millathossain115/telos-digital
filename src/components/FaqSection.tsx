@@ -34,7 +34,7 @@ export function FaqSection() {
   };
 
   return (
-    <section className="py-28 relative bg-[#FAF8F5] border-t border-black/[0.06]">
+    <section className="py-28 relative bg-[#FAF8F5]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
