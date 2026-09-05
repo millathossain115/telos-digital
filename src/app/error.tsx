@@ -17,7 +17,7 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-100 flex flex-col items-center justify-center px-4 sm:px-6 relative overflow-hidden font-sans">
+    <div className="min-h-screen bg-[#FAF8F5] text-[#141312] flex flex-col items-center justify-center px-4 sm:px-6 relative overflow-hidden font-sans">
       {/* Red alert ambient spotlight */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-1/3 left-1/2 -tranneutral-x-1/2 -tranneutral-y-1/2 w-[600px] h-[350px] bg-rose-500/15 blur-[140px] rounded-full" />
@@ -35,13 +35,13 @@ export default function Error({
           Execution Interrupted
         </h1>
 
-        <p className="text-sm text-neutral-400 leading-relaxed text-pretty">
+        <p className="text-sm text-neutral-600 leading-relaxed text-pretty">
           An unexpected exception was caught by our edge boundary. Our telemetry pipeline has logged this stack trace.
         </p>
 
         {/* Diagnostic Box */}
-        <div className="rounded-2xl bg-neutral-900/60 border border-neutral-800/80 p-4 font-mono text-xs text-left text-neutral-400">
-          <div className="flex items-center justify-between pb-2.5 border-b border-neutral-800/70 mb-2.5">
+        <div className="rounded-2xl bg-white/90 border border-black/[0.08]/80 p-4 font-mono text-xs text-left text-neutral-600">
+          <div className="flex items-center justify-between pb-2.5 border-b border-black/[0.08]/70 mb-2.5">
             <span className="flex items-center gap-2 text-neutral-300">
               <Terminal className="w-3.5 h-3.5 text-rose-400" />
               <span>exception_trace</span>
@@ -67,7 +67,7 @@ export default function Error({
 
           <Link
             href="/"
-            className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl bg-neutral-900/80 hover:bg-neutral-800 border border-neutral-800 text-neutral-300 hover:text-white font-semibold text-sm transition-all duration-200 gap-2"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl bg-neutral-900/80 hover:bg-neutral-800 border border-black/[0.08] text-neutral-300 hover:text-white font-semibold text-sm transition-all duration-200 gap-2"
           >
             <Home className="w-4 h-4" />
             <span>Back to Home</span>

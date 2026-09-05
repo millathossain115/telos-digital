@@ -2,6 +2,40 @@
 
 import { Globe, Smartphone, Palette, ArrowUpRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
+import { motion, type Variants } from "framer-motion";
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.28,
+      delayChildren: 0.15,
+    },
+  },
+};
+
+const headerVariants: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 1.1, ease: [0.16, 1, 0.3, 1] },
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 44, scale: 0.97 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 1.25,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
 
 const SERVICES = [
   {
@@ -62,67 +96,108 @@ const SERVICES = [
 
 export function ServicesBento() {
   return (
-    <section id="services" className="py-24 relative bg-neutral-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-zinc-900/60 border border-amber-950/40 text-amber-200 text-xs font-mono uppercase tracking-wider mb-4">
-              Core Capabilities
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-semibold text-white tracking-tight sm:tracking-tighter">
-              Bespoke systems, <br className="hidden sm:inline" />
-              <span className="text-neutral-400 font-normal">engineered from zero to production.</span>
-            </h2>
+    <section id="services" className="pt-12 sm:pt-16 pb-28 relative bg-[#FAF8F5] overflow-hidden">
+      {/* Subtle warm chromatic light leaks */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-b from-amber-200/30 via-amber-100/10 to-transparent rounded-full blur-[120px]" />
+        <div className="absolute -bottom-20 right-10 w-[500px] h-[300px] bg-amber-100/40 rounded-full blur-[100px]" />
+      </div>
+
+      <motion.div
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-80px" }}
+        variants={containerVariants}
+      >
+        {/* Section Header - Focused Section Identity */}
+        <motion.div 
+          variants={headerVariants}
+          className="text-center max-w-4xl mx-auto mb-14 sm:mb-16 flex flex-col items-center"
+        >
+          {/* Capsule pill */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/80 border border-black/[0.08] backdrop-blur-xl text-xs font-mono tracking-widest uppercase mb-4 shadow-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shadow-[0_0_6px_rgba(245,158,11,0.6)]" />
+            <span className="text-amber-700 font-medium">Core Capabilities</span>
           </div>
-          <p className="text-neutral-400 max-w-md text-sm sm:text-base leading-relaxed">
+
+          {/* Clean 1-2 line section heading */}
+          <h2 className="text-2xl sm:text-4xl lg:text-[40px] font-semibold tracking-tight text-[#141312] leading-tight sm:leading-snug">
+            Bespoke systems,{" "}
+            <span className="bg-gradient-to-r from-neutral-600 via-neutral-500 to-amber-700 bg-clip-text text-transparent font-normal">
+              engineered from zero to production.
+            </span>
+          </h2>
+
+          {/* Tight subtext */}
+          <p className="mt-3.5 text-neutral-600 max-w-2xl text-sm sm:text-base leading-relaxed">
             We don’t use generic templates. Every line of code and user touchpoint is crafted specifically to meet high operational standards.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Bento Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Bento Grid - Luminous Porcelain Glass Slabs */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-7">
           {SERVICES.map((service) => {
             const Icon = service.icon;
             return (
-              <div
+              <motion.div
                 key={service.id}
-                className={`group relative flex flex-col justify-between p-8 rounded-2xl bg-neutral-900/40 border border-neutral-800/90 ${service.borderHover} transition-all duration-300 backdrop-blur-sm overflow-hidden hover:-tranneutral-y-1 hover:shadow-2xl hover:shadow-black/40`}
+                variants={cardVariants}
+                whileHover={{
+                  y: -8,
+                  transition: { type: "spring", stiffness: 350, damping: 22 },
+                }}
+                className="group relative flex flex-col justify-between p-8 sm:p-9 rounded-3xl cursor-pointer overflow-hidden
+                  bg-white/75
+                  backdrop-blur-xl
+                  border border-black/[0.07]
+                  hover:border-amber-500/40
+                  shadow-[0_10px_30px_rgba(20,19,18,0.04),inset_0_1px_1px_rgba(255,255,255,0.8)]
+                  hover:shadow-[0_20px_50px_rgba(20,19,18,0.08),0_0_30px_rgba(245,158,11,0.1)]
+                  transition-all duration-500"
               >
-                {/* Background Ambient Glow */}
+                {/* Specular razor edge */}
+                <div className="absolute inset-x-4 top-0 h-[1px] bg-gradient-to-r from-transparent via-amber-400/40 to-transparent pointer-events-none" />
+
+                {/* Ambient warm gradient */}
+                <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-amber-50/20 pointer-events-none" />
+
+                {/* Liquid hover refraction pool */}
                 <div
-                  className={`absolute -top-24 -right-24 w-64 h-64 bg-gradient-to-bl ${service.accentClass} blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}
+                  className="absolute -top-32 -right-32 w-80 h-80 bg-[radial-gradient(circle_at_center,rgba(245,158,11,0.12),transparent_65%)] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
                 />
 
-                <div>
+                <div className="relative z-10">
                   {/* Top row */}
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-neutral-800/80 border border-neutral-700/60 flex items-center justify-center text-white group-hover:scale-105 transition-transform">
-                      <Icon className="w-6 h-6 text-neutral-200" />
+                  <div className="flex items-center justify-between mb-8">
+                    {/* Glass orb icon container */}
+                    <div className="w-13 h-13 p-3 rounded-2xl bg-[#FAF8F5] border border-black/[0.08] shadow-sm flex items-center justify-center text-amber-600 group-hover:scale-105 group-hover:border-amber-500/40 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.2)] transition-all duration-500">
+                      <Icon className="w-6 h-6 text-amber-600" />
                     </div>
+
                     <span
-                      className={`text-xs font-mono px-2.5 py-1 rounded-full border ${service.badgeColor}`}
+                      className="text-[11px] font-mono font-medium tracking-wide px-3.5 py-1.5 rounded-full bg-amber-500/[0.08] border border-amber-500/20 text-amber-800 backdrop-blur-sm"
                     >
                       {service.badge}
                     </span>
                   </div>
 
-                  {/* Title & Desc */}
-                  <h3 className="text-xl font-bold text-white tracking-tight group-hover:text-amber-100 transition-colors">
+                  {/* Title & Description */}
+                  <h3 className="text-2xl font-semibold text-[#141312] tracking-tight group-hover:text-black transition-colors duration-300">
                     {service.title}
                   </h3>
-                  <p className="mt-3 text-sm text-neutral-400 leading-relaxed">
+                  <p className="mt-3.5 text-sm text-neutral-600 leading-relaxed font-normal">
                     {service.description}
                   </p>
 
-                  {/* Deliverables List */}
-                  <div className="mt-6 pt-6 border-t border-neutral-800/60 space-y-2.5">
-                    <p className="text-xs font-mono text-neutral-500 uppercase tracking-wider">
+                  {/* Deliverables with refined divider */}
+                  <div className="mt-7 pt-6 border-t border-black/[0.06] space-y-2.5">
+                    <p className="text-[11px] font-mono text-neutral-500 uppercase tracking-widest font-medium">
                       Key Deliverables
                     </p>
                     {service.deliverables.map((item) => (
-                      <div key={item} className="flex items-center gap-2 text-xs text-neutral-300">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                      <div key={item} className="flex items-center gap-2.5 text-xs text-neutral-700 font-medium">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-amber-600 shrink-0" />
                         <span>{item}</span>
                       </div>
                     ))}
@@ -130,12 +205,12 @@ export function ServicesBento() {
                 </div>
 
                 {/* Footer Tag Strip & CTA link */}
-                <div className="mt-8 pt-6 border-t border-neutral-800/60 flex items-center justify-between">
+                <div className="relative z-10 mt-8 pt-6 border-t border-black/[0.06] flex items-center justify-between">
                   <div className="flex flex-wrap gap-1.5">
                     {service.tech.map((t) => (
                       <span
                         key={t}
-                        className="text-[11px] font-mono px-2 py-0.5 rounded bg-neutral-950/80 text-neutral-400 border border-neutral-800"
+                        className="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-[#FAF8F5] text-neutral-700 border border-black/[0.06]"
                       >
                         {t}
                       </span>
@@ -143,17 +218,17 @@ export function ServicesBento() {
                   </div>
                   <Link
                     href="/contact"
-                    className="p-2 rounded-lg bg-neutral-800/50 text-neutral-400 hover:text-white hover:bg-neutral-800 transition-colors"
+                    className="p-2.5 rounded-xl bg-[#FAF8F5] border border-black/[0.08] text-neutral-600 group-hover:bg-[#141312] group-hover:text-amber-300 group-hover:border-[#141312] group-hover:scale-110 transition-all duration-300 shadow-sm"
                     aria-label={`Explore ${service.title}`}
                   >
-                    <ArrowUpRight className="w-4 h-4" />
+                    <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </Link>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

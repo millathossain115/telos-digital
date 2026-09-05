@@ -7,7 +7,7 @@ import { ArrowLeft, Home, Terminal, RefreshCw } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-100 flex flex-col font-sans selection:bg-indigo-500 selection:text-white">
+    <div className="min-h-screen bg-[#FAF8F5] text-[#141312] flex flex-col font-sans selection:bg-indigo-500 selection:text-white">
       <Navbar />
 
       <main className="flex-1 flex items-center justify-center pt-28 pb-20 px-4 sm:px-6 relative overflow-hidden">
@@ -21,7 +21,7 @@ export default function NotFound() {
         <div className="max-w-xl w-full mx-auto text-center relative z-10">
           
           {/* Status Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-900/90 border border-neutral-800 text-xs font-mono text-rose-400 mb-8 backdrop-blur-md shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-900/90 border border-black/[0.08] text-xs font-mono text-rose-400 mb-8 backdrop-blur-md shadow-sm">
             <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
             <span>HTTP_STATUS // 404_NOT_FOUND</span>
           </div>
@@ -36,13 +36,13 @@ export default function NotFound() {
             Route Resolution Failed
           </h1>
 
-          <p className="mt-3 text-sm sm:text-base text-neutral-400 max-w-md mx-auto leading-relaxed text-pretty">
+          <p className="mt-3 text-sm sm:text-base text-neutral-600 max-w-md mx-auto leading-relaxed text-pretty">
             The requested URI path does not map to any active cluster or edge handler. The endpoint may have been deprecated or moved.
           </p>
 
           {/* Terminal Diagnostics Card */}
-          <div className="mt-8 text-left rounded-2xl bg-neutral-900/50 border border-neutral-800/80 p-4 font-mono text-xs text-neutral-400 shadow-xl backdrop-blur-sm">
-            <div className="flex items-center justify-between pb-3 border-b border-neutral-800/70 mb-3">
+          <div className="mt-8 text-left rounded-2xl bg-white/85 border border-black/[0.08]/80 p-4 font-mono text-xs text-neutral-600 shadow-xl backdrop-blur-sm">
+            <div className="flex items-center justify-between pb-3 border-b border-black/[0.08]/70 mb-3">
               <span className="flex items-center gap-2 text-neutral-300">
                 <Terminal className="w-3.5 h-3.5 text-rose-400" />
                 <span>telemetry_log</span>
@@ -68,7 +68,7 @@ export default function NotFound() {
 
             <Link
               href="/services"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl bg-neutral-900/80 hover:bg-neutral-800 border border-neutral-800 hover:border-neutral-700 text-neutral-300 hover:text-white font-semibold text-sm transition-all duration-200 gap-2"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl bg-neutral-900/80 hover:bg-neutral-800 border border-black/[0.08] hover:border-neutral-700 text-neutral-300 hover:text-white font-semibold text-sm transition-all duration-200 gap-2"
             >
               <span>Explore Services</span>
               <ArrowLeft className="w-4 h-4 rotate-180" />

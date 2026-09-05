@@ -55,7 +55,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-100 flex flex-col font-sans selection:bg-indigo-500 selection:text-white">
+    <div className="min-h-screen bg-[#FAF8F5] text-[#141312] flex flex-col font-sans selection:bg-indigo-500 selection:text-white">
       <Navbar />
 
       <main className="flex-1 pt-32 pb-24 relative overflow-hidden">
@@ -70,7 +70,7 @@ export default function ContactPage() {
           
           {/* Header */}
           <div className="max-w-3xl mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 text-xs font-mono text-indigo-400 mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 border border-black/[0.08] text-xs font-mono text-indigo-400 mb-4">
               <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse" />
               <span>Direct Project Intake // Q4 Open</span>
             </div>
@@ -81,7 +81,7 @@ export default function ContactPage() {
               </span>
               .
             </h1>
-            <p className="mt-4 text-base sm:text-lg text-neutral-400 leading-relaxed text-pretty">
+            <p className="mt-4 text-base sm:text-lg text-neutral-600 leading-relaxed text-pretty">
               Tell us about your technical goals, constraints, and timeline. You’ll speak directly with our principal engineers—zero sales reps.
             </p>
           </div>
@@ -93,8 +93,8 @@ export default function ContactPage() {
             <div className="lg:col-span-5 space-y-8">
               
               {/* Card 1: Direct Contacts & SLA */}
-              <div className="p-7 sm:p-8 rounded-3xl bg-neutral-900/40 border border-neutral-800/80 backdrop-blur-xl shadow-xl space-y-6">
-                <div className="flex items-center justify-between pb-4 border-b border-neutral-800/70">
+              <div className="p-7 sm:p-8 rounded-3xl bg-white/80 border border-black/[0.08]/80 backdrop-blur-xl shadow-xl space-y-6">
+                <div className="flex items-center justify-between pb-4 border-b border-black/[0.08]/70">
                   <span className="text-xs font-mono text-neutral-500 uppercase tracking-wider">
                     Agency Coordinates
                   </span>
@@ -107,7 +107,7 @@ export default function ContactPage() {
                 <div className="space-y-4">
                   <a
                     href="mailto:hello@telosdigital.io"
-                    className="group flex items-start gap-4 p-3.5 rounded-2xl bg-neutral-950/60 border border-neutral-800/60 hover:border-indigo-500/50 transition-colors"
+                    className="group flex items-start gap-4 p-3.5 rounded-2xl bg-[#FAF8F5]/60 border border-black/[0.08]/60 hover:border-indigo-500/50 transition-colors"
                   >
                     <div className="w-10 h-10 rounded-xl bg-indigo-950/50 border border-indigo-800/40 flex items-center justify-center text-indigo-400 group-hover:scale-105 transition-transform shrink-0">
                       <Mail className="w-4 h-4" />
@@ -120,7 +120,7 @@ export default function ContactPage() {
                     </div>
                   </a>
 
-                  <div className="flex items-start gap-4 p-3.5 rounded-2xl bg-neutral-950/60 border border-neutral-800/60">
+                  <div className="flex items-start gap-4 p-3.5 rounded-2xl bg-[#FAF8F5]/60 border border-black/[0.08]/60">
                     <div className="w-10 h-10 rounded-xl bg-cyan-950/50 border border-cyan-800/40 flex items-center justify-center text-cyan-400 shrink-0">
                       <MapPin className="w-4 h-4" />
                     </div>
@@ -132,7 +132,7 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4 p-3.5 rounded-2xl bg-neutral-950/60 border border-neutral-800/60">
+                  <div className="flex items-start gap-4 p-3.5 rounded-2xl bg-[#FAF8F5]/60 border border-black/[0.08]/60">
                     <div className="w-10 h-10 rounded-xl bg-purple-950/50 border border-purple-800/40 flex items-center justify-center text-purple-400 shrink-0">
                       <Clock className="w-4 h-4" />
                     </div>
@@ -155,7 +155,7 @@ export default function ContactPage() {
                 <h3 className="text-xl font-semibold text-white tracking-tight">
                   Book a 15-minute technical discovery call
                 </h3>
-                <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed">
+                <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
                   Have an existing codebase or tight product timeline? Jump on a direct video call with our lead architect to evaluate feasibility.
                 </p>
                 <a
@@ -170,7 +170,7 @@ export default function ContactPage() {
               </div>
 
               {/* Trust Badge */}
-              <div className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-neutral-900/30 border border-neutral-800/60 text-xs font-mono text-neutral-400">
+              <div className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-white/70 border border-black/[0.08]/60 text-xs font-mono text-neutral-600">
                 <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>NDA signed upfront upon request. Full IP protection.</span>
               </div>
@@ -179,7 +179,7 @@ export default function ContactPage() {
 
             {/* Right Column: Interactive Intake Form */}
             <div className="lg:col-span-7">
-              <div className="p-8 sm:p-12 rounded-3xl bg-neutral-900/40 border border-neutral-800/90 shadow-2xl backdrop-blur-xl relative">
+              <div className="p-8 sm:p-12 rounded-3xl bg-white/80 border border-black/[0.08]/90 shadow-2xl backdrop-blur-xl relative">
                 
                 {isSubmitted ? (
                   <div className="py-12 flex flex-col items-center text-center space-y-4 animate-in fade-in zoom-in duration-300">
@@ -189,7 +189,7 @@ export default function ContactPage() {
                     <h3 className="text-2xl font-semibold text-white tracking-tight">
                       Message Received
                     </h3>
-                    <p className="text-neutral-400 max-w-md text-sm leading-relaxed">
+                    <p className="text-neutral-600 max-w-md text-sm leading-relaxed">
                       Thank you, <span className="text-neutral-200 font-medium">{form.name}</span>. Our engineering team will review your specification and reply within 24 hours with architectural feedback.
                     </p>
                     <button
@@ -222,7 +222,7 @@ export default function ContactPage() {
                           value={form.name}
                           onChange={(e) => setForm({ ...form, name: e.target.value })}
                           placeholder="e.g. Alex Vance"
-                          className="w-full px-4 py-3 rounded-xl bg-neutral-950/80 border border-neutral-800 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
+                          className="w-full px-4 py-3 rounded-xl bg-[#FAF8F5]/80 border border-black/[0.08] text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
                         />
                       </div>
 
@@ -236,7 +236,7 @@ export default function ContactPage() {
                           value={form.email}
                           onChange={(e) => setForm({ ...form, email: e.target.value })}
                           placeholder="alex@company.com"
-                          className="w-full px-4 py-3 rounded-xl bg-neutral-950/80 border border-neutral-800 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
+                          className="w-full px-4 py-3 rounded-xl bg-[#FAF8F5]/80 border border-black/[0.08] text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
                         />
                       </div>
                     </div>
@@ -251,7 +251,7 @@ export default function ContactPage() {
                         value={form.company}
                         onChange={(e) => setForm({ ...form, company: e.target.value })}
                         placeholder=""
-                        className="w-full px-4 py-3 rounded-xl bg-neutral-950/80 border border-neutral-800 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
+                        className="w-full px-4 py-3 rounded-xl bg-[#FAF8F5]/80 border border-black/[0.08] text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
                       />
                     </div>
 
@@ -266,7 +266,7 @@ export default function ContactPage() {
                         value={form.details}
                         onChange={(e) => setForm({ ...form, details: e.target.value })}
                         placeholder="Tell us about the product you want to build, existing stack, and ideal target launch date..."
-                        className="w-full px-4 py-3 rounded-xl bg-neutral-950/80 border border-neutral-800 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors resize-none leading-relaxed"
+                        className="w-full px-4 py-3 rounded-xl bg-[#FAF8F5]/80 border border-black/[0.08] text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors resize-none leading-relaxed"
                       />
                     </div>
 

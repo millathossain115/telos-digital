@@ -34,17 +34,18 @@ export function FaqSection() {
   };
 
   return (
-    <section className="py-24 relative bg-neutral-950/80 border-t border-neutral-900">
+    <section className="py-28 relative bg-[#FAF8F5] border-t border-black/[0.06]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-neutral-900 border border-neutral-800 text-neutral-300 text-xs font-mono uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-black/[0.08] text-amber-700 text-xs font-mono uppercase tracking-wider mb-4 shadow-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
             Clarity & Expectations
           </div>
-          <h2 className="text-3xl sm:text-5xl font-semibold text-white tracking-tight sm:tracking-tighter">
+          <h2 className="text-3xl sm:text-5xl font-semibold text-[#141312] tracking-tight sm:tracking-tighter">
             Frequently Asked Questions
           </h2>
-          <p className="mt-4 text-neutral-400 text-sm sm:text-base">
+          <p className="mt-4 text-neutral-600 text-sm sm:text-base">
             Everything you need to know about partnering with Telos Digital.
           </p>
         </div>
@@ -56,10 +57,10 @@ export function FaqSection() {
             return (
               <div
                 key={faq.q}
-                className={`rounded-2xl border transition-colors overflow-hidden ${
+                className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
                   isOpen
-                    ? "bg-neutral-900/60 border-neutral-700/80"
-                    : "bg-neutral-900/20 border-neutral-800/80 hover:border-neutral-750"
+                    ? "bg-white border-amber-500/40 shadow-md shadow-black/[0.03]"
+                    : "bg-white/80 border-black/[0.07] hover:border-black/[0.15] shadow-sm"
                 }`}
               >
                 <button
@@ -67,16 +68,18 @@ export function FaqSection() {
                   className="w-full py-5 px-6 flex items-center justify-between text-left gap-4 focus:outline-none"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-base sm:text-lg font-semibold text-neutral-100 tracking-tight">
+                  <span className="text-base sm:text-lg font-semibold text-[#141312] tracking-tight">
                     {faq.q}
                   </span>
-                  <div className="w-8 h-8 rounded-full bg-neutral-800/80 border border-neutral-700/60 flex items-center justify-center text-neutral-300 shrink-0">
+                  <div className={`w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-colors ${
+                    isOpen ? "bg-[#141312] text-amber-300 border-[#141312]" : "bg-[#FAF8F5] text-neutral-700 border-black/[0.08]"
+                  }`}>
                     {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                   </div>
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-1 text-sm sm:text-base text-neutral-400 leading-relaxed border-t border-neutral-800/40">
+                  <div className="px-6 pb-6 pt-1 text-sm sm:text-base text-neutral-600 leading-relaxed border-t border-black/[0.05]">
                     {faq.a}
                   </div>
                 )}

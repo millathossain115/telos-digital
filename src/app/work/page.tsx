@@ -149,7 +149,7 @@ export default function WorkPage() {
       : CASE_STUDIES.filter((p) => p.category === activeFilter);
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-100 flex flex-col font-sans selection:bg-amber-900 selection:text-white">
+    <div className="min-h-screen bg-[#FAF8F5] text-[#141312] flex flex-col font-sans selection:bg-amber-900 selection:text-white">
       <Navbar />
 
       <main className="flex-1 pt-32 pb-24 relative overflow-hidden">
@@ -163,7 +163,7 @@ export default function WorkPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
           {/* Header & Mission */}
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 text-xs font-mono text-amber-200 mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 border border-black/[0.08] text-xs font-mono text-amber-200 mb-4">
               <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
               <span>Selected Case Studies // Proven Engineering</span>
             </div>
@@ -174,14 +174,14 @@ export default function WorkPage() {
               </span>
               .
             </h1>
-            <p className="mt-4 text-base sm:text-lg text-neutral-400 leading-relaxed text-pretty">
+            <p className="mt-4 text-base sm:text-lg text-neutral-600 leading-relaxed text-pretty">
               Explore deep dives into how we solve architectural bottlenecks,
               eliminate latency, and ship resilient digital products.
             </p>
           </div>
 
           {/* Interactive Filter Strip */}
-          <div className="flex flex-wrap items-center gap-2 pb-6 border-b border-neutral-900">
+          <div className="flex flex-wrap items-center gap-2 pb-6 border-b border-black/[0.06]">
             <div className="flex items-center gap-1.5 text-xs font-mono text-neutral-500 mr-2">
               <Filter className="w-3.5 h-3.5" />
               <span>Filter:</span>
@@ -200,7 +200,7 @@ export default function WorkPage() {
                 className={`px-3.5 py-1.5 rounded-xl text-xs font-mono transition-all duration-200 border ${
                   activeFilter === filter
                     ? "bg-neutral-800 text-white border-amber-600/70 shadow-sm"
-                    : "bg-neutral-900/40 text-neutral-400 border-neutral-800/80 hover:border-neutral-700 hover:text-white"
+                    : "bg-white/80 text-neutral-600 border-black/[0.08]/80 hover:border-neutral-700 hover:text-white"
                 }`}>
                 {filter}
               </button>
@@ -212,7 +212,7 @@ export default function WorkPage() {
             {filteredProjects.map((project, idx) => (
               <article
                 key={project.id}
-                className="group p-8 sm:p-12 rounded-3xl bg-neutral-900/30 border border-neutral-800/80 hover:border-neutral-700/80 transition-all duration-300 backdrop-blur-md relative overflow-hidden shadow-2xl">
+                className="group p-8 sm:p-12 rounded-3xl bg-white/70 border border-black/[0.08]/80 hover:border-neutral-700/80 transition-all duration-300 backdrop-blur-md relative overflow-hidden shadow-2xl">
                 {/* Subtle back illumination on hover */}
                 <div className="absolute -top-32 -right-32 w-80 h-80 bg-white/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
@@ -239,15 +239,15 @@ export default function WorkPage() {
                       <p className="mt-2 text-sm font-medium text-amber-200 font-mono">
                         {project.tagline}
                       </p>
-                      <p className="mt-3 text-sm text-neutral-400 leading-relaxed">
+                      <p className="mt-3 text-sm text-neutral-600 leading-relaxed">
                         {project.overview}
                       </p>
                     </div>
 
                     {/* Challenge & Solution Cards */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                      <div className="p-4 rounded-2xl bg-neutral-950/70 border border-neutral-800/70 space-y-1.5">
-                        <div className="text-[11px] font-mono text-neutral-400 uppercase tracking-wider">
+                      <div className="p-4 rounded-2xl bg-[#FAF8F5]/70 border border-black/[0.08]/70 space-y-1.5">
+                        <div className="text-[11px] font-mono text-neutral-600 uppercase tracking-wider">
                           The Bottleneck
                         </div>
                         <p className="text-xs text-neutral-300 leading-relaxed">
@@ -255,7 +255,7 @@ export default function WorkPage() {
                         </p>
                       </div>
 
-                      <div className="p-4 rounded-2xl bg-neutral-950/70 border border-amber-950 space-y-1.5">
+                      <div className="p-4 rounded-2xl bg-[#FAF8F5]/70 border border-amber-950 space-y-1.5">
                         <div className="text-[11px] font-mono text-amber-500 uppercase tracking-wider">
                           Architectural Execution
                         </div>
@@ -270,7 +270,7 @@ export default function WorkPage() {
                       {project.techStack.map((tech) => (
                         <span
                           key={tech}
-                          className="text-xs font-mono px-2.5 py-1 rounded bg-neutral-950 border border-neutral-800 text-neutral-400">
+                          className="text-xs font-mono px-2.5 py-1 rounded bg-[#FAF8F5] border border-black/[0.08] text-neutral-600">
                           {tech}
                         </span>
                       ))}
@@ -280,7 +280,7 @@ export default function WorkPage() {
                   {/* Right: Metrics & Architecture Terminal (5 Cols) */}
                   <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
                     {project.image && (
-                      <div className="rounded-2xl overflow-hidden border border-neutral-800/80 shadow-2xl relative w-full aspect-[4/3] group-hover:border-neutral-700/80 transition-colors">
+                      <div className="rounded-2xl overflow-hidden border border-black/[0.08]/80 shadow-2xl relative w-full aspect-[4/3] group-hover:border-neutral-700/80 transition-colors">
                         <Image
                           src={project.image}
                           alt={project.title}
@@ -290,8 +290,8 @@ export default function WorkPage() {
                       </div>
                     )}
                     {/* Architectural Console Preview */}
-                    <div className="rounded-2xl bg-neutral-950 border border-neutral-800 p-5 font-mono text-xs text-neutral-400 space-y-3 shadow-xl">
-                      <div className="flex items-center justify-between pb-3 border-b border-neutral-800/80">
+                    <div className="rounded-2xl bg-[#FAF8F5] border border-black/[0.08] p-5 font-mono text-xs text-neutral-600 space-y-3 shadow-xl">
+                      <div className="flex items-center justify-between pb-3 border-b border-black/[0.08]/80">
                         <div className="flex items-center gap-1.5">
                           <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
                           <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
@@ -317,13 +317,13 @@ export default function WorkPage() {
                     </div>
 
                     {/* Quantitative Results Strip */}
-                    <div className="grid grid-cols-3 gap-3 p-5 rounded-2xl bg-neutral-900/50 border border-neutral-800/80">
+                    <div className="grid grid-cols-3 gap-3 p-5 rounded-2xl bg-white/85 border border-black/[0.08]/80">
                       {project.metrics.map((m) => (
                         <div key={m.label} className="text-center">
                           <div className="text-lg sm:text-xl font-semibold font-mono text-white tracking-tight tabular-nums">
                             {m.value}
                           </div>
-                          <div className="text-[10px] font-mono text-neutral-400 mt-1 leading-tight">
+                          <div className="text-[10px] font-mono text-neutral-600 mt-1 leading-tight">
                             {m.label}
                           </div>
                         </div>
@@ -333,7 +333,7 @@ export default function WorkPage() {
                     {/* CTA Link */}
                     <Link
                       href="/contact"
-                      className="inline-flex items-center justify-between px-5 py-3 rounded-xl bg-neutral-900/80 border border-neutral-800 hover:border-neutral-700 text-sm font-semibold text-neutral-300 hover:text-white transition-all group/cta">
+                      className="inline-flex items-center justify-between px-5 py-3 rounded-xl bg-neutral-900/80 border border-black/[0.08] hover:border-neutral-700 text-sm font-semibold text-neutral-300 hover:text-white transition-all group/cta">
                       <span>Discuss a project like this</span>
                       <ArrowUpRight className="w-4 h-4 text-amber-500 group-hover/cta:tranneutral-x-0.5 group-hover/cta:-tranneutral-y-0.5 transition-transform" />
                     </Link>
@@ -344,7 +344,7 @@ export default function WorkPage() {
           </div>
 
           {/* Bottom Conversion Section */}
-          <section className="rounded-3xl p-8 sm:p-14 bg-gradient-to-r from-zinc-900/80 via-black to-zinc-950/80 border border-neutral-800/80 shadow-2xl text-center max-w-4xl mx-auto">
+          <section className="rounded-3xl p-8 sm:p-14 bg-gradient-to-r from-zinc-900/80 via-black to-zinc-950/80 border border-black/[0.08]/80 shadow-2xl text-center max-w-4xl mx-auto">
             <h2 className="text-3xl sm:text-5xl font-semibold text-white tracking-tight sm:tracking-tighter">
               Have an ambitious technical challenge?
             </h2>
@@ -361,7 +361,7 @@ export default function WorkPage() {
               </Link>
               <Link
                 href="/services"
-                className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-neutral-900/80 border border-neutral-800 hover:border-neutral-700 text-neutral-300 hover:text-white font-semibold text-sm transition-all duration-200">
+                className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-neutral-900/80 border border-black/[0.08] hover:border-neutral-700 text-neutral-300 hover:text-white font-semibold text-sm transition-all duration-200">
                 <span>View All Services</span>
               </Link>
             </div>

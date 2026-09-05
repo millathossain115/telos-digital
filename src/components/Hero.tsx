@@ -24,17 +24,17 @@ const itemVariants: Variants = {
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-start overflow-hidden bg-neutral-950 text-neutral-100 pt-32">
-      {/* 21st.dev inspired glow pulse background */}
+    <section className="relative min-h-screen flex flex-col items-center justify-start overflow-hidden bg-[#FAF8F5] text-[#141312] pt-32">
+      {/* Warm ambient light leak */}
       <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
-        <div className="absolute top-1/2 left-1/2 w-[150vw] h-[150vh] -tranneutral-x-1/2 -tranneutral-y-1/2 animate-[pulse_8s_ease-in-out_infinite]"
+        <div className="absolute top-1/3 left-1/2 w-[120vw] h-[120vh] -translate-x-1/2 -translate-y-1/2"
           style={{
             background: `
-              radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.03), transparent 78%),
-              radial-gradient(38% 44% at 62% 54%, rgba(255, 255, 255, 0.02), transparent 76%),
-              radial-gradient(34% 40% at 38% 54%, rgba(255, 255, 255, 0.01), transparent 76%)
+              radial-gradient(50% 50% at 50% 50%, rgba(212, 175, 55, 0.08), transparent 70%),
+              radial-gradient(40% 40% at 65% 45%, rgba(245, 239, 230, 0.9), transparent 75%),
+              radial-gradient(35% 35% at 35% 45%, rgba(235, 229, 220, 0.6), transparent 75%)
             `,
-            filter: 'blur(48px)'
+            filter: 'blur(50px)'
           }}
         />
       </div>
@@ -45,30 +45,30 @@ export function Hero() {
         animate="visible"
         className="relative z-10 mx-auto max-w-6xl px-6 text-center"
       >
-        {/* Large balanced typography like 21st.dev */}
-        <motion.h1 variants={itemVariants} className="text-[clamp(40px,6.2vw,72px)] font-medium leading-[1.06] tracking-[-0.022em] text-balance">
+        {/* Large balanced typography */}
+        <motion.h1 variants={itemVariants} className="text-[clamp(40px,6.2vw,72px)] font-medium leading-[1.06] tracking-[-0.022em] text-[#141312] text-balance">
           We engineer{" "}
-          <em className="font-serif text-[1.08em] font-normal italic leading-[1] text-amber-500">
+          <em className="font-serif text-[1.08em] font-normal italic leading-[1] text-amber-600">
             scalable
           </em>
           <br />
           software &amp; interfaces
         </motion.h1>
 
-        <motion.p variants={itemVariants} className="mx-auto mt-6 max-w-[500px] text-[clamp(15px,1.5vw,17px)] font-medium leading-[1.5] tracking-[-0.012em] text-neutral-400 text-balance">
-          <span className="text-neutral-100 shadow-[inset_0_-0.06em_0_0_#f59e0b]">Telos Digital</span> partners with founders to ship mission-critical React apps, mobile cores, and refined experiences.
+        <motion.p variants={itemVariants} className="mx-auto mt-6 max-w-[520px] text-[clamp(15px,1.5vw,17px)] font-normal leading-[1.6] tracking-[-0.012em] text-neutral-600 text-balance">
+          <span className="font-semibold text-[#141312] shadow-[inset_0_-0.06em_0_0_#d97706]">Telos Digital</span> partners with founders to ship mission-critical React apps, mobile cores, and refined experiences.
         </motion.p>
 
         <motion.div variants={itemVariants} className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="/contact"
-            className="inline-flex h-11 items-center justify-center rounded-full bg-white px-6 text-[14px] font-medium text-black transition hover:bg-amber-100 active:scale-[0.97]"
+            className="inline-flex h-11 items-center justify-center rounded-full bg-[#141312] px-6 text-[14px] font-medium text-white shadow-md hover:bg-black transition active:scale-[0.97]"
           >
             Start a Project
           </Link>
           <Link
             href="#work"
-            className="inline-flex h-11 items-center justify-center rounded-full px-6 text-[14px] font-medium text-neutral-300 transition hover:bg-white/10 hover:text-white active:scale-[0.97]"
+            className="inline-flex h-11 items-center justify-center rounded-full bg-white/80 border border-black/[0.08] px-6 text-[14px] font-medium text-neutral-800 shadow-sm transition hover:bg-white hover:text-black active:scale-[0.97]"
           >
             View Work
           </Link>
@@ -80,22 +80,24 @@ export function Hero() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-        className="relative z-10 mx-auto mt-16 w-full max-w-[1400px] px-0 sm:px-6"
+        className="relative z-10 mx-auto mt-16 w-full max-w-[1400px] px-4 sm:px-6"
       >
         {/* Golden oval glow at the top center of the dashboard image */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] max-w-[800px] h-[200px] bg-amber-500/30 blur-[80px] rounded-[100%] pointer-events-none z-[-1]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] max-w-[800px] h-[200px] bg-amber-400/25 blur-[90px] rounded-[100%] pointer-events-none z-[-1]" />
 
-        <div className="relative w-full rounded-t-2xl sm:rounded-2xl border border-white/10 border-t-amber-500/30 border-b-0 bg-neutral-900/50 shadow-2xl backdrop-blur-xl overflow-hidden">
+        <div 
+          className="relative w-full rounded-t-2xl sm:rounded-t-3xl border-t border-x border-b-0 border-black/[0.08] border-t-amber-500/40 bg-white/80 shadow-[0_20px_50px_rgba(20,19,18,0.04)] backdrop-blur-xl overflow-hidden [mask-image:linear-gradient(to_bottom,black_55%,transparent_98%)]"
+        >
           <img
-            src="/assets/images/CRM Hero.jpeg"
+            src="/assets/images/CRm hero Light.jpeg"
             alt="Telos Digital Dashboard Mockup"
             className="w-full h-auto block"
           />
-          {/* Blend bottom into background */}
-          <div className="absolute inset-x-0 bottom-0 h-32 sm:h-48 bg-gradient-to-t from-neutral-950 to-transparent pointer-events-none" />
+          {/* Seamless fade mask */}
+          <div className="absolute inset-x-0 bottom-0 h-48 sm:h-80 bg-gradient-to-t from-[#FAF8F5] via-[#FAF8F5]/80 to-transparent pointer-events-none" />
         </div>
-        {/* Glow below image */}
-        <div className="absolute -inset-4 z-[-1] mx-auto w-3/4 blur-3xl rounded-[3rem] bg-white/5" />
+        {/* Soft warm shadow below image */}
+        <div className="absolute -inset-4 z-[-1] mx-auto w-3/4 blur-3xl rounded-[3rem] bg-amber-500/[0.04]" />
       </motion.div>
     </section>
   );

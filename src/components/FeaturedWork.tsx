@@ -68,19 +68,20 @@ const PROJECTS = [
 
 export function FeaturedWork() {
   return (
-    <section id="work" className="py-24 relative bg-neutral-950/60 border-t border-neutral-900">
+    <section id="work" className="py-28 relative bg-[#FAF8F5] border-t border-black/[0.06]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-zinc-900/60 border border-amber-950/40 text-amber-200 text-xs font-mono uppercase tracking-wider mb-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-black/[0.08] text-amber-700 text-xs font-mono uppercase tracking-wider mb-4 shadow-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
               Selected Proof
             </div>
-            <h2 className="text-3xl sm:text-5xl font-semibold text-white tracking-tight sm:tracking-tighter">
+            <h2 className="text-3xl sm:text-5xl font-semibold text-[#141312] tracking-tight sm:tracking-tighter">
               Featured Work
             </h2>
           </div>
-          <p className="text-neutral-400 max-w-md text-sm sm:text-base leading-relaxed">
+          <p className="text-neutral-600 max-w-md text-sm sm:text-base leading-relaxed">
             Real enterprise challenges solved through rigorous engineering discipline, architectural clarity, and user empathy.
           </p>
         </div>
@@ -92,11 +93,11 @@ export function FeaturedWork() {
             return (
               <div
                 key={project.id}
-                className={`group relative rounded-3xl bg-neutral-900/30 border border-neutral-800/80 ${project.borderAccent} p-6 sm:p-10 transition-all duration-300 backdrop-blur-sm overflow-hidden hover:shadow-2xl hover:shadow-black/50`}
+                className="group relative rounded-3xl bg-white border border-black/[0.08] p-6 sm:p-10 transition-all duration-300 shadow-[0_10px_35px_rgba(20,19,18,0.03)] hover:shadow-[0_20px_50px_rgba(20,19,18,0.08)] hover:border-amber-500/30 overflow-hidden"
               >
-                {/* Glow aura */}
+                {/* Subtle warm glow on hover */}
                 <div
-                  className={`absolute -top-32 -right-32 w-96 h-96 bg-gradient-to-bl ${project.glow} blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}
+                  className="absolute -top-32 -right-32 w-96 h-96 bg-amber-100/40 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                 />
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -105,32 +106,32 @@ export function FeaturedWork() {
                     <div>
                       {/* Top metadata */}
                       <div className="flex flex-wrap items-center gap-3 mb-4">
-                        <span className="text-xs font-mono px-3 py-1 rounded-full bg-neutral-800/80 border border-neutral-700 text-neutral-300">
+                        <span className="text-xs font-mono px-3 py-1 rounded-full bg-[#FAF8F5] border border-black/[0.07] text-neutral-700 font-medium">
                           {project.client}
                         </span>
-                        <span className="text-xs font-mono text-amber-500">
+                        <span className="text-xs font-mono text-amber-600 font-semibold">
                           // {project.category}
                         </span>
-                        <span className="text-xs font-mono text-neutral-600 ml-auto">
+                        <span className="text-xs font-mono text-neutral-400 ml-auto font-medium">
                           0{index + 1}
                         </span>
                       </div>
 
                       {/* Main Title */}
-                      <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight group-hover:text-amber-100 transition-colors">
+                      <h3 className="text-2xl sm:text-3xl font-bold text-[#141312] tracking-tight group-hover:text-amber-800 transition-colors">
                         {project.title}
                       </h3>
 
                       {/* Problem / Solution Narrative */}
                       <div className="mt-6 space-y-3 text-sm leading-relaxed">
-                        <div className="p-3.5 rounded-xl bg-neutral-950/60 border border-neutral-800/60 text-neutral-400">
-                          <strong className="text-neutral-200 font-mono text-xs uppercase tracking-wide block mb-1">
+                        <div className="p-4 rounded-xl bg-[#FAF8F5] border border-black/[0.05] text-neutral-600">
+                          <strong className="text-neutral-900 font-mono text-xs uppercase tracking-wide block mb-1">
                             The Challenge:
                           </strong>
                           {project.problem}
                         </div>
-                        <div className="p-3.5 rounded-xl bg-neutral-950/60 border border-neutral-800/60 text-neutral-300">
-                          <strong className="text-amber-500 font-mono text-xs uppercase tracking-wide block mb-1">
+                        <div className="p-4 rounded-xl bg-amber-50/50 border border-amber-200/60 text-neutral-800">
+                          <strong className="text-amber-700 font-mono text-xs uppercase tracking-wide block mb-1">
                             The Technical Solution:
                           </strong>
                           {project.solution}
@@ -138,13 +139,13 @@ export function FeaturedWork() {
                       </div>
 
                       {/* Stats Strip */}
-                      <div className="mt-6 grid grid-cols-3 gap-4 pt-6 border-t border-neutral-800/60">
+                      <div className="mt-6 grid grid-cols-3 gap-4 pt-6 border-t border-black/[0.06]">
                         {project.stats.map((s) => (
                           <div key={s.label}>
-                            <div className="text-xl sm:text-2xl font-bold font-mono text-white tracking-tight tabular-nums">
+                            <div className="text-xl sm:text-2xl font-bold font-mono text-[#141312] tracking-tight tabular-nums">
                               {s.value}
                             </div>
-                            <div className="text-[11px] font-mono text-neutral-400 mt-0.5">
+                            <div className="text-[11px] font-mono text-neutral-500 mt-0.5">
                               {s.label}
                             </div>
                           </div>
@@ -153,12 +154,12 @@ export function FeaturedWork() {
                     </div>
 
                     {/* Tech tags & link */}
-                    <div className="mt-8 flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-neutral-800/60">
+                    <div className="mt-8 flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-black/[0.06]">
                       <div className="flex flex-wrap gap-2">
                         {project.tech.map((t) => (
                           <span
                             key={t}
-                            className="text-xs font-mono px-2.5 py-1 rounded-md bg-neutral-950 text-neutral-300 border border-neutral-800"
+                            className="text-xs font-mono px-2.5 py-1 rounded-lg bg-[#FAF8F5] text-neutral-700 border border-black/[0.06]"
                           >
                             {t}
                           </span>
@@ -166,7 +167,7 @@ export function FeaturedWork() {
                       </div>
                       <Link
                         href="/contact"
-                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-amber-500 hover:text-white transition-colors group-hover:tranneutral-x-1 duration-200"
+                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-amber-600 hover:text-black transition-colors duration-200"
                       >
                         <span>Deep Dive</span>
                         <ArrowUpRight className="w-4 h-4" />
@@ -176,37 +177,37 @@ export function FeaturedWork() {
 
                   {/* Right Column: Architectural Terminal Mockup Card */}
                   <div className="lg:col-span-5">
-                    <div className="rounded-2xl bg-neutral-950 border border-neutral-800/90 p-4 sm:p-5 shadow-xl group-hover:border-neutral-700 transition-colors">
+                    <div className="rounded-2xl bg-[#141312] border border-black p-4 sm:p-5 shadow-2xl">
                       <div className="flex items-center justify-between pb-3 border-b border-neutral-800 mb-4">
                         <div className="flex items-center gap-1.5">
                           <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
                           <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
                           <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
-                          <span className="ml-2 text-[11px] font-mono text-neutral-500">
+                          <span className="ml-2 text-[11px] font-mono text-neutral-400">
                             {project.visualHeader}
                           </span>
                         </div>
-                        <Icon className="w-4 h-4 text-neutral-500" />
+                        <Icon className="w-4 h-4 text-amber-400" />
                       </div>
 
                       {/* Mock Terminal Stream */}
-                      <div className="space-y-2 font-mono text-xs text-neutral-400">
-                        <div className="flex items-center justify-between bg-neutral-900/60 px-3 py-2 rounded border border-neutral-800/50">
+                      <div className="space-y-2 font-mono text-xs text-neutral-300">
+                        <div className="flex items-center justify-between bg-neutral-900/90 px-3 py-2 rounded border border-neutral-800">
                           <span className="text-neutral-500">$ status --cluster</span>
-                          <span className="text-emerald-400">OPERATIONAL</span>
+                          <span className="text-emerald-400 font-semibold">OPERATIONAL</span>
                         </div>
-                        <div className="flex items-center justify-between bg-neutral-900/60 px-3 py-2 rounded border border-neutral-800/50">
+                        <div className="flex items-center justify-between bg-neutral-900/90 px-3 py-2 rounded border border-neutral-800">
                           <span className="text-neutral-500">sync_strategy</span>
-                          <span className="text-amber-200">DETERMINISTIC</span>
+                          <span className="text-amber-300">DETERMINISTIC</span>
                         </div>
-                        <div className="flex items-center justify-between bg-neutral-900/60 px-3 py-2 rounded border border-neutral-800/50">
+                        <div className="flex items-center justify-between bg-neutral-900/90 px-3 py-2 rounded border border-neutral-800">
                           <span className="text-neutral-500">edge_routing</span>
-                          <span className="text-amber-200">ACTIVE [32 nodes]</span>
+                          <span className="text-amber-300">ACTIVE [32 nodes]</span>
                         </div>
-                        <div className="p-3 rounded bg-neutral-900/40 border border-neutral-800/40 text-[11px] text-neutral-400 font-mono mt-3">
+                        <div className="p-3 rounded bg-neutral-900/60 border border-neutral-800 text-[11px] text-neutral-400 font-mono mt-3">
                           <span className="text-emerald-400">✓</span> Test suites passed: 248/248 unit, 42 e2e
                           <br />
-                          <span className="text-amber-500">ℹ</span> Benchmark: zero frame drops on 120Hz display
+                          <span className="text-amber-400">ℹ</span> Benchmark: zero frame drops on 120Hz display
                         </div>
                       </div>
                     </div>

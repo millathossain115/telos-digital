@@ -10,11 +10,11 @@ import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-100 flex flex-col font-sans selection:bg-amber-900 selection:text-white">
+    <div className="min-h-screen bg-[#FAF8F5] text-[#141312] flex flex-col font-sans selection:bg-amber-200 selection:text-black">
       <Navbar />
       <main className="flex-1">
         <Hero />
-        <TechMarquee />
+        {/* <TechMarquee /> */}
         <ServicesBento />
         <FeaturedWork />
         <ProcessSection />

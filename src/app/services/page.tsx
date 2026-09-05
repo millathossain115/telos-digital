@@ -203,13 +203,13 @@ const ENGAGEMENT_MODELS = [
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-100 flex flex-col font-sans selection:bg-indigo-500 selection:text-white">
+    <div className="min-h-screen bg-[#FAF8F5] text-[#141312] flex flex-col font-sans selection:bg-indigo-500 selection:text-white">
       <Navbar />
 
       <main className="flex-1 pt-32 pb-24">
         {/* Section 1: Overview Header */}
         <section className="relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center mb-24">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-900/90 border border-neutral-800 text-xs font-mono text-indigo-400 mb-6">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-900/90 border border-black/[0.08] text-xs font-mono text-indigo-400 mb-6">
             <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse" />
             <span>Technical Capabilities // End-to-End</span>
           </div>
@@ -222,7 +222,7 @@ export default function ServicesPage() {
             .
           </h1>
 
-          <p className="mt-6 text-lg sm:text-xl text-neutral-400 max-w-2xl mx-auto leading-relaxed text-pretty">
+          <p className="mt-6 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto leading-relaxed text-pretty">
             From initial database schema and API contracts to pixel-perfect mobile gestures and zero-downtime deployment pipelines.
           </p>
 
@@ -236,7 +236,7 @@ export default function ServicesPage() {
             </Link>
             <a
               href="#engagement"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-neutral-900/60 border border-neutral-800 hover:border-neutral-700 text-neutral-300 hover:text-white text-sm font-semibold transition-all duration-200"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/90 border border-black/[0.08] hover:border-neutral-700 text-neutral-300 hover:text-white text-sm font-semibold transition-all duration-200"
             >
               <span>Compare Engagement Models</span>
             </a>
@@ -249,7 +249,7 @@ export default function ServicesPage() {
             <div
               key={module.id}
               id={module.id}
-              className={`grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center p-8 sm:p-12 rounded-3xl bg-neutral-900/20 border border-neutral-800/80 backdrop-blur-sm relative overflow-hidden`}
+              className={`grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center p-8 sm:p-12 rounded-3xl bg-neutral-900/20 border border-black/[0.08]/80 backdrop-blur-sm relative overflow-hidden`}
             >
               {/* Content Column */}
               <div
@@ -275,7 +275,7 @@ export default function ServicesPage() {
                     {module.subtitle}
                   </p>
 
-                  <p className="mt-4 text-sm text-neutral-400 leading-relaxed">
+                  <p className="mt-4 text-sm text-neutral-600 leading-relaxed">
                     {module.description}
                   </p>
 
@@ -286,7 +286,7 @@ export default function ServicesPage() {
                       return (
                         <div
                           key={cap.label}
-                          className="flex items-start gap-3.5 p-3 rounded-xl bg-neutral-950/60 border border-neutral-800/60"
+                          className="flex items-start gap-3.5 p-3 rounded-xl bg-[#FAF8F5]/60 border border-black/[0.08]/60"
                         >
                           <div className="w-8 h-8 rounded-lg bg-indigo-950/40 border border-indigo-800/30 flex items-center justify-center text-indigo-400 shrink-0 mt-0.5">
                             <Icon className="w-4 h-4" />
@@ -295,7 +295,7 @@ export default function ServicesPage() {
                             <div className="text-sm font-semibold text-neutral-200">
                               {cap.label}
                             </div>
-                            <div className="text-xs text-neutral-400 leading-relaxed mt-0.5">
+                            <div className="text-xs text-neutral-600 leading-relaxed mt-0.5">
                               {cap.detail}
                             </div>
                           </div>
@@ -306,12 +306,12 @@ export default function ServicesPage() {
                 </div>
 
                 {/* Tech Badges & CTA */}
-                <div className="mt-8 pt-6 border-t border-neutral-800/60 flex flex-wrap items-center justify-between gap-4">
+                <div className="mt-8 pt-6 border-t border-black/[0.08]/60 flex flex-wrap items-center justify-between gap-4">
                   <div className="flex flex-wrap gap-2">
                     {module.techStack.map((tech) => (
                       <span
                         key={tech}
-                        className="text-xs font-mono px-2.5 py-1 rounded bg-neutral-950 border border-neutral-800 text-neutral-400"
+                        className="text-xs font-mono px-2.5 py-1 rounded bg-[#FAF8F5] border border-black/[0.08] text-neutral-600"
                       >
                         {tech}
                       </span>
@@ -333,8 +333,8 @@ export default function ServicesPage() {
                   module.reverse ? "lg:order-1" : "lg:order-2"
                 }`}
               >
-                <div className="rounded-2xl bg-neutral-950 border border-neutral-800/90 p-6 shadow-2xl relative overflow-hidden">
-                  <div className="flex items-center justify-between pb-4 border-b border-neutral-800 mb-6">
+                <div className="rounded-2xl bg-[#FAF8F5] border border-black/[0.08]/90 p-6 shadow-2xl relative overflow-hidden">
+                  <div className="flex items-center justify-between pb-4 border-b border-black/[0.08] mb-6">
                     <div className="flex items-center gap-2">
                       <span className="w-3 h-3 rounded-full bg-rose-500/80" />
                       <span className="w-3 h-3 rounded-full bg-amber-500/80" />
@@ -345,14 +345,14 @@ export default function ServicesPage() {
                     </span>
                   </div>
 
-                  <div className="space-y-4 font-mono text-xs text-neutral-400">
-                    <div className="p-3.5 rounded-lg bg-neutral-900/60 border border-neutral-800 flex items-center justify-between">
+                  <div className="space-y-4 font-mono text-xs text-neutral-600">
+                    <div className="p-3.5 rounded-lg bg-white/90 border border-black/[0.08] flex items-center justify-between">
                       <span className="text-neutral-500">pipeline_status</span>
                       <span className="text-emerald-400 font-semibold">VALIDATED</span>
                     </div>
 
-                    <div className="p-3.5 rounded-lg bg-neutral-900/60 border border-neutral-800 space-y-2">
-                      <div className="text-neutral-400 text-[11px] uppercase tracking-wider">
+                    <div className="p-3.5 rounded-lg bg-white/90 border border-black/[0.08] space-y-2">
+                      <div className="text-neutral-600 text-[11px] uppercase tracking-wider">
                         Architectural Directives
                       </div>
                       <div className="text-neutral-300">✓ Type safety across client & server</div>
@@ -364,7 +364,7 @@ export default function ServicesPage() {
                       <div className="text-xs text-neutral-300 font-sans font-semibold mb-1">
                         Senior Engineering Promise
                       </div>
-                      <p className="text-[11px] text-neutral-400 font-sans leading-relaxed">
+                      <p className="text-[11px] text-neutral-600 font-sans leading-relaxed">
                         Every implementation is reviewed and stamped by a senior staff engineer with zero outsourced code.
                       </p>
                     </div>
@@ -384,7 +384,7 @@ export default function ServicesPage() {
             <h2 className="text-3xl sm:text-5xl font-semibold text-white tracking-tight sm:tracking-tighter">
               Transparent ways to partner
             </h2>
-            <p className="mt-4 text-neutral-400 text-sm sm:text-base">
+            <p className="mt-4 text-neutral-600 text-sm sm:text-base">
               Predictable costs, clearly defined milestones, and zero junior agency handoffs.
             </p>
           </div>
@@ -395,8 +395,8 @@ export default function ServicesPage() {
                 key={model.name}
                 className={`relative flex flex-col justify-between p-8 sm:p-10 rounded-3xl border transition-all duration-300 backdrop-blur-md ${
                   model.highlight
-                    ? "bg-neutral-900/50 border-indigo-500/50 shadow-2xl shadow-indigo-950/40 ring-1 ring-indigo-500/30"
-                    : "bg-neutral-900/25 border-neutral-800/80 hover:border-neutral-700"
+                    ? "bg-white/85 border-indigo-500/50 shadow-2xl shadow-indigo-950/40 ring-1 ring-indigo-500/30"
+                    : "bg-neutral-900/25 border-black/[0.08]/80 hover:border-neutral-700"
                 }`}
               >
                 {model.highlight && (
@@ -414,11 +414,11 @@ export default function ServicesPage() {
                   <p className="text-xs font-mono text-indigo-400 mt-1">
                     {model.tagline}
                   </p>
-                  <p className="text-sm text-neutral-400 mt-4 leading-relaxed">
+                  <p className="text-sm text-neutral-600 mt-4 leading-relaxed">
                     {model.bestFor}
                   </p>
 
-                  <div className="mt-8 pt-6 border-t border-neutral-800/60 space-y-3">
+                  <div className="mt-8 pt-6 border-t border-black/[0.08]/60 space-y-3">
                     <div className="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-2">
                       What is included:
                     </div>
@@ -431,7 +431,7 @@ export default function ServicesPage() {
                   </div>
                 </div>
 
-                <div className="mt-10 pt-6 border-t border-neutral-800/60">
+                <div className="mt-10 pt-6 border-t border-black/[0.08]/60">
                   <Link
                     href="/contact"
                     className={`w-full inline-flex items-center justify-center py-3.5 px-6 rounded-xl font-semibold text-sm transition-all duration-200 gap-2 ${
