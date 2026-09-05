@@ -1,0 +1,176 @@
+{
+  "modules": [
+    {
+      "id": "web-saas",
+      "tag": "MODULE 01",
+      "title": "Custom Web & SaaS Development",
+      "subtitle": "Enterprise-grade web systems engineered for scale, concurrency, and security.",
+      "description": "We design and build complete cloud architectures from the schema layer to server-driven interfaces. Every platform is built for resilience under traffic spikes, multi-tenant data isolation, and low-latency interaction.",
+      "metric": "< 80ms P95 API Latency",
+      "techStack": ["Next.js 16", "TypeScript", "Tailwind CSS", "PostgreSQL", "Redis", "AWS / Vercel"],
+      "reverse": false,
+      "capabilities": [
+        {
+          "icon": "database",
+          "label": "Database & Schema Architecture",
+          "detail": "PostgreSQL & TimescaleDB modeling with connection pooling, migrations, and strict indexing."
+        },
+        {
+          "icon": "code2",
+          "label": "REST & GraphQL API Design",
+          "detail": "Type-safe RPC contracts with Zod validation, rate limiting, and OpenAPI specifications."
+        },
+        {
+          "icon": "globe",
+          "label": "SSR / SSG & Edge Routing",
+          "detail": "Next.js App Router with React Server Components, streaming suspense, and CDN edge caching."
+        },
+        {
+          "icon": "lock",
+          "label": "Auth & Enterprise RBAC",
+          "detail": "OAuth2, WebAuthn passkeys, multi-factor security, and granular permission matrices."
+        },
+        {
+          "icon": "creditCard",
+          "label": "Billing & Subscription Engines",
+          "detail": "Stripe Billing, usage-based metering, webhook reconciliation, and automated invoicing."
+        }
+      ]
+    },
+    {
+      "id": "mobile",
+      "tag": "MODULE 02",
+      "title": "Mobile Engineering",
+      "subtitle": "Hardware-accelerated mobile apps for iOS and Android from a single shared TypeScript core.",
+      "description": "We avoid sluggish web-wrappers. We build high-performance mobile apps using React Native and Expo with native platform modules, offline-first SQLite sync, and buttery-smooth 60fps gestures.",
+      "metric": "120Hz ProMotion Native Feel",
+      "techStack": ["React Native", "Expo 52", "Hermes Bytecode", "SQLite", "EAS Build"],
+      "reverse": true,
+      "capabilities": [
+        {
+          "icon": "smartphone",
+          "label": "Cross-Platform Single Codebase",
+          "detail": "React Native with 90%+ code sharing between iOS and Android without sacrificing platform UX."
+        },
+        {
+          "icon": "wifiOff",
+          "label": "Offline-First SQLite Synchronization",
+          "detail": "Local-first persistence with deterministic conflict-free replication when network returns."
+        },
+        {
+          "icon": "bell",
+          "label": "Push Notifications & Background Tasks",
+          "detail": "APNs & FCM integration with automated user notification schedules and silent sync workers."
+        },
+        {
+          "icon": "lock",
+          "label": "Biometric & Secure Enclave Security",
+          "detail": "FaceID, TouchID, and Android BiometricPrompt with cryptographic hardware token storage."
+        },
+        {
+          "icon": "rocket",
+          "label": "App Store & Google Play Compliance",
+          "detail": "Full handling of review audits, privacy manifests, EAS CI/CD build channels, and rollout flags."
+        }
+      ]
+    },
+    {
+      "id": "ui-ux",
+      "tag": "MODULE 03",
+      "title": "UI/UX & Product Strategy",
+      "subtitle": "Precision interface systems designed to bridge product vision and production code.",
+      "description": "Design without technical grounding leads to broken implementations. We design in tight coordination with engineering constraints, delivering tokenized design systems, WCAG 2.1 AA accessibility, and click-through prototypes.",
+      "metric": "100% Token-to-Code Parity",
+      "techStack": ["Figma Enterprise", "Radix Primitives", "Tailwind CSS", "Storybook", "WCAG 2.1"],
+      "reverse": false,
+      "capabilities": [
+        {
+          "icon": "layers",
+          "label": "Wireframing & Information Architecture",
+          "detail": "User journey mapping, state charts, and ergonomic screen hierarchy before visual styling."
+        },
+        {
+          "icon": "palette",
+          "label": "Design Tokens & System Architecture",
+          "detail": "Semantic color ramps, typography scales, and spacing tokens synced from Figma directly to code."
+        },
+        {
+          "icon": "terminal",
+          "label": "Production Figma Component Libraries",
+          "detail": "Strict auto-layout, nested variant sets, and dev-mode ready assets with zero ambiguity."
+        },
+        {
+          "icon": "checkCircle2",
+          "label": "Usability & Accessibility Audits",
+          "detail": "Screen-reader audits, contrast validation, and keyboard navigation testing across viewports."
+        }
+      ]
+    },
+    {
+      "id": "mvp",
+      "tag": "MODULE 04",
+      "title": "MVP Accelerator",
+      "subtitle": "6-week fixed-scope delivery designed for pre-seed and seed stage startups.",
+      "description": "Speed is oxygen for early ventures. The MVP Accelerator eliminates scope creep and engineering paralysis. We lock a clear specification, ship working builds every 14 days, and launch a production product ready for real paying users.",
+      "metric": "Fixed 6-Week Turnaround",
+      "techStack": ["Next.js", "TypeScript", "Supabase / PostgreSQL", "Stripe", "PostHog", "Resend"],
+      "reverse": true,
+      "capabilities": [
+        {
+          "icon": "calendar",
+          "label": "Week 1–2: Architecture & Specification",
+          "detail": "System design, core data schemas, wireframes, and fixed delivery contract agreement."
+        },
+        {
+          "icon": "code2",
+          "label": "Week 3–4: Core Feature Sprint",
+          "detail": "Authentication, primary user workflows, external API integrations, and database migrations."
+        },
+        {
+          "icon": "zap",
+          "label": "Week 5: Polish, Billing & Edge Cases",
+          "detail": "Stripe checkout, responsive optimization, error logging, and analytics instrumentation."
+        },
+        {
+          "icon": "rocket",
+          "label": "Week 6: Production Launch & Handover",
+          "detail": "DNS cutover, security audit, documentation runbooks, and 100% intellectual property transfer."
+        }
+      ]
+    }
+  ],
+  "engagementModels": [
+    {
+      "id": "fixed-scope",
+      "name": "Fixed-Scope Project",
+      "tagline": "For well-defined MVPs and complete system overhauls",
+      "bestFor": "Pre-seed/Seed MVPs, ground-up rebuilds, and discrete product releases.",
+      "features": [
+        "Explicit technical specification & fixed milestone scope",
+        "Guaranteed timeline and predetermined delivery date",
+        "Bi-weekly interactive demo walkthroughs",
+        "Rigorous end-to-end automated test suite",
+        "100% code IP and documentation handover",
+        "30-day post-launch warranty & bug-fix SLA"
+      ],
+      "ctaText": "Request Scope Proposal",
+      "highlight": false
+    },
+    {
+      "id": "dedicated-retainer",
+      "name": "Dedicated Sprint Retainer",
+      "tagline": "For continuous feature velocity and senior technical leadership",
+      "bestFor": "Post-revenue startups and scaleups needing dedicated staff engineering power without recruiting overhead.",
+      "features": [
+        "Dedicated senior staff engineers committed to your team",
+        "Bi-weekly sprint planning, backlog grooming & deployments",
+        "Direct integration into your Slack/Discord & GitHub workflow",
+        "Architectural guidance, code reviews & team mentorship",
+        "Flexible priority re-allocation between web, mobile & cloud",
+        "Pause or cancel anytime with simple 14-day notice"
+      ],
+      "ctaText": "Book Retainer Consult",
+      "highlight": true
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "standards": [
+    {
+      "id": "model",
+      "label": "Engineering Model",
+      "value": "Senior Staff Only",
+      "detail": "Zero outsourced or junior labor"
+    },
+    {
+      "id": "cadence",
+      "label": "Delivery Cadence",
+      "value": "14-Day Sprints",
+      "detail": "Continuous working staging deploys"
+    },
+    {
+      "id": "ip",
+      "label": "IP Protection",
+      "value": "100% Day-One",
+      "detail": "Full legal copyright & repo handover"
+    },
+    {
+      "id": "coverage",
+      "label": "Global Coverage",
+      "value": "EST · CET · GMT+6",
+      "detail": "Synchronous + async overlap"
+    }
+  ],
+  "principles": [
+    {
+      "number": "01",
+      "title": "Zero Junior Outsourcing",
+      "tagline": "Staff-Level Pedigree",
+      "description": "Traditional agencies win contracts with senior pitch decks and delegate delivery to junior freelancers. At Telos, every architectural decision and line of code is produced by battle-tested staff engineers.",
+      "icon": "terminal"
+    },
+    {
+      "number": "02",
+      "title": "Deterministic Type Safety",
+      "tagline": "Zero-Assumption Codebases",
+      "description": "We reject loose typing and fragile assumptions. Our systems enforce strict end-to-end TypeScript, runtime Zod validation, automated CI/CD checks, and Playwright integration tests.",
+      "icon": "code2"
+    },
+    {
+      "number": "03",
+      "title": "100% Unconditional IP Ownership",
+      "tagline": "Day-One Asset Transfer",
+      "description": "Your company owns every commit, Figma token, cloud infrastructure definition, and database migration from the instant it is committed. No vendor lock-in or proprietary licensing traps.",
+      "icon": "lock"
+    },
+    {
+      "number": "04",
+      "title": "High Signal, Low Noise",
+      "tagline": "Async-First Operating Model",
+      "description": "We replace bloated status meetings with asynchronous Loom walkthroughs, live staging branch previews, and direct Slack/Discord channels with your engineers.",
+      "icon": "gitCommit"
+    }
+  ],
+  "quote": {
+    "badge": "Founding Perspective",
+    "text": "We don’t believe in massive headcount bloat or account executives acting as telephone games between founders and engineers. When you partner with us, you speak directly with the people architecting your databases, designing your interfaces, and pushing to production.",
+    "author": "Engineering Leadership",
+    "role": "Telos Digital Architecture Group"
+  }
+}
