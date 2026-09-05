@@ -64,7 +64,7 @@ export function Navbar() {
             href="/contact"
             className="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-600 rounded-lg shadow-sm shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 gap-2"
           >
-            <span>Let's Talk</span>
+            <span>Let&apos;s Talk</span>
             <svg className="w-4 h-4 text-cyan-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7-7 7M3 12h18" />
             </svg>
@@ -110,7 +110,7 @@ export function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
               className="w-full inline-flex items-center justify-center py-2.5 px-4 rounded-lg bg-gradient-to-r from-indigo-600 to-cyan-600 text-white font-semibold text-sm shadow-md gap-2"
             >
-              <span>Let's Talk</span>
+              <span>Let&apos;s Talk</span>
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7-7 7M3 12h18" />
               </svg>
