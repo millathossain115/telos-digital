@@ -131,7 +131,7 @@ export default function ContactPage() {
 
                   <div className="space-y-3.5">
                     <a
-                      href="mailto:hello@telosdigital.io"
+                      href="mailto:telosdigital@gmail.com"
                       className="group flex items-start gap-3.5 p-3.5 rounded-2xl bg-white border border-black/[0.06] hover:border-amber-500/40 transition-all shadow-xs"
                     >
                       <div className="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-800 shrink-0 group-hover:scale-105 transition-transform">
@@ -140,20 +140,40 @@ export default function ContactPage() {
                       <div>
                         <div className="text-[11px] font-mono text-neutral-500">Direct Inquiries</div>
                         <div className="text-sm font-semibold text-[#141312] group-hover:text-amber-800 transition-colors">
-                          hello@telosdigital.io
+                          telosdigital@gmail.com
                         </div>
                       </div>
                     </a>
 
-                    <div className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white border border-black/[0.06] shadow-xs">
-                      <div className="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-800 shrink-0">
-                        <MapPin className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <div className="text-[11px] font-mono text-neutral-500">Global Reach</div>
-                        <div className="text-sm font-medium text-neutral-700 leading-snug">
-                          Operating across GMT+6, EST, and CET timezones.
+                    <div className="p-3.5 rounded-2xl bg-white border border-black/[0.06] shadow-xs space-y-2">
+                      <div className="flex items-start gap-3.5">
+                        <div className="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-800 shrink-0">
+                          <MapPin className="w-4 h-4" />
                         </div>
+                        <div>
+                          <div className="text-[11px] font-mono text-neutral-500">Studio Headquarters</div>
+                          <div className="text-sm font-semibold text-[#141312] leading-snug">
+                            Madani Avenue, Dhaka, Bangladesh
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="p-3.5 rounded-2xl bg-white border border-black/[0.06] shadow-xs space-y-1.5">
+                      <div className="text-[11px] font-mono text-neutral-500 px-1">Engineering Hotlines</div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        <a
+                          href="tel:+0881618257217"
+                          className="px-3 py-2 rounded-xl bg-[#FAF8F5] border border-black/[0.06] text-xs font-mono font-semibold text-[#141312] hover:text-amber-800 hover:border-amber-500/40 transition-colors flex items-center justify-center"
+                        >
+                          +0881618257217
+                        </a>
+                        <a
+                          href="tel:+0881610108851"
+                          className="px-3 py-2 rounded-xl bg-[#FAF8F5] border border-black/[0.06] text-xs font-mono font-semibold text-[#141312] hover:text-amber-800 hover:border-amber-500/40 transition-colors flex items-center justify-center"
+                        >
+                          +0881610108851
+                        </a>
                       </div>
                     </div>
 

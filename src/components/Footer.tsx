@@ -1,7 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 function InteractiveFooterTitle() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -61,10 +63,10 @@ export function Footer() {
   return (
     <footer className="bg-[#F3EFEA] text-neutral-600 border-t border-black/[0.08] pt-16 pb-12 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-black/[0.08]">
-          {/* Column 1: Brand Info */}
-          <div className="lg:col-span-2 flex flex-col gap-4">
-            <a href="#" className="flex items-center gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-black/[0.08]">
+          {/* Column 1: Brand Info (5 cols) */}
+          <div className="lg:col-span-5 flex flex-col gap-4">
+            <Link href="/" className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-500 via-amber-400 to-[#141312] p-[1px]">
                 <div className="w-full h-full bg-[#141312] rounded-[11px] flex items-center justify-center">
                   <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-white text-lg">
@@ -75,10 +77,44 @@ export function Footer() {
               <span className="text-xl font-bold tracking-tight text-[#141312]">
                 TELOS <span className="text-amber-600 font-medium">DIGITAL</span>
               </span>
-            </a>
+            </Link>
             <p className="text-sm text-neutral-600 max-w-sm leading-relaxed">
-              Empowering global organizations with enterprise-grade cloud architecture, intelligent AI automation, and digital engineering excellence.
+              Enterprise cloud, AI systems, and digital engineering.
             </p>
+
+            {/* Direct Studio Contact Info */}
+            <div className="pt-2 space-y-2.5 text-xs font-mono">
+              <div className="flex items-start gap-2 text-neutral-700">
+                <MapPin className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
+                <span>Madani Avenue, Dhaka, Bangladesh</span>
+              </div>
+              <div className="flex items-center gap-2 text-neutral-700">
+                <Mail className="w-4 h-4 text-amber-700 shrink-0" />
+                <a
+                  href="mailto:telosdigital@gmail.com"
+                  className="hover:text-amber-800 transition-colors font-medium underline decoration-amber-500/30 underline-offset-4"
+                >
+                  telosdigital@gmail.com
+                </a>
+              </div>
+              <div className="flex flex-wrap items-center gap-2 text-neutral-700">
+                <Phone className="w-4 h-4 text-amber-700 shrink-0" />
+                <a
+                  href="tel:+0881618257217"
+                  className="hover:text-amber-800 transition-colors font-medium"
+                >
+                  +0881618257217
+                </a>
+                <span className="text-neutral-400">/</span>
+                <a
+                  href="tel:+0881610108851"
+                  className="hover:text-amber-800 transition-colors font-medium"
+                >
+                  +0881610108851
+                </a>
+              </div>
+            </div>
+
             <div className="flex items-center gap-4 text-neutral-600 pt-2">
               <a href="#" className="w-9 h-9 rounded-lg bg-white border border-black/[0.08] flex items-center justify-center hover:text-amber-700 hover:border-amber-500/30 hover:bg-[#FAF8F5] transition-all shadow-sm" aria-label="Twitter">
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -98,35 +134,34 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Solutions */}
-          <div>
+          {/* Column 2: Solutions (2 cols) */}
+          <div className="lg:col-span-2">
             <h4 className="text-sm font-semibold text-[#141312] tracking-wider uppercase mb-4">Solutions</h4>
             <ul className="space-y-2.5 text-sm">
-              <li><a href="#" className="hover:text-amber-700 transition-colors">Cloud Migration</a></li>
-              <li><a href="#" className="hover:text-amber-700 transition-colors">AI & Automation</a></li>
-              <li><a href="#" className="hover:text-amber-700 transition-colors">DevOps Pipeline</a></li>
-              <li><a href="#" className="hover:text-amber-700 transition-colors">Data Analytics</a></li>
-              <li><a href="#" className="hover:text-amber-700 transition-colors">Cybersecurity</a></li>
+              <li><Link href="/services" className="hover:text-amber-700 transition-colors">Cloud Migration</Link></li>
+              <li><Link href="/services" className="hover:text-amber-700 transition-colors">AI & Automation</Link></li>
+              <li><Link href="/services" className="hover:text-amber-700 transition-colors">DevOps Pipeline</Link></li>
+              <li><Link href="/services" className="hover:text-amber-700 transition-colors">Data Analytics</Link></li>
+              <li><Link href="/services" className="hover:text-amber-700 transition-colors">Cybersecurity</Link></li>
             </ul>
           </div>
 
-          {/* Column 3: Company */}
-          <div>
+          {/* Column 3: Navigation (2 cols) */}
+          <div className="lg:col-span-2">
             <h4 className="text-sm font-semibold text-[#141312] tracking-wider uppercase mb-4">Company</h4>
             <ul className="space-y-2.5 text-sm">
-              <li><a href="#" className="hover:text-amber-700 transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-amber-700 transition-colors">Careers</a></li>
-              <li><a href="#" className="hover:text-amber-700 transition-colors">Press & Media</a></li>
-              <li><a href="#" className="hover:text-amber-700 transition-colors">Partners</a></li>
-              <li><a href="#" className="hover:text-amber-700 transition-colors">Contact</a></li>
+              <li><Link href="/about" className="hover:text-amber-700 transition-colors">About Us</Link></li>
+              <li><Link href="/work" className="hover:text-amber-700 transition-colors">Case Studies</Link></li>
+              <li><Link href="/process" className="hover:text-amber-700 transition-colors">Our Process</Link></li>
+              <li><Link href="/contact" className="hover:text-amber-700 transition-colors">Contact</Link></li>
             </ul>
           </div>
 
-          {/* Column 4: Newsletter */}
-          <div className="lg:col-span-1">
-            <h4 className="text-sm font-semibold text-[#141312] tracking-wider uppercase mb-4">Newsletter</h4>
+          {/* Column 4: Newsletter & Quick Touch (3 cols) */}
+          <div className="lg:col-span-3">
+            <h4 className="text-sm font-semibold text-[#141312] tracking-wider uppercase mb-4">Engineering Dispatch</h4>
             <p className="text-xs text-neutral-600 mb-3 leading-relaxed">
-              Bi-weekly engineering essays on cloud scalability and generative automation.
+              Bi-weekly technical essays on cloud scalability, distributed architecture, and AI infrastructure.
             </p>
             <div className="flex flex-col gap-2">
               <input
@@ -134,7 +169,7 @@ export function Footer() {
                 placeholder="Enter work email"
                 className="w-full bg-white border border-black/[0.08] rounded-lg px-3 py-2 text-xs text-[#141312] placeholder-neutral-400 focus:outline-none focus:border-amber-500 transition-colors shadow-sm"
               />
-              <button className="w-full py-2 bg-[#141312] hover:bg-black text-white rounded-lg text-xs font-semibold shadow-sm transition-colors">
+              <button className="w-full py-2 bg-[#141312] hover:bg-black text-white rounded-lg text-xs font-semibold shadow-sm transition-colors cursor-pointer">
                 Subscribe
               </button>
             </div>
@@ -143,7 +178,7 @@ export function Footer() {
 
         {/* Footer Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
-          <p>© {new Date().getFullYear()} Telos Digital Inc. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Telos Digital Inc. Madani Avenue, Dhaka. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-amber-700 transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-amber-700 transition-colors">Terms of Service</a>
@@ -151,10 +186,9 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Thematic Big Brand Title with Option 2 Kinetic Spring Lift */}
+        {/* Thematic Big Brand Title with Spotlight Reveal */}
         <InteractiveFooterTitle />
       </div>
     </footer>
   );
 }
-

@@ -64,7 +64,7 @@ export default function AboutPage() {
 
             <div className="mt-8 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-[#F3EFEA] border border-black/[0.06] text-xs font-mono text-neutral-600 shadow-xs">
               <Globe2 className="w-4 h-4 text-amber-600" />
-              <span>Headquartered in Dhaka · Serving global teams across EST, CET, and GMT+6</span>
+              <span>Studio: Madani Avenue, Dhaka, Bangladesh · Serving global teams across EST, CET, and GMT+6</span>
             </div>
           </motion.section>
 
