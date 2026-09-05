@@ -19,11 +19,29 @@
       "skillPath": "skills/.experimental/framer-motion/SKILL.md",
       "computedHash": "40a05a1671ae7dbba9bf4d483d37927e593a2b4b569a4388d29ce922cc54c2c6"
     },
+    "mobile-app-ui-design": {
+      "source": "ceorkm/mobile-app-ui-design",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "fbeba4ea8cc5063c9280a0f29af46f05ff66326d49ff7e59b61ee021b4d424c8"
+    },
+    "premium-frontend-ui": {
+      "source": "github/awesome-copilot",
+      "sourceType": "github",
+      "skillPath": "skills/premium-frontend-ui/SKILL.md",
+      "computedHash": "e7f3d02a0233beafdd6fe5335427388109b9699ebcdc6a8782a8bada2826d916"
+    },
     "typescript": {
       "source": "mrsombre/typescript-skills",
       "sourceType": "github",
       "skillPath": "skills/typescript/SKILL.md",
       "computedHash": "cea50c18841ca0eebcbef66e59ef3b341a82b568bac3575eb92760d637013f5d"
+    },
+    "ui-animation": {
+      "source": "mblode/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ui-animation/SKILL.md",
+      "computedHash": "75f2c6e538226d10ce75ddbb42bab0e56f051e8d8719c47cd6d5ab0c38d9e8af"
     }
   }
 }
