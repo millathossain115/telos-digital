@@ -163,16 +163,16 @@ export default function ContactPage() {
                       <div className="text-[11px] font-mono text-neutral-500 px-1">Engineering Hotlines</div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         <a
-                          href="tel:+0881618257217"
+                          href="tel:+8801618257217"
                           className="px-3 py-2 rounded-xl bg-[#FAF8F5] border border-black/[0.06] text-xs font-mono font-semibold text-[#141312] hover:text-amber-800 hover:border-amber-500/40 transition-colors flex items-center justify-center"
                         >
-                          +0881618257217
+                          +880 1618-257217
                         </a>
                         <a
-                          href="tel:+0881610108851"
+                          href="tel:+8801610108851"
                           className="px-3 py-2 rounded-xl bg-[#FAF8F5] border border-black/[0.06] text-xs font-mono font-semibold text-[#141312] hover:text-amber-800 hover:border-amber-500/40 transition-colors flex items-center justify-center"
                         >
-                          +0881610108851
+                          +880 1610-108851
                         </a>
                       </div>
                     </div>

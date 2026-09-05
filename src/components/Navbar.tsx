@@ -54,18 +54,18 @@ export function Navbar() {
 
             <div className="hidden sm:flex items-center gap-3">
               <a
-                href="tel:+0881618257217"
+                href="tel:+8801618257217"
                 className="inline-flex items-center gap-1 text-white/80 hover:text-amber-400 transition-colors"
               >
                 <Phone className="w-3 h-3 text-amber-500" />
-                <span>+0881618257217</span>
+                <span>+880 1618-257217</span>
               </a>
               <span className="text-white/30 font-light">/</span>
               <a
-                href="tel:+0881610108851"
+                href="tel:+8801610108851"
                 className="inline-flex items-center gap-1 text-white/80 hover:text-amber-400 transition-colors"
               >
-                <span>+0881610108851</span>
+                <span>+880 1610-108851</span>
               </a>
             </div>
           </div>
@@ -185,17 +185,17 @@ export function Navbar() {
               </a>
               <div className="flex flex-col gap-1">
                 <a
-                  href="tel:+0881618257217"
+                  href="tel:+8801618257217"
                   className="flex items-center gap-2 hover:text-amber-700"
                 >
                   <Phone className="w-3.5 h-3.5 text-amber-600" />
-                  <span>+0881618257217</span>
+                  <span>+880 1618-257217</span>
                 </a>
                 <a
-                  href="tel:+0881610108851"
+                  href="tel:+8801610108851"
                   className="flex items-center gap-2 pl-5 hover:text-amber-700"
                 >
-                  <span>+0881610108851</span>
+                  <span>+880 1610-108851</span>
                 </a>
               </div>
               <div className="flex items-center gap-2 text-neutral-500 pt-1">
