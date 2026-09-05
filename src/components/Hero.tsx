@@ -62,13 +62,13 @@ export function Hero() {
         <motion.div variants={itemVariants} className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="/contact"
-            className="inline-flex h-11 items-center justify-center rounded-full bg-[#141312] px-6 text-[14px] font-medium text-white shadow-md hover:bg-black transition active:scale-[0.97]"
+            className="inline-flex h-11 items-center justify-center rounded-full bg-[#141312] px-6 text-[14px] font-medium text-white shadow-md hover:bg-amber-600 hover:shadow-amber-500/25 transition-all active:scale-[0.97]"
           >
             Start a Project
           </Link>
           <Link
-            href="#work"
-            className="inline-flex h-11 items-center justify-center rounded-full bg-white/80 border border-black/[0.08] px-6 text-[14px] font-medium text-neutral-800 shadow-sm transition hover:bg-white hover:text-black active:scale-[0.97]"
+            href="/work"
+            className="inline-flex h-11 items-center justify-center rounded-full bg-white/80 border border-black/[0.08] px-6 text-[14px] font-medium text-neutral-800 shadow-sm transition hover:bg-white hover:text-amber-800 hover:border-amber-500/40 active:scale-[0.97]"
           >
             View Work
           </Link>

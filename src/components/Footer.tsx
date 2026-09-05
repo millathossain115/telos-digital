@@ -169,7 +169,7 @@ export function Footer() {
                 placeholder="Enter work email"
                 className="w-full bg-white border border-black/[0.08] rounded-lg px-3 py-2 text-xs text-[#141312] placeholder-neutral-400 focus:outline-none focus:border-amber-500 transition-colors shadow-sm"
               />
-              <button className="w-full py-2 bg-[#141312] hover:bg-black text-white rounded-lg text-xs font-semibold shadow-sm transition-colors cursor-pointer">
+              <button className="w-full py-2 bg-[#141312] hover:bg-amber-600 text-white rounded-lg text-xs font-semibold shadow-sm hover:shadow-amber-500/20 transition-all cursor-pointer">
                 Subscribe
               </button>
             </div>

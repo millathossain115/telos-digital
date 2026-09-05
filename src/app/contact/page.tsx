@@ -212,7 +212,7 @@ export default function ContactPage() {
                     href="https://cal.com"
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center w-full py-3 px-5 rounded-xl bg-white text-[#141312] hover:bg-neutral-100 font-semibold text-sm transition-all duration-200 gap-2 shadow-sm"
+                    className="inline-flex items-center justify-center w-full py-3 px-5 rounded-xl bg-white text-[#141312] hover:bg-amber-50 hover:border-amber-500/30 hover:text-amber-900 border border-transparent font-semibold text-sm transition-all duration-200 gap-2 shadow-sm"
                   >
                     <span>Select Time on Cal.com</span>
                     <ArrowRight className="w-4 h-4 text-amber-600" />
@@ -243,7 +243,7 @@ export default function ContactPage() {
                           setIsSubmitted(false);
                           setForm({ name: "", email: "", message: "" });
                         }}
-                        className="mt-4 px-5 py-2.5 rounded-xl bg-white/80 hover:bg-white border border-amber-900/15 text-xs font-mono text-neutral-800 transition-colors cursor-pointer shadow-xs"
+                        className="mt-4 px-5 py-2.5 rounded-xl bg-white/90 hover:bg-amber-600 hover:text-white hover:border-amber-600 border border-amber-900/15 text-xs font-mono text-neutral-800 transition-all cursor-pointer shadow-xs"
                       >
                         Send another message
                       </button>
@@ -320,7 +320,7 @@ export default function ContactPage() {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full py-3.5 px-6 rounded-xl font-semibold text-sm bg-[#141312] hover:bg-black text-white shadow-sm hover:shadow-md hover:scale-[1.005] active:scale-[0.995] disabled:opacity-50 disabled:pointer-events-none transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
+                        className="w-full py-3.5 px-6 rounded-xl font-semibold text-sm bg-[#141312] hover:bg-amber-600 text-white shadow-md hover:shadow-amber-500/20 hover:scale-[1.005] active:scale-[0.995] disabled:opacity-50 disabled:pointer-events-none transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
                       >
                         {isSubmitting ? (
                           <>

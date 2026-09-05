@@ -28,7 +28,7 @@ export function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       {/* Top Narrow Thematic Utility Strip */}
-      <div className="bg-[#141312] text-[#FAF8F5]/80 text-[11px] font-mono border-b border-white/10 relative z-10">
+      <div className="bg-[#141312] text-[#FAF8F5]/80 text-[11px] font-mono relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1.5 flex flex-wrap items-center justify-between gap-y-1 gap-x-4">
           {/* Location & Status */}
           <div className="flex items-center gap-2 text-xs">
@@ -76,8 +76,8 @@ export function Navbar() {
       <div
         className={`transition-all duration-300 ${
           scrolled
-            ? "bg-[#FAF8F5]/90 backdrop-blur-md py-3 shadow-[0_4px_20px_rgba(20,19,18,0.03)] border-b border-[#141312]/5"
-            : "bg-[#FAF8F5]/80 backdrop-blur-sm py-4 border-b border-[#141312]/5"
+            ? "bg-[#FAF8F5]/90 backdrop-blur-md py-3 shadow-[0_4px_20px_rgba(20,19,18,0.03)]"
+            : "bg-[#FAF8F5]/80 backdrop-blur-sm py-4"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -122,10 +122,10 @@ export function Navbar() {
           <div className="hidden md:flex items-center gap-3">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-[#141312] hover:bg-black rounded-lg shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 gap-2"
+              className="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-[#141312] hover:bg-amber-600 rounded-lg shadow-sm hover:shadow-amber-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 gap-2"
             >
               <span>Let&apos;s Talk</span>
-              <svg className="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 text-amber-400 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7-7 7M3 12h18" />
               </svg>
             </Link>
@@ -208,7 +208,7 @@ export function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full inline-flex items-center justify-center py-2.5 px-4 rounded-lg bg-[#141312] text-white font-semibold text-sm shadow-md gap-2 transition-colors"
+                className="w-full inline-flex items-center justify-center py-2.5 px-4 rounded-lg bg-[#141312] hover:bg-amber-600 text-white font-semibold text-sm shadow-md gap-2 transition-colors"
               >
                 <span>Let&apos;s Talk</span>
                 <svg className="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">

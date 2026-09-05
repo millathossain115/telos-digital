@@ -97,9 +97,9 @@ export function ConversionCtaBanner({
             >
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-7 py-4 rounded-xl bg-white text-[#141312] font-semibold text-sm sm:text-base hover:bg-neutral-100 transition-colors shadow-sm gap-2.5 group"
+                className="inline-flex items-center justify-center px-7 py-4 rounded-xl bg-white text-[#141312] font-semibold text-sm sm:text-base hover:bg-amber-400 hover:text-[#141312] transition-all shadow-lg hover:shadow-amber-500/20 gap-2.5 group"
               >
-                <Calendar className="w-4 h-4 text-amber-600" />
+                <Calendar className="w-4 h-4 text-amber-700" />
                 <span>Book Technical Roadmap Call</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>

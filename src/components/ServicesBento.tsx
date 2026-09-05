@@ -5,11 +5,14 @@ import Link from "next/link";
 import { motion, type Variants } from "framer-motion";
 import {
   ArrowUpRight,
+  ArrowRight,
   Sparkles,
   Layers,
   ShieldCheck,
   Zap,
   Check,
+  CheckCircle2,
+  FileCode,
   TrendingUp,
   Activity,
   Smartphone,
@@ -188,10 +191,10 @@ export function ServicesBento() {
 
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#141312] hover:text-amber-700 transition-colors uppercase tracking-wider font-mono group/btn"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#141312] hover:bg-amber-600 text-white text-xs font-mono font-semibold tracking-wider transition-all duration-200 shadow-md hover:shadow-amber-500/20 hover:scale-[1.02] active:scale-[0.98] group/btn"
                 >
-                  Build a Web Platform
-                  <ArrowUpRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
+                  <span>BUILD A WEB PLATFORM</span>
+                  <ArrowUpRight className="w-4 h-4 text-amber-400 group-hover/btn:text-white transition-all group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                 </Link>
               </div>
             </div>
@@ -314,7 +317,7 @@ export function ServicesBento() {
             </div>
 
             {/* Bottom row */}
-            <div className="pt-6 border-t border-black/[0.06] flex items-center justify-between">
+            <div className="pt-6 border-t border-black/[0.06] flex flex-wrap items-center justify-between gap-4">
               <div className="flex flex-wrap gap-1.5">
                 {["Apple App Store", "Google Play", "Push Notifications", "Offline Sync"].map((t) => (
                   <span key={t} className="px-2.5 py-1 text-xs font-medium text-neutral-700 bg-[#F5F2ED] rounded-lg border border-black/[0.06] group-hover:border-black/10 transition-colors">
@@ -325,10 +328,10 @@ export function ServicesBento() {
 
               <Link
                 href="/contact"
-                className="p-2.5 rounded-xl bg-[#F3EFEA] hover:bg-[#141312] hover:text-white transition-all duration-300 group-hover:scale-105"
-                aria-label="Build mobile apps"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#141312] hover:bg-amber-600 text-white text-xs font-mono font-semibold tracking-wider transition-all duration-200 shadow-md hover:shadow-amber-500/20 hover:scale-[1.02] active:scale-[0.98] group/btn shrink-0"
               >
-                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <span>BUILD MOBILE APP</span>
+                <ArrowUpRight className="w-3.5 h-3.5 text-amber-400 group-hover/btn:text-white transition-all group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
               </Link>
             </div>
           </BentoCard>
@@ -343,64 +346,86 @@ export function ServicesBento() {
                 </span>
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 text-amber-800 text-xs font-medium border border-amber-500/20 group-hover:bg-amber-500/15 transition-colors">
                   <LayoutGrid className="w-3.5 h-3.5 text-amber-700" />
-                  Product Design
+                  Product UI/UX
                 </span>
               </div>
 
-              <h3 className="text-2xl font-semibold text-[#141312] tracking-tight mb-3 group-hover:text-black transition-colors">
-                UI/UX Design &amp; Brand Systems
+              {/* Title & Description */}
+              <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#141312] mb-3">
+                Design Systems &amp; Spatial UI
               </h3>
-              <p className="text-neutral-600 text-sm leading-relaxed mb-6">
-                We design interfaces that feel effortless to use. Interactive Figma prototypes, reusable component libraries, and clean typography tailored to your exact brand tone.
+              <p className="text-sm text-neutral-600 leading-relaxed font-normal mb-8">
+                Translating complex business logic into intuitive, visually breathtaking digital products. Complete design systems with atomic tokens, responsive layouts, and Figma components ready for engineers to ship.
               </p>
 
               {/* Design System Preview Surface */}
-              <div className="rounded-2xl bg-[#F6F3EE] border border-black/[0.06] p-4 sm:p-5 mb-6 group-hover:bg-[#F2ECE4] transition-colors duration-500">
-                <div className="flex items-center justify-between mb-3 text-xs font-semibold text-[#141312] border-b border-black/[0.06] pb-2">
-                  <span>BRAND &amp; DESIGN SYSTEM</span>
-                  <span className="text-neutral-600 text-[11px] font-medium">PIXEL-PERFECT FIGMA</span>
+              <div className="rounded-2xl bg-[#F6F3EE] border border-black/[0.06] p-4 sm:p-5 mb-6 group-hover:bg-[#F2ECE4] transition-colors duration-500 space-y-3.5">
+                <div className="flex items-center justify-between border-b border-black/[0.06] pb-2.5">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-amber-600 animate-pulse" />
+                    <span className="text-xs font-semibold text-[#141312]">ATOMIC DESIGN SYSTEM</span>
+                  </div>
+                  <span className="text-[10px] font-mono font-medium text-amber-800 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
+                    FIGMA AUTO-LAYOUT
+                  </span>
                 </div>
 
-                {/* Harmonious Palette Preview */}
-                <div className="grid grid-cols-4 gap-2 mb-3">
-                  <div className="h-10 rounded-xl bg-[#141312] p-1.5 flex flex-col justify-between text-[9px] font-medium text-white shadow-xs group-hover:scale-[1.02] transition-transform">
-                    <span>Obsidian</span>
-                    <span className="opacity-70">Dark</span>
+                {/* Harmonious Color Palette Tokens */}
+                <div className="grid grid-cols-4 gap-2">
+                  <div className="h-11 rounded-xl bg-[#141312] p-2 flex flex-col justify-between text-[9px] font-mono text-white shadow-xs group-hover:scale-[1.02] transition-transform">
+                    <span className="font-semibold">Obsidian</span>
+                    <span className="opacity-60 text-[8px]">#141312</span>
                   </div>
-                  <div className="h-10 rounded-xl bg-[#F3EFEA] border border-black/10 p-1.5 flex flex-col justify-between text-[9px] font-medium text-neutral-700 shadow-xs group-hover:scale-[1.02] transition-transform">
-                    <span>Sand</span>
-                    <span className="opacity-70">Surface</span>
+                  <div className="h-11 rounded-xl bg-[#F5F2ED] border border-black/[0.08] p-2 flex flex-col justify-between text-[9px] font-mono text-[#141312] shadow-xs group-hover:scale-[1.02] transition-transform">
+                    <span className="font-semibold">Cream</span>
+                    <span className="opacity-60 text-[8px]">#F5F2ED</span>
                   </div>
-                  <div className="h-10 rounded-xl bg-amber-600 p-1.5 flex flex-col justify-between text-[9px] font-medium text-white shadow-xs group-hover:scale-[1.02] transition-transform">
-                    <span>Amber</span>
-                    <span className="opacity-70">Accent</span>
+                  <div className="h-11 rounded-xl bg-amber-500 p-2 flex flex-col justify-between text-[9px] font-mono text-white shadow-xs group-hover:scale-[1.02] transition-transform">
+                    <span className="font-semibold">Amber</span>
+                    <span className="opacity-80 text-[8px]">Brand Accent</span>
                   </div>
-                  <div className="h-10 rounded-xl bg-emerald-600 p-1.5 flex flex-col justify-between text-[9px] font-medium text-white shadow-xs group-hover:scale-[1.02] transition-transform">
-                    <span>Emerald</span>
-                    <span className="opacity-70">Success</span>
+                  <div className="h-11 rounded-xl bg-emerald-600 p-2 flex flex-col justify-between text-[9px] font-mono text-white shadow-xs group-hover:scale-[1.02] transition-transform">
+                    <span className="font-semibold">Emerald</span>
+                    <span className="opacity-70 text-[8px]">Success 99%</span>
                   </div>
                 </div>
 
-                {/* Component preview */}
-                <div className="p-3 bg-white rounded-xl border border-black/[0.05] flex items-center justify-between shadow-xs group-hover:shadow-sm transition-all">
+                {/* Typography & Spatial Grid Telemetry */}
+                <div className="p-3 bg-white rounded-xl border border-black/[0.05] flex items-center justify-between shadow-xs">
                   <div className="flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-lg bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-700 group-hover:scale-110 transition-transform">
+                    <div className="w-8 h-8 rounded-lg bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-700 shrink-0">
                       <Sparkles className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="text-xs font-semibold text-[#141312]">Ready-to-Code Components</div>
-                      <div className="text-[11px] text-neutral-500">Buttons, forms, modals &amp; navigation</div>
+                      <div className="text-xs font-semibold text-[#141312]">Fluid Typography &amp; 8pt Grid</div>
+                      <div className="text-[11px] text-neutral-500">System tokens mapped 1:1 with Tailwind CSS</div>
                     </div>
                   </div>
-                  <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
-                    Validated
+                  <span className="text-[10px] font-mono font-medium px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 shrink-0">
+                    Synced
+                  </span>
+                </div>
+
+                {/* Interactive Component Kit Preview */}
+                <div className="p-3 bg-white rounded-xl border border-black/[0.05] flex items-center justify-between shadow-xs">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-8 h-8 rounded-lg bg-[#FAF8F5] border border-black/[0.08] flex items-center justify-center text-[#141312] shrink-0">
+                      <FileCode className="w-4 h-4 text-amber-700" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-semibold text-[#141312]">Ready-to-Code Components</div>
+                      <div className="text-[11px] text-neutral-500">Modals, tables, form inputs, tooltips &amp; navbars</div>
+                    </div>
+                  </div>
+                  <span className="text-[10px] font-mono font-medium px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200 shrink-0">
+                    Figma + Code
                   </span>
                 </div>
               </div>
             </div>
 
             {/* Bottom row */}
-            <div className="pt-6 border-t border-black/[0.06] flex items-center justify-between">
+            <div className="pt-6 border-t border-black/[0.06] flex flex-wrap items-center justify-between gap-4">
               <div className="flex flex-wrap gap-1.5">
                 {["Interactive Figma", "Component Library", "Responsive Layouts", "Typography"].map((t) => (
                   <span key={t} className="px-2.5 py-1 text-xs font-medium text-neutral-700 bg-[#F5F2ED] rounded-lg border border-black/[0.06] group-hover:border-black/10 transition-colors">
@@ -411,38 +436,73 @@ export function ServicesBento() {
 
               <Link
                 href="/contact"
-                className="p-2.5 rounded-xl bg-[#F3EFEA] hover:bg-[#141312] hover:text-white transition-all duration-300 group-hover:scale-105"
-                aria-label="Design systems consultation"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#141312] hover:bg-amber-600 text-white text-xs font-mono font-semibold tracking-wider transition-all duration-200 shadow-md hover:shadow-amber-500/20 hover:scale-[1.02] active:scale-[0.98] group/btn shrink-0"
               >
-                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <span>DESIGN SYSTEM AUDIT</span>
+                <ArrowUpRight className="w-3.5 h-3.5 text-amber-400 group-hover/btn:text-white transition-all group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
               </Link>
             </div>
           </BentoCard>
 
         </div>
 
-        {/* Bottom Editorial Callout Strip */}
-        <div className="mt-10 rounded-2xl bg-[#FFFFFF] border border-black/[0.08] p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-[0_2px_12px_rgba(20,19,18,0.03)] hover:shadow-[0_8px_24px_rgba(20,19,18,0.06)] hover:border-black/20 transition-all duration-300">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-[#F5F2ED] border border-black/[0.06] flex items-center justify-center text-[#141312] shrink-0">
-              <Layers className="w-4 h-4 text-amber-700" />
+        {/* Bottom Editorial Callout Strip — Bespoke Human Engineering Note */}
+        <div className="relative mt-12 rounded-3xl border border-[#141312]/10 bg-gradient-to-br from-[#FAF6F0] via-[#F4ECE2] to-[#ECE2D2] p-7 sm:p-10 text-[#141312] shadow-[0_14px_35px_rgba(20,19,18,0.04)] overflow-hidden">
+
+          <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+            <div className="space-y-4 max-w-3xl">
+              {/* Top provenance tag */}
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#141312]/10 text-xs font-mono font-medium text-[#141312]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
+                  Engineering Advisory
+                </span>
+                <span className="text-xs font-mono text-[#141312]/50">
+                  Direct review · No sales intermediaries
+                </span>
+              </div>
+
+              {/* Natural Editorial Heading */}
+              <div>
+                <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#141312] leading-snug">
+                  Have an existing product or specific roadmap in mind?
+                </h3>
+                <p className="mt-2 text-sm sm:text-base text-[#141312]/75 leading-relaxed font-sans">
+                  Share your GitHub repo, Figma files, or architectural specs. Our principal engineer personally reviews bottlenecks, estimates timelines, and delivers an honest 48-hour feasibility roadmap.
+                </p>
+              </div>
+
+              {/* Human Commitment Bullets */}
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-1 text-xs font-mono text-[#141312]/80">
+                <span className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-amber-700" />
+                  Strict NDA Protection
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-amber-700" />
+                  Realistic milestone estimates
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-amber-700" />
+                  Direct engineer dialogue
+                </span>
+              </div>
             </div>
-            <div>
-              <p className="text-xs sm:text-sm text-[#141312] font-semibold">
-                Have an existing product or specific roadmap in mind?
-              </p>
-              <p className="text-xs text-neutral-500">
-                We review your current code or product specs and provide an honest roadmap in 48 hours.
-              </p>
+
+            {/* Action Side with Studio Stamp Vibe */}
+            <div className="w-full lg:w-auto flex flex-col sm:flex-row lg:flex-col items-stretch gap-3 shrink-0">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#141312] hover:bg-amber-600 text-white text-xs font-mono font-semibold tracking-wider transition-all duration-200 shadow-md hover:shadow-amber-500/20 active:scale-95 group/btn"
+              >
+                <span>Request Code Review</span>
+                <ArrowRight className="w-3.5 h-3.5 text-amber-400 group-hover/btn:text-white transition-all group-hover/btn:translate-x-0.5" />
+              </Link>
+              <span className="text-[11px] font-mono text-[#141312]/50 text-center lg:text-right">
+                Avg. response: &lt; 4 hours
+              </span>
             </div>
           </div>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 text-xs font-medium px-4 py-2.5 rounded-full bg-[#141312] text-white hover:bg-neutral-800 transition whitespace-nowrap shadow-sm active:scale-95"
-          >
-            Schedule a Discovery Call
-            <ArrowUpRight className="w-3.5 h-3.5" />
-          </Link>
         </div>
       </motion.div>
     </section>

@@ -64,14 +64,14 @@ export default function ServicesPage() {
               <div className="flex items-center gap-3 shrink-0">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#141312] hover:bg-black text-white font-semibold text-sm shadow-md hover:scale-[1.01] active:scale-[0.99] transition-all duration-200"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#141312] hover:bg-amber-600 text-white font-semibold text-sm shadow-md hover:shadow-amber-500/20 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 group"
                 >
                   <span>Book Consult</span>
-                  <ArrowRight className="w-4 h-4 text-amber-400" />
+                  <ArrowRight className="w-4 h-4 text-amber-400 group-hover:text-white transition-colors" />
                 </Link>
                 <a
                   href="#engagement"
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white border border-black/[0.08] hover:border-black/[0.18] text-[#141312] text-sm font-semibold transition-all duration-200 shadow-xs"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white border border-black/[0.08] hover:border-amber-500/40 hover:text-amber-800 text-[#141312] text-sm font-semibold transition-all duration-200 shadow-xs"
                 >
                   <span>Pricing</span>
                 </a>

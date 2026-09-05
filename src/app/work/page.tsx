@@ -118,7 +118,7 @@ export default function WorkPage() {
                   className={`px-3.5 py-1.5 rounded-xl text-xs font-mono transition-all ${
                     selectedCategory === cat
                       ? "bg-[#141312] text-white font-semibold shadow-md"
-                      : "bg-[#141312]/5 text-[#141312]/70 hover:bg-[#141312]/10 hover:text-[#141312]"
+                      : "bg-[#141312]/5 text-[#141312]/70 hover:bg-amber-500/15 hover:text-amber-900 hover:border-amber-500/30"
                   }`}
                 >
                   {cat}
@@ -159,14 +159,14 @@ export default function WorkPage() {
               <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 justify-end">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-amber-500 text-[#141312] font-mono text-xs font-bold tracking-wider hover:bg-amber-400 transition-all shadow-lg active:scale-95"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-amber-500 text-[#141312] font-mono text-xs font-bold tracking-wider hover:bg-amber-400 hover:shadow-amber-500/20 transition-all shadow-lg active:scale-95"
                 >
                   <span>START YOUR PROJECT</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="/process"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-mono text-xs font-medium tracking-wider transition-colors border border-white/10"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-amber-500/20 hover:text-amber-300 hover:border-amber-400/40 text-white font-mono text-xs font-medium tracking-wider transition-all border border-white/10"
                 >
                   <span>INSPECT OUR PROCESS</span>
                 </Link>

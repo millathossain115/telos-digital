@@ -166,7 +166,7 @@ export function ComparisonMatrix() {
             <div className="mt-8 pt-6 border-t border-black/[0.06]">
               <Link
                 href="/contact"
-                className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#141312] text-white text-xs font-semibold hover:bg-neutral-800 transition shadow-sm active:scale-95"
+                className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#141312] text-white text-xs font-semibold hover:bg-amber-600 hover:shadow-amber-500/20 transition shadow-sm active:scale-95"
               >
                 <span>Partner with Telos</span>
                 <ArrowRight className="w-3.5 h-3.5" />

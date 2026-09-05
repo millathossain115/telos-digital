@@ -221,23 +221,6 @@ export function ProcessSection() {
             ))}
           </motion.div>
         </div>
-
-        {/* Bottom CTA Banner */}
-        <div className="mt-12 rounded-2xl bg-[#FFFFFF] border border-black/[0.08] p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-[0_2px_12px_rgba(20,19,18,0.03)]">
-          <div className="flex items-center gap-3">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-            <p className="text-xs sm:text-sm text-neutral-700 font-medium">
-              Ready to turn your roadmap into production software? Average kickoff takes under 5 business days.
-            </p>
-          </div>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 text-xs font-medium px-4 py-2.5 rounded-full bg-[#141312] text-white hover:bg-neutral-800 transition whitespace-nowrap shadow-sm active:scale-95"
-          >
-            Schedule a Kickoff
-            <ArrowUpRight className="w-3.5 h-3.5" />
-          </Link>
-        </div>
       </div>
     </section>
   );

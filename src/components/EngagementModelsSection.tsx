@@ -75,8 +75,8 @@ export function EngagementModelsSection({ models }: EngagementModelsSectionProps
                 href="/contact"
                 className={`w-full inline-flex items-center justify-center py-3.5 px-6 rounded-xl font-semibold text-sm transition-all duration-200 gap-2 cursor-pointer ${
                   model.highlight
-                    ? "bg-[#141312] text-white hover:bg-black shadow-md hover:scale-[1.01] active:scale-[0.99]"
-                    : "bg-white text-[#141312] hover:bg-neutral-50 border border-black/[0.08] shadow-xs"
+                    ? "bg-[#141312] text-white hover:bg-amber-600 hover:shadow-amber-500/20 shadow-md hover:scale-[1.01] active:scale-[0.99]"
+                    : "bg-white text-[#141312] hover:bg-amber-50/80 hover:border-amber-500/40 hover:text-amber-900 border border-black/[0.08] shadow-xs"
                 }`}
               >
                 <span>{model.ctaText}</span>

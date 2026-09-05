@@ -60,7 +60,7 @@ export default function NotFound() {
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
               href="/"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl bg-white text-neutral-950 font-semibold text-sm hover:bg-neutral-100 shadow-xl shadow-white/5 hover:-tranneutral-y-0.5 active:tranneutral-y-0 transition-all duration-200 gap-2"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl bg-white text-neutral-950 font-semibold text-sm hover:bg-amber-400 hover:text-black shadow-xl shadow-white/5 hover:shadow-amber-500/20 active:scale-[0.98] transition-all duration-200 gap-2 cursor-pointer"
             >
               <Home className="w-4 h-4 text-neutral-950" />
               <span>Back to Home</span>
@@ -68,7 +68,7 @@ export default function NotFound() {
 
             <Link
               href="/services"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl bg-neutral-900/80 hover:bg-neutral-800 border border-black/[0.08] hover:border-neutral-700 text-neutral-300 hover:text-white font-semibold text-sm transition-all duration-200 gap-2"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl bg-neutral-900/80 hover:bg-amber-600 border border-white/10 hover:border-amber-500/40 text-neutral-300 hover:text-white font-semibold text-sm transition-all duration-200 gap-2 shadow-sm"
             >
               <span>Explore Services</span>
               <ArrowLeft className="w-4 h-4 rotate-180" />
