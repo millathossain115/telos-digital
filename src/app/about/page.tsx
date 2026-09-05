@@ -7,7 +7,8 @@ import { AboutPrincipleCard } from "@/components/AboutPrincipleCard";
 import { AboutStandards } from "@/components/AboutStandards";
 import aboutDataJson from "@/data/aboutData.json";
 import type { AboutData } from "@/types/about";
-import { Globe2, Sparkles } from "lucide-react";
+import { Globe2, Sparkles, MapPin, Mail, Phone, ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { motion, type Variants } from "framer-motion";
 
 const aboutData: AboutData = aboutDataJson as AboutData;
@@ -138,7 +139,74 @@ export default function AboutPage() {
             </div>
           </motion.section>
 
-          {/* Section 5: Shared Conversion Banner Component */}
+          {/* Section 5: Studio Coordinates & Direct Hotlines */}
+          <motion.section
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="p-8 sm:p-10 rounded-3xl bg-white border border-black/[0.08] shadow-[0_8px_30px_rgba(20,19,18,0.03)] relative overflow-hidden"
+          >
+            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+              <div className="space-y-3 max-w-md">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-800 text-xs font-mono uppercase tracking-wider font-semibold">
+                  <Globe2 className="w-3.5 h-3.5 text-amber-600" />
+                  <span>Direct Engineering Studio</span>
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-semibold text-[#141312] tracking-tight">
+                  Reach our engineering room
+                </h3>
+                <p className="text-sm text-neutral-600 leading-relaxed font-normal">
+                  Drop by our Dhaka headquarters or contact our lead architects directly for project feasibility reviews.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 flex-1 max-w-2xl">
+                {/* Address */}
+                <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-black/[0.06] flex flex-col justify-between space-y-2">
+                  <div className="flex items-center gap-2 text-neutral-500 text-xs font-mono">
+                    <MapPin className="w-3.5 h-3.5 text-amber-600" />
+                    <span>Headquarters</span>
+                  </div>
+                  <div className="text-xs sm:text-sm font-semibold text-[#141312] leading-snug">
+                    Madani Avenue, Dhaka, Bangladesh
+                  </div>
+                </div>
+
+                {/* Email */}
+                <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-black/[0.06] flex flex-col justify-between space-y-2">
+                  <div className="flex items-center gap-2 text-neutral-500 text-xs font-mono">
+                    <Mail className="w-3.5 h-3.5 text-amber-600" />
+                    <span>Direct Dispatch</span>
+                  </div>
+                  <a
+                    href="mailto:telosdigital@gmail.com"
+                    className="text-xs sm:text-sm font-semibold text-[#141312] hover:text-amber-600 transition-colors underline decoration-amber-500/30 underline-offset-2 break-all"
+                  >
+                    telosdigital@gmail.com
+                  </a>
+                </div>
+
+                {/* Phone */}
+                <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-black/[0.06] flex flex-col justify-between space-y-2">
+                  <div className="flex items-center gap-2 text-neutral-500 text-xs font-mono">
+                    <Phone className="w-3.5 h-3.5 text-amber-600" />
+                    <span>Engineering Hotline</span>
+                  </div>
+                  <div className="flex flex-col gap-1 text-xs font-mono font-semibold text-[#141312]">
+                    <a href="tel:+8801618257217" className="hover:text-amber-600 transition-colors">
+                      +880 1618-257217
+                    </a>
+                    <a href="tel:+8801610108851" className="hover:text-amber-600 transition-colors">
+                      +880 1610-108851
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* Section 6: Shared Conversion Banner Component */}
           <ConversionCtaBanner
             badge="Partner With Telos"
             title={

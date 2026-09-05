@@ -57,9 +57,16 @@ export default function ServicesPage() {
             </h1>
 
             <div className="mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-4 border-t border-black/[0.06]">
-              <p className="text-base sm:text-lg text-neutral-600 max-w-2xl leading-relaxed font-normal text-pretty">
-                We design and ship production software from raw schema architecture and native device threads to automated multi-region deployment runbooks.
-              </p>
+              <div className="space-y-2">
+                <p className="text-base sm:text-lg text-neutral-600 max-w-2xl leading-relaxed font-normal text-pretty">
+                  We design and ship production software from raw schema architecture and native device threads to automated multi-region deployment runbooks.
+                </p>
+                <div className="flex flex-wrap items-center gap-2 text-xs font-mono text-emerald-800">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                  <span className="font-semibold">Direct engineering model:</span>
+                  <span className="text-neutral-600">Zero middle managers or sales overhead — 40% to 60% lower cost than traditional agency retainers.</span>
+                </div>
+              </div>
 
               <div className="flex items-center gap-3 shrink-0">
                 <Link

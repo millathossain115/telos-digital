@@ -61,23 +61,26 @@ export function ServiceModuleCard({ module }: ServiceModuleCardProps) {
       id={module.id}
       className="p-6 sm:p-8 rounded-3xl bg-white border border-black/[0.08] shadow-[0_10px_30px_rgba(20,19,18,0.03)] hover:border-amber-500/30 transition-all duration-300 relative overflow-hidden group"
     >
-      {/* Top Banner Row: Module ID + Metric + CTA */}
+      {/* Top Banner Row: Module ID + Metric + Cost Advantage + High-Impact CTA */}
       <div className="flex flex-wrap items-center justify-between gap-4 pb-5 mb-6 border-b border-black/[0.06]">
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-2.5">
           <span className="text-xs font-mono font-semibold px-3 py-1 rounded-full bg-[#141312] text-white">
             {module.tag}
           </span>
           <span className="text-xs font-mono px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-900 font-semibold">
             {module.metric}
           </span>
+          <span className="text-[11px] font-mono px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-800 font-medium hidden sm:inline-flex items-center gap-1">
+            <span>40-60% less than legacy agencies</span>
+          </span>
         </div>
 
         <Link
           href="/contact"
-          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#141312] hover:text-amber-700 transition-colors group/link font-mono"
+          className="inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl bg-[#141312] hover:bg-amber-600 text-white text-xs font-mono font-semibold tracking-wider transition-all duration-200 shadow-md hover:shadow-amber-500/25 hover:scale-[1.02] active:scale-[0.98] group/btn shrink-0"
         >
-          <span>Request Technical Spec</span>
-          <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
+          <span>BUILD WITH TELOS</span>
+          <ArrowRight className="w-3.5 h-3.5 text-amber-400 group-hover/btn:text-white group-hover/btn:translate-x-0.5 transition-all" />
         </Link>
       </div>
 

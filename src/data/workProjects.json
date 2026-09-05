@@ -67,28 +67,5 @@
     "techStack": ["Next.js", "React", "Tailwind CSS", "Framer Motion", "Vercel"],
     "deliverables": ["Handmade Marketplace UI", "Atelier Lookbook", "Voucher Deal Engine", "Category Navigation"],
     "status": "Live Production"
-  },
-  {
-    "id": "millathossain-portfolio",
-    "title": "Millat Hossain — Full Stack Developer & Software Engineer Portfolio",
-    "client": "Millat Hossain",
-    "category": "Architecture & Engineering",
-    "year": "2026",
-    "tagline": "High-performance digital products, scalable frontend systems, and interaction design showcase",
-    "summary": "Engineered a flagship personal portfolio for Millat Hossain, featuring custom kinetic typography, smooth dark-mode aura aesthetics, interactive work showcase, and resume telemetry.",
-    "challenge": "Developer portfolios often feel generic and fail to showcase refined interaction craftsmanship alongside engineering depth.",
-    "architectureHighlight": "Fluid preloader choreography · Dark obsidian aura glow · Interactive work showcase",
-    "solution": "Built a high-performance web experience emphasizing clean user experience, scalable frontend architecture, and purposeful motion design.",
-    "liveUrl": "https://millathossain.vercel.app/",
-    "image": "/assets/images/millathossain.png",
-    "metrics": [
-      { "label": "Render FPS", "value": "120 FPS" },
-      { "label": "Lighthouse Score", "value": "100/100" },
-      { "label": "Visitor Retention", "value": "+185%" },
-      { "label": "Inbound Inquiries", "value": "+3.8x" }
-    ],
-    "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel Edge"],
-    "deliverables": ["Personal Brand Architecture", "Interactive Project Gallery", "Resume Telemetry", "Motion Choreography"],
-    "status": "Live Production"
   }
 ]

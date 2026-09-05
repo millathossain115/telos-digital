@@ -1,6 +1,5 @@
 "use client";
 
-import { useState, useMemo } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ConversionCtaBanner } from "@/components/ConversionCtaBanner";
@@ -8,23 +7,12 @@ import { WorkProjectCard } from "@/components/WorkProjectCard";
 import workProjectsData from "@/data/workProjects.json";
 import type { WorkProject } from "@/types/work";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Code2, Cpu, ExternalLink, Filter, Layers, Sparkles, Terminal } from "lucide-react";
+import { ArrowUpRight, Code2, Cpu, ExternalLink, Layers, Sparkles, Terminal } from "lucide-react";
 import Link from "next/link";
 
 const ALL_PROJECTS = workProjectsData as WorkProject[];
 
 export default function WorkPage() {
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
-
-  const categories = useMemo(() => {
-    const cats = Array.from(new Set(ALL_PROJECTS.map((p) => p.category)));
-    return ["All", ...cats];
-  }, []);
-
-  const filteredProjects = useMemo(() => {
-    if (selectedCategory === "All") return ALL_PROJECTS;
-    return ALL_PROJECTS.filter((p) => p.category === selectedCategory);
-  }, [selectedCategory]);
 
   return (
     <div className="min-h-screen bg-[#FAF8F5] text-[#141312] selection:bg-amber-500/20 selection:text-amber-900 font-sans">
@@ -102,35 +90,9 @@ export default function WorkPage() {
           </div>
         </section>
 
-        {/* Filter Navigation Bar */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-2 rounded-2xl bg-white/80 border border-[#141312]/10 backdrop-blur-md shadow-sm">
-            <div className="flex items-center gap-2 px-3 py-1 text-xs font-mono font-semibold text-[#141312]/70">
-              <Filter className="w-3.5 h-3.5 text-amber-600" />
-              <span>FILTER ARCHITECTURE:</span>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-1.5">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`px-3.5 py-1.5 rounded-xl text-xs font-mono transition-all ${
-                    selectedCategory === cat
-                      ? "bg-[#141312] text-white font-semibold shadow-md"
-                      : "bg-[#141312]/5 text-[#141312]/70 hover:bg-amber-500/15 hover:text-amber-900 hover:border-amber-500/30"
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Case Studies / Projects Stream */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
-          {filteredProjects.map((project, idx) => (
+          {ALL_PROJECTS.map((project, idx) => (
             <WorkProjectCard key={project.id} project={project} index={idx} />
           ))}
         </section>
