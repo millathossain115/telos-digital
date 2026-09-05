@@ -1,0 +1,94 @@
+[
+  {
+    "id": "hawkeri",
+    "title": "Hawkeri — Hyperlocal Multi-Vendor Commerce Ecosystem",
+    "client": "Hawkeri Bangladesh",
+    "category": "E-Commerce & Marketplaces",
+    "year": "2026",
+    "tagline": "Real-time inventory sync, COD logistics telemetry, and sub-second checkout across Bangladesh",
+    "summary": "Engineered an end-to-end multi-vendor marketplace tailored for Bangladesh's dynamic retail fabric, combining low-latency product indexing, Cash-on-Delivery fulfillment tracking, and bilingual search.",
+    "architectureHighlight": "Edge cached product search · Real-time order dispatch · Optimistic cart state",
+    "challenge": "High mobile traffic with volatile cellular connectivity, complex district courier logistics, and concurrent vendor catalog updates causing inventory race conditions.",
+    "solution": "Built a high-performance Next.js storefront backed by edge data caching, local-first cart persistence, and microservice order processing with automated courier routing.",
+    "liveUrl": "https://www.hawkeri.com/",
+    "image": "/assets/images/hawkeri.png",
+    "metrics": [
+      { "label": "Search Latency", "value": "<120ms" },
+      { "label": "SKU Concurrency", "value": "50k+ Live" },
+      { "label": "Checkout Drop-off", "value": "-38%" },
+      { "label": "Mobile PageScore", "value": "98/100" }
+    ],
+    "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "Redis", "PostgreSQL"],
+    "deliverables": ["Storefront Web App", "Vendor Portal", "Order Dispatch Pipeline", "Courier API Sync"],
+    "status": "Live Production"
+  },
+  {
+    "id": "adskill-consultancy",
+    "title": "AdSkill Consultancy — US Immigration & Visa Guidance Platform",
+    "client": "AdSkill Consultancy",
+    "category": "Growth & Performance SaaS",
+    "year": "2025",
+    "tagline": "Specialized guidance platform across US visa & Green Card pathways with 98% success rate",
+    "summary": "Engineered a high-trust digital intake and consultation scheduling platform for NYC-based US immigration consultancy, featuring automated client triage, 30-min consultation booking, and trust metrics.",
+    "challenge": "Complex visa assessment forms and lack of trust proof points caused prospective applicants to abandon inquiries before booking initial consultations.",
+    "architectureHighlight": "Frictionless intake funnels · WhatsApp live triage · Zero-CLS editorial layout",
+    "solution": "Architected an ultra-fast, data-driven web portal with embedded interactive consultation pipelines, live case success telemetry, and seamless appointment booking.",
+    "liveUrl": "https://adskill-consultancy-web.vercel.app/",
+    "image": "/assets/images/adskill.png",
+    "metrics": [
+      { "label": "Visas Approved", "value": "2.5k+" },
+      { "label": "Success Rate", "value": "98%" },
+      { "label": "Happy Clients", "value": "5,000+" },
+      { "label": "Consult Intake Rate", "value": "+140%" }
+    ],
+    "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel Edge"],
+    "deliverables": ["Consultancy Web App", "Intake Pipeline Engine", "Case Tracking UI", "Appointment Integration"],
+    "status": "Live Production"
+  },
+  {
+    "id": "artisane-client",
+    "title": "Artisane — Handmade Craft & Atelier Marketplace",
+    "client": "Artisane Studio",
+    "category": "Luxury Editorial & Brand",
+    "year": "2025",
+    "tagline": "Curated marketplace for stocked craft kits, jewelry making, metalwork, and atelier supplies",
+    "summary": "Designed and deployed a bespoke e-commerce experience for handmade artisanal crafts, stocked tools, craft storage, and creative studio materials.",
+    "challenge": "Standard e-commerce frameworks lacked the dark-mode atelier editorial mood while maintaining rapid multi-category search across niche craft inventories.",
+    "architectureHighlight": "Atelier mood aesthetics · Real-time voucher engine · Instant search telemetry",
+    "solution": "Crafted an immersive dark editorial marketplace with streamlined category filtering, instant voucher application, and responsive checkout flows.",
+    "liveUrl": "https://artisane-client.vercel.app/",
+    "image": "/assets/images/artisane.png",
+    "metrics": [
+      { "label": "Session Duration", "value": "+210%" },
+      { "label": "Catalog Engagement", "value": "4.6 min" },
+      { "label": "Voucher Conversion", "value": "+34%" },
+      { "label": "Mobile Speed Score", "value": "99/100" }
+    ],
+    "techStack": ["Next.js", "React", "Tailwind CSS", "Framer Motion", "Vercel"],
+    "deliverables": ["Handmade Marketplace UI", "Atelier Lookbook", "Voucher Deal Engine", "Category Navigation"],
+    "status": "Live Production"
+  },
+  {
+    "id": "millathossain-portfolio",
+    "title": "Millat Hossain — Full Stack Developer & Software Engineer Portfolio",
+    "client": "Millat Hossain",
+    "category": "Architecture & Engineering",
+    "year": "2026",
+    "tagline": "High-performance digital products, scalable frontend systems, and interaction design showcase",
+    "summary": "Engineered a flagship personal portfolio for Millat Hossain, featuring custom kinetic typography, smooth dark-mode aura aesthetics, interactive work showcase, and resume telemetry.",
+    "challenge": "Developer portfolios often feel generic and fail to showcase refined interaction craftsmanship alongside engineering depth.",
+    "architectureHighlight": "Fluid preloader choreography · Dark obsidian aura glow · Interactive work showcase",
+    "solution": "Built a high-performance web experience emphasizing clean user experience, scalable frontend architecture, and purposeful motion design.",
+    "liveUrl": "https://millathossain.vercel.app/",
+    "image": "/assets/images/millathossain.png",
+    "metrics": [
+      { "label": "Render FPS", "value": "120 FPS" },
+      { "label": "Lighthouse Score", "value": "100/100" },
+      { "label": "Visitor Retention", "value": "+185%" },
+      { "label": "Inbound Inquiries", "value": "+3.8x" }
+    ],
+    "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel Edge"],
+    "deliverables": ["Personal Brand Architecture", "Interactive Project Gallery", "Resume Telemetry", "Motion Choreography"],
+    "status": "Live Production"
+  }
+]
