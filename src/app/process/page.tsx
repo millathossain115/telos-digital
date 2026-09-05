@@ -119,7 +119,7 @@ const COLLABORATION_RULES = [
 
 export default function ProcessPage() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-indigo-500 selection:text-white">
+    <div className="min-h-screen bg-neutral-950 text-neutral-100 flex flex-col font-sans selection:bg-indigo-500 selection:text-white">
       <Navbar />
 
       <main className="flex-1 pt-32 pb-24 relative overflow-hidden">
@@ -134,7 +134,7 @@ export default function ProcessPage() {
           
           {/* Header */}
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-xs font-mono text-indigo-400 mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 text-xs font-mono text-indigo-400 mb-4">
               <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse" />
               <span>Engineering Execution // How We Ship</span>
             </div>
@@ -145,20 +145,20 @@ export default function ProcessPage() {
               </span>
               .
             </h1>
-            <p className="mt-4 text-base sm:text-lg text-slate-400 leading-relaxed text-pretty">
+            <p className="mt-4 text-base sm:text-lg text-neutral-400 leading-relaxed text-pretty">
               We eliminate black-box development and surprise scope inflation. Here is the step-by-step roadmap of how we take your vision from technical architecture to a resilient production deployment.
             </p>
           </div>
 
           {/* Core Collaboration Guarantees */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-7 sm:p-9 rounded-3xl bg-slate-900/30 border border-slate-800/80 backdrop-blur-md">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-7 sm:p-9 rounded-3xl bg-neutral-900/30 border border-neutral-800/80 backdrop-blur-md">
             {COLLABORATION_RULES.map((rule) => (
-              <div key={rule.title} className="space-y-2 border-l border-slate-800/80 pl-5">
+              <div key={rule.title} className="space-y-2 border-l border-neutral-800/80 pl-5">
                 <div className="text-sm font-semibold text-white tracking-tight flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                   <span>{rule.title}</span>
                 </div>
-                <p className="text-xs text-slate-400 leading-relaxed">
+                <p className="text-xs text-neutral-400 leading-relaxed">
                   {rule.desc}
                 </p>
               </div>
@@ -172,7 +172,7 @@ export default function ProcessPage() {
               return (
                 <section
                   key={phase.step}
-                  className="p-8 sm:p-12 rounded-3xl bg-slate-900/25 border border-slate-800/80 hover:border-slate-700/80 transition-all duration-300 backdrop-blur-sm relative overflow-hidden shadow-2xl"
+                  className="p-8 sm:p-12 rounded-3xl bg-neutral-900/25 border border-neutral-800/80 hover:border-neutral-700/80 transition-all duration-300 backdrop-blur-sm relative overflow-hidden shadow-2xl"
                 >
                   {/* Subtle hover backlight */}
                   <div className="absolute -top-32 -right-32 w-80 h-80 bg-indigo-500/10 blur-3xl opacity-0 hover:opacity-100 transition-opacity pointer-events-none" />
@@ -185,8 +185,8 @@ export default function ProcessPage() {
                         <span className="text-xs font-mono px-3 py-1 rounded-full bg-indigo-950/60 border border-indigo-800/50 text-indigo-300 font-medium">
                           {phase.step}
                         </span>
-                        <span className="text-xs font-mono text-slate-500 flex items-center gap-1.5">
-                          <Clock className="w-3.5 h-3.5 text-slate-400" />
+                        <span className="text-xs font-mono text-neutral-500 flex items-center gap-1.5">
+                          <Clock className="w-3.5 h-3.5 text-neutral-400" />
                           {phase.timeframe}
                         </span>
                       </div>
@@ -195,19 +195,19 @@ export default function ProcessPage() {
                         <h2 className="text-2xl sm:text-3xl font-semibold text-white tracking-tight">
                           {phase.title}
                         </h2>
-                        <p className="mt-3 text-sm text-slate-400 leading-relaxed">
+                        <p className="mt-3 text-sm text-neutral-400 leading-relaxed">
                           {phase.summary}
                         </p>
                       </div>
 
                       {/* Explicit Deliverables Checklist */}
                       <div className="space-y-3 pt-2">
-                        <div className="text-xs font-mono text-slate-400 uppercase tracking-wider">
+                        <div className="text-xs font-mono text-neutral-400 uppercase tracking-wider">
                           Tangible Deliverables
                         </div>
                         <div className="space-y-2.5">
                           {phase.deliverables.map((item) => (
-                            <div key={item} className="flex items-start gap-3 text-xs sm:text-sm text-slate-300">
+                            <div key={item} className="flex items-start gap-3 text-xs sm:text-sm text-neutral-300">
                               <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                               <span>{item}</span>
                             </div>
@@ -220,7 +220,7 @@ export default function ProcessPage() {
                         {phase.tooling.map((tool) => (
                           <span
                             key={tool}
-                            className="text-xs font-mono px-2.5 py-1 rounded bg-slate-950 border border-slate-800 text-slate-400"
+                            className="text-xs font-mono px-2.5 py-1 rounded bg-neutral-950 border border-neutral-800 text-neutral-400"
                           >
                             {tool}
                           </span>
@@ -230,9 +230,9 @@ export default function ProcessPage() {
 
                     {/* Right: Client Touchpoints & Workflow (5 Cols) */}
                     <div className="lg:col-span-5 space-y-5">
-                      <div className="rounded-2xl bg-slate-950 border border-slate-800 p-6 space-y-4 shadow-xl">
-                        <div className="flex items-center justify-between pb-3 border-b border-slate-800/80">
-                          <span className="text-xs font-mono text-slate-400 flex items-center gap-2">
+                      <div className="rounded-2xl bg-neutral-950 border border-neutral-800 p-6 space-y-4 shadow-xl">
+                        <div className="flex items-center justify-between pb-3 border-b border-neutral-800/80">
+                          <span className="text-xs font-mono text-neutral-400 flex items-center gap-2">
                             <Terminal className="w-3.5 h-3.5 text-indigo-400" />
                             Client Interaction Cadence
                           </span>
@@ -243,7 +243,7 @@ export default function ProcessPage() {
                           {phase.clientTouchpoints.map((tp) => (
                             <div
                               key={tp}
-                              className="p-3 rounded-xl bg-slate-900/50 border border-slate-800/60 text-xs text-slate-300 leading-relaxed flex items-start gap-2.5"
+                              className="p-3 rounded-xl bg-neutral-900/50 border border-neutral-800/60 text-xs text-neutral-300 leading-relaxed flex items-start gap-2.5"
                             >
                               <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 shrink-0 mt-1.5" />
                               <span>{tp}</span>
@@ -251,7 +251,7 @@ export default function ProcessPage() {
                           ))}
                         </div>
 
-                        <div className="pt-2 text-[11px] font-mono text-slate-500 border-t border-slate-800/60">
+                        <div className="pt-2 text-[11px] font-mono text-neutral-500 border-t border-neutral-800/60">
                           ✓ Weekly updates delivered asynchronously with Loom video demonstrations
                         </div>
                       </div>
@@ -264,24 +264,24 @@ export default function ProcessPage() {
           </div>
 
           {/* Bottom Conversion Banner */}
-          <section className="rounded-3xl p-8 sm:p-14 bg-gradient-to-r from-indigo-950/80 via-slate-900/90 to-cyan-950/80 border border-slate-800/80 shadow-2xl text-center max-w-4xl mx-auto">
+          <section className="rounded-3xl p-8 sm:p-14 bg-gradient-to-r from-indigo-950/80 via-neutral-900/90 to-cyan-950/80 border border-neutral-800/80 shadow-2xl text-center max-w-4xl mx-auto">
             <h2 className="text-3xl sm:text-5xl font-semibold text-white tracking-tight sm:tracking-tighter">
               Ready to begin Phase 01?
             </h2>
-            <p className="mt-4 text-slate-300 max-w-lg mx-auto text-sm sm:text-base leading-relaxed">
+            <p className="mt-4 text-neutral-300 max-w-lg mx-auto text-sm sm:text-base leading-relaxed">
               Book an initial 15-minute technical discovery call to review requirements and schedule your sprint roadmap.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-white text-slate-950 font-semibold text-sm hover:bg-slate-100 shadow-xl shadow-white/5 hover:-translate-y-0.5 transition-all duration-200 gap-2"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-white text-neutral-950 font-semibold text-sm hover:bg-neutral-100 shadow-xl shadow-white/5 hover:-tranneutral-y-0.5 transition-all duration-200 gap-2"
               >
                 <span>Schedule Architecture Call</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 href="/work"
-                className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white font-semibold text-sm transition-all duration-200"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-neutral-900/80 border border-neutral-800 hover:border-neutral-700 text-neutral-300 hover:text-white font-semibold text-sm transition-all duration-200"
               >
                 <span>Review Case Studies</span>
               </Link>

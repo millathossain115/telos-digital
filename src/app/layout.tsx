@@ -23,7 +23,7 @@ export default function RootLayout({
       lang="en"
       className={`${fontGeistSans.variable} ${fontGeistMono.variable} ${fontInter.variable} ${fontJetBrainsMono.variable} h-full antialiased dark scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col bg-slate-950 text-slate-100 font-sans">{children}</body>
+      <body className="min-h-full flex flex-col bg-neutral-950 text-neutral-100 font-sans">{children}</body>
     </html>
   );
 }

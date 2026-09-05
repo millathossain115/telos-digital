@@ -15,9 +15,9 @@ const TECH_STACK = [
 
 export function TechMarquee() {
   return (
-    <section className="relative py-12 border-y border-slate-900 bg-slate-950/70 overflow-hidden">
+    <section className="relative py-12 border-y border-neutral-900 bg-neutral-950/70 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 text-center">
-        <p className="text-xs font-mono uppercase tracking-widest text-slate-500">
+        <p className="text-xs font-mono uppercase tracking-widest text-neutral-500">
           Engineered with battle-tested modern foundations
         </p>
       </div>
@@ -29,13 +29,13 @@ export function TechMarquee() {
           {[...TECH_STACK, ...TECH_STACK].map((tech, idx) => (
             <div
               key={`${tech.name}-${idx}`}
-              className="flex items-center gap-3 px-4 py-2 rounded-lg bg-slate-900/50 border border-slate-800/80 hover:border-slate-700 transition-colors backdrop-blur-sm group cursor-default"
+              className="flex items-center gap-3 px-4 py-2 rounded-lg bg-neutral-900/50 border border-neutral-800/80 hover:border-neutral-700 transition-colors backdrop-blur-sm group cursor-default"
             >
-              <div className="w-2 h-2 rounded-full bg-indigo-500/80 group-hover:bg-cyan-400 transition-colors" />
-              <span className="text-sm font-semibold text-slate-200 group-hover:text-white transition-colors">
+              <div className="w-2 h-2 rounded-full bg-amber-600/80 group-hover:bg-white transition-colors" />
+              <span className="text-sm font-semibold text-neutral-200 group-hover:text-white transition-colors">
                 {tech.name}
               </span>
-              <span className="text-xs font-mono text-slate-500 group-hover:text-slate-400 transition-colors">
+              <span className="text-xs font-mono text-neutral-500 group-hover:text-neutral-400 transition-colors">
                 [{tech.role}]
               </span>
             </div>

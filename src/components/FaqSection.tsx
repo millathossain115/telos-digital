@@ -34,17 +34,17 @@ export function FaqSection() {
   };
 
   return (
-    <section className="py-24 relative bg-slate-950/80 border-t border-slate-900">
+    <section className="py-24 relative bg-neutral-950/80 border-t border-neutral-900">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-300 text-xs font-mono uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-neutral-900 border border-neutral-800 text-neutral-300 text-xs font-mono uppercase tracking-wider mb-4">
             Clarity & Expectations
           </div>
           <h2 className="text-3xl sm:text-5xl font-semibold text-white tracking-tight sm:tracking-tighter">
             Frequently Asked Questions
           </h2>
-          <p className="mt-4 text-slate-400 text-sm sm:text-base">
+          <p className="mt-4 text-neutral-400 text-sm sm:text-base">
             Everything you need to know about partnering with Telos Digital.
           </p>
         </div>
@@ -58,8 +58,8 @@ export function FaqSection() {
                 key={faq.q}
                 className={`rounded-2xl border transition-colors overflow-hidden ${
                   isOpen
-                    ? "bg-slate-900/60 border-slate-700/80"
-                    : "bg-slate-900/20 border-slate-800/80 hover:border-slate-750"
+                    ? "bg-neutral-900/60 border-neutral-700/80"
+                    : "bg-neutral-900/20 border-neutral-800/80 hover:border-neutral-750"
                 }`}
               >
                 <button
@@ -67,16 +67,16 @@ export function FaqSection() {
                   className="w-full py-5 px-6 flex items-center justify-between text-left gap-4 focus:outline-none"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-base sm:text-lg font-semibold text-slate-100 tracking-tight">
+                  <span className="text-base sm:text-lg font-semibold text-neutral-100 tracking-tight">
                     {faq.q}
                   </span>
-                  <div className="w-8 h-8 rounded-full bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-neutral-800/80 border border-neutral-700/60 flex items-center justify-center text-neutral-300 shrink-0">
                     {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                   </div>
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-1 text-sm sm:text-base text-slate-400 leading-relaxed border-t border-slate-800/40">
+                  <div className="px-6 pb-6 pt-1 text-sm sm:text-base text-neutral-400 leading-relaxed border-t border-neutral-800/40">
                     {faq.a}
                   </div>
                 )}

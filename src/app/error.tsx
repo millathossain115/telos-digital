@@ -17,10 +17,10 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-center px-4 sm:px-6 relative overflow-hidden font-sans">
+    <div className="min-h-screen bg-neutral-950 text-neutral-100 flex flex-col items-center justify-center px-4 sm:px-6 relative overflow-hidden font-sans">
       {/* Red alert ambient spotlight */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-rose-500/15 blur-[140px] rounded-full" />
+        <div className="absolute top-1/3 left-1/2 -tranneutral-x-1/2 -tranneutral-y-1/2 w-[600px] h-[350px] bg-rose-500/15 blur-[140px] rounded-full" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#33415510_1px,transparent_1px),linear-gradient(to_bottom,#33415510_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_50%,#000_70%,transparent_100%)]" />
       </div>
 
@@ -35,19 +35,19 @@ export default function Error({
           Execution Interrupted
         </h1>
 
-        <p className="text-sm text-slate-400 leading-relaxed text-pretty">
+        <p className="text-sm text-neutral-400 leading-relaxed text-pretty">
           An unexpected exception was caught by our edge boundary. Our telemetry pipeline has logged this stack trace.
         </p>
 
         {/* Diagnostic Box */}
-        <div className="rounded-2xl bg-slate-900/60 border border-slate-800/80 p-4 font-mono text-xs text-left text-slate-400">
-          <div className="flex items-center justify-between pb-2.5 border-b border-slate-800/70 mb-2.5">
-            <span className="flex items-center gap-2 text-slate-300">
+        <div className="rounded-2xl bg-neutral-900/60 border border-neutral-800/80 p-4 font-mono text-xs text-left text-neutral-400">
+          <div className="flex items-center justify-between pb-2.5 border-b border-neutral-800/70 mb-2.5">
+            <span className="flex items-center gap-2 text-neutral-300">
               <Terminal className="w-3.5 h-3.5 text-rose-400" />
               <span>exception_trace</span>
             </span>
             {error.digest && (
-              <span className="text-[10px] text-slate-500">digest: {error.digest.slice(0, 8)}</span>
+              <span className="text-[10px] text-neutral-500">digest: {error.digest.slice(0, 8)}</span>
             )}
           </div>
           <p className="text-rose-300 text-[11px] truncate">
@@ -59,15 +59,15 @@ export default function Error({
         <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
           <button
             onClick={() => reset()}
-            className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl bg-white text-slate-950 font-semibold text-sm hover:bg-slate-100 shadow-xl shadow-white/5 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 gap-2"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl bg-white text-neutral-950 font-semibold text-sm hover:bg-neutral-100 shadow-xl shadow-white/5 hover:-tranneutral-y-0.5 active:tranneutral-y-0 transition-all duration-200 gap-2"
           >
-            <RefreshCw className="w-4 h-4 text-slate-950" />
+            <RefreshCw className="w-4 h-4 text-neutral-950" />
             <span>Retry Operation</span>
           </button>
 
           <Link
             href="/"
-            className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white font-semibold text-sm transition-all duration-200 gap-2"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl bg-neutral-900/80 hover:bg-neutral-800 border border-neutral-800 text-neutral-300 hover:text-white font-semibold text-sm transition-all duration-200 gap-2"
           >
             <Home className="w-4 h-4" />
             <span>Back to Home</span>
