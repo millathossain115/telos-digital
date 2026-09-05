@@ -1,6 +1,5 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
-import { TechMarquee } from "@/components/TechMarquee";
 import { ServicesBento } from "@/components/ServicesBento";
 import { ComparisonMatrix } from "@/components/ComparisonMatrix";
 import { ProcessSection } from "@/components/ProcessSection";

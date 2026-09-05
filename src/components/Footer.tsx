@@ -1,5 +1,56 @@
 "use client";
 
+import { useState } from "react";
+import { motion } from "framer-motion";
+
+function InteractiveFooterTitle() {
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+
+  function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setMousePos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  }
+
+  return (
+    <div
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="relative pt-16 pb-4 flex items-center justify-center select-none overflow-hidden w-full cursor-default group"
+    >
+      {/* Base Layer: Soft warm watermark */}
+      <span className="font-extrabold text-[10.2vw] leading-none tracking-tight sm:tracking-tighter text-[#141312]/[0.07] text-center uppercase whitespace-nowrap transition-colors duration-500">
+        Telos Digital
+      </span>
+
+      {/* Spotlight Shimmer Reveal Layer (Dynamic Mask) */}
+      <motion.div
+        animate={{ opacity: isHovered ? 1 : 0 }}
+        transition={{ duration: 0.25 }}
+        className="pointer-events-none absolute inset-0 flex items-center justify-center pt-16 pb-4"
+        style={{
+          maskImage: `radial-gradient(340px circle at ${mousePos.x}px ${mousePos.y}px, black 25%, transparent 70%)`,
+          WebkitMaskImage: `radial-gradient(340px circle at ${mousePos.x}px ${mousePos.y}px, black 25%, transparent 70%)`,
+        }}
+      >
+        <span
+          className="font-extrabold text-[10.2vw] leading-none tracking-tight sm:tracking-tighter text-transparent bg-clip-text text-center uppercase whitespace-nowrap drop-shadow-[0_0_24px_rgba(217,119,6,0.35)]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grainBoost'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.25' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 26 -8'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grainBoost)' opacity='0.75'/%3E%3C/svg%3E"), linear-gradient(to right, #b45309, #f59e0b, #141312)`,
+            backgroundBlendMode: "color-burn, normal",
+          }}
+        >
+          Telos Digital
+        </span>
+      </motion.div>
+    </div>
+  );
+}
+
 export function Footer() {
   return (
     <footer className="bg-[#F3EFEA] text-neutral-600 border-t border-black/[0.08] pt-16 pb-12 relative overflow-hidden">
@@ -94,13 +145,10 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Thematic Big Brand Title */}
-        <div className="pt-16 pb-4 flex items-center justify-center select-none pointer-events-none overflow-hidden w-full">
-          <span className="font-extrabold text-[10.2vw] leading-none tracking-tight sm:tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-black/[0.08] via-black/[0.04] to-transparent text-center uppercase whitespace-nowrap">
-            Telos Digital
-          </span>
-        </div>
+        {/* Thematic Big Brand Title with Option 2 Kinetic Spring Lift */}
+        <InteractiveFooterTitle />
       </div>
     </footer>
   );
 }
+
