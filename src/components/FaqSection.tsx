@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown, MessageSquareQuote, ArrowRight, HelpCircle } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 import Link from "next/link";
 
 const FAQS = [
@@ -33,6 +33,35 @@ const FAQS = [
   },
 ];
 
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const leftColVariants: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+  },
+};
+
+const faqItemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
+  },
+};
+
 export function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
@@ -51,9 +80,15 @@ export function FaqSection() {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch"
+        >
           {/* Left Column: Heading + Context Info */}
-          <div className="lg:col-span-5 flex flex-col justify-between">
+          <motion.div variants={leftColVariants} className="lg:col-span-5 flex flex-col justify-between">
             <div>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-black/[0.08] text-amber-700 text-xs font-mono uppercase tracking-wider mb-5 shadow-sm">
                 <HelpCircle className="w-3.5 h-3.5 text-amber-600" />
@@ -96,7 +131,7 @@ export function FaqSection() {
                 <ArrowRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1" />
               </Link>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column: FAQs Accordion List */}
           <div className="lg:col-span-7 flex flex-col justify-between gap-3">
@@ -104,9 +139,10 @@ export function FaqSection() {
               const isOpen = openIndex === idx;
 
               return (
-                <div
+                <motion.div
                   key={faq.id}
-                  className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
+                  variants={faqItemVariants}
+                  className={`rounded-2xl border transition-colors duration-300 overflow-hidden ${
                     isOpen
                       ? "bg-white border-amber-500/40 shadow-lg shadow-amber-900/[0.03]"
                       : "bg-white/80 hover:bg-white border-black/[0.07] hover:border-black/[0.14] shadow-sm"
@@ -158,14 +194,15 @@ export function FaqSection() {
                       </motion.div>
                     )}
                   </AnimatePresence>
-                </div>
+                </motion.div>
               );
             })}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 }
+
 
 

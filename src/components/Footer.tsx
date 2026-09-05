@@ -22,8 +22,14 @@ function InteractiveFooterTitle() {
       onMouseLeave={() => setIsHovered(false)}
       className="relative pt-16 pb-4 flex items-center justify-center select-none overflow-hidden w-full cursor-default group"
     >
-      {/* Base Layer: Soft warm watermark */}
-      <span className="font-extrabold text-[10.2vw] leading-none tracking-tight sm:tracking-tighter text-[#141312]/[0.07] text-center uppercase whitespace-nowrap transition-colors duration-500">
+      {/* Base Layer: Soft warm watermark blended to bottom */}
+      <span
+        className="font-extrabold text-[10.2vw] leading-none tracking-tight sm:tracking-tighter text-[#141312]/[0.10] text-center uppercase whitespace-nowrap transition-colors duration-500"
+        style={{
+          maskImage: "linear-gradient(to bottom, black 20%, rgba(0,0,0,0.3) 65%, transparent 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, black 20%, rgba(0,0,0,0.3) 65%, transparent 100%)",
+        }}
+      >
         Telos Digital
       </span>
 

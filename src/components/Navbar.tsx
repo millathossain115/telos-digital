@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const NAV_LINKS = [
   { label: "Services", href: "/services" },
@@ -11,6 +12,7 @@ const NAV_LINKS = [
 ];
 
 export function Navbar() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -46,16 +48,26 @@ export function Navbar() {
         </Link>
 
         {/* Center: Navigation Links */}
-        <nav className="hidden md:flex items-center gap-1 bg-white/70 border border-black/[0.06] rounded-full px-4 py-1.5 backdrop-blur-md shadow-sm">
-          {NAV_LINKS.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className="text-sm font-medium text-neutral-600 hover:text-black px-3.5 py-1.5 rounded-full transition-colors hover:bg-black/[0.04]"
-            >
-              {item.label}
-            </Link>
-          ))}
+        <nav className="hidden md:flex items-center gap-1 bg-white/70 border border-black/[0.06] rounded-full p-1.5 backdrop-blur-md shadow-sm">
+          {NAV_LINKS.map((item) => {
+            const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
+            return (
+              <Link
+                key={item.label}
+                href={item.href}
+                className={`relative text-sm font-medium px-4 py-1.5 rounded-full transition-all duration-200 flex items-center gap-1.5 ${
+                  isActive
+                    ? "bg-[#141312] text-white shadow-sm font-semibold"
+                    : "text-neutral-600 hover:text-black hover:bg-black/[0.04]"
+                }`}
+              >
+                {isActive && (
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                )}
+                <span>{item.label}</span>
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Right: Primary Action Button */}
@@ -92,16 +104,26 @@ export function Navbar() {
       {mobileMenuOpen && (
         <div className="md:hidden bg-[#FAF8F5]/98 border-b border-black/[0.08] backdrop-blur-xl px-4 pt-3 pb-6 space-y-3 mt-3 animate-in fade-in slide-in-from-top-3 duration-200 shadow-xl shadow-black/5">
           <div className="flex flex-col space-y-1">
-            {NAV_LINKS.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="block px-3 py-2 rounded-md text-base font-medium text-neutral-800 hover:bg-black/[0.04] transition-colors"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {NAV_LINKS.map((item) => {
+              const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-base font-medium transition-colors ${
+                    isActive
+                      ? "bg-[#141312] text-white font-semibold"
+                      : "text-neutral-800 hover:bg-black/[0.04]"
+                  }`}
+                >
+                  <span>{item.label}</span>
+                  {isActive && (
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                  )}
+                </Link>
+              );
+            })}
           </div>
 
           <div className="pt-4 flex flex-col">
