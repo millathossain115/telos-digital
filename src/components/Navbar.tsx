@@ -27,45 +27,45 @@ export function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-      {/* Top Narrow Thematic Utility Strip */}
-      <div className="bg-[#141312] text-[#FAF8F5]/80 text-[11px] font-mono relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1.5 flex flex-wrap items-center justify-between gap-y-1 gap-x-4">
+      {/* Top Utility Strip */}
+      <div className="bg-[#141312] text-[#FAF8F5] text-xs font-mono relative z-10 border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center justify-between gap-y-1.5 gap-x-4">
           {/* Location & Status */}
-          <div className="flex items-center gap-2 text-xs">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="text-white/60">STUDIO:</span>
-            <span className="text-white/90 font-medium flex items-center gap-1">
-              <MapPin className="w-3 h-3 text-amber-400" />
-              Madani Avenue, Dhaka, Bangladesh
+          <div className="flex items-center gap-2 text-xs sm:text-[13px]">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 ring-2 ring-emerald-400/30 animate-pulse" />
+            <span className="text-white/70 font-semibold tracking-wide text-[11px] uppercase">STUDIO:</span>
+            <span className="text-white font-medium flex items-center gap-1.5">
+              <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+              <span>Madani Avenue, Dhaka, Bangladesh</span>
             </span>
           </div>
 
           {/* Contact Direct Strip */}
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-xs sm:text-[13px]">
             <a
               href="mailto:telosdigital@gmail.com"
-              className="inline-flex items-center gap-1.5 text-white/80 hover:text-amber-400 transition-colors"
+              className="inline-flex items-center gap-1.5 text-white/90 hover:text-amber-400 transition-colors font-medium"
             >
-              <Mail className="w-3 h-3 text-amber-500" />
+              <Mail className="w-3.5 h-3.5 text-amber-400 shrink-0" />
               <span>telosdigital@gmail.com</span>
             </a>
 
-            <span className="text-white/20 hidden sm:inline">|</span>
+            <span className="text-white/30 hidden sm:inline">|</span>
 
-            <div className="hidden sm:flex items-center gap-3">
+            <div className="hidden sm:flex items-center gap-2 text-white/90">
+              <Phone className="w-3.5 h-3.5 text-amber-400 shrink-0" />
               <a
                 href="tel:+8801618257217"
-                className="inline-flex items-center gap-1 text-white/80 hover:text-amber-400 transition-colors"
+                className="hover:text-amber-400 font-semibold tracking-tight text-white transition-colors"
               >
-                <Phone className="w-3 h-3 text-amber-500" />
-                <span>+880 1618-257217</span>
+                +880 1618-257217
               </a>
-              <span className="text-white/30 font-light">/</span>
+              <span className="text-white/40 font-normal">/</span>
               <a
                 href="tel:+8801610108851"
-                className="inline-flex items-center gap-1 text-white/80 hover:text-amber-400 transition-colors"
+                className="hover:text-amber-400 font-semibold tracking-tight text-white transition-colors"
               >
-                <span>+880 1610-108851</span>
+                +880 1610-108851
               </a>
             </div>
           </div>
@@ -175,31 +175,31 @@ export function Navbar() {
             </div>
 
             {/* Mobile Contact Quick Details */}
-            <div className="pt-3 border-t border-black/[0.08] space-y-2 text-xs font-mono text-neutral-600">
+            <div className="pt-3 border-t border-black/[0.08] space-y-2.5 text-[13px] font-mono text-neutral-700">
               <a
                 href="mailto:telosdigital@gmail.com"
-                className="flex items-center gap-2 hover:text-amber-700"
+                className="flex items-center gap-2 text-neutral-800 hover:text-amber-700 font-medium"
               >
-                <Mail className="w-3.5 h-3.5 text-amber-600" />
+                <Mail className="w-4 h-4 text-amber-600 shrink-0" />
                 <span>telosdigital@gmail.com</span>
               </a>
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col gap-1.5">
                 <a
                   href="tel:+8801618257217"
-                  className="flex items-center gap-2 hover:text-amber-700"
+                  className="flex items-center gap-2 font-semibold text-neutral-900 hover:text-amber-700"
                 >
-                  <Phone className="w-3.5 h-3.5 text-amber-600" />
+                  <Phone className="w-4 h-4 text-amber-600 shrink-0" />
                   <span>+880 1618-257217</span>
                 </a>
                 <a
                   href="tel:+8801610108851"
-                  className="flex items-center gap-2 pl-5 hover:text-amber-700"
+                  className="flex items-center gap-2 pl-6 font-semibold text-neutral-900 hover:text-amber-700"
                 >
                   <span>+880 1610-108851</span>
                 </a>
               </div>
-              <div className="flex items-center gap-2 text-neutral-500 pt-1">
-                <MapPin className="w-3.5 h-3.5 text-amber-600" />
+              <div className="flex items-center gap-2 text-neutral-600 pt-0.5">
+                <MapPin className="w-4 h-4 text-amber-600 shrink-0" />
                 <span>Madani Avenue, Dhaka, Bangladesh</span>
               </div>
             </div>

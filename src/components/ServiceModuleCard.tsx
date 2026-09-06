@@ -59,18 +59,22 @@ export function ServiceModuleCard({ module }: ServiceModuleCardProps) {
       whileInView="visible"
       viewport={{ once: true, amount: 0.15 }}
       id={module.id}
-      className="p-6 sm:p-8 rounded-3xl bg-white border border-black/[0.08] shadow-[0_10px_30px_rgba(20,19,18,0.03)] hover:border-amber-500/30 transition-all duration-300 relative overflow-hidden group"
+      className="p-6 sm:p-9 rounded-3xl bg-gradient-to-br from-[#F5EFEB] via-[#EFE7DF] to-[#E8DDD2] text-[#141312] border border-[#D8C7B5]/70 shadow-[0_16px_40px_rgba(20,19,18,0.06)] hover:border-amber-500/50 hover:shadow-[0_20px_50px_rgba(217,119,6,0.12)] transition-all duration-300 relative overflow-hidden group backdrop-blur-md"
     >
+      {/* Subtle Antigravity Ambient Light */}
+      <div className="absolute top-0 right-1/4 w-96 h-48 bg-amber-500/10 blur-3xl pointer-events-none rounded-full" />
+      <div className="absolute bottom-0 left-10 w-72 h-40 bg-white/40 blur-2xl pointer-events-none rounded-full" />
+
       {/* Top Banner Row: Module ID + Metric + Cost Advantage + High-Impact CTA */}
-      <div className="flex flex-wrap items-center justify-between gap-4 pb-5 mb-6 border-b border-black/[0.06]">
+      <div className="flex flex-wrap items-center justify-between gap-4 pb-5 mb-6 border-b border-black/[0.08] relative z-10">
         <div className="flex flex-wrap items-center gap-2.5">
-          <span className="text-xs font-mono font-semibold px-3 py-1 rounded-full bg-[#141312] text-white">
+          <span className="text-xs font-mono font-semibold px-3 py-1 rounded-full bg-[#141312] text-white shadow-xs">
             {module.tag}
           </span>
-          <span className="text-xs font-mono px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-900 font-semibold">
+          <span className="text-xs font-mono px-3 py-1 rounded-full bg-amber-500/15 border border-amber-600/25 text-amber-900 font-semibold">
             {module.metric}
           </span>
-          <span className="text-[11px] font-mono px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-800 font-medium hidden sm:inline-flex items-center gap-1">
+          <span className="text-[11px] font-mono px-2.5 py-1 rounded-full bg-emerald-600/15 border border-emerald-600/25 text-emerald-900 font-medium hidden sm:inline-flex items-center gap-1">
             <span>40-60% less than legacy agencies</span>
           </span>
         </div>
@@ -84,32 +88,32 @@ export function ServiceModuleCard({ module }: ServiceModuleCardProps) {
         </Link>
       </div>
 
-      {/* Main Grid: Left summary (4 cols), Right 2-col compact capability pills (8 cols) */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-        {/* Left Column: Title, Subtitle, Tech badges (4 cols) */}
+      {/* Main Grid: Left summary (5 cols), Right 2-col capability pills (7 cols) */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start relative z-10">
+        {/* Left Column: Title, Subtitle, Tech badges */}
         <div className="lg:col-span-5 space-y-4">
           <div>
             <h2 className="text-2xl sm:text-3xl font-semibold text-[#141312] tracking-tight">
               {module.title}
             </h2>
-            <p className="mt-1.5 text-sm font-medium text-amber-800/90 leading-snug">
+            <p className="mt-1.5 text-sm font-semibold text-amber-800 leading-snug">
               {module.subtitle}
             </p>
           </div>
 
-          <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal">
+          <p className="text-xs sm:text-sm text-[#3E3834] leading-relaxed font-normal">
             {module.description}
           </p>
 
           <div className="pt-2">
-            <div className="text-[11px] font-mono text-neutral-500 uppercase tracking-wider mb-2 font-medium">
+            <div className="text-[11px] font-mono text-[#7A6F66] uppercase tracking-wider mb-2 font-medium">
               Target Stack
             </div>
             <div className="flex flex-wrap gap-1.5">
               {module.techStack.map((tech) => (
                 <span
                   key={tech}
-                  className="text-xs font-mono px-2.5 py-0.5 rounded-md bg-[#FAF8F5] border border-black/[0.07] text-neutral-700 font-medium"
+                  className="text-xs font-mono px-2.5 py-0.5 rounded-md bg-white/70 border border-black/[0.08] text-[#141312] font-medium shadow-2xs"
                 >
                   {tech}
                 </span>
@@ -118,7 +122,7 @@ export function ServiceModuleCard({ module }: ServiceModuleCardProps) {
           </div>
         </div>
 
-        {/* Right Column: 2-Column Capability Grid (7 cols) - compact & concise */}
+        {/* Right Column: 2-Column Capability Grid */}
         <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3">
           {module.capabilities.map((cap) => {
             const Icon =
@@ -126,16 +130,16 @@ export function ServiceModuleCard({ module }: ServiceModuleCardProps) {
             return (
               <div
                 key={cap.label}
-                className="p-3.5 rounded-2xl bg-[#FAF8F5] border border-black/[0.05] hover:border-black/[0.12] transition-colors flex flex-col justify-between"
+                className="p-3.5 rounded-2xl bg-white/60 border border-black/[0.07] hover:border-amber-500/40 hover:bg-white/80 transition-all flex flex-col justify-between shadow-2xs"
               >
-                <div className="w-7 h-7 rounded-lg bg-white border border-black/[0.08] flex items-center justify-center text-amber-700 mb-2.5 shadow-2xs">
+                <div className="w-7 h-7 rounded-lg bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-800 mb-2.5 shadow-2xs">
                   <Icon className="w-3.5 h-3.5" />
                 </div>
                 <div>
                   <h4 className="text-xs sm:text-sm font-semibold text-[#141312] leading-tight">
                     {cap.label}
                   </h4>
-                  <p className="text-[11px] sm:text-xs text-neutral-600 leading-relaxed mt-1">
+                  <p className="text-[11px] sm:text-xs text-[#524A44] leading-relaxed mt-1">
                     {cap.detail}
                   </p>
                 </div>
