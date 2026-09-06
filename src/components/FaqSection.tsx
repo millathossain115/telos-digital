@@ -113,34 +113,38 @@ export function FaqSection() {
               </p>
             </div>
 
-            {/* Direct Contact Card - Anchored at bottom */}
-            <div className="mt-8 p-5 sm:p-6 rounded-2xl bg-white border border-black/[0.07] shadow-sm relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-amber-500/5 rounded-bl-full pointer-events-none transition-transform group-hover:scale-110" />
+            {/* Direct Contact Card - Anchored at bottom with thematic gradient & ambient glow */}
+            <div className="mt-8 p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-[#FFFDF9] via-[#FAF3EA] to-[#F3E7D7] border border-amber-900/[0.1] shadow-[0_8px_24px_rgba(217,119,6,0.06)] hover:shadow-[0_12px_32px_rgba(217,119,6,0.12)] hover:border-amber-600/30 transition-all duration-400 relative overflow-hidden group">
+              {/* Top ambient corner glow */}
+              <div className="pointer-events-none absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-amber-400/20 to-orange-500/10 rounded-full blur-2xl transition-transform duration-500 group-hover:scale-125" />
 
-              <div className="flex items-center gap-3 mb-2.5">
-                <div className="w-9 h-9 rounded-xl bg-amber-50 border border-amber-200/60 flex items-center justify-center text-amber-700 shrink-0">
+              {/* Top hairline border shimmer on hover */}
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-500/0 to-transparent group-hover:via-amber-500/50 transition-all duration-500" />
+
+              <div className="flex items-center gap-3 mb-2.5 relative z-10">
+                <div className="w-9 h-9 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-800 shadow-xs shrink-0 group-hover:scale-105 transition-transform">
                   <MessageSquareQuote className="w-4 h-4" />
                 </div>
                 <div>
                   <h4 className="text-sm font-semibold text-[#141312]">
                     Have a custom question?
                   </h4>
-                  <p className="text-[11px] text-neutral-500 font-mono">
+                  <p className="text-[11px] text-amber-800/80 font-mono font-medium">
                     Response within 24 hours
                   </p>
                 </div>
               </div>
 
-              <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed mb-3.5">
+              <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed mb-3.5 relative z-10">
                 Can’t find the exact answer you need? Chat directly with our
                 engineering leadership.
               </p>
 
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#141312] hover:text-amber-700 transition-colors group/link">
+                className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#141312] group-hover:text-amber-800 transition-colors group/link relative z-10">
                 <span>Speak with an Architect</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1" />
+                <ArrowRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1 text-amber-700" />
               </Link>
             </div>
           </motion.div>
@@ -154,10 +158,10 @@ export function FaqSection() {
                 <motion.div
                   key={faq.id}
                   variants={faqItemVariants}
-                  className={`rounded-2xl border transition-colors duration-300 overflow-hidden ${
+                  className={`rounded-2xl border transition-all duration-400 overflow-hidden ${
                     isOpen
-                      ? "bg-white border-amber-500/40 shadow-lg shadow-amber-900/[0.03]"
-                      : "bg-white/80 hover:bg-white border-black/[0.07] hover:border-black/[0.14] shadow-sm"
+                      ? "bg-gradient-to-br from-[#FFFDF9] via-[#FAF3EA] to-[#F5ECE0] border-amber-900/[0.12] shadow-[0_12px_32px_rgba(217,119,6,0.08)]"
+                      : "bg-white border-black/[0.07] hover:bg-gradient-to-br hover:from-white hover:via-[#FDFBF7] hover:to-[#F7F2EB] hover:border-black/[0.12] hover:shadow-[0_8px_24px_rgba(20,19,18,0.06)] hover:-translate-y-0.5 shadow-xs"
                   }`}>
                   <button
                     type="button"
