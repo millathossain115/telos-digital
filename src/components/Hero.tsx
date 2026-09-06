@@ -1,9 +1,10 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { motion, type Variants } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -22,7 +23,35 @@ const itemVariants: Variants = {
   },
 };
 
+const BANNER_IMAGES = [
+  {
+    src: "/assets/Banner/CRm hero Light.jpeg",
+    alt: "Telos Digital CRM Dashboard",
+  },
+  {
+    src: "/assets/Banner/Landing Mockup Ecommerce.jpeg",
+    alt: "Telos Digital Ecommerce Experience",
+  },
+  {
+    src: "/assets/Banner/Landing mockup Beuty.jpeg",
+    alt: "Telos Digital Beauty Platform",
+  },
+  {
+    src: "/assets/Banner/landing mockup Dancing .jpeg",
+    alt: "Telos Digital Creative Platform",
+  },
+];
+
 export function Hero() {
+  const [currentIdx, setCurrentIdx] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIdx((prev) => (prev + 1) % BANNER_IMAGES.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-start overflow-hidden bg-[#FAF8F5] text-[#141312] pt-32">
       {/* Warm ambient light leak */}
@@ -88,13 +117,32 @@ export function Hero() {
         <div 
           className="relative w-full rounded-t-2xl sm:rounded-t-3xl border-t border-x border-b-0 border-black/[0.08] border-t-amber-500/40 bg-white/80 shadow-[0_20px_50px_rgba(20,19,18,0.04)] backdrop-blur-xl overflow-hidden [mask-image:linear-gradient(to_bottom,black_55%,transparent_98%)]"
         >
+          {/* Aspect ratio spacer using first image */}
           <img
-            src="/assets/images/CRm hero Light.jpeg"
-            alt="Telos Digital Dashboard Mockup"
-            className="w-full h-auto block"
+            src={BANNER_IMAGES[0].src}
+            alt=""
+            aria-hidden="true"
+            className="w-full h-auto block opacity-0 pointer-events-none select-none"
           />
+
+          {/* Crossfade layered slides */}
+          <div className="absolute inset-0">
+            <AnimatePresence mode="sync">
+              <motion.img
+                key={BANNER_IMAGES[currentIdx].src}
+                src={BANNER_IMAGES[currentIdx].src}
+                alt={BANNER_IMAGES[currentIdx].alt}
+                initial={{ opacity: 0, scale: 1.015 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                className="absolute inset-0 w-full h-full object-cover object-top block"
+              />
+            </AnimatePresence>
+          </div>
+
           {/* Seamless fade mask */}
-          <div className="absolute inset-x-0 bottom-0 h-48 sm:h-80 bg-gradient-to-t from-[#FAF8F5] via-[#FAF8F5]/80 to-transparent pointer-events-none" />
+          <div className="absolute inset-x-0 bottom-0 h-48 sm:h-80 bg-gradient-to-t from-[#FAF8F5] via-[#FAF8F5]/80 to-transparent pointer-events-none z-10" />
         </div>
         {/* Soft warm shadow below image */}
         <div className="absolute -inset-4 z-[-1] mx-auto w-3/4 blur-3xl rounded-[3rem] bg-amber-500/[0.04]" />
