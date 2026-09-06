@@ -1,9 +1,14 @@
 "use client";
 
-import { useState } from "react";
-import { ChevronDown, MessageSquareQuote, ArrowRight, HelpCircle } from "lucide-react";
-import { motion, AnimatePresence, type Variants } from "framer-motion";
+import { AnimatePresence, motion, type Variants } from "framer-motion";
+import {
+  ArrowRight,
+  ChevronDown,
+  HelpCircle,
+  MessageSquareQuote,
+} from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
 
 const FAQS = [
   {
@@ -75,7 +80,8 @@ export function FaqSection() {
       <div
         className="pointer-events-none absolute top-1/4 right-0 w-[500px] h-[500px] rounded-full opacity-40 blur-3xl -z-10"
         style={{
-          background: "radial-gradient(circle, rgba(217, 119, 6, 0.08) 0%, transparent 70%)",
+          background:
+            "radial-gradient(circle, rgba(217, 119, 6, 0.08) 0%, transparent 70%)",
         }}
       />
 
@@ -85,10 +91,11 @@ export function FaqSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch"
-        >
+          className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
           {/* Left Column: Heading + Context Info */}
-          <motion.div variants={leftColVariants} className="lg:col-span-5 flex flex-col justify-between">
+          <motion.div
+            variants={leftColVariants}
+            className="lg:col-span-5 flex flex-col justify-between">
             <div>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-black/[0.08] text-amber-700 text-xs font-mono uppercase tracking-wider mb-5 shadow-sm">
                 <HelpCircle className="w-3.5 h-3.5 text-amber-600" />
@@ -101,32 +108,37 @@ export function FaqSection() {
               </h2>
 
               <p className="mt-4 text-neutral-600 text-sm sm:text-base leading-relaxed max-w-md">
-                Everything you need to know about our sprint cadence, delivery guarantees, and how we engineer products from day one.
+                Everything you need to know about our sprint cadence, delivery
+                guarantees, and how we engineer products from day one.
               </p>
             </div>
 
             {/* Direct Contact Card - Anchored at bottom */}
             <div className="mt-8 p-5 sm:p-6 rounded-2xl bg-white border border-black/[0.07] shadow-sm relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-24 h-24 bg-amber-500/5 rounded-bl-full pointer-events-none transition-transform group-hover:scale-110" />
-              
+
               <div className="flex items-center gap-3 mb-2.5">
                 <div className="w-9 h-9 rounded-xl bg-amber-50 border border-amber-200/60 flex items-center justify-center text-amber-700 shrink-0">
                   <MessageSquareQuote className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-[#141312]">Have a custom question?</h4>
-                  <p className="text-[11px] text-neutral-500 font-mono">Response within 24 hours</p>
+                  <h4 className="text-sm font-semibold text-[#141312]">
+                    Have a custom question?
+                  </h4>
+                  <p className="text-[11px] text-neutral-500 font-mono">
+                    Response within 24 hours
+                  </p>
                 </div>
               </div>
 
               <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed mb-3.5">
-                Can’t find the exact answer you need? Chat directly with our engineering leadership.
+                Can’t find the exact answer you need? Chat directly with our
+                engineering leadership.
               </p>
 
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#141312] hover:text-amber-700 transition-colors group/link"
-              >
+                className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#141312] hover:text-amber-700 transition-colors group/link">
                 <span>Speak with an Architect</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1" />
               </Link>
@@ -146,14 +158,12 @@ export function FaqSection() {
                     isOpen
                       ? "bg-white border-amber-500/40 shadow-lg shadow-amber-900/[0.03]"
                       : "bg-white/80 hover:bg-white border-black/[0.07] hover:border-black/[0.14] shadow-sm"
-                  }`}
-                >
+                  }`}>
                   <button
                     type="button"
                     onClick={() => toggleFaq(idx)}
                     className="w-full py-4.5 sm:py-5 px-6 sm:px-7 flex items-center justify-between text-left gap-4 focus:outline-none cursor-pointer select-none"
-                    aria-expanded={isOpen}
-                  >
+                    aria-expanded={isOpen}>
                     <div className="flex items-center gap-4">
                       <span className="font-mono text-xs text-amber-600/80 shrink-0 font-medium">
                         {String(idx + 1).padStart(2, "0")}
@@ -168,8 +178,7 @@ export function FaqSection() {
                         isOpen
                           ? "bg-[#141312] text-amber-300 border-[#141312] shadow-sm"
                           : "bg-[#FAF8F5] text-neutral-600 border-black/[0.08] hover:bg-neutral-100"
-                      }`}
-                    >
+                      }`}>
                       <ChevronDown
                         className={`w-4 h-4 transition-transform duration-300 ease-out ${
                           isOpen ? "rotate-180" : "rotate-0"
@@ -186,8 +195,7 @@ export function FaqSection() {
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                        className="overflow-hidden"
-                      >
+                        className="overflow-hidden">
                         <div className="px-6 sm:px-7 pb-5 pt-1 text-sm sm:text-base text-neutral-600 leading-relaxed border-t border-black/[0.05]">
                           <p className="pl-7 sm:pl-8">{faq.a}</p>
                         </div>
@@ -203,6 +211,3 @@ export function FaqSection() {
     </section>
   );
 }
-
-
-
