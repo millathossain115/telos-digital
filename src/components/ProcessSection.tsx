@@ -182,10 +182,46 @@ function ProcessCard({ step, index }: { step: (typeof STEPS)[0]; index: number }
 
 export function ProcessSection() {
   return (
-    <section id="process" className="py-24 sm:py-32 relative bg-[#FAF8F5] overflow-hidden">
-      {/* Warm ambient glow */}
-      <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
-        <div className="w-[850px] h-[500px] bg-gradient-to-tr from-amber-200/15 via-[#FAF8F5] to-amber-100/20 rounded-full blur-[140px]" />
+    <section 
+      id="process" 
+      className="py-24 sm:py-32 relative overflow-hidden border-t border-black/[0.06]"
+      style={{
+        backgroundColor: "#FAF7F2",
+        backgroundImage: `
+          radial-gradient(at 12% 18%, rgba(243, 219, 178, 0.48) 0px, transparent 55%),
+          radial-gradient(at 88% 12%, rgba(245, 203, 154, 0.42) 0px, transparent 50%),
+          radial-gradient(at 48% 46%, rgba(235, 222, 207, 0.55) 0px, transparent 65%),
+          radial-gradient(at 15% 82%, rgba(230, 213, 195, 0.6) 0px, transparent 55%),
+          radial-gradient(at 85% 85%, rgba(247, 215, 175, 0.45) 0px, transparent 50%),
+          radial-gradient(at 50% 95%, rgba(240, 228, 212, 0.5) 0px, transparent 60%)
+        `,
+      }}
+    >
+      {/* Dynamic Freeform Floating Glow Orbs for Soft Luminous Mesh Depth */}
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        {/* Amber-Gold Freeform Node */}
+        <div 
+          className="absolute -top-12 -left-20 w-[550px] h-[550px] rounded-full blur-[110px] opacity-60"
+          style={{
+            background: "radial-gradient(circle, rgba(234, 179, 8, 0.22) 0%, rgba(245, 158, 11, 0.08) 50%, transparent 70%)",
+          }}
+        />
+
+        {/* Terracotta-Warm Freeform Node */}
+        <div 
+          className="absolute top-1/3 -right-24 w-[650px] h-[650px] rounded-full blur-[130px] opacity-55"
+          style={{
+            background: "radial-gradient(circle, rgba(249, 115, 22, 0.18) 0%, rgba(217, 119, 6, 0.08) 55%, transparent 75%)",
+          }}
+        />
+
+        {/* Soft Honey Center Node */}
+        <div 
+          className="absolute -bottom-20 left-1/4 w-[700px] h-[600px] rounded-full blur-[140px] opacity-50"
+          style={{
+            background: "radial-gradient(circle, rgba(217, 119, 6, 0.15) 0%, rgba(245, 230, 211, 0.6) 50%, transparent 75%)",
+          }}
+        />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

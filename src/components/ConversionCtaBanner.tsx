@@ -45,17 +45,24 @@ export function ConversionCtaBanner({
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="relative rounded-3xl p-8 sm:p-14 lg:p-16 bg-gradient-to-br from-[#3A1F13] via-[#2D180E] to-[#1F1009] text-white overflow-hidden shadow-[0_28px_80px_rgba(58,31,19,0.28)] border border-amber-500/20"
+          whileHover={{
+            y: -4,
+            transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] },
+          }}
+          className="group relative rounded-3xl p-8 sm:p-14 lg:p-16 bg-gradient-to-br from-[#3A1F13] via-[#2D180E] to-[#1F1009] text-white overflow-hidden shadow-[0_28px_80px_rgba(58,31,19,0.28)] hover:shadow-[0_36px_90px_rgba(217,119,6,0.28)] border border-amber-500/20 hover:border-amber-400/50 transition-all duration-500"
         >
-          {/* Luminous warm amber ambient glows */}
+          {/* Top highlight shine line on hover */}
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-400/0 to-transparent group-hover:via-amber-400/70 transition-all duration-700" />
+
+          {/* Luminous warm amber ambient glows - expand on hover */}
           <div
-            className="pointer-events-none absolute -bottom-24 -right-24 w-96 h-96 rounded-full opacity-40 blur-3xl"
+            className="pointer-events-none absolute -bottom-24 -right-24 w-96 h-96 rounded-full opacity-40 group-hover:opacity-75 group-hover:scale-110 transition-all duration-700 blur-3xl"
             style={{
               background: "radial-gradient(circle, #f59e0b 0%, transparent 70%)",
             }}
           />
           <div
-            className="pointer-events-none absolute -top-24 -left-24 w-80 h-80 rounded-full opacity-25 blur-3xl"
+            className="pointer-events-none absolute -top-24 -left-24 w-80 h-80 rounded-full opacity-25 group-hover:opacity-50 group-hover:scale-110 transition-all duration-700 blur-3xl"
             style={{
               background: "radial-gradient(circle, #d97706 0%, transparent 70%)",
             }}
