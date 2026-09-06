@@ -75,7 +75,7 @@ export function FaqSection() {
   };
 
   return (
-    <section className="py-24 sm:py-32 relative bg-[#FAF8F5] overflow-hidden border-t border-black/[0.04]">
+    <section className="py-24 sm:py-32 relative bg-[#FAF8F5] overflow-hidden">
       {/* Background ambient radial glow */}
       <div
         className="pointer-events-none absolute top-1/4 right-0 w-[500px] h-[500px] rounded-full opacity-40 blur-3xl -z-10"
