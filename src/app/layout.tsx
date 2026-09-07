@@ -6,6 +6,7 @@ import {
   fontJetBrainsMono,
 } from "./fonts";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import { CalendlyProvider } from "@/components/CalendlyProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -25,8 +26,10 @@ export default function RootLayout({
       className={`${fontGeistSans.variable} ${fontGeistMono.variable} ${fontInter.variable} ${fontJetBrainsMono.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col bg-[#FAF8F5] text-[#141312] font-sans antialiased">
-        {children}
-        <FloatingWhatsApp />
+        <CalendlyProvider>
+          {children}
+          <FloatingWhatsApp />
+        </CalendlyProvider>
       </body>
     </html>
   );

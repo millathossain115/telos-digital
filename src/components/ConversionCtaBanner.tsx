@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
+import { useCalendly } from "@/components/CalendlyProvider";
 
 const bannerVariants: Variants = {
   hidden: { opacity: 0, y: 24 },
@@ -39,6 +40,7 @@ export function ConversionCtaBanner({
   subtitle = "Book a 30-minute architectural assessment with our principal engineer. We’ll evaluate feasibility, recommend the exact stack, and outline sprint milestones.",
   className = "py-20 sm:py-28 relative bg-[#FAF8F5]",
 }: ConversionCtaBannerProps) {
+  const { openCalendly } = useCalendly();
   return (
     <section className={className}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -104,14 +106,15 @@ export function ConversionCtaBanner({
               variants={itemVariants}
               className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4"
             >
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center px-7 py-4 rounded-xl bg-white text-[#141312] font-semibold text-sm sm:text-base hover:bg-amber-400 hover:text-[#141312] transition-all shadow-lg hover:shadow-amber-500/20 gap-2.5 group"
+              <button
+                type="button"
+                onClick={() => openCalendly()}
+                className="inline-flex items-center justify-center px-7 py-4 rounded-xl bg-white text-[#141312] font-semibold text-sm sm:text-base hover:bg-amber-400 hover:text-[#141312] transition-all shadow-lg hover:shadow-amber-500/20 gap-2.5 group cursor-pointer"
               >
                 <Calendar className="w-4 h-4 text-amber-700" />
                 <span>Book Technical Roadmap Call</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </Link>
+              </button>
 
               <Link
                 href="/contact"

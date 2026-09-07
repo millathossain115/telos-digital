@@ -51,3 +51,38 @@ body {
   background: #D4AF37;
   color: #141312;
 }
+
+/* Calendly popup close button positioning */
+.calendly-overlay {
+  z-index: 99999 !important;
+}
+
+.calendly-overlay .calendly-popup {
+  position: relative !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4) !important;
+}
+
+.calendly-overlay .calendly-popup-close {
+  top: 16px !important;
+  right: 16px !important;
+  z-index: 100000 !important;
+  width: 32px !important;
+  height: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: #141312 !important;
+  border-radius: 9999px !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  opacity: 0.9 !important;
+  transition: all 0.2s ease !important;
+}
+
+.calendly-overlay .calendly-popup-close:hover {
+  background-color: #000000 !important;
+  transform: scale(1.08) !important;
+  opacity: 1 !important;
+}
+

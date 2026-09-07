@@ -16,6 +16,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
+import { useCalendly } from "@/components/CalendlyProvider";
 
 interface FormState {
   name: string;
@@ -44,6 +45,7 @@ const itemVariants: Variants = {
 };
 
 export default function ContactPage() {
+  const { openCalendly } = useCalendly();
   const [form, setForm] = useState<FormState>({
     name: "",
     email: "",
@@ -208,15 +210,14 @@ export default function ContactPage() {
                     Have an existing codebase or tight milestone? Jump on a direct call with our lead architect.
                   </p>
 
-                  <a
-                    href="https://cal.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center justify-center w-full py-3 px-5 rounded-xl bg-white text-[#141312] hover:bg-amber-50 hover:border-amber-500/30 hover:text-amber-900 border border-transparent font-semibold text-sm transition-all duration-200 gap-2 shadow-sm"
+                  <button
+                    type="button"
+                    onClick={() => openCalendly()}
+                    className="inline-flex items-center justify-center w-full py-3 px-5 rounded-xl bg-white text-[#141312] hover:bg-amber-400 hover:text-[#141312] font-semibold text-sm transition-all duration-200 gap-2 shadow-sm cursor-pointer"
                   >
-                    <span>Select Time on Cal.com</span>
-                    <ArrowRight className="w-4 h-4 text-amber-600" />
-                  </a>
+                    <span>Schedule on Calendly</span>
+                    <ArrowRight className="w-4 h-4 text-amber-700" />
+                  </button>
                 </div>
               </motion.div>
 
