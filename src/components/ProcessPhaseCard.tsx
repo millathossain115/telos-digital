@@ -110,18 +110,18 @@ export function ProcessPhaseCard({ phase, index }: ProcessPhaseCardProps) {
         <div className="lg:col-span-5">
           <motion.div
             animate={{
-              y: [0, -18],
+              y: [0, -16, 0],
+              rotate: [0, -0.75, 0.75, 0],
             }}
             transition={{
-              duration: 1.5 + (index % 2) * 0.2,
+              duration: 1.4,
               repeat: Infinity,
-              repeatType: "reverse",
               ease: "easeInOut",
-              delay: index * 0.15,
+              delay: index * 0.18,
             }}
-            whileHover={{ y: 0, transition: { duration: 0.15, ease: "easeOut" } }}
+            whileHover={{ y: -4, rotate: 0, transition: { duration: 0.2, ease: "easeOut" } }}
             style={{ willChange: "transform" }}
-            className="rounded-2xl bg-gradient-to-b from-white via-[#FCFAF7] to-[#F7F3EC] border border-black/[0.08] p-5 sm:p-6 space-y-3.5 shadow-[0_10px_25px_-4px_rgba(30,20,12,0.08),0_20px_48px_-8px_rgba(217,119,6,0.12)] hover:border-amber-500/40 hover:shadow-[0_14px_30px_-4px_rgba(30,20,12,0.12),0_28px_56px_-6px_rgba(217,119,6,0.18)] transition-all duration-300"
+            className="rounded-2xl bg-gradient-to-b from-white via-[#FCFAF7] to-[#F7F3EC] border border-black/[0.08] p-5 sm:p-6 space-y-3.5 shadow-[0_12px_28px_-4px_rgba(30,20,12,0.1),0_24px_52px_-8px_rgba(217,119,6,0.16)] hover:border-amber-500/40 hover:shadow-[0_16px_36px_-4px_rgba(30,20,12,0.14),0_30px_60px_-6px_rgba(217,119,6,0.22)] transition-all duration-300"
           >
             <div className="flex items-center justify-between pb-2.5 border-b border-black/[0.06]">
               <span className="text-xs font-mono text-neutral-700 flex items-center gap-2 font-medium">
