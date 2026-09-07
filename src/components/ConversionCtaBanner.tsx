@@ -1,8 +1,9 @@
 "use client";
 
+import React, { useState, useRef } from "react";
 import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
-import { motion, type Variants } from "framer-motion";
+import { motion, useMotionValue, useSpring, type Variants } from "framer-motion";
 import { useCalendly } from "@/components/CalendlyProvider";
 
 const bannerVariants: Variants = {
@@ -41,20 +42,67 @@ export function ConversionCtaBanner({
   className = "py-20 sm:py-28 relative bg-[#FAF8F5]",
 }: ConversionCtaBannerProps) {
   const { openCalendly } = useCalendly();
+  const bannerRef = useRef<HTMLDivElement>(null);
+  const [isHovered, setIsHovered] = useState(false);
+
+  // Smooth springs for golden cursor follower & spotlight
+  const mouseX = useMotionValue(-1000);
+  const mouseY = useMotionValue(-1000);
+  const smoothX = useSpring(mouseX, { damping: 30, stiffness: 220, mass: 0.2 });
+  const smoothY = useSpring(mouseY, { damping: 30, stiffness: 220, mass: 0.2 });
+
+  function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
+    if (!bannerRef.current) return;
+    const rect = bannerRef.current.getBoundingClientRect();
+    mouseX.set(e.clientX - rect.left);
+    mouseY.set(e.clientY - rect.top);
+  }
+
   return (
     <section className={className}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
+          ref={bannerRef}
           variants={bannerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
+          onMouseMove={handleMouseMove}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
           whileHover={{
             y: -4,
             transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] },
           }}
-          className="group relative rounded-3xl p-8 sm:p-14 lg:p-16 bg-gradient-to-br from-[#3A1F13] via-[#2D180E] to-[#1F1009] text-white overflow-hidden shadow-[0_28px_80px_rgba(58,31,19,0.28)] hover:shadow-[0_36px_90px_rgba(217,119,6,0.28)] border border-amber-500/20 hover:border-amber-400/50 transition-all duration-500"
+          className="group relative rounded-3xl p-8 sm:p-14 lg:p-16 bg-gradient-to-br from-[#3A1F13] via-[#2D180E] to-[#1F1009] text-white overflow-hidden shadow-[0_28px_80px_rgba(58,31,19,0.28)] hover:shadow-[0_36px_90px_rgba(217,119,6,0.28)] border border-amber-500/20 hover:border-amber-400/50 transition-all duration-500 cursor-default"
         >
+          {/* Interactive Golden Spotlight Tracker Follows Cursor */}
+          <motion.div
+            aria-hidden="true"
+            className="pointer-events-none absolute w-[550px] h-[550px] rounded-full blur-[90px] z-[1] transition-opacity duration-500"
+            style={{
+              left: smoothX,
+              top: smoothY,
+              translateX: "-50%",
+              translateY: "-50%",
+              opacity: isHovered ? 0.3 : 0,
+              background: "radial-gradient(circle, rgba(245, 158, 11, 0.6) 0%, rgba(217, 119, 6, 0.25) 40%, transparent 70%)",
+            }}
+          />
+
+          {/* Precision Micro-Ring Cursor Follower */}
+          <motion.div
+            aria-hidden="true"
+            className="pointer-events-none absolute w-6 h-6 rounded-full border border-amber-400/70 z-20 transition-opacity duration-300 shadow-[0_0_12px_rgba(245,158,11,0.5)]"
+            style={{
+              left: smoothX,
+              top: smoothY,
+              translateX: "-50%",
+              translateY: "-50%",
+              opacity: isHovered ? 1 : 0,
+            }}
+          />
+
           {/* Top highlight shine line on hover */}
           <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-400/0 to-transparent group-hover:via-amber-400/70 transition-all duration-700" />
 

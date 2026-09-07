@@ -60,8 +60,33 @@ function InteractiveFooterTitle() {
 }
 
 export function Footer() {
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+
+  function handleMouseMove(e: React.MouseEvent<HTMLElement>) {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setMousePos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  }
+
   return (
-    <footer className="bg-[#100F0E] text-neutral-400 border-t border-white/[0.08] pt-16 pb-12 relative overflow-hidden">
+    <footer
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="bg-[#100F0E] text-neutral-400 border-t border-white/[0.08] pt-16 pb-12 relative overflow-hidden"
+    >
+      {/* Dynamic ambient cursor spotlight on dark footer */}
+      <div
+        className="pointer-events-none absolute inset-0 transition-opacity duration-500 z-0"
+        style={{
+          opacity: isHovered ? 1 : 0,
+          background: `radial-gradient(700px circle at ${mousePos.x}px ${mousePos.y}px, rgba(217, 119, 6, 0.08), transparent 70%)`,
+        }}
+      />
+
       {/* Subtle top warm glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-48 bg-amber-500/[0.04] blur-3xl pointer-events-none" />
 

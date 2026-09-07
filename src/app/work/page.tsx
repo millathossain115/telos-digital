@@ -1,18 +1,34 @@
 "use client";
 
+import { useState, useRef } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ConversionCtaBanner } from "@/components/ConversionCtaBanner";
 import { WorkProjectCard } from "@/components/WorkProjectCard";
 import workProjectsData from "@/data/workProjects.json";
 import type { WorkProject } from "@/types/work";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 import { ArrowUpRight, Code2, Cpu, ExternalLink, Layers, Sparkles, Terminal } from "lucide-react";
 import Link from "next/link";
 
 const ALL_PROJECTS = workProjectsData as WorkProject[];
 
 export default function WorkPage() {
+  const workbenchRef = useRef<HTMLElement>(null);
+  const [isWorkbenchHovered, setIsWorkbenchHovered] = useState(false);
+
+  // Smooth springs for golden cursor follower & spotlight
+  const mouseX = useMotionValue(-1000);
+  const mouseY = useMotionValue(-1000);
+  const smoothX = useSpring(mouseX, { damping: 30, stiffness: 220, mass: 0.2 });
+  const smoothY = useSpring(mouseY, { damping: 30, stiffness: 220, mass: 0.2 });
+
+  function handleWorkbenchMouseMove(e: React.MouseEvent<HTMLElement>) {
+    if (!workbenchRef.current) return;
+    const rect = workbenchRef.current.getBoundingClientRect();
+    mouseX.set(e.clientX - rect.left);
+    mouseY.set(e.clientY - rect.top);
+  }
 
   return (
     <div className="min-h-screen bg-[#FAF8F5] text-[#141312] selection:bg-amber-500/20 selection:text-amber-900 font-sans">
@@ -98,7 +114,40 @@ export default function WorkPage() {
         </section>
 
         {/* Technical Capabilities Full-Width Architecture Workbench */}
-        <section className="w-full mt-24 sm:mt-32 relative border-y border-[#DDD3C7] bg-[#141210] text-[#FAF7F2] overflow-hidden">
+        <section
+          ref={workbenchRef}
+          onMouseMove={handleWorkbenchMouseMove}
+          onMouseEnter={() => setIsWorkbenchHovered(true)}
+          onMouseLeave={() => setIsWorkbenchHovered(false)}
+          className="w-full mt-24 sm:mt-32 relative border-y border-[#DDD3C7] bg-[#141210] text-[#FAF7F2] overflow-hidden cursor-default"
+        >
+          {/* Interactive Golden Spotlight Tracker Follows Cursor */}
+          <motion.div
+            aria-hidden="true"
+            className="pointer-events-none absolute w-[600px] h-[600px] rounded-full blur-[100px] z-[1] transition-opacity duration-500"
+            style={{
+              left: smoothX,
+              top: smoothY,
+              translateX: "-50%",
+              translateY: "-50%",
+              opacity: isWorkbenchHovered ? 0.28 : 0,
+              background: "radial-gradient(circle, rgba(245, 158, 11, 0.6) 0%, rgba(217, 119, 6, 0.25) 40%, transparent 70%)",
+            }}
+          />
+
+          {/* Precision Micro-Ring Cursor Follower */}
+          <motion.div
+            aria-hidden="true"
+            className="pointer-events-none absolute w-6 h-6 rounded-full border border-amber-400/70 z-20 transition-opacity duration-300 shadow-[0_0_12px_rgba(245,158,11,0.5)]"
+            style={{
+              left: smoothX,
+              top: smoothY,
+              translateX: "-50%",
+              translateY: "-50%",
+              opacity: isWorkbenchHovered ? 1 : 0,
+            }}
+          />
+
           {/* Subtle blueprint grid overlay */}
           <div 
             className="absolute inset-0 opacity-[0.07] pointer-events-none"

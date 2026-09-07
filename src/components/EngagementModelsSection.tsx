@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import { Check, ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 import type { EngagementModel } from "@/types/services";
 
 interface EngagementModelsSectionProps {
@@ -11,31 +11,55 @@ interface EngagementModelsSectionProps {
 }
 
 export function EngagementModelsSection({ models }: EngagementModelsSectionProps) {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const sectionRef = useRef<HTMLElement>(null);
   const [isHovered, setIsHovered] = useState(false);
 
+  // Smooth springs for golden cursor follower & spotlight
+  const mouseX = useMotionValue(-1000);
+  const mouseY = useMotionValue(-1000);
+  const smoothX = useSpring(mouseX, { damping: 30, stiffness: 220, mass: 0.2 });
+  const smoothY = useSpring(mouseY, { damping: 30, stiffness: 220, mass: 0.2 });
+
   function handleMouseMove(e: React.MouseEvent<HTMLElement>) {
-    const rect = e.currentTarget.getBoundingClientRect();
-    setMousePosition({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    });
+    if (!sectionRef.current) return;
+    const rect = sectionRef.current.getBoundingClientRect();
+    mouseX.set(e.clientX - rect.left);
+    mouseY.set(e.clientY - rect.top);
   }
 
   return (
     <section
+      ref={sectionRef}
       id="engagement"
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="relative w-full py-24 sm:py-32 my-20 bg-gradient-to-b from-[#141210] via-[#1E1B17] to-[#2E2822] border-y border-amber-500/20 overflow-hidden"
+      className="relative w-full py-24 sm:py-32 my-20 bg-gradient-to-b from-[#141210] via-[#1E1B17] to-[#2E2822] border-y border-amber-500/20 overflow-hidden cursor-default"
     >
-      {/* Interactive cursor spotlight */}
-      <div
-        className="pointer-events-none absolute inset-0 transition-opacity duration-500 z-0"
+      {/* Interactive Golden Spotlight Tracker Follows Cursor */}
+      <motion.div
+        aria-hidden="true"
+        className="pointer-events-none absolute w-[600px] h-[600px] rounded-full blur-[100px] z-[1] transition-opacity duration-500"
         style={{
+          left: smoothX,
+          top: smoothY,
+          translateX: "-50%",
+          translateY: "-50%",
+          opacity: isHovered ? 0.28 : 0,
+          background: "radial-gradient(circle, rgba(245, 158, 11, 0.6) 0%, rgba(217, 119, 6, 0.25) 40%, transparent 70%)",
+        }}
+      />
+
+      {/* Precision Micro-Ring Cursor Follower */}
+      <motion.div
+        aria-hidden="true"
+        className="pointer-events-none absolute w-6 h-6 rounded-full border border-amber-400/70 z-20 transition-opacity duration-300 shadow-[0_0_12px_rgba(245,158,11,0.5)]"
+        style={{
+          left: smoothX,
+          top: smoothY,
+          translateX: "-50%",
+          translateY: "-50%",
           opacity: isHovered ? 1 : 0,
-          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(217, 119, 6, 0.18), transparent 70%)`,
         }}
       />
 

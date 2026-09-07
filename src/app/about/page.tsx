@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef, useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ConversionCtaBanner } from "@/components/ConversionCtaBanner";
@@ -9,7 +10,7 @@ import aboutDataJson from "@/data/aboutData.json";
 import type { AboutData } from "@/types/about";
 import { Globe2, Sparkles, MapPin, Mail, Phone, ArrowUpRight, Cpu, Layers, Check, X, Terminal, ShieldAlert } from "lucide-react";
 import Link from "next/link";
-import { motion, type Variants } from "framer-motion";
+import { motion, useMotionValue, useSpring, type Variants } from "framer-motion";
 
 const aboutData: AboutData = aboutDataJson as AboutData;
 
@@ -23,6 +24,21 @@ const heroVariants: Variants = {
 };
 
 export default function AboutPage() {
+  const comparisonSectionRef = useRef<HTMLElement>(null);
+  const [isComparisonHovered, setIsComparisonHovered] = useState(false);
+
+  // Smooth springs for golden cursor follower & spotlight
+  const mouseX = useMotionValue(-1000);
+  const mouseY = useMotionValue(-1000);
+  const smoothX = useSpring(mouseX, { damping: 30, stiffness: 220, mass: 0.2 });
+  const smoothY = useSpring(mouseY, { damping: 30, stiffness: 220, mass: 0.2 });
+
+  function handleComparisonMouseMove(e: React.MouseEvent<HTMLElement>) {
+    if (!comparisonSectionRef.current) return;
+    const rect = comparisonSectionRef.current.getBoundingClientRect();
+    mouseX.set(e.clientX - rect.left);
+    mouseY.set(e.clientY - rect.top);
+  }
   return (
     <div className="min-h-screen bg-[#FAF8F5] text-[#141312] flex flex-col font-sans selection:bg-amber-500/20 selection:text-amber-900">
       <Navbar />
@@ -115,7 +131,40 @@ export default function AboutPage() {
         </div>
 
         {/* Section 4: The Anti-Agency Model (Full-Width Edge-to-Edge Obsidian Cockpit) */}
-        <section className="w-full mt-16 sm:mt-20 relative border-y border-[#B8AA98] bg-[#141210] text-[#FAF7F2] overflow-hidden shadow-[0_10px_30px_rgba(20,19,18,0.06)]">
+        <section
+          ref={comparisonSectionRef}
+          onMouseMove={handleComparisonMouseMove}
+          onMouseEnter={() => setIsComparisonHovered(true)}
+          onMouseLeave={() => setIsComparisonHovered(false)}
+          className="w-full mt-16 sm:mt-20 relative border-y border-[#B8AA98] bg-[#141210] text-[#FAF7F2] overflow-hidden shadow-[0_10px_30px_rgba(20,19,18,0.06)] cursor-default"
+        >
+          {/* Interactive Golden Spotlight Tracker Follows Cursor */}
+          <motion.div
+            aria-hidden="true"
+            className="pointer-events-none absolute w-[600px] h-[600px] rounded-full blur-[100px] z-[1] transition-opacity duration-500"
+            style={{
+              left: smoothX,
+              top: smoothY,
+              translateX: "-50%",
+              translateY: "-50%",
+              opacity: isComparisonHovered ? 0.28 : 0,
+              background: "radial-gradient(circle, rgba(245, 158, 11, 0.6) 0%, rgba(217, 119, 6, 0.25) 40%, transparent 70%)",
+            }}
+          />
+
+          {/* Precision Micro-Ring Cursor Follower */}
+          <motion.div
+            aria-hidden="true"
+            className="pointer-events-none absolute w-6 h-6 rounded-full border border-amber-400/70 z-20 transition-opacity duration-300 shadow-[0_0_12px_rgba(245,158,11,0.5)]"
+            style={{
+              left: smoothX,
+              top: smoothY,
+              translateX: "-50%",
+              translateY: "-50%",
+              opacity: isComparisonHovered ? 1 : 0,
+            }}
+          />
+
           {/* Subtle blueprint grid overlay */}
           <div 
             className="absolute inset-0 opacity-[0.06] pointer-events-none"
