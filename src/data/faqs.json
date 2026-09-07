@@ -1,0 +1,27 @@
+[
+  {
+    "id": "mvp-timeline",
+    "q": "How long does a production MVP typically take to build?",
+    "a": "Most scoped MVPs ship within 6 to 10 weeks. We structure work into 2-week continuous delivery sprints, meaning you have a testable staging build in your hands starting on Week 2, not at the very end."
+  },
+  {
+    "id": "pricing-model",
+    "q": "How does your pricing and engagement model work?",
+    "a": "We work on transparent sprint-based retainers or fixed-scope milestones for clearly architected projects. No hidden change orders or billable hour surprises. You know exactly what you are paying and what is shipping every two weeks."
+  },
+  {
+    "id": "ip-ownership",
+    "q": "Do we retain 100% ownership of the code and design assets?",
+    "a": "Yes, unconditionally. All repositories, Figma design tokens, infrastructure setups, and intellectual property belong to your organization from Day 1. We hand over comprehensive runbooks upon completion."
+  },
+  {
+    "id": "cadence-comm",
+    "q": "What is your communication and sprint cadence?",
+    "a": "We integrate directly into your workflow via dedicated Slack/Discord channels, asynchronous Loom walk-throughs, and weekly live demo checkpoints. You communicate directly with the senior engineers writing your code."
+  },
+  {
+    "id": "legacy-code",
+    "q": "Can you take over and refactor an existing legacy codebase?",
+    "a": "Yes. We start with a 5-day Architectural Audit to evaluate security vulnerabilities, technical debt, and test coverage before recommending whether an incremental strangler refactor or dedicated rewrite is most capital-efficient."
+  }
+]

@@ -60,5 +60,27 @@
     "text": "We don’t believe in massive headcount bloat or account executives acting as telephone games between founders and engineers. When you partner with us, you speak directly with the people architecting your databases, designing your interfaces, and pushing to production.",
     "author": "Engineering Leadership",
     "role": "Telos Digital Architecture Group"
-  }
+  },
+  "comparisonRows": [
+    {
+      "criterion": "Engineering Roster",
+      "traditional": "Senior pitch team, outsourced junior execution",
+      "telos": "100% senior staff architects & principal leads"
+    },
+    {
+      "criterion": "Codebase & IP Ownership",
+      "traditional": "Held until final payment; proprietary lock-in",
+      "telos": "Day-one unconditional copyright & repo commit rights"
+    },
+    {
+      "criterion": "Delivery Architecture",
+      "traditional": "Bloated 6-month waterfall with endless status calls",
+      "telos": "14-day production sprints with live staging branches"
+    },
+    {
+      "criterion": "Quality Verification",
+      "traditional": "Manual sanity checks before demo",
+      "telos": "Strict TypeScript, automated CI/CD, and Playwright suites"
+    }
+  ]
 }

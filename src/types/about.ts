@@ -20,8 +20,15 @@ export interface AboutQuote {
   role: string;
 }
 
+export interface AboutComparisonRow {
+  criterion: string;
+  traditional: string;
+  telos: string;
+}
+
 export interface AboutData {
   standards: AboutStandard[];
   principles: AboutPrinciple[];
   quote: AboutQuote;
+  comparisonRows?: AboutComparisonRow[];
 }

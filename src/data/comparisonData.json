@@ -1,0 +1,50 @@
+{
+  "comparisonCards": [
+    {
+      "id": "agency",
+      "tag": "Alternative 01",
+      "title": "Traditional Agency",
+      "subtitle": "High overhead, layers of account managers",
+      "footerNote": "Best for: Enterprise RFPs & slide decks",
+      "isHighlight": false,
+      "specs": [
+        { "label": "Team", "val": "Senior pitch, junior builders", "negative": true },
+        { "label": "Speed", "val": "5 to 9 months to launch", "negative": true },
+        { "label": "IP Ownership", "val": "Retained proprietary frameworks", "negative": true },
+        { "label": "Code Quality", "val": "Brittle MVPs, high rewrite debt", "negative": true },
+        { "label": "Access", "val": "Filtered through project managers", "negative": true }
+      ]
+    },
+    {
+      "id": "telos",
+      "tag": "The Telos Standard",
+      "badge": "Recommended",
+      "title": "Telos Digital",
+      "subtitle": "Direct partnership with senior software architects",
+      "footerNote": "Best for: High-growth tech & mission-critical builds",
+      "isHighlight": true,
+      "specs": [
+        { "label": "Team", "val": "100% Staff & Principal engineers only", "negative": false },
+        { "label": "Speed", "val": "Production ready in 6–10 weeks", "negative": false },
+        { "label": "IP Ownership", "val": "100% full source & asset handover Day 1", "negative": false },
+        { "label": "Code Quality", "val": "Typed Next.js & automated test suite", "negative": false },
+        { "label": "Access", "val": "Direct Slack channel with your engineers", "negative": false }
+      ]
+    },
+    {
+      "id": "freelance",
+      "tag": "Alternative 02",
+      "title": "Freelancers / Marketplaces",
+      "subtitle": "High variance, fragmented accountability",
+      "footerNote": "Best for: Minor bug fixes & isolated design tweaks",
+      "isHighlight": false,
+      "specs": [
+        { "label": "Team", "val": "Unverified individuals, high context switching", "negative": true },
+        { "label": "Speed", "val": "Unpredictable delivery & ghosting risk", "negative": true },
+        { "label": "IP Ownership", "val": "Messy individual copyright claims", "negative": true },
+        { "label": "Code Quality", "val": "No architectural cohesion or QA tests", "negative": true },
+        { "label": "Access", "val": "Ad-hoc messaging across time zones", "negative": true }
+      ]
+    }
+  ]
+}

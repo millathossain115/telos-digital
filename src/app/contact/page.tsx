@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
 import { useCalendly } from "@/components/CalendlyProvider";
+import siteConfig from "@/data/siteConfig.json";
 
 /* =========================================================================
    TYPES & ANIMATIONS
@@ -68,14 +69,14 @@ export function ContactCoordinates() {
           </span>
           <span className="text-[11px] font-mono px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-900 flex items-center gap-1.5 font-medium">
             <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
-            24h Response SLA
+            {siteConfig.contact.sla}
           </span>
         </div>
 
         <div className="space-y-2">
           {/* Direct Email */}
           <a
-            href="mailto:millathossain115@gmail.com"
+            href={`mailto:${siteConfig.contact.primaryEmail}`}
             className="group flex items-center gap-3 p-2.5 rounded-2xl bg-white border border-black/[0.06] hover:border-amber-500/40 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
           >
             <div className="w-8 h-8 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-800 shrink-0 group-hover:bg-amber-500 group-hover:text-white transition-all duration-200">
@@ -84,7 +85,7 @@ export function ContactCoordinates() {
             <div>
               <div className="text-[10px] font-mono text-neutral-500">Direct Inquiries</div>
               <div className="text-xs sm:text-sm font-semibold text-[#141312] group-hover:text-amber-800 transition-colors">
-                telosdigital@gmail.com
+                {siteConfig.contact.primaryEmail}
               </div>
             </div>
           </a>
@@ -98,7 +99,7 @@ export function ContactCoordinates() {
               <div>
                 <div className="text-[10px] font-mono text-neutral-500">Studio Headquarters</div>
                 <div className="text-xs sm:text-sm font-semibold text-[#141312] leading-snug">
-                  Madani Avenue, Dhaka, Bangladesh
+                  {siteConfig.contact.address.full}
                 </div>
               </div>
             </div>
@@ -108,18 +109,15 @@ export function ContactCoordinates() {
           <div className="p-2.5 rounded-2xl bg-white border border-black/[0.06] shadow-xs space-y-1">
             <div className="text-[10px] font-mono text-neutral-500 px-1">Engineering Hotlines</div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
-              <a
-                href="tel:+8801618257217"
-                className="px-2.5 py-1.5 rounded-xl bg-[#FAF8F5] border border-black/[0.06] text-xs font-mono font-semibold text-[#141312] hover:text-amber-800 hover:border-amber-500/40 hover:bg-white hover:shadow-xs transition-all duration-200 flex items-center justify-center"
-              >
-                +880 1618-257217
-              </a>
-              <a
-                href="tel:+8801610108851"
-                className="px-2.5 py-1.5 rounded-xl bg-[#FAF8F5] border border-black/[0.06] text-xs font-mono font-semibold text-[#141312] hover:text-amber-800 hover:border-amber-500/40 hover:bg-white hover:shadow-xs transition-all duration-200 flex items-center justify-center"
-              >
-                +880 1610-108851
-              </a>
+              {siteConfig.contact.phones.map((phone) => (
+                <a
+                  key={phone.tel}
+                  href={`tel:${phone.tel}`}
+                  className="px-2.5 py-1.5 rounded-xl bg-[#FAF8F5] border border-black/[0.06] text-xs font-mono font-semibold text-[#141312] hover:text-amber-800 hover:border-amber-500/40 hover:bg-white hover:shadow-xs transition-all duration-200 flex items-center justify-center"
+                >
+                  {phone.display}
+                </a>
+              ))}
             </div>
           </div>
 
@@ -131,7 +129,7 @@ export function ContactCoordinates() {
             <div>
               <div className="text-[10px] font-mono text-neutral-500">Cadence</div>
               <div className="text-xs font-medium text-neutral-700 leading-tight">
-                Bi-weekly staging demos with continuous Slack integration.
+                {siteConfig.contact.cadence}
               </div>
             </div>
           </div>

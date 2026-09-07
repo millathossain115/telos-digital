@@ -1,0 +1,30 @@
+{
+  "company": {
+    "name": "Telos Digital",
+    "legalName": "Telos Digital Inc.",
+    "tagline": "Software Architecture & Product Engineering",
+    "description": "Production software engineering studio. Full-stack cloud web systems, native mobile apps, and refined UI/UX."
+  },
+  "contact": {
+    "primaryEmail": "telosdigital@gmail.com",
+    "recipientEmail": "millathossain115@gmail.com",
+    "phones": [
+      { "display": "+880 1618-257217", "tel": "+8801618257217" },
+      { "display": "+880 1610-108851", "tel": "+8801610108851" }
+    ],
+    "address": {
+      "street": "Madani Avenue",
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "full": "Madani Avenue, Dhaka, Bangladesh"
+    },
+    "sla": "24h Response SLA",
+    "cadence": "Bi-weekly staging demos with continuous Slack integration."
+  },
+  "navLinks": [
+    { "label": "Services", "href": "/services" },
+    { "label": "Work", "href": "/work" },
+    { "label": "Process", "href": "/process" },
+    { "label": "About", "href": "/about" }
+  ]
+}

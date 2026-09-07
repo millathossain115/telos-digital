@@ -22,29 +22,6 @@ const heroVariants: Variants = {
   },
 };
 
-const COMPARISON_ROWS = [
-  {
-    criterion: "Engineering Roster",
-    traditional: "Senior pitch team, outsourced junior execution",
-    telos: "100% senior staff architects & principal leads",
-  },
-  {
-    criterion: "Codebase & IP Ownership",
-    traditional: "Held until final payment; proprietary lock-in",
-    telos: "Day-one unconditional copyright & repo commit rights",
-  },
-  {
-    criterion: "Delivery Architecture",
-    traditional: "Bloated 6-month waterfall with endless status calls",
-    telos: "14-day production sprints with live staging branches",
-  },
-  {
-    criterion: "Quality Verification",
-    traditional: "Manual sanity checks before demo",
-    telos: "Strict TypeScript, automated CI/CD, and Playwright suites",
-  },
-];
-
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-[#FAF8F5] text-[#141312] flex flex-col font-sans selection:bg-amber-500/20 selection:text-amber-900">
@@ -173,7 +150,7 @@ export default function AboutPage() {
 
             {/* Vertically Compact Comparison Matrix */}
             <div className="space-y-3.5">
-              {COMPARISON_ROWS.map((row, idx) => (
+              {(aboutData.comparisonRows || []).map((row, idx) => (
                 <div
                   key={idx}
                   className="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/[0.08] hover:border-amber-500/40 transition-all items-center shadow-xs"
