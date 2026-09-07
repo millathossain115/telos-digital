@@ -10,9 +10,12 @@ import { CalendlyProvider } from "@/components/CalendlyProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Telos Digital - Architecting Digital Transformation",
+  title: {
+    default: "Telos Digital | Software Architecture & Product Engineering",
+    template: "%s | Telos Digital",
+  },
   description:
-    "Enterprise-grade cloud architectures, AI automation, and next-generation software solutions.",
+    "Production software engineering studio. Full-stack cloud web systems, native mobile apps, and refined UI/UX.",
 };
 
 export default function RootLayout({
