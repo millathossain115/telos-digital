@@ -68,23 +68,23 @@ export default function WorkPage() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full max-w-3xl p-3 rounded-2xl bg-white/80 border border-[#141312]/10 backdrop-blur-md shadow-sm"
+              className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 w-full max-w-3xl p-2 sm:p-2.5 rounded-2xl bg-gradient-to-b from-[#EFEAE2]/70 to-[#E8E1D6]/85 border border-[#D9CFC4] backdrop-blur-md shadow-[0_12px_36px_rgba(20,19,18,0.04)]"
             >
-              <div className="text-center p-3">
+              <div className="text-center p-3.5 rounded-xl bg-white/80 border border-black/[0.04] shadow-2xs">
                 <div className="text-2xl sm:text-3xl font-extrabold font-mono text-[#141312]">100%</div>
-                <div className="text-[11px] font-mono text-[#141312]/60 uppercase mt-0.5">Live Production</div>
+                <div className="text-[10px] font-mono text-[#141312]/60 uppercase tracking-wider mt-0.5 font-semibold">Live Production</div>
               </div>
-              <div className="text-center p-3 border-l border-[#141312]/10">
+              <div className="text-center p-3.5 rounded-xl bg-white/80 border border-black/[0.04] shadow-2xs">
                 <div className="text-2xl sm:text-3xl font-extrabold font-mono text-amber-700">&lt;200ms</div>
-                <div className="text-[11px] font-mono text-[#141312]/60 uppercase mt-0.5">Global Latency</div>
+                <div className="text-[10px] font-mono text-[#141312]/60 uppercase tracking-wider mt-0.5 font-semibold">Global Latency</div>
               </div>
-              <div className="text-center p-3 border-l border-[#141312]/10">
+              <div className="text-center p-3.5 rounded-xl bg-white/80 border border-black/[0.04] shadow-2xs">
                 <div className="text-2xl sm:text-3xl font-extrabold font-mono text-[#141312]">99.9%</div>
-                <div className="text-[11px] font-mono text-[#141312]/60 uppercase mt-0.5">Uptime SLA</div>
+                <div className="text-[10px] font-mono text-[#141312]/60 uppercase tracking-wider mt-0.5 font-semibold">Uptime SLA</div>
               </div>
-              <div className="text-center p-3 border-l border-[#141312]/10">
+              <div className="text-center p-3.5 rounded-xl bg-white/80 border border-black/[0.04] shadow-2xs">
                 <div className="text-2xl sm:text-3xl font-extrabold font-mono text-amber-700">4.9/5</div>
-                <div className="text-[11px] font-mono text-[#141312]/60 uppercase mt-0.5">Client Satisfaction</div>
+                <div className="text-[10px] font-mono text-[#141312]/60 uppercase tracking-wider mt-0.5 font-semibold">Client Score</div>
               </div>
             </motion.div>
           </div>
@@ -97,41 +97,119 @@ export default function WorkPage() {
           ))}
         </section>
 
-        {/* Technical Capabilities Intermission Banner */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 sm:mt-28">
-          <div className="rounded-3xl p-8 sm:p-12 bg-[#141312] text-[#FAF8F5] relative overflow-hidden shadow-2xl border border-white/10">
-            {/* Ambient Background Lights */}
-            <div className="absolute top-0 right-0 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-amber-600/10 rounded-full blur-2xl pointer-events-none" />
+        {/* Technical Capabilities Full-Width Architecture Workbench */}
+        <section className="w-full mt-24 sm:mt-32 relative border-y border-[#DDD3C7] bg-[#141210] text-[#FAF7F2] overflow-hidden">
+          {/* Subtle blueprint grid overlay */}
+          <div 
+            className="absolute inset-0 opacity-[0.07] pointer-events-none"
+            style={{
+              backgroundImage: "radial-gradient(circle, #f59e0b 1px, transparent 1px)",
+              backgroundSize: "32px 32px",
+            }}
+          />
+          {/* Ambient directional glow */}
+          <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-1/4 w-80 h-80 bg-amber-600/10 rounded-full blur-3xl pointer-events-none" />
 
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-8 space-y-4">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 font-mono text-xs">
-                  <Cpu className="w-3.5 h-3.5" />
-                  <span>CUSTOM SOFTWARE ARCHITECTURE</span>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 relative z-10">
+            {/* Top Header Row */}
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-12 border-b border-white/[0.08]">
+              <div className="max-w-2xl space-y-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 font-mono text-xs">
+                  <Terminal className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                  <span className="tracking-wide uppercase">Bespoke Engineering Division</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
                 </div>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">
-                  Need a custom ecosystem engineered with zero compromises?
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                  Need a custom ecosystem engineered with{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500">
+                    zero compromises?
+                  </span>
                 </h2>
-                <p className="text-sm sm:text-base text-white/70 max-w-xl font-light leading-relaxed">
+                <p className="text-neutral-300 text-base sm:text-lg font-light leading-relaxed">
                   We build scalable digital products, high-throughput commerce architectures, and bespoke web platforms from conception to global edge deployment.
                 </p>
               </div>
 
-              <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 justify-end">
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-amber-500 text-[#141312] font-mono text-xs font-bold tracking-wider hover:bg-amber-400 hover:shadow-amber-500/20 transition-all shadow-lg active:scale-95"
+                  className="inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-amber-500 text-[#141210] font-mono text-xs font-bold tracking-wider hover:bg-amber-400 transition-all shadow-[0_0_30px_rgba(245,158,11,0.25)] hover:shadow-[0_0_40px_rgba(245,158,11,0.4)] active:scale-95"
                 >
+                  <Cpu className="w-4 h-4 text-[#141210]" />
                   <span>START YOUR PROJECT</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="/process"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-amber-500/20 hover:text-amber-300 hover:border-amber-400/40 text-white font-mono text-xs font-medium tracking-wider transition-all border border-white/10"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] text-white font-mono text-xs font-medium tracking-wider transition-colors border border-white/10"
                 >
                   <span>INSPECT OUR PROCESS</span>
                 </Link>
+              </div>
+            </div>
+
+            {/* 3 Pillar Architectural Matrix */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-12">
+              <div className="p-6 sm:p-7 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-amber-500/30 transition-all group">
+                <div className="flex items-center justify-between mb-5">
+                  <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 group-hover:scale-110 group-hover:bg-amber-500/20 transition-all">
+                    <Cpu className="w-5 h-5" />
+                  </div>
+                  <span className="text-[11px] font-mono text-neutral-400 tracking-wider">01 // EDGE</span>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">High-Throughput Core</h3>
+                <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed mb-4">
+                  Multi-region edge execution, micro-caching algorithms, and sub-100ms API response pipelines with auto-scaling elasticity.
+                </p>
+                <div className="flex flex-wrap gap-1.5 pt-2 border-t border-white/[0.06]">
+                  {["Next.js SSR", "Redis Global", "Cloudflare Workers"].map((t) => (
+                    <span key={t} className="px-2 py-0.5 rounded text-[10px] font-mono bg-white/[0.05] text-neutral-300">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="p-6 sm:p-7 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-amber-500/30 transition-all group">
+                <div className="flex items-center justify-between mb-5">
+                  <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 group-hover:scale-110 group-hover:bg-amber-500/20 transition-all">
+                    <Layers className="w-5 h-5" />
+                  </div>
+                  <span className="text-[11px] font-mono text-neutral-400 tracking-wider">02 // STACK</span>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Bespoke Design Systems</h3>
+                <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed mb-4">
+                  Fluid typography scales, spatial canvas interactions, accessible component tokens, and frictionless UI motion.
+                </p>
+                <div className="flex flex-wrap gap-1.5 pt-2 border-t border-white/[0.06]">
+                  {["Tailwind Engine", "Framer Motion", "Radix Primitives"].map((t) => (
+                    <span key={t} className="px-2 py-0.5 rounded text-[10px] font-mono bg-white/[0.05] text-neutral-300">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="p-6 sm:p-7 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-amber-500/30 transition-all group">
+                <div className="flex items-center justify-between mb-5">
+                  <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 group-hover:scale-110 group-hover:bg-amber-500/20 transition-all">
+                    <Sparkles className="w-5 h-5" />
+                  </div>
+                  <span className="text-[11px] font-mono text-neutral-400 tracking-wider">03 // RELIABILITY</span>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Zero-Compromise SLA</h3>
+                <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed mb-4">
+                  Full test automation, strict TypeScript safety, atomic state hydration, and telemetry observability built in.
+                </p>
+                <div className="flex flex-wrap gap-1.5 pt-2 border-t border-white/[0.06]">
+                  {["100% Strict TS", "End-to-End Testing", "Telemetry Metrics"].map((t) => (
+                    <span key={t} className="px-2 py-0.5 rounded text-[10px] font-mono bg-white/[0.05] text-neutral-300">
+                      {t}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
