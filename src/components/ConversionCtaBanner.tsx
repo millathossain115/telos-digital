@@ -30,15 +30,17 @@ interface ConversionCtaBannerProps {
   badge?: string;
   title?: React.ReactNode;
   subtitle?: string;
+  className?: string;
 }
 
 export function ConversionCtaBanner({
   badge = "Direct Engineering Consult",
   title,
   subtitle = "Book a 30-minute architectural assessment with our principal engineer. We’ll evaluate feasibility, recommend the exact stack, and outline sprint milestones.",
+  className = "py-20 sm:py-28 relative bg-[#FAF8F5]",
 }: ConversionCtaBannerProps) {
   return (
-    <section className="py-20 sm:py-28 relative bg-[#FAF8F5]">
+    <section className={className}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={bannerVariants}
