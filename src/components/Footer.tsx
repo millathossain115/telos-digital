@@ -24,16 +24,26 @@ function InteractiveFooterTitle() {
       onMouseLeave={() => setIsHovered(false)}
       className="relative pt-16 pb-4 flex items-center justify-center select-none overflow-hidden w-full cursor-default group"
     >
-      {/* Base Layer: Soft warm dark watermark blended to bottom */}
-      <span
-        className="font-extrabold text-[10.2vw] leading-none tracking-tight sm:tracking-tighter text-white/[0.06] text-center uppercase whitespace-nowrap transition-colors duration-500"
+      {/* Base Layer: Soft warm dark watermark with subtle ambient breathing pulse */}
+      <motion.span
+        animate={{
+          opacity: [0.05, 0.12, 0.05],
+          scale: [1, 1.012, 1],
+        }}
+        transition={{
+          duration: 4.5,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="font-extrabold text-[10.2vw] leading-none tracking-tight sm:tracking-tighter text-white text-center uppercase whitespace-nowrap"
         style={{
+          willChange: "opacity, transform",
           maskImage: "linear-gradient(to bottom, black 20%, rgba(0,0,0,0.3) 65%, transparent 100%)",
           WebkitMaskImage: "linear-gradient(to bottom, black 20%, rgba(0,0,0,0.3) 65%, transparent 100%)",
         }}
       >
         Telos Digital
-      </span>
+      </motion.span>
 
       {/* Spotlight Shimmer Reveal Layer (Dynamic Mask) */}
       <motion.div
