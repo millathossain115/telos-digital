@@ -6,9 +6,9 @@ import Link from "next/link";
 
 const HERO_SLIDES = [
   {
-    title: "Light Enterprise CRM Suite",
-    tag: "Internal Tools & Analytics",
-    src: "/assets/Banner/CRm hero Light.jpeg",
+    title: "Next-Gen Enterprise Web Architecture",
+    tag: "Internal Tools & Cloud Platforms",
+    src: "/assets/Banner/homepage-seen-computer-screen.jpg",
   },
   {
     title: "Editorial Beauty & Direct-to-Consumer",
