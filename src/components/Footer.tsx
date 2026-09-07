@@ -3,7 +3,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, Calendar, ArrowRight, MessageSquare } from "lucide-react";
+import { useCalendly } from "@/components/CalendlyProvider";
 
 function InteractiveFooterTitle() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -70,6 +71,7 @@ function InteractiveFooterTitle() {
 }
 
 export function Footer() {
+  const { openCalendly } = useCalendly();
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
 
@@ -212,11 +214,11 @@ export function Footer() {
           <div className="lg:col-span-2">
             <h4 className="text-sm font-semibold text-white tracking-wider uppercase mb-4">Solutions</h4>
             <ul className="space-y-2.5 text-sm">
-              <li><Link href="/services" className="hover:text-amber-400 transition-colors">Cloud Migration</Link></li>
-              <li><Link href="/services" className="hover:text-amber-400 transition-colors">AI & Automation</Link></li>
-              <li><Link href="/services" className="hover:text-amber-400 transition-colors">DevOps Pipeline</Link></li>
-              <li><Link href="/services" className="hover:text-amber-400 transition-colors">Data Analytics</Link></li>
-              <li><Link href="/services" className="hover:text-amber-400 transition-colors">Cybersecurity</Link></li>
+              <li><Link href="/services#web-saas" className="hover:text-amber-400 transition-colors">Web &amp; SaaS Platforms</Link></li>
+              <li><Link href="/services#mobile" className="hover:text-amber-400 transition-colors">Mobile Engineering</Link></li>
+              <li><Link href="/services#ui-ux" className="hover:text-amber-400 transition-colors">UI/UX &amp; Design Systems</Link></li>
+              <li><Link href="/services#mvp" className="hover:text-amber-400 transition-colors">MVP Accelerator</Link></li>
+              <li><Link href="/services#engagement" className="hover:text-amber-400 transition-colors">Dedicated Retainers</Link></li>
             </ul>
           </div>
 
@@ -224,39 +226,56 @@ export function Footer() {
           <div className="lg:col-span-2">
             <h4 className="text-sm font-semibold text-white tracking-wider uppercase mb-4">Company</h4>
             <ul className="space-y-2.5 text-sm">
-              <li><Link href="/about" className="hover:text-amber-400 transition-colors">About Us</Link></li>
-              <li><Link href="/work" className="hover:text-amber-400 transition-colors">Case Studies</Link></li>
-              <li><Link href="/process" className="hover:text-amber-400 transition-colors">Our Process</Link></li>
-              <li><Link href="/contact" className="hover:text-amber-400 transition-colors">Contact</Link></li>
+              <li><Link href="/about" className="hover:text-amber-400 transition-colors">Agency Manifesto</Link></li>
+              <li><Link href="/work" className="hover:text-amber-400 transition-colors">Proven Work</Link></li>
+              <li><Link href="/process" className="hover:text-amber-400 transition-colors">How We Ship</Link></li>
+              <li><Link href="/contact" className="hover:text-amber-400 transition-colors">Direct Consultation</Link></li>
             </ul>
           </div>
 
-          {/* Column 4: Newsletter & Quick Touch (3 cols) */}
-          <div className="lg:col-span-3">
-            <h4 className="text-sm font-semibold text-white tracking-wider uppercase mb-4">Engineering Dispatch</h4>
-            <p className="text-xs text-neutral-400 mb-3 leading-relaxed">
-              Bi-weekly technical essays on cloud scalability, distributed architecture, and AI infrastructure.
-            </p>
-            <div className="flex flex-col gap-2">
-              <input
-                type="email"
-                placeholder="Enter work email"
-                className="w-full bg-white/[0.05] border border-white/[0.12] rounded-lg px-3 py-2 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-amber-500 transition-colors shadow-inner"
-              />
-              <button className="w-full py-2 bg-amber-500 hover:bg-amber-400 text-[#141312] rounded-lg text-xs font-semibold shadow-sm hover:shadow-amber-500/20 transition-all cursor-pointer">
-                Subscribe
+          {/* Column 4: Quick Consultation CTA (3 cols) */}
+          <div className="lg:col-span-3 flex flex-col justify-between p-5 rounded-2xl bg-white/[0.03] border border-white/[0.08] hover:border-amber-500/30 transition-all">
+            <div>
+              <div className="flex items-center gap-2 mb-2.5">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <h4 className="text-xs font-mono font-semibold text-amber-400 tracking-wider uppercase">
+                  Direct Principal Access
+                </h4>
+              </div>
+              <p className="text-xs text-neutral-300 mb-4 leading-relaxed font-normal">
+                Book a 30-min architectural session or message directly on WhatsApp. Response within 2 hours.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-2 pt-1">
+              <button
+                onClick={() => openCalendly()}
+                className="w-full inline-flex items-center justify-center gap-1.5 py-2 px-3 bg-amber-500 hover:bg-amber-400 text-[#141312] rounded-lg text-[11px] font-semibold tracking-tight transition-all cursor-pointer font-mono"
+              >
+                <Calendar className="w-3 h-3 shrink-0" />
+                <span>Book Architecture Call</span>
+                <ArrowRight className="w-3 h-3 shrink-0" />
               </button>
+
+              <a
+                href="https://wa.me/8801618257217"
+                target="_blank"
+                rel="noreferrer"
+                className="w-full inline-flex items-center justify-center gap-1.5 py-1.5 px-3 bg-white/[0.04] hover:bg-white/[0.08] text-white/90 border border-white/[0.08] hover:border-emerald-500/40 rounded-lg text-[11px] font-medium transition-all"
+              >
+                <MessageSquare className="w-3 h-3 text-emerald-400 shrink-0" />
+                <span>WhatsApp Direct Intake</span>
+              </a>
             </div>
           </div>
         </div>
 
         {/* Footer Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
-          <p>© {new Date().getFullYear()} Telos Digital Inc. Madani Avenue, Dhaka. All rights reserved.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-amber-400 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-amber-400 transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-amber-400 transition-colors">Security</a>
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500 font-mono">
+          <p>© {new Date().getFullYear()} Telos Digital. Built with architectural discipline. All rights reserved.</p>
+          <div className="flex items-center gap-2 text-neutral-400">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <span>Systems Normal // Dhaka, BD</span>
           </div>
         </div>
 
