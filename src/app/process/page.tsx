@@ -76,21 +76,29 @@ export default function ProcessPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 p-7 sm:p-9 rounded-3xl bg-[#F3EFEA] border border-black/[0.08] shadow-[0_12px_36px_rgba(20,19,18,0.03)]"
+            className="grid grid-cols-1 md:grid-cols-3 gap-5 p-2 sm:p-2.5 rounded-[2rem] bg-gradient-to-b from-[#EFEAE2]/60 to-[#E8E1D6]/80 border border-[#D9CFC4] shadow-[0_16px_40px_rgba(20,19,18,0.04)] backdrop-blur-sm"
           >
             {COLLABORATION_RULES.map((rule) => {
               const RuleIcon = RULE_ICON_MAP[rule.icon as keyof typeof RULE_ICON_MAP] || Zap;
               return (
-                <div key={rule.id} className="space-y-2.5 border-l border-black/[0.08] pl-5">
-                  <div className="text-sm sm:text-base font-semibold text-[#141312] tracking-tight flex items-center gap-2.5">
-                    <div className="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-800 shrink-0">
-                      <RuleIcon className="w-3.5 h-3.5" />
+                <div
+                  key={rule.id}
+                  className="group relative flex flex-col justify-between p-6 sm:p-7 rounded-[1.6rem] bg-gradient-to-br from-white via-[#FCFAF7] to-[#F7F2EB] border border-black/[0.06] hover:border-amber-500/40 shadow-xs hover:shadow-[0_12px_32px_rgba(217,119,6,0.08)] transition-all duration-300 overflow-hidden"
+                >
+                  {/* Subtle hover accent light */}
+                  <div className="pointer-events-none absolute -top-12 -right-12 w-28 h-28 bg-amber-500/10 rounded-full blur-xl group-hover:bg-amber-500/20 group-hover:scale-125 transition-all duration-500" />
+
+                  <div className="space-y-3 relative z-10">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500/15 to-amber-600/5 border border-amber-500/25 flex items-center justify-center text-amber-700 shadow-xs group-hover:scale-105 group-hover:border-amber-500/40 transition-all duration-300">
+                      <RuleIcon className="w-4 h-4" />
                     </div>
-                    <span>{rule.title}</span>
+                    <h3 className="text-base font-semibold text-[#141312] tracking-tight group-hover:text-amber-950 transition-colors">
+                      {rule.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
+                      {rule.desc}
+                    </p>
                   </div>
-                  <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
-                    {rule.desc}
-                  </p>
                 </div>
               );
             })}

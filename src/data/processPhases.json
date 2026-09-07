@@ -3,81 +3,81 @@
     "id": "phase-01",
     "step": "PHASE 01",
     "timeframe": "Weeks 1–2",
-    "title": "Discovery, Technical Architecture & Data Modeling",
-    "summary": "We eliminate ambiguity before writing code. We dissect your business logic, evaluate technical feasibility, and produce an explicit architectural blueprint.",
+    "title": "Architecture & Data Modeling",
+    "summary": "Zero guesswork. We map domain logic, validate feasibility, and lock an explicit system blueprint.",
     "icon": "compass",
     "deliverables": [
-      "Interactive system architecture diagram & data flow topology",
-      "PostgreSQL / database schema definition & migration strategy",
-      "API contract specifications (REST, GraphQL, or tRPC)",
-      "Threat modeling, rate limiting & enterprise RBAC plan"
+      "System architecture diagram & data topology",
+      "Database schema & migration roadmap",
+      "Typed API contract specs (REST / tRPC)",
+      "Threat model & role-based access control (RBAC)"
     ],
     "clientTouchpoints": [
-      "Initial 90-minute architecture workshop",
-      "Async Loom review of proposed entity relationships",
-      "Formal specification sign-off"
+      "90-min architecture workshop",
+      "Async Loom reviews of entity models",
+      "Blueprint sign-off"
     ],
-    "tooling": ["Figma Architecture", "dbdiagram.io", "Notion Spec", "GitHub Projects"]
+    "tooling": ["Figma", "dbdiagram.io", "Notion", "GitHub"]
   },
   {
     "id": "phase-02",
     "step": "PHASE 02",
     "timeframe": "Weeks 2–3",
-    "title": "High-Fidelity UI/UX Prototyping & Design Systems",
-    "summary": "No placeholder designs or aesthetic vanity. We design directly against real-world frontend constraints, producing tokenized component systems ready for React.",
+    "title": "UI/UX Design Systems",
+    "summary": "Engineered for code. Tokenized components designed directly against real frontend constraints.",
     "icon": "penTool",
     "deliverables": [
-      "Click-through interactive prototype in Figma covering all primary user journeys",
-      "Complete design token library: typography, semantic colors, spacing scales",
-      "Zero-ambiguity auto-layout components with hover, active, and error states",
-      "WCAG 2.1 AA accessibility & contrast validation audit"
+      "Click-through Figma prototype of core journeys",
+      "Design token library (typography, colors, scales)",
+      "Production-ready auto-layout components",
+      "WCAG 2.1 AA accessibility audit"
     ],
     "clientTouchpoints": [
-      "Weekly design walkthrough demo",
-      "Direct Figma comment review & approval",
-      "Prototype test session with team stakeholders"
+      "Weekly design demo",
+      "Direct Figma comment reviews",
+      "Stakeholder prototype run"
     ],
-    "tooling": ["Figma Enterprise", "Radix UI Primitives", "Tailwind CSS Tokens"]
+    "tooling": ["Figma", "Radix UI", "Tailwind CSS"]
   },
   {
     "id": "phase-03",
     "step": "PHASE 03",
     "timeframe": "Weeks 3–8",
-    "title": "Sprint Execution, Continuous Staging & Automated Testing",
-    "summary": "Rapid bi-weekly delivery cycles. Every pull request triggers an automated preview deployment, strict TypeScript validation, and end-to-end integration tests.",
+    "title": "Sprint Execution & Staging",
+    "summary": "Rapid bi-weekly ship cadence. Every pull request triggers live previews and automated end-to-end testing.",
     "icon": "code2",
     "deliverables": [
-      "Bi-weekly staging environment updates on live URLs for hands-on review",
-      "100% strictly typed TypeScript codebase with zero runtime type leaks",
-      "Automated Playwright integration tests covering mission-critical user paths",
-      "GitHub Actions CI/CD pipelines executing linting, unit tests, and build audits"
+      "Bi-weekly staging updates on live test URLs",
+      "Strictly typed TypeScript (zero type leaks)",
+      "Automated Playwright E2E test suites",
+      "GitHub Actions CI/CD pipelines"
     ],
     "clientTouchpoints": [
-      "Every 14 days: live milestone demo & sprint retrospective",
-      "Direct engineer Slack/Discord channel for async questions",
-      "Live preview deployment links for every active feature branch"
+      "Bi-weekly live milestone demo",
+      "Direct engineer Slack/Discord channel",
+      "Branch preview URLs on demand"
     ],
-    "tooling": ["Next.js 16", "React Native", "Playwright", "GitHub Actions", "Vercel / AWS"]
+    "tooling": ["Next.js", "TypeScript", "Playwright", "GitHub Actions"]
   },
   {
     "id": "phase-04",
     "step": "PHASE 04",
     "timeframe": "Launch & Beyond",
-    "title": "Production Cutover, Security Audit & IP Handover",
-    "summary": "We orchestrate a seamless zero-downtime release to production cloud infrastructure, followed by complete transfer of all code repositories and documentation runbooks.",
+    "title": "Production Release & Handover",
+    "summary": "Zero-downtime cutover to cloud infrastructure, followed by 100% unconditional repo and IP transfer.",
     "icon": "rocket",
     "deliverables": [
-      "Zero-downtime DNS cutover and CDN edge caching configuration",
-      "Cloud infrastructure provisioning (AWS, Supabase, Vercel, Redis)",
-      "Comprehensive engineering runbook, environment setup & deploy guide",
-      "Unconditional transfer of repository ownership and all API keys",
-      "30-day post-launch warranty and bug-fix SLA guarantee"
+      "Zero-downtime DNS & CDN edge configuration",
+      "Cloud provisioning (AWS / Supabase / Vercel)",
+      "Deployment runbook & environment guide",
+      "Full repo, API key, & IP transfer",
+      "30-day post-launch warranty & SLA"
     ],
     "clientTouchpoints": [
-      "Final pre-flight security and load testing review",
-      "Live production deployment monitoring session",
-      "Formal handoff walkthrough & team training session"
+      "Pre-flight security & load review",
+      "Live release monitoring",
+      "Team handoff & walkthrough"
     ],
-    "tooling": ["AWS CloudFormation", "Terraform", "Cloudflare", "Datadog / Sentry"]
+    "tooling": ["AWS", "Terraform", "Cloudflare", "Sentry"]
   }
 ]

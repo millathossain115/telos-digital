@@ -34,47 +34,54 @@ export function ProcessPhaseCard({ phase, index }: ProcessPhaseCardProps) {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className="p-8 sm:p-12 rounded-3xl bg-[#F3EFEA] border border-black/[0.08] hover:border-amber-500/30 transition-all duration-300 relative overflow-hidden shadow-[0_12px_40px_rgba(20,19,18,0.03)] group"
+      className="group relative p-6 sm:p-9 rounded-[2rem] bg-gradient-to-br from-[#F7F2EB] via-[#F2ECE3] to-[#EAE1D5] border border-[#DDD3C7]/90 hover:border-amber-500/40 transition-all duration-500 shadow-[0_4px_6px_-1px_rgba(20,19,18,0.03),0_18px_45px_-6px_rgba(40,28,15,0.08),0_30px_70px_-12px_rgba(217,119,6,0.06)] hover:shadow-[0_8px_12px_-2px_rgba(20,19,18,0.04),0_24px_55px_-4px_rgba(40,28,15,0.12),0_36px_85px_-10px_rgba(217,119,6,0.14)] overflow-hidden"
     >
-      {/* Warm corner ambient backlight */}
-      <div className="absolute -top-32 -right-32 w-80 h-80 bg-amber-500/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+      {/* Top subtle border highlight */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start relative z-10">
+      {/* Warm corner ambient backlight */}
+      <div className="absolute -top-32 -right-32 w-96 h-96 bg-amber-500/10 blur-3xl opacity-40 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 pointer-events-none" />
+      <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-amber-600/5 blur-3xl opacity-30 pointer-events-none" />
+
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start relative z-10">
         {/* Left: Phase Title & Scope (7 Cols) */}
-        <div className="lg:col-span-7 space-y-6">
+        <div className="lg:col-span-7 space-y-4 sm:space-y-5">
           <div className="flex items-center gap-3">
-            <span className="text-xs font-mono px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-900 font-semibold">
+            <span className="text-xs font-mono px-3.5 py-1 rounded-full bg-white/90 border border-amber-600/20 text-amber-900 font-semibold shadow-xs backdrop-blur-xs">
               {phase.step}
             </span>
-            <span className="text-xs font-mono text-neutral-500 flex items-center gap-1.5">
+            <span className="text-xs font-mono text-neutral-600 flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/60 border border-black/[0.04]">
               <Clock className="w-3.5 h-3.5 text-amber-700" />
               {phase.timeframe}
             </span>
           </div>
 
           <div>
-            <div className="flex items-center gap-3 mb-2">
-              <div className="w-10 h-10 rounded-xl bg-white border border-black/[0.08] flex items-center justify-center text-amber-700 shadow-xs">
+            <div className="flex items-center gap-3 mb-1.5">
+              <div className="w-10 h-10 rounded-xl bg-white border border-amber-500/20 flex items-center justify-center text-amber-700 shadow-sm group-hover:scale-105 group-hover:border-amber-500/40 transition-all duration-300">
                 <IconComponent className="w-5 h-5" />
               </div>
-              <h2 className="text-2xl sm:text-3xl font-semibold text-[#141312] tracking-tight leading-snug">
+              <h2 className="text-xl sm:text-2xl font-semibold text-[#141312] tracking-tight leading-snug">
                 {phase.title}
               </h2>
             </div>
-            <p className="mt-3 text-sm sm:text-base text-neutral-600 leading-relaxed">
+            <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
               {phase.summary}
             </p>
           </div>
 
-          {/* Explicit Deliverables Checklist */}
-          <div className="space-y-3 pt-2">
-            <div className="text-xs font-mono text-neutral-500 uppercase tracking-wider font-medium">
+          {/* Explicit Deliverables Checklist - Compact 2-column grid */}
+          <div className="space-y-2 pt-1">
+            <div className="text-[11px] font-mono text-neutral-500 uppercase tracking-wider font-medium">
               Tangible Deliverables
             </div>
-            <div className="space-y-2.5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {phase.deliverables.map((item) => (
-                <div key={item} className="flex items-start gap-3 text-xs sm:text-sm text-neutral-700 leading-relaxed">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                <div
+                  key={item}
+                  className="flex items-start gap-2.5 p-2.5 rounded-xl bg-white/75 border border-black/[0.04] text-xs text-neutral-700 leading-snug hover:bg-white/95 transition-all shadow-[0_2px_6px_rgba(20,19,18,0.02)] hover:shadow-[0_4px_12px_rgba(20,19,18,0.05)]"
+                >
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
                   <span>{item}</span>
                 </div>
               ))}
@@ -82,15 +89,15 @@ export function ProcessPhaseCard({ phase, index }: ProcessPhaseCardProps) {
           </div>
 
           {/* Tooling Tags */}
-          <div className="space-y-2 pt-2">
-            <div className="text-xs font-mono text-neutral-500 uppercase tracking-wider font-medium">
+          <div className="space-y-1.5 pt-1">
+            <div className="text-[11px] font-mono text-neutral-500 uppercase tracking-wider font-medium">
               Stack & Tooling
             </div>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5">
               {phase.tooling.map((tool) => (
                 <span
                   key={tool}
-                  className="text-xs font-mono px-3 py-1 rounded-lg bg-white border border-black/[0.07] text-neutral-700 shadow-xs font-medium"
+                  className="text-xs font-mono px-2.5 py-0.5 rounded-md bg-white/80 border border-black/[0.07] text-neutral-700 shadow-xs font-medium hover:border-amber-500/30 transition-colors"
                 >
                   {tool}
                 </span>
@@ -99,38 +106,40 @@ export function ProcessPhaseCard({ phase, index }: ProcessPhaseCardProps) {
           </div>
         </div>
 
-        {/* Right: Client Touchpoints & Workflow (5 Cols) with weightless floating motion */}
-        <div className="lg:col-span-5 space-y-5">
+        {/* Right: Client Touchpoints & Workflow (5 Cols) */}
+        <div className="lg:col-span-5">
           <motion.div
             animate={{
-              y: [0, -14],
+              y: [0, -18],
             }}
             transition={{
-              duration: 2.2 + (index % 2) * 0.3,
+              duration: 1.5 + (index % 2) * 0.2,
               repeat: Infinity,
               repeatType: "reverse",
-              ease: [0.45, 0.05, 0.55, 0.95],
-              delay: index * 0.25,
+              ease: "easeInOut",
+              delay: index * 0.15,
             }}
-            whileHover={{ y: 0, transition: { duration: 0.2, ease: "easeOut" } }}
+            whileHover={{ y: 0, transition: { duration: 0.15, ease: "easeOut" } }}
             style={{ willChange: "transform" }}
-            className="rounded-2xl bg-white border border-black/[0.08] p-6 sm:p-7 space-y-4 shadow-sm hover:shadow-md transition-shadow duration-300"
+            className="rounded-2xl bg-gradient-to-b from-white via-[#FCFAF7] to-[#F7F3EC] border border-black/[0.08] p-5 sm:p-6 space-y-3.5 shadow-[0_10px_25px_-4px_rgba(30,20,12,0.08),0_20px_48px_-8px_rgba(217,119,6,0.12)] hover:border-amber-500/40 hover:shadow-[0_14px_30px_-4px_rgba(30,20,12,0.12),0_28px_56px_-6px_rgba(217,119,6,0.18)] transition-all duration-300"
           >
-            <div className="flex items-center justify-between pb-3 border-b border-black/[0.06]">
-              <span className="text-xs font-mono text-neutral-600 flex items-center gap-2 font-medium">
+            <div className="flex items-center justify-between pb-2.5 border-b border-black/[0.06]">
+              <span className="text-xs font-mono text-neutral-700 flex items-center gap-2 font-medium">
                 <Terminal className="w-3.5 h-3.5 text-amber-600" />
-                Client Interaction Cadence
+                Client Cadence
               </span>
-              <span className="text-[11px] font-mono text-amber-700 font-semibold uppercase">Touchpoints</span>
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-800 font-semibold uppercase">
+                Touchpoints
+              </span>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-2">
               {phase.clientTouchpoints.map((tp) => (
                 <div
                   key={tp}
-                  className="p-3.5 rounded-xl bg-[#FAF8F5] border border-black/[0.05] text-xs sm:text-sm text-neutral-700 leading-relaxed flex items-start gap-2.5"
+                  className="p-2.5 rounded-xl bg-white/90 border border-black/[0.05] text-xs text-neutral-700 leading-snug flex items-start gap-2 shadow-xs hover:border-amber-500/30 transition-colors"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0 mt-2" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0 mt-1.5" />
                   <span>{tp}</span>
                 </div>
               ))}
