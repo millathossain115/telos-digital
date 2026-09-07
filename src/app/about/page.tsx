@@ -206,7 +206,7 @@ export default function AboutPage() {
                 >
                   {/* Criterion */}
                   <div className="md:col-span-3 text-xs sm:text-sm font-mono font-bold text-amber-300 flex items-center gap-2">
-                    <span className="text-[10px] text-neutral-500 font-mono">0{idx + 1} //</span>
+                    <span className="text-[10px] text-neutral-500 font-mono">0{idx + 1}{" //"}</span>
                     <span>{row.criterion}</span>
                   </div>
 
