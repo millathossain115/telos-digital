@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence, type Variants } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import Link from "next/link";
 
 const HERO_SLIDES = [
@@ -50,7 +50,7 @@ export function Hero() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
-    }, 4500);
+    }, 2800);
     return () => clearInterval(timer);
   }, []);
 
@@ -151,20 +151,35 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Slide Frame with Crossfade */}
-          <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] min-h-[300px] sm:min-h-[460px] bg-black/40 overflow-hidden">
-            <AnimatePresence mode="wait">
-              <motion.img
-                key={HERO_SLIDES[currentSlide].src}
-                src={HERO_SLIDES[currentSlide].src}
-                alt={HERO_SLIDES[currentSlide].title}
-                initial={{ opacity: 0, scale: 1.02 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className="w-full h-full object-cover object-top block"
-              />
-            </AnimatePresence>
+          {/* Slide Frame with True Stacked Crossfade */}
+          <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] min-h-[300px] sm:min-h-[460px] bg-[#141312] overflow-hidden">
+            {HERO_SLIDES.map((slide, idx) => {
+              const isActive = idx === currentSlide;
+              return (
+                <motion.div
+                  key={slide.src}
+                  initial={false}
+                  animate={{
+                    opacity: isActive ? 1 : 0,
+                    scale: isActive ? 1 : 1.03,
+                    zIndex: isActive ? 10 : 1,
+                  }}
+                  transition={{
+                    opacity: { duration: 0.5, ease: [0.25, 1, 0.5, 1] },
+                    scale: { duration: 0.7, ease: [0.25, 1, 0.5, 1] },
+                  }}
+                  style={{ willChange: "opacity, transform" }}
+                  className="absolute inset-0 w-full h-full pointer-events-none"
+                >
+                  <img
+                    src={slide.src}
+                    alt={slide.title}
+                    loading={idx === 0 ? "eager" : "lazy"}
+                    className="w-full h-full object-cover object-top block"
+                  />
+                </motion.div>
+              );
+            })}
           </div>
 
           {/* Seamless bottom fade mask */}
