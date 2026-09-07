@@ -59,45 +59,45 @@ export function ContactCoordinates() {
   const { openCalendly } = useCalendly();
 
   return (
-    <div className="space-y-6">
+    <div className="flex flex-col justify-between h-full space-y-6">
       {/* Studio Coordinates Box */}
-      <div className="p-6 sm:p-7 rounded-3xl bg-[#F3EFEA] border border-black/[0.08] shadow-[0_12px_36px_rgba(20,19,18,0.03)] space-y-5">
-        <div className="flex items-center justify-between pb-4 border-b border-black/[0.07]">
+      <div className="p-5 sm:p-6 rounded-3xl bg-[#F3EFEA] border border-black/[0.08] shadow-[0_8px_30px_rgba(20,19,18,0.08)] hover:shadow-[0_20px_50px_rgba(20,19,18,0.14)] hover:border-amber-900/25 transition-all duration-300 space-y-3.5">
+        <div className="flex items-center justify-between pb-3 border-b border-black/[0.07]">
           <span className="text-xs font-mono text-neutral-600 uppercase tracking-wider font-medium">
             Studio Details
           </span>
-          <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-900 flex items-center gap-1.5 font-medium">
+          <span className="text-[11px] font-mono px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-900 flex items-center gap-1.5 font-medium">
             <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
             24h Response SLA
           </span>
         </div>
 
-        <div className="space-y-3.5">
+        <div className="space-y-2">
           {/* Direct Email */}
           <a
             href="mailto:millathossain115@gmail.com"
-            className="group flex items-start gap-3.5 p-3.5 rounded-2xl bg-white border border-black/[0.06] hover:border-amber-500/40 transition-all shadow-xs"
+            className="group flex items-center gap-3 p-2.5 rounded-2xl bg-white border border-black/[0.06] hover:border-amber-500/40 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
           >
-            <div className="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-800 shrink-0 group-hover:scale-105 transition-transform">
-              <Mail className="w-4 h-4" />
+            <div className="w-8 h-8 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-800 shrink-0 group-hover:bg-amber-500 group-hover:text-white transition-all duration-200">
+              <Mail className="w-3.5 h-3.5" />
             </div>
             <div>
-              <div className="text-[11px] font-mono text-neutral-500">Direct Inquiries</div>
-              <div className="text-sm font-semibold text-[#141312] group-hover:text-amber-800 transition-colors">
+              <div className="text-[10px] font-mono text-neutral-500">Direct Inquiries</div>
+              <div className="text-xs sm:text-sm font-semibold text-[#141312] group-hover:text-amber-800 transition-colors">
                 telosdigital@gmail.com
               </div>
             </div>
           </a>
 
           {/* Location */}
-          <div className="p-3.5 rounded-2xl bg-white border border-black/[0.06] shadow-xs space-y-2">
-            <div className="flex items-start gap-3.5">
-              <div className="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-800 shrink-0">
-                <MapPin className="w-4 h-4" />
+          <div className="group p-2.5 rounded-2xl bg-white border border-black/[0.06] hover:border-amber-500/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-800 shrink-0 group-hover:bg-amber-500 group-hover:text-white transition-all duration-200">
+                <MapPin className="w-3.5 h-3.5" />
               </div>
               <div>
-                <div className="text-[11px] font-mono text-neutral-500">Studio Headquarters</div>
-                <div className="text-sm font-semibold text-[#141312] leading-snug">
+                <div className="text-[10px] font-mono text-neutral-500">Studio Headquarters</div>
+                <div className="text-xs sm:text-sm font-semibold text-[#141312] leading-snug">
                   Madani Avenue, Dhaka, Bangladesh
                 </div>
               </div>
@@ -105,18 +105,18 @@ export function ContactCoordinates() {
           </div>
 
           {/* Hotlines */}
-          <div className="p-3.5 rounded-2xl bg-white border border-black/[0.06] shadow-xs space-y-1.5">
-            <div className="text-[11px] font-mono text-neutral-500 px-1">Engineering Hotlines</div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          <div className="p-2.5 rounded-2xl bg-white border border-black/[0.06] shadow-xs space-y-1">
+            <div className="text-[10px] font-mono text-neutral-500 px-1">Engineering Hotlines</div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
               <a
                 href="tel:+8801618257217"
-                className="px-3 py-2 rounded-xl bg-[#FAF8F5] border border-black/[0.06] text-xs font-mono font-semibold text-[#141312] hover:text-amber-800 hover:border-amber-500/40 transition-colors flex items-center justify-center"
+                className="px-2.5 py-1.5 rounded-xl bg-[#FAF8F5] border border-black/[0.06] text-xs font-mono font-semibold text-[#141312] hover:text-amber-800 hover:border-amber-500/40 hover:bg-white hover:shadow-xs transition-all duration-200 flex items-center justify-center"
               >
                 +880 1618-257217
               </a>
               <a
                 href="tel:+8801610108851"
-                className="px-3 py-2 rounded-xl bg-[#FAF8F5] border border-black/[0.06] text-xs font-mono font-semibold text-[#141312] hover:text-amber-800 hover:border-amber-500/40 transition-colors flex items-center justify-center"
+                className="px-2.5 py-1.5 rounded-xl bg-[#FAF8F5] border border-black/[0.06] text-xs font-mono font-semibold text-[#141312] hover:text-amber-800 hover:border-amber-500/40 hover:bg-white hover:shadow-xs transition-all duration-200 flex items-center justify-center"
               >
                 +880 1610-108851
               </a>
@@ -124,13 +124,13 @@ export function ContactCoordinates() {
           </div>
 
           {/* Cadence */}
-          <div className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white border border-black/[0.06] shadow-xs">
-            <div className="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-800 shrink-0">
-              <Clock className="w-4 h-4" />
+          <div className="group flex items-center gap-3 p-2.5 rounded-2xl bg-white border border-black/[0.06] hover:border-amber-500/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+            <div className="w-8 h-8 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-800 shrink-0 group-hover:bg-amber-500 group-hover:text-white transition-all duration-200">
+              <Clock className="w-3.5 h-3.5" />
             </div>
             <div>
-              <div className="text-[11px] font-mono text-neutral-500">Cadence</div>
-              <div className="text-sm font-medium text-neutral-700 leading-snug">
+              <div className="text-[10px] font-mono text-neutral-500">Cadence</div>
+              <div className="text-xs font-medium text-neutral-700 leading-tight">
                 Bi-weekly staging demos with continuous Slack integration.
               </div>
             </div>
@@ -139,8 +139,8 @@ export function ContactCoordinates() {
       </div>
 
       {/* Direct Call Card */}
-      <div className="p-6 sm:p-7 rounded-3xl bg-[#141312] text-white border border-black shadow-lg relative overflow-hidden group">
-        <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-bl-full pointer-events-none transition-transform group-hover:scale-110" />
+      <div className="p-6 sm:p-7 rounded-3xl bg-[#141312] text-white border border-black shadow-[0_16px_40px_rgba(20,19,18,0.38)] hover:shadow-[0_24px_60px_rgba(20,19,18,0.52)] hover:border-amber-500/40 transition-all duration-300 relative overflow-hidden group">
+        <div className="absolute top-0 right-0 w-36 h-36 bg-amber-500/10 rounded-bl-full pointer-events-none transition-all duration-500 group-hover:scale-125 group-hover:bg-amber-500/20" />
 
         <div className="flex items-center gap-2 text-amber-400 text-xs font-mono mb-3">
           <Calendar className="w-3.5 h-3.5" />
@@ -237,9 +237,9 @@ export function ProjectIntakeForm({
   };
 
   return (
-    <div className="p-7 sm:p-10 rounded-3xl bg-gradient-to-br from-[#FAF6F0] via-[#F4ECE2] to-[#E9DFD0] border border-amber-900/10 shadow-[0_16px_40px_rgba(30,20,10,0.06)] relative overflow-hidden">
+    <div className="h-full flex flex-col justify-between p-7 sm:p-10 rounded-3xl bg-gradient-to-br from-[#FAF6F0] via-[#F4ECE2] to-[#E9DFD0] border border-amber-900/10 shadow-[0_20px_50px_rgba(30,20,10,0.12)] hover:shadow-[0_30px_70px_rgba(30,20,10,0.18)] hover:border-amber-900/30 transition-all duration-300 relative overflow-hidden group">
       {/* Subtle top-right warm ambient light */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none transition-opacity duration-500 group-hover:opacity-100 group-hover:scale-110" />
 
       {isSubmitted ? (
         <div className="py-12 flex flex-col items-center text-center space-y-4 animate-in fade-in zoom-in duration-300 relative z-10">
@@ -406,14 +406,14 @@ export default function ContactPage() {
             </motion.div>
 
             {/* 2-Column Split */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
               {/* Left Column: Coordinates + Calendly Direct Call */}
-              <motion.div variants={itemVariants} className="lg:col-span-5">
+              <motion.div variants={itemVariants} className="lg:col-span-5 h-full">
                 <ContactCoordinates />
               </motion.div>
 
               {/* Right Column: 3-Field Intake Form */}
-              <motion.div variants={itemVariants} className="lg:col-span-7">
+              <motion.div variants={itemVariants} className="lg:col-span-7 h-full">
                 <ProjectIntakeForm
                   recipientEmail="millathossain115@gmail.com"
                   displayEmail="telosdigital@gmail.com"
