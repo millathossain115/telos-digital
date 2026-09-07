@@ -30,11 +30,22 @@ export function Navbar() {
       {/* Top Utility Strip */}
       <div className="bg-[#141312] text-[#FAF8F5] text-xs font-mono relative z-10 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center justify-between gap-y-1.5 gap-x-4">
-          {/* Location & Status */}
+          {/* Location & Status (Desktop/Tablet) or Phone (Mobile) */}
           <div className="flex items-center gap-2 text-xs sm:text-[13px]">
             <span className="w-2 h-2 rounded-full bg-emerald-400 ring-2 ring-emerald-400/30 animate-pulse" />
             <span className="text-white/70 font-semibold tracking-wide text-[11px] uppercase">STUDIO:</span>
-            <span className="text-white font-medium flex items-center gap-1.5">
+            
+            {/* Mobile View: Phone number */}
+            <a
+              href="tel:+8801618257217"
+              className="sm:hidden text-white font-medium hover:text-amber-400 transition-colors flex items-center gap-1.5"
+            >
+              <Phone className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+              <span>+880 1618-257217</span>
+            </a>
+
+            {/* sm+ View: Location */}
+            <span className="hidden sm:inline-flex text-white font-medium items-center gap-1.5">
               <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
               <span>Madani Avenue, Dhaka, Bangladesh</span>
             </span>
