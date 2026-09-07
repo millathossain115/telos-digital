@@ -23,6 +23,29 @@
     "status": "Live Production"
   },
   {
+    "id": "andgatebos",
+    "title": "AndgateBOS — Cloud SME Business Operating System & POS",
+    "client": "Andgate Technologies",
+    "category": "Enterprise SaaS & POS",
+    "year": "2026",
+    "tagline": "All-in-one business OS covering offline-capable POS billing, inventory, cash closing, and bKash/Nagad payments",
+    "summary": "Engineered a robust business operating system for retail SMEs in Bangladesh, unifying POS checkout, multi-branch stock reconciliation, double-entry bookkeeping, and automated digital wallet reconciliation.",
+    "architectureHighlight": "Offline POS synchronization · Sub-100ms receipt generation · bKash/Nagad MFS gateway",
+    "challenge": "SMEs face frequent cellular dropouts, fragmented manual ledger books (khata), and payment reconciliation discrepancies across cash and mobile financial services.",
+    "solution": "Built a resilient Next.js Progressive Web App with IndexedDB offline-first sales caching, automatic background ledger synchronization, and real-time BI analytics.",
+    "liveUrl": "https://www.andgatebos.com/",
+    "image": "/assets/images/andgatebos.png",
+    "metrics": [
+      { "label": "Active Stores", "value": "100+" },
+      { "label": "Sales Processed", "value": "৳1M+" },
+      { "label": "Offline Resilience", "value": "100%" },
+      { "label": "Uptime SLA", "value": "99.9%" }
+    ],
+    "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "IndexedDB", "Node.js", "PostgreSQL"],
+    "deliverables": ["Cloud POS Terminal", "Inventory & Stock Transfer", "Owner BI Dashboard", "MFS Payment Reconciliation"],
+    "status": "Live Production"
+  },
+  {
     "id": "adskill-consultancy",
     "title": "AdSkill Consultancy — US Immigration & Visa Guidance Platform",
     "client": "AdSkill Consultancy",
