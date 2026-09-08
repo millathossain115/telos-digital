@@ -196,7 +196,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ## Studio & Contact
 
 - **Studio Headquarters:** Madani Avenue, Dhaka, Bangladesh
-- **Direct Dispatch:** [telosdigital@gmail.com](mailto:telosdigital@gmail.com)
+- **Direct Dispatch:** [telosdigitalofficial@gmail.com](mailto:telosdigitalofficial@gmail.com)
 - **Direct Line:** `+880 1618-257217` / `+880 1610-108851`
 - **SLA:** 24-hour response turnaround on initial architecture intake.
 

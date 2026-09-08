@@ -299,10 +299,10 @@ export default function AboutPage() {
                   <div>
                     <div className="text-[11px] font-mono text-amber-700 font-bold mb-1">DIRECT INBOX</div>
                     <a
-                      href="mailto:telosdigital@gmail.com"
+                      href="mailto:telosdigitalofficial@gmail.com"
                       className="text-xs sm:text-sm font-bold text-[#141312] hover:text-amber-700 transition-colors underline decoration-amber-500/40 underline-offset-4 break-all block"
                     >
-                      telosdigital@gmail.com
+                      telosdigitalofficial@gmail.com
                     </a>
                   </div>
                 </div>

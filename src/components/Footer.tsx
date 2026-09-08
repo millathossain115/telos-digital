@@ -131,10 +131,10 @@ export function Footer() {
               <div className="flex items-center gap-2 text-neutral-300">
                 <Mail className="w-4 h-4 text-amber-500 shrink-0" />
                 <a
-                  href="mailto:telosdigital@gmail.com"
+                  href="mailto:telosdigitalofficial@gmail.com"
                   className="hover:text-amber-400 transition-colors font-medium underline decoration-amber-500/40 underline-offset-4"
                 >
-                  telosdigital@gmail.com
+                  telosdigitalofficial@gmail.com
                 </a>
               </div>
               <div className="flex flex-wrap items-center gap-2 text-neutral-300">

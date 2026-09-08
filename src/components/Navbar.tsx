@@ -54,11 +54,11 @@ export function Navbar() {
           {/* Contact Direct Strip */}
           <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-xs sm:text-[13px]">
             <a
-              href="mailto:telosdigital@gmail.com"
+              href="mailto:telosdigitalofficial@gmail.com"
               className="inline-flex items-center gap-1.5 text-white/90 hover:text-amber-400 transition-colors font-medium"
             >
               <Mail className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-              <span>telosdigital@gmail.com</span>
+              <span>telosdigitalofficial@gmail.com</span>
             </a>
 
             <span className="text-white/30 hidden sm:inline">|</span>
@@ -188,11 +188,11 @@ export function Navbar() {
             {/* Mobile Contact Quick Details */}
             <div className="pt-3 border-t border-black/[0.08] space-y-2.5 text-[13px] font-mono text-neutral-700">
               <a
-                href="mailto:telosdigital@gmail.com"
+                href="mailto:telosdigitalofficial@gmail.com"
                 className="flex items-center gap-2 text-neutral-800 hover:text-amber-700 font-medium"
               >
                 <Mail className="w-4 h-4 text-amber-600 shrink-0" />
-                <span>telosdigital@gmail.com</span>
+                <span>telosdigitalofficial@gmail.com</span>
               </a>
               <div className="flex flex-col gap-1.5">
                 <a

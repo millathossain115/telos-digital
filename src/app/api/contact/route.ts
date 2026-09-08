@@ -25,7 +25,7 @@ export async function POST(req: Request) {
     }
 
     const resend = new Resend(apiKey);
-    const toEmail = process.env.CONTACT_NOTIFICATION_EMAIL || "millathossain115@gmail.com";
+    const toEmail = process.env.CONTACT_NOTIFICATION_EMAIL || "telosdigitalofficial@gmail.com";
 
     const { data, error } = await resend.emails.send({
       from: "Telos Intake <onboarding@resend.dev>",

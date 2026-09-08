@@ -172,7 +172,7 @@ export function ContactCoordinates() {
 
 export function ProjectIntakeForm({
   recipientEmail = "millathossain115@gmail.com",
-  displayEmail = "telosdigital@gmail.com",
+  displayEmail = "telosdigitalofficial@gmail.com",
 }: ProjectIntakeFormProps) {
   const [form, setForm] = useState<FormState>({
     name: "",
@@ -221,7 +221,7 @@ export function ProjectIntakeForm({
       } else {
         setErrorMessage(result.error || "Failed to send message. Please try again.");
       }
-    } catch (err: any) {
+    } catch {
       // Network error -> fallback to client mailto
       const subject = encodeURIComponent(`Project Intake: ${form.name} via Telos Digital`);
       const body = encodeURIComponent(
@@ -414,7 +414,7 @@ export default function ContactPage() {
               <motion.div variants={itemVariants} className="lg:col-span-7 h-full">
                 <ProjectIntakeForm
                   recipientEmail="millathossain115@gmail.com"
-                  displayEmail="telosdigital@gmail.com"
+                  displayEmail="telosdigitalofficial@gmail.com"
                 />
               </motion.div>
             </div>
