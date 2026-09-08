@@ -7,6 +7,7 @@ import {
 } from "./fonts";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { CalendlyProvider } from "@/components/CalendlyProvider";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -33,6 +34,7 @@ export default function RootLayout({
           {children}
           <FloatingWhatsApp />
         </CalendlyProvider>
+        <Analytics />
       </body>
     </html>
   );
