@@ -88,7 +88,7 @@ export function Footer() {
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="bg-[#100F0E] text-neutral-400 border-t border-white/[0.08] pt-16 pb-12 relative overflow-hidden"
+      className="bg-[#100F0E] text-neutral-400 border-t border-white/[0.08] pt-16 pb-24 md:pb-12 relative overflow-hidden"
     >
       {/* Dynamic ambient cursor spotlight on dark footer */}
       <div
