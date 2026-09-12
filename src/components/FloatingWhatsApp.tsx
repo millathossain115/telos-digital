@@ -9,7 +9,7 @@ export function FloatingWhatsApp() {
       animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ duration: 0.4, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
       aria-label="Direct WhatsApp contact"
-      className="fixed bottom-6 right-6 z-50 flex items-center group pointer-events-auto select-none"
+      className="fixed bottom-20 sm:bottom-6 right-4 sm:right-6 z-50 flex items-center group pointer-events-auto select-none"
     >
       {/* Tooltip on hover */}
       <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 mr-3 rounded-full bg-[#141312] text-white text-xs font-mono tracking-tight shadow-xl border border-white/10 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-200 pointer-events-none">
