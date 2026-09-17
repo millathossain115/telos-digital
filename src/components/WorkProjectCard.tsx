@@ -38,6 +38,12 @@ export function WorkProjectCard({ project, index }: WorkProjectCardProps) {
           {/* Metadata pill row */}
           <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
             <div className="flex items-center gap-2">
+              {project.inHouseProduct ? (
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold tracking-wider uppercase bg-amber-500 text-[#141210] shadow-[0_0_15px_rgba(245,158,11,0.35)]">
+                  <Sparkles className="w-3.5 h-3.5 fill-[#141210]" />
+                  IN-HOUSE PRODUCT
+                </span>
+              ) : null}
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium tracking-wide uppercase bg-amber-500/10 text-amber-900 border border-amber-500/25 shadow-2xs">
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-600 animate-pulse" />
                 {project.category}

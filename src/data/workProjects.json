@@ -1,5 +1,29 @@
 [
   {
+    "id": "teloscart",
+    "title": "Telos Cart — Next-Gen Digital & Retail E-Commerce Ecosystem",
+    "client": "Telos Digital (In-House Flagship Product)",
+    "category": "E-Commerce & Marketplaces",
+    "year": "2026",
+    "tagline": "Modern high-speed retail marketplace with automated COD logistics, real-time catalog indexing, and sub-second checkout across 64 districts",
+    "summary": "Conceived, architected, and operated in-house by Telos Digital as our flagship commerce product. Telos Cart combines low-latency product indexing, verified multi-vendor fulfillment, instant search, and automated Cash-on-Delivery routing across Bangladesh.",
+    "architectureHighlight": "Full-stack Next.js App Router · Real-time Cart Hydration · Edge-optimized Image Delivery",
+    "challenge": "Fragmented logistics across nationwide districts, high mobile bounce rates on unoptimized networks, and complex inventory synchronizations across varied merchant categories.",
+    "solution": "Built a lightning-fast commerce platform utilizing Next.js, Framer Motion, dynamic catalog indexing, zero-friction COD checkout pipelines, and mobile-first micro-interactions.",
+    "liveUrl": "https://www.teloscart.website/",
+    "image": "/assets/images/teloscart.png",
+    "metrics": [
+      { "label": "District Coverage", "value": "64 Districts" },
+      { "label": "Catalog Speed", "value": "<140ms" },
+      { "label": "Mobile PageScore", "value": "99/100" },
+      { "label": "Product Architecture", "value": "In-House" }
+    ],
+    "techStack": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel Edge"],
+    "deliverables": ["Flagship Web Platform", "Nationwide COD Funnel", "Interactive Category Navigation", "Dynamic Cart & Wishlist"],
+    "status": "Live Production",
+    "inHouseProduct": true
+  },
+  {
     "id": "hawkeri",
     "title": "Hawkeri — Hyperlocal Multi-Vendor Commerce Ecosystem",
     "client": "Hawkeri Bangladesh",

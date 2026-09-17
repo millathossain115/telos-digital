@@ -20,4 +20,5 @@ export interface WorkProject {
   techStack: string[];
   deliverables: string[];
   status: string;
+  inHouseProduct?: boolean;
 }

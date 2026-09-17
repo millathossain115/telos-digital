@@ -218,7 +218,19 @@ export function Footer() {
               <li><Link href="/services#mobile" className="hover:text-amber-400 transition-colors">Mobile Engineering</Link></li>
               <li><Link href="/services#ui-ux" className="hover:text-amber-400 transition-colors">UI/UX &amp; Design Systems</Link></li>
               <li><Link href="/services#mvp" className="hover:text-amber-400 transition-colors">MVP Accelerator</Link></li>
-              <li><Link href="/services#engagement" className="hover:text-amber-400 transition-colors">Dedicated Retainers</Link></li>
+              <li>
+                <a
+                  href="https://www.teloscart.website/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-amber-400 transition-colors inline-flex items-center gap-1.5 text-amber-400/90 font-medium"
+                >
+                  <span>Telos Cart</span>
+                  <span className="text-[10px] uppercase font-mono px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                    Product
+                  </span>
+                </a>
+              </li>
             </ul>
           </div>
 

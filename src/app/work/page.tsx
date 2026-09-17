@@ -76,7 +76,7 @@ export default function WorkPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-base sm:text-lg md:text-xl text-[#141312]/75 max-w-2xl font-normal leading-relaxed mb-10"
             >
-              From hyperlocal high-throughput multi-vendor commerce to high-conversion ad consultancy platforms and editorial brand flagships. Explore our live production deployments.
+              Featuring our premier in-house retail flagship <strong className="text-[#141312] font-semibold">Telos Cart</strong> alongside high-throughput multi-vendor ecosystems, client platforms, and brand destinations.
             </motion.p>
 
             {/* Quick Metrics Bar */}
