@@ -184,6 +184,10 @@ export default function RootLayout({
       lang="en"
       className={`${fontGeistSans.variable} ${fontGeistMono.variable} ${fontInter.variable} ${fontJetBrainsMono.variable} h-full antialiased scroll-smooth`}
     >
+      <head>
+        <link rel="preconnect" href="https://calendly.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://calendly.com" />
+      </head>
       <body className="min-h-full flex flex-col bg-[#FAF8F5] text-[#141312] font-sans antialiased">
         <script
           type="application/ld+json"
