@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, Calendar, ArrowRight, MessageSquare } from "lucide-react";
 import { useCalendly } from "@/components/CalendlyProvider";
+import { CopyEmailButton } from "@/components/CopyEmailButton";
 
 function InteractiveFooterTitle() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -136,6 +137,7 @@ export function Footer() {
                 >
                   telosdigitalofficial@gmail.com
                 </a>
+                <CopyEmailButton variant="iconOnly" email="telosdigitalofficial@gmail.com" />
               </div>
               <div className="flex flex-wrap items-center gap-2 text-neutral-300">
                 <Phone className="w-4 h-4 text-amber-500 shrink-0" />

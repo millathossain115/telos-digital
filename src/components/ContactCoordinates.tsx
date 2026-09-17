@@ -2,6 +2,7 @@
 
 import { Mail, MapPin, Clock, Calendar, ArrowRight } from "lucide-react";
 import { useCalendly } from "@/components/CalendlyProvider";
+import { CopyEmailButton } from "@/components/CopyEmailButton";
 import siteConfig from "@/data/siteConfig.json";
 
 export function ContactCoordinates() {
@@ -23,20 +24,23 @@ export function ContactCoordinates() {
 
         <div className="space-y-2">
           {/* Direct Email */}
-          <a
-            href={`mailto:${siteConfig.contact.primaryEmail}`}
-            className="group flex items-center gap-3 p-2.5 rounded-2xl bg-white border border-black/[0.06] hover:border-amber-500/40 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
-          >
-            <div className="w-8 h-8 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-800 shrink-0 group-hover:bg-amber-500 group-hover:text-white transition-all duration-200">
-              <Mail className="w-3.5 h-3.5" />
-            </div>
-            <div>
-              <div className="text-[10px] font-mono text-neutral-500">Direct Inquiries</div>
-              <div className="text-xs sm:text-sm font-semibold text-[#141312] group-hover:text-amber-800 transition-colors">
-                {siteConfig.contact.primaryEmail}
+          <div className="flex items-center gap-2 p-2.5 rounded-2xl bg-white border border-black/[0.06] hover:border-amber-500/40 hover:shadow-md transition-all duration-200">
+            <a
+              href={`mailto:${siteConfig.contact.primaryEmail}`}
+              className="flex-1 flex items-center gap-3 min-w-0"
+            >
+              <div className="w-8 h-8 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-800 shrink-0">
+                <Mail className="w-3.5 h-3.5" />
               </div>
-            </div>
-          </a>
+              <div className="min-w-0">
+                <div className="text-[10px] font-mono text-neutral-500">Direct Inquiries</div>
+                <div className="text-xs sm:text-sm font-semibold text-[#141312] hover:text-amber-800 transition-colors truncate">
+                  {siteConfig.contact.primaryEmail}
+                </div>
+              </div>
+            </a>
+            <CopyEmailButton variant="pill" email={siteConfig.contact.primaryEmail} />
+          </div>
 
           {/* Location */}
           <div className="group p-2.5 rounded-2xl bg-white border border-black/[0.06] hover:border-amber-500/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">

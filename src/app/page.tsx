@@ -1,11 +1,30 @@
+import dynamic from "next/dynamic";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { ServicesBento } from "@/components/ServicesBento";
-import { ComparisonMatrix } from "@/components/ComparisonMatrix";
-import { ProcessSection } from "@/components/ProcessSection";
-import { FaqSection } from "@/components/FaqSection";
 import { ConversionCtaBanner } from "@/components/ConversionCtaBanner";
 import { Footer } from "@/components/Footer";
+
+const ComparisonMatrix = dynamic(
+  () => import("@/components/ComparisonMatrix").then((mod) => mod.ComparisonMatrix),
+  {
+    loading: () => <div className="py-24" />,
+  }
+);
+
+const ProcessSection = dynamic(
+  () => import("@/components/ProcessSection").then((mod) => mod.ProcessSection),
+  {
+    loading: () => <div className="py-24" />,
+  }
+);
+
+const FaqSection = dynamic(
+  () => import("@/components/FaqSection").then((mod) => mod.FaqSection),
+  {
+    loading: () => <div className="py-24" />,
+  }
+);
 
 export default function Home() {
   return (

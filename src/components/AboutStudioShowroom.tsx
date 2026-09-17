@@ -1,4 +1,5 @@
 import { Terminal, Globe2, MapPin, Mail, Phone } from "lucide-react";
+import { CopyEmailButton } from "@/components/CopyEmailButton";
 
 export function AboutStudioShowroom() {
   return (
@@ -70,9 +71,12 @@ export function AboutStudioShowroom() {
                 <div className="w-11 h-11 rounded-xl bg-amber-500/10 border border-amber-500/25 flex items-center justify-center text-amber-700 group-hover/card:scale-105 transition-transform">
                   <Mail className="w-5 h-5" />
                 </div>
-                <span className="text-[10px] font-mono text-[#141312]/50 uppercase tracking-wider font-semibold">
-                  Dispatch
-                </span>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[10px] font-mono text-[#141312]/50 uppercase tracking-wider font-semibold">
+                    Dispatch
+                  </span>
+                  <CopyEmailButton variant="pill" email="telosdigitalofficial@gmail.com" />
+                </div>
               </div>
               <div>
                 <div className="text-[11px] font-mono text-amber-700 font-bold mb-1">

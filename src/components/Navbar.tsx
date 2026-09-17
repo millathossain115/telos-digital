@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { CopyEmailButton } from "@/components/CopyEmailButton";
 
 const NAV_LINKS = [
   { label: "Services", href: "/services" },
@@ -27,39 +28,33 @@ export function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-      {/* Top Utility Strip */}
-      <div className="bg-[#141312] text-[#FAF8F5] text-xs font-mono relative z-10 border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center justify-between gap-y-1.5 gap-x-4">
-          {/* Location & Status (Desktop/Tablet) or Phone (Mobile) */}
-          <div className="flex items-center gap-2 text-xs sm:text-[13px]">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 ring-2 ring-emerald-400/30 animate-pulse" />
-            <span className="text-white/70 font-semibold tracking-wide text-[11px] uppercase">STUDIO:</span>
-            
-            {/* Mobile View: Phone number */}
-            <a
-              href="tel:+8801618257217"
-              className="sm:hidden text-white font-medium hover:text-amber-400 transition-colors flex items-center gap-1.5"
-            >
-              <Phone className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-              <span>+880 1618-257217</span>
-            </a>
-
-            {/* sm+ View: Location */}
-            <span className="hidden sm:inline-flex text-white font-medium items-center gap-1.5">
+      {/* Top Bar: Always Visible Studio & Contact Details */}
+      <div className="w-full bg-[#141210] border-b border-[#2C2622] text-[#FAF7F2]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center justify-between gap-y-1 gap-x-6 text-xs sm:text-[13px] font-mono tracking-tight">
+          {/* Left: Studio Status + Location */}
+          <div className="flex items-center gap-3 text-neutral-300">
+            <span className="inline-flex items-center gap-2 text-white">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 ring-2 ring-emerald-400/30 animate-pulse shrink-0" />
+              <span className="font-semibold text-white tracking-wider text-[11px] uppercase">STUDIO:</span>
+            </span>
+            <span className="inline-flex text-neutral-300 font-medium items-center gap-1.5">
               <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
               <span>Madani Avenue, Dhaka, Bangladesh</span>
             </span>
           </div>
 
           {/* Contact Direct Strip */}
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-xs sm:text-[13px]">
-            <a
-              href="mailto:telosdigitalofficial@gmail.com"
-              className="inline-flex items-center gap-1.5 text-white/90 hover:text-amber-400 transition-colors font-medium"
-            >
-              <Mail className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-              <span>telosdigitalofficial@gmail.com</span>
-            </a>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs sm:text-[13px]">
+            <div className="inline-flex items-center gap-1.5">
+              <a
+                href="mailto:telosdigitalofficial@gmail.com"
+                className="inline-flex items-center gap-1.5 text-white/90 hover:text-amber-400 transition-colors font-medium"
+              >
+                <Mail className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                <span>telosdigitalofficial@gmail.com</span>
+              </a>
+              <CopyEmailButton variant="iconOnly" email="telosdigitalofficial@gmail.com" />
+            </div>
 
             <span className="text-white/30 hidden sm:inline">|</span>
 
@@ -187,13 +182,16 @@ export function Navbar() {
 
             {/* Mobile Contact Quick Details */}
             <div className="pt-3 border-t border-black/[0.08] space-y-2.5 text-[13px] font-mono text-neutral-700">
-              <a
-                href="mailto:telosdigitalofficial@gmail.com"
-                className="flex items-center gap-2 text-neutral-800 hover:text-amber-700 font-medium"
-              >
-                <Mail className="w-4 h-4 text-amber-600 shrink-0" />
-                <span>telosdigitalofficial@gmail.com</span>
-              </a>
+              <div className="flex items-center justify-between gap-2">
+                <a
+                  href="mailto:telosdigitalofficial@gmail.com"
+                  className="flex items-center gap-2 text-neutral-800 hover:text-amber-700 font-medium"
+                >
+                  <Mail className="w-4 h-4 text-amber-600 shrink-0" />
+                  <span>telosdigitalofficial@gmail.com</span>
+                </a>
+                <CopyEmailButton variant="pill" email="telosdigitalofficial@gmail.com" />
+              </div>
               <div className="flex flex-col gap-1.5">
                 <a
                   href="tel:+8801618257217"
