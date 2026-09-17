@@ -110,6 +110,59 @@ const jsonLd = {
       ],
     },
     {
+      "@type": "ProfessionalService",
+      "@id": "https://www.telosdigital.agency/#service",
+      name: "Telos Digital Software Engineering",
+      url: "https://www.telosdigital.agency",
+      image: "https://www.telosdigital.agency/icon.svg",
+      priceRange: "$$$$",
+      telephone: "+8801618257217",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Madani Avenue",
+        addressLocality: "Dhaka",
+        addressCountry: "BD",
+      },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Engineering & Architecture Capabilities",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Full-Stack Web Architecture",
+              description: "Custom Next.js, React, Node.js, and cloud application engineering.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "High-Performance Mobile Engineering",
+              description: "Native iOS (Swift) and React Native cross-platform application development.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Enterprise Commerce & Retail Systems",
+              description: "Scalable e-commerce infrastructure, inventory synchronization, and custom checkout flows.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Cloud Infrastructure & DevOps",
+              description: "Automated CI/CD pipelines, container orchestration, and serverless architectures.",
+            },
+          },
+        ],
+      },
+    },
+    {
       "@type": "WebSite",
       "@id": "https://www.telosdigital.agency/#website",
       url: "https://www.telosdigital.agency",

@@ -1,0 +1,62 @@
+# Telos Digital
+> Production Software Architecture & Product Engineering Studio
+
+Telos Digital is an elite software engineering and digital architecture studio. We design, architect, and deliver production-grade cloud systems, high-velocity commerce engines, enterprise platforms, and native mobile applications.
+
+- **Website**: https://www.telosdigital.agency
+- **Primary Domain**: https://www.telosdigital.agency
+- **Primary Inquiries**: telosdigitalofficial@gmail.com
+- **Direct WhatsApp**: +880 1610-108851 / +880 1618-257217
+- **Headquarters / Location**: Madani Avenue, Dhaka, Bangladesh (Serving global clients across North America, Europe, MENA, and APAC)
+- **Code Ownership Guarantee**: 100% unconditional day-one intellectual property (IP) and repository commit rights transferred to clients.
+
+---
+
+## Core Capabilities & Engineering Services
+
+1. **Full-Stack Web Architecture**
+   - Modern Next.js (App Router, Turbopack, Server Actions), React, TypeScript, Node.js, and Bun.
+   - High-throughput REST & GraphQL APIs, microservices, edge computing, serverless architectures, and PostgreSQL/Redis/Supabase persistence.
+
+2. **Enterprise E-Commerce & Retail Ecosystems**
+   - High-concurrency transaction engines, verified multi-vendor fulfillment, localized delivery integrations (including Cash-on-Delivery routing), and sub-100ms product indexing.
+   - Flagship reference: **Telos Cart** (https://www.teloscart.website/).
+
+3. **High-Performance Native & Cross-Platform Mobile Engineering**
+   - Native iOS (Swift/SwiftUI) and high-fidelity React Native / Flutter apps.
+   - Offline-first caching, biometrics, hardware sensor integrations, and push notification pipelines.
+
+4. **Cloud Infrastructure & DevOps CI/CD**
+   - AWS, Google Cloud Platform (GCP), Vercel, Docker container orchestration, and automated Playwright E2E testing pipelines.
+
+5. **Design Systems & Spatial UI/UX**
+   - Architectural UI design systems, micro-interactions, responsive accessibility, and custom design tokens.
+
+---
+
+## Flagship Products & Selected Work
+
+- **Telos Cart** (https://www.teloscart.website/):
+  - Next-generation digital and retail e-commerce platform architected and operated by Telos Digital.
+  - Combines low-latency product indexing, instant fuzzy search, multi-vendor logistics, and automated Cash-on-Delivery routing.
+
+---
+
+## Operating Principles (The Telos Standard)
+
+- **Senior-Only Engineering**: 100% senior staff architects and principal leads on direct client codebases. Zero junior bait-and-switch.
+- **14-Day Production Sprints**: Live staging branches delivered every 2 weeks with continuous client Slack/GitHub integration.
+- **Architectural Discipline**: Strict TypeScript, 0-warning linter compliance, automated CI/CD checks, and Playwright verification suites.
+- **Unconditional IP Ownership**: Day-one copyright and full repository ownership from the first commit.
+
+---
+
+## Official Sitemaps & Key Pages
+
+- Home: https://www.telosdigital.agency
+- Services & Capabilities: https://www.telosdigital.agency/services
+- Selected Work & Case Studies: https://www.telosdigital.agency/work
+- Engineering Delivery Process: https://www.telosdigital.agency/process
+- About & Studio Philosophy: https://www.telosdigital.agency/about
+- Project Intake & Contact: https://www.telosdigital.agency/contact
+- Sitemap XML: https://www.telosdigital.agency/sitemap.xml
