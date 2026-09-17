@@ -4,6 +4,7 @@ import { Hero } from "@/components/Hero";
 import { ServicesBento } from "@/components/ServicesBento";
 import { ConversionCtaBanner } from "@/components/ConversionCtaBanner";
 import { Footer } from "@/components/Footer";
+import { LandingInquiryModal } from "@/components/LandingInquiryModal";
 
 const ComparisonMatrix = dynamic(
   () => import("@/components/ComparisonMatrix").then((mod) => mod.ComparisonMatrix),
@@ -40,6 +41,7 @@ export default function Home() {
         <ConversionCtaBanner />
       </main>
       <Footer />
+      <LandingInquiryModal />
     </div>
   );
 }
