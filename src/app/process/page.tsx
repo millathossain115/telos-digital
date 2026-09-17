@@ -111,6 +111,86 @@ export default function ProcessPage() {
             ))}
           </div>
 
+          {/* Existing Projects: Modernization, Redesign & Rebranding Track */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#141312] via-[#1A1816] to-[#26211C] border border-[#3A332C] p-8 sm:p-12 text-white shadow-2xl"
+          >
+            <div className="pointer-events-none absolute -top-24 -right-24 w-96 h-96 bg-amber-500/15 rounded-full blur-3xl" />
+            <div className="pointer-events-none absolute -bottom-24 -left-24 w-80 h-80 bg-amber-600/10 rounded-full blur-3xl" />
+
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-7 space-y-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-mono uppercase tracking-wider">
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                  <span>Existing Systems // Legacy Modernization</span>
+                </div>
+
+                <h2 className="text-2xl sm:text-4xl font-semibold tracking-tight text-white leading-tight">
+                  Have an existing product that needs a{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-200">
+                    redesign, rebrand, or tech upgrade?
+                  </span>
+                </h2>
+
+                <p className="text-sm sm:text-base text-neutral-300 leading-relaxed max-w-2xl">
+                  We don&apos;t just build greenfield software from scratch. We regularly take over existing codebases, outdated web applications, and legacy platforms to overhaul their UI/UX design, refresh their brand identity, refactor technical debt, and migrate them to modern stacks with zero business downtime.
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs sm:text-sm text-neutral-200">
+                  <div className="flex items-start gap-2.5">
+                    <span className="text-amber-400 font-mono font-bold">✓</span>
+                    <span><strong>UI/UX Redesign & Rebranding:</strong> Contemporary visual systems, typography, and micro-interactions.</span>
+                  </div>
+                  <div className="flex items-start gap-2.5">
+                    <span className="text-amber-400 font-mono font-bold">✓</span>
+                    <span><strong>Stack Migration:</strong> Legacy React, WordPress, or monolithic apps to Next.js & Turbopack.</span>
+                  </div>
+                  <div className="flex items-start gap-2.5">
+                    <span className="text-amber-400 font-mono font-bold">✓</span>
+                    <span><strong>Performance & SEO Overhaul:</strong> Sub-second Core Web Vitals, metadata, and structured data fixes.</span>
+                  </div>
+                  <div className="flex items-start gap-2.5">
+                    <span className="text-amber-400 font-mono font-bold">✓</span>
+                    <span><strong>Code Audit & Refactoring:</strong> Elimination of security risks, type leaks, and slow database queries.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="lg:col-span-5 bg-white/[0.04] border border-white/[0.08] rounded-2xl p-6 sm:p-7 space-y-4 backdrop-blur-sm">
+                <div className="text-xs font-mono uppercase tracking-wider text-amber-400">
+                  Modernization Playbook
+                </div>
+                <div className="space-y-3 text-xs sm:text-sm text-neutral-300">
+                  <div className="p-3 rounded-xl bg-black/30 border border-white/5 flex gap-3">
+                    <span className="text-amber-400 font-mono font-bold">01</span>
+                    <div>
+                      <strong className="text-white block">Audit & Architecture Diagnosis</strong>
+                      Deep code, design, and performance inspection before touching production.
+                    </div>
+                  </div>
+                  <div className="p-3 rounded-xl bg-black/30 border border-white/5 flex gap-3">
+                    <span className="text-amber-400 font-mono font-bold">02</span>
+                    <div>
+                      <strong className="text-white block">Staged Incremental Refactor</strong>
+                      Module-by-module modernization with staging previews. No service interruption.
+                    </div>
+                  </div>
+                  <div className="p-3 rounded-xl bg-black/30 border border-white/5 flex gap-3">
+                    <span className="text-amber-400 font-mono font-bold">03</span>
+                    <div>
+                      <strong className="text-white block">Seamless Production Cutover</strong>
+                      Zero-downtime DNS transfer, data parity checks, and automated regression testing.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
           {/* Bottom Conversion Banner Component */}
           <ConversionCtaBanner
             badge="Phase 01 Onboarding"
