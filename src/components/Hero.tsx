@@ -3,27 +3,28 @@
 import { useState, useEffect } from "react";
 import { motion, type Variants } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const HERO_SLIDES = [
   {
     title: "Next-Gen Enterprise Web Architecture",
     tag: "Internal Tools & Cloud Platforms",
-    src: "/assets/Banner/homepage-seen-computer-screen.jpg",
+    src: "/assets/Banner/hero-enterprise.webp",
   },
   {
     title: "Editorial Beauty & Direct-to-Consumer",
     tag: "E-Commerce Experience",
-    src: "/assets/Banner/Landing mockup Beuty.jpeg",
+    src: "/assets/Banner/hero-beauty.webp",
   },
   {
     title: "High-Conversion Retail Storefront",
     tag: "Commerce Architecture",
-    src: "/assets/Banner/Landing Mockup Ecommerce.jpeg",
+    src: "/assets/Banner/hero-ecommerce.webp",
   },
   {
     title: "Dynamic Kinetic & Creative Stage",
     tag: "Interactive Experience",
-    src: "/assets/Banner/landing mockup Dancing .jpeg",
+    src: "/assets/Banner/hero-creative.webp",
   },
 ];
 
@@ -171,11 +172,13 @@ export function Hero() {
                   style={{ willChange: "opacity, transform" }}
                   className="absolute inset-0 w-full h-full pointer-events-none"
                 >
-                  <img
+                  <Image
                     src={slide.src}
                     alt={slide.title}
-                    loading={idx === 0 ? "eager" : "lazy"}
-                    className="w-full h-full object-cover object-top block"
+                    fill
+                    priority={idx === 0}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+                    className="object-cover object-top block"
                   />
                 </motion.div>
               );

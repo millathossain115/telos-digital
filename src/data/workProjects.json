@@ -11,7 +11,7 @@
     "challenge": "Fragmented logistics across nationwide districts, high mobile bounce rates on unoptimized networks, and complex inventory synchronizations across varied merchant categories.",
     "solution": "Built a lightning-fast commerce platform utilizing Next.js, Framer Motion, dynamic catalog indexing, zero-friction COD checkout pipelines, and mobile-first micro-interactions.",
     "liveUrl": "https://www.teloscart.website/",
-    "image": "/assets/images/teloscart.png",
+    "image": "/assets/images/teloscart.webp",
     "metrics": [
       { "label": "District Coverage", "value": "64 Districts" },
       { "label": "Catalog Speed", "value": "<140ms" },
@@ -35,7 +35,7 @@
     "challenge": "High mobile traffic with volatile cellular connectivity, complex district courier logistics, and concurrent vendor catalog updates causing inventory race conditions.",
     "solution": "Built a high-performance Next.js storefront backed by edge data caching, local-first cart persistence, and microservice order processing with automated courier routing.",
     "liveUrl": "https://www.hawkeri.com/",
-    "image": "/assets/images/hawkeri.png",
+    "image": "/assets/images/hawkeri.webp",
     "metrics": [
       { "label": "Search Latency", "value": "<120ms" },
       { "label": "SKU Concurrency", "value": "50k+ Live" },
@@ -58,7 +58,7 @@
     "challenge": "SMEs face frequent cellular dropouts, fragmented manual ledger books (khata), and payment reconciliation discrepancies across cash and mobile financial services.",
     "solution": "Built a resilient Next.js Progressive Web App with IndexedDB offline-first sales caching, automatic background ledger synchronization, and real-time BI analytics.",
     "liveUrl": "https://www.andgatebos.com/",
-    "image": "/assets/images/andgatebos.png",
+    "image": "/assets/images/andgatebos.webp",
     "metrics": [
       { "label": "Active Stores", "value": "100+" },
       { "label": "Sales Processed", "value": "৳1M+" },
@@ -81,7 +81,7 @@
     "architectureHighlight": "Frictionless intake funnels · WhatsApp live triage · Zero-CLS editorial layout",
     "solution": "Architected an ultra-fast, data-driven web portal with embedded interactive consultation pipelines, live case success telemetry, and seamless appointment booking.",
     "liveUrl": "https://adskill-consultancy-web.vercel.app/",
-    "image": "/assets/images/adskill.png",
+    "image": "/assets/images/adskill.webp",
     "metrics": [
       { "label": "Visas Approved", "value": "2.5k+" },
       { "label": "Success Rate", "value": "98%" },
@@ -104,7 +104,7 @@
     "architectureHighlight": "Atelier mood aesthetics · Real-time voucher engine · Instant search telemetry",
     "solution": "Crafted an immersive dark editorial marketplace with streamlined category filtering, instant voucher application, and responsive checkout flows.",
     "liveUrl": "https://artisane-client.vercel.app/",
-    "image": "/assets/images/artisane.png",
+    "image": "/assets/images/artisane.webp",
     "metrics": [
       { "label": "Session Duration", "value": "+210%" },
       { "label": "Catalog Engagement", "value": "4.6 min" },
