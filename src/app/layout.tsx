@@ -52,9 +52,9 @@ export const metadata: Metadata = {
       "Production software engineering studio. Full-stack cloud web systems, high-speed retail commerce, native mobile apps, and refined digital products.",
     images: [
       {
-        url: "/icon.svg",
-        width: 512,
-        height: 512,
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
         alt: "Telos Digital — Software Architecture & Product Engineering Studio",
       },
     ],
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     title: "Telos Digital | Software Architecture & Product Engineering",
     description:
       "Production software engineering studio. Full-stack cloud web systems, high-speed retail commerce, native mobile apps, and refined digital products.",
-    images: ["/icon.svg"],
+    images: ["/opengraph-image.png"],
   },
   robots: {
     index: true,
