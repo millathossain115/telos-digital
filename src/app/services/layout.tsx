@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Services & Capabilities",
   description:
     "Full-stack web architecture, high-performance mobile engineering, cloud infrastructure, and enterprise design systems.",
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 export default function ServicesLayout({
