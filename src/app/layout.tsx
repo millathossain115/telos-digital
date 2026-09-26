@@ -66,6 +66,18 @@ export const metadata: Metadata = {
       "Production software engineering studio. Full-stack cloud web systems, high-speed retail commerce, native mobile apps, and refined digital products.",
     images: ["/opengraph-image.png"],
   },
+  icons: {
+    icon: [
+      { url: "/icon-48x48.png", sizes: "48x48", type: "image/png" },
+      { url: "/icon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/icon-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: ["/icon-48x48.png"],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
   robots: {
     index: true,
     follow: true,
