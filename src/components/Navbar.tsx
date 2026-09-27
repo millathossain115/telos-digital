@@ -28,11 +28,35 @@ export function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-      {/* Top Bar: Always Visible Studio & Contact Details */}
+      {/* Top Bar: Compact Phone on Mobile, Full Coordinates on Tablet/Desktop */}
       <div className="w-full bg-[#141210] border-b border-[#2C2622] text-[#FAF7F2]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center justify-between gap-y-1 gap-x-6 text-xs sm:text-[13px] font-mono tracking-tight">
-          {/* Left: Studio Status + Location */}
-          <div className="flex items-center gap-3 text-neutral-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1.5 sm:py-2 flex items-center justify-between text-xs sm:text-[13px] font-mono tracking-tight">
+          {/* Mobile View: Narrow single-line phone quick-dial */}
+          <div className="flex sm:hidden items-center justify-between w-full">
+            <span className="inline-flex items-center gap-1.5 text-white/70 text-[11px]">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span>DIRECT:</span>
+            </span>
+            <div className="flex items-center gap-2 text-[11px]">
+              <Phone className="w-3 h-3 text-amber-400 shrink-0" />
+              <a
+                href="tel:+8801618257217"
+                className="text-white hover:text-amber-400 font-semibold tracking-tight transition-colors"
+              >
+                +880 1618-257217
+              </a>
+              <span className="text-white/30 font-normal">/</span>
+              <a
+                href="tel:+8801610108851"
+                className="text-white hover:text-amber-400 font-semibold tracking-tight transition-colors"
+              >
+                108851
+              </a>
+            </div>
+          </div>
+
+          {/* Desktop/Tablet View (sm+): Full Studio Status & Coordinates */}
+          <div className="hidden sm:flex items-center gap-3 text-neutral-300">
             <span className="inline-flex items-center gap-2 text-white">
               <span className="w-2 h-2 rounded-full bg-emerald-400 ring-2 ring-emerald-400/30 animate-pulse shrink-0" />
               <span className="font-semibold text-white tracking-wider text-[11px] uppercase">STUDIO:</span>
@@ -43,8 +67,8 @@ export function Navbar() {
             </span>
           </div>
 
-          {/* Contact Direct Strip */}
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs sm:text-[13px]">
+          {/* Contact Direct Strip on Desktop/Tablet */}
+          <div className="hidden sm:flex flex-wrap items-center gap-x-4 gap-y-1 text-xs sm:text-[13px]">
             <div className="inline-flex items-center gap-1.5">
               <a
                 href="mailto:telosdigitalofficial@gmail.com"
@@ -56,9 +80,9 @@ export function Navbar() {
               <CopyEmailButton variant="iconOnly" email="telosdigitalofficial@gmail.com" />
             </div>
 
-            <span className="text-white/30 hidden sm:inline">|</span>
+            <span className="text-white/30">|</span>
 
-            <div className="hidden sm:flex items-center gap-2 text-white/90">
+            <div className="flex items-center gap-2 text-white/90">
               <Phone className="w-3.5 h-3.5 text-amber-400 shrink-0" />
               <a
                 href="tel:+8801618257217"
