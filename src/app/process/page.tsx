@@ -75,27 +75,27 @@ export default function ProcessPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-5 p-2 sm:p-2.5 rounded-[2rem] bg-gradient-to-b from-[#EFEAE2]/60 to-[#E8E1D6]/80 border border-[#D9CFC4] shadow-[0_16px_40px_rgba(20,19,18,0.04)] backdrop-blur-sm"
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-4"
           >
             {COLLABORATION_RULES.map((rule) => {
               const RuleIcon = RULE_ICON_MAP[rule.icon as keyof typeof RULE_ICON_MAP] || Zap;
               return (
                 <div
                   key={rule.id}
-                  className="group relative flex flex-col justify-between p-6 sm:p-7 rounded-[1.6rem] bg-gradient-to-br from-white via-[#FCFAF7] to-[#F7F2EB] border border-black/[0.06] hover:border-amber-500/40 shadow-xs hover:shadow-[0_12px_32px_rgba(217,119,6,0.08)] transition-all duration-300 overflow-hidden"
+                  className="group relative flex flex-col justify-between p-6 sm:p-7 rounded-2xl bg-gradient-to-br from-[#FFFDF9] via-[#FAF3EB] to-[#F2E7DC] border border-[#E6DACD] ring-1 ring-inset ring-white/95 shadow-[0_10px_30px_rgba(20,19,18,0.03)] hover:shadow-[0_16px_40px_rgba(217,119,6,0.07)] hover:border-amber-500/40 transition-all duration-300 overflow-hidden"
                 >
                   {/* Subtle hover accent light */}
-                  <div className="pointer-events-none absolute -top-12 -right-12 w-28 h-28 bg-amber-500/10 rounded-full blur-xl group-hover:bg-amber-500/20 group-hover:scale-125 transition-all duration-500" />
+                  <div className="pointer-events-none absolute -top-10 -right-10 w-24 h-24 bg-amber-500/10 rounded-full blur-xl group-hover:bg-amber-500/20 transition-all duration-300" />
 
                   <div className="space-y-3 relative z-10">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500/15 to-amber-600/5 border border-amber-500/25 flex items-center justify-center text-amber-700 shadow-xs group-hover:scale-105 group-hover:border-amber-500/40 transition-all duration-300">
+                    <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-800 shadow-2xs group-hover:scale-105 transition-transform duration-300">
                       <RuleIcon className="w-4 h-4" />
                     </div>
-                    <h3 className="text-base font-semibold text-[#141312] tracking-tight group-hover:text-amber-950 transition-colors">
+                    <h3 className="text-base font-bold text-[#141312] tracking-tight">
                       {rule.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
+                    <p className="text-xs sm:text-[13px] text-[#141312]/75 leading-relaxed">
                       {rule.desc}
                     </p>
                   </div>
@@ -105,7 +105,7 @@ export default function ProcessPage() {
           </motion.div>
 
           {/* 4 Phases Timeline Stack */}
-          <div className="space-y-12 sm:space-y-16">
+          <div className="space-y-8 sm:space-y-10">
             {PHASES.map((phase, idx) => (
               <ProcessPhaseCard key={phase.id} phase={phase} index={idx} />
             ))}
@@ -115,9 +115,9 @@ export default function ProcessPage() {
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#141312] via-[#1A1816] to-[#26211C] border border-[#3A332C] p-8 sm:p-12 text-white shadow-2xl"
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#141210] via-[#1A1816] to-[#241F1A] border border-amber-500/30 ring-1 ring-inset ring-white/10 p-6 sm:p-10 text-white shadow-2xl"
           >
             <div className="pointer-events-none absolute -top-24 -right-24 w-96 h-96 bg-amber-500/15 rounded-full blur-3xl" />
             <div className="pointer-events-none absolute -bottom-24 -left-24 w-80 h-80 bg-amber-600/10 rounded-full blur-3xl" />
@@ -125,65 +125,65 @@ export default function ProcessPage() {
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-7 space-y-4">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-mono uppercase tracking-wider">
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
                   <span>Existing Systems // Legacy Modernization</span>
                 </div>
 
-                <h2 className="text-2xl sm:text-4xl font-semibold tracking-tight text-white leading-tight">
+                <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
                   Have an existing product that needs a{" "}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-200">
                     redesign, rebrand, or tech upgrade?
                   </span>
                 </h2>
 
-                <p className="text-sm sm:text-base text-neutral-300 leading-relaxed max-w-2xl">
+                <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed max-w-2xl">
                   We don&apos;t just build greenfield software from scratch. We regularly take over existing codebases, outdated web applications, and legacy platforms to overhaul their UI/UX design, refresh their brand identity, refactor technical debt, and migrate them to modern stacks with zero business downtime.
                 </p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs sm:text-sm text-neutral-200">
-                  <div className="flex items-start gap-2.5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2 text-xs text-neutral-200">
+                  <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/10 flex items-start gap-2">
                     <span className="text-amber-400 font-mono font-bold">✓</span>
-                    <span><strong>UI/UX Redesign & Rebranding:</strong> Contemporary visual systems, typography, and micro-interactions.</span>
+                    <span><strong className="text-white">UI/UX & Rebrand:</strong> Modern tokens & micro-interactions.</span>
                   </div>
-                  <div className="flex items-start gap-2.5">
+                  <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/10 flex items-start gap-2">
                     <span className="text-amber-400 font-mono font-bold">✓</span>
-                    <span><strong>Stack Migration:</strong> Legacy React, WordPress, or monolithic apps to Next.js & Turbopack.</span>
+                    <span><strong className="text-white">Stack Migration:</strong> Legacy React or WP to Next.js Turbopack.</span>
                   </div>
-                  <div className="flex items-start gap-2.5">
+                  <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/10 flex items-start gap-2">
                     <span className="text-amber-400 font-mono font-bold">✓</span>
-                    <span><strong>Performance & SEO Overhaul:</strong> Sub-second Core Web Vitals, metadata, and structured data fixes.</span>
+                    <span><strong className="text-white">Performance & SEO:</strong> Sub-second Core Web Vitals & parity.</span>
                   </div>
-                  <div className="flex items-start gap-2.5">
+                  <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/10 flex items-start gap-2">
                     <span className="text-amber-400 font-mono font-bold">✓</span>
-                    <span><strong>Code Audit & Refactoring:</strong> Elimination of security risks, type leaks, and slow database queries.</span>
+                    <span><strong className="text-white">Refactoring & Audit:</strong> Elimination of security & type debt.</span>
                   </div>
                 </div>
               </div>
 
-              <div className="lg:col-span-5 bg-white/[0.04] border border-white/[0.08] rounded-2xl p-6 sm:p-7 space-y-4 backdrop-blur-sm">
-                <div className="text-xs font-mono uppercase tracking-wider text-amber-400">
+              <div className="lg:col-span-5 bg-white/[0.03] border border-white/10 ring-1 ring-inset ring-white/5 rounded-2xl p-5 sm:p-6 space-y-3 backdrop-blur-md">
+                <div className="text-xs font-mono uppercase tracking-wider text-amber-400 font-bold">
                   Modernization Playbook
                 </div>
-                <div className="space-y-3 text-xs sm:text-sm text-neutral-300">
-                  <div className="p-3 rounded-xl bg-black/30 border border-white/5 flex gap-3">
-                    <span className="text-amber-400 font-mono font-bold">01</span>
+                <div className="space-y-2.5 text-xs text-neutral-300">
+                  <div className="p-3 rounded-xl bg-black/40 border border-white/5 flex gap-3">
+                    <span className="text-amber-400 font-mono font-bold text-sm">01</span>
                     <div>
-                      <strong className="text-white block">Audit & Architecture Diagnosis</strong>
+                      <strong className="text-white block text-xs">Audit & Architecture Diagnosis</strong>
                       Deep code, design, and performance inspection before touching production.
                     </div>
                   </div>
-                  <div className="p-3 rounded-xl bg-black/30 border border-white/5 flex gap-3">
-                    <span className="text-amber-400 font-mono font-bold">02</span>
+                  <div className="p-3 rounded-xl bg-black/40 border border-white/5 flex gap-3">
+                    <span className="text-amber-400 font-mono font-bold text-sm">02</span>
                     <div>
-                      <strong className="text-white block">Staged Incremental Refactor</strong>
+                      <strong className="text-white block text-xs">Staged Incremental Refactor</strong>
                       Module-by-module modernization with staging previews. No service interruption.
                     </div>
                   </div>
-                  <div className="p-3 rounded-xl bg-black/30 border border-white/5 flex gap-3">
-                    <span className="text-amber-400 font-mono font-bold">03</span>
+                  <div className="p-3 rounded-xl bg-black/40 border border-white/5 flex gap-3">
+                    <span className="text-amber-400 font-mono font-bold text-sm">03</span>
                     <div>
-                      <strong className="text-white block">Seamless Production Cutover</strong>
-                      Zero-downtime DNS transfer, data parity checks, and automated regression testing.
+                      <strong className="text-white block text-xs">Seamless Production Cutover</strong>
+                      Zero-downtime DNS transfer, data parity checks, and automated tests.
                     </div>
                   </div>
                 </div>

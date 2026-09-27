@@ -33,71 +33,72 @@ export function ProcessPhaseCard({ phase, index }: ProcessPhaseCardProps) {
       variants={cardVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      className="group relative p-6 sm:p-9 rounded-[2rem] bg-gradient-to-br from-[#F7F2EB] via-[#F2ECE3] to-[#EAE1D5] border border-[#DDD3C7]/90 hover:border-amber-500/40 transition-all duration-500 shadow-[0_4px_6px_-1px_rgba(20,19,18,0.03),0_18px_45px_-6px_rgba(40,28,15,0.08),0_30px_70px_-12px_rgba(217,119,6,0.06)] hover:shadow-[0_8px_12px_-2px_rgba(20,19,18,0.04),0_24px_55px_-4px_rgba(40,28,15,0.12),0_36px_85px_-10px_rgba(217,119,6,0.14)] overflow-hidden"
+      viewport={{ once: true, amount: 0.15 }}
+      className="group relative p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#FFFDF9] via-[#FAF3EB] to-[#F2E7DC] border border-[#E6DACD] ring-1 ring-inset ring-white/95 shadow-[0_12px_36px_rgba(20,19,18,0.04)] hover:shadow-[0_20px_50px_rgba(217,119,6,0.08)] hover:border-amber-500/40 transition-all duration-400 overflow-hidden"
     >
-      {/* Top subtle border highlight */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
+      {/* Top subtle hairline amber highlight */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[1.5px] bg-gradient-to-r from-transparent via-amber-500/50 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
 
       {/* Warm corner ambient backlight */}
-      <div className="absolute -top-32 -right-32 w-96 h-96 bg-amber-500/10 blur-3xl opacity-40 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 pointer-events-none" />
-      <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-amber-600/5 blur-3xl opacity-30 pointer-events-none" />
+      <div className="absolute -top-24 -right-24 w-80 h-80 bg-amber-500/10 blur-3xl opacity-30 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start relative z-10">
-        {/* Left: Phase Title & Scope (7 Cols) */}
-        <div className="lg:col-span-7 space-y-4 sm:space-y-5">
-          <div className="flex items-center gap-3">
-            <span className="text-xs font-mono px-3.5 py-1 rounded-full bg-white/90 border border-amber-600/20 text-amber-900 font-semibold shadow-xs backdrop-blur-xs">
-              {phase.step}
-            </span>
-            <span className="text-xs font-mono text-neutral-600 flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/60 border border-black/[0.04]">
-              <Clock className="w-3.5 h-3.5 text-amber-700" />
-              {phase.timeframe}
-            </span>
-          </div>
-
-          <div>
-            <div className="flex items-center gap-3 mb-1.5">
-              <div className="w-10 h-10 rounded-xl bg-white border border-amber-500/20 flex items-center justify-center text-amber-700 shadow-sm group-hover:scale-105 group-hover:border-amber-500/40 transition-all duration-300">
-                <IconComponent className="w-5 h-5" />
-              </div>
-              <h2 className="text-xl sm:text-2xl font-semibold text-[#141312] tracking-tight leading-snug">
-                {phase.title}
-              </h2>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch relative z-10">
+        {/* Left: Phase Title & Deliverables (7 Cols) */}
+        <div className="lg:col-span-7 flex flex-col justify-between space-y-4">
+          <div className="space-y-3.5">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-[11px] font-mono px-3 py-0.5 rounded-full bg-amber-500 text-[#141210] font-bold uppercase tracking-wider shadow-[0_0_12px_rgba(245,158,11,0.25)]">
+                {phase.step}
+              </span>
+              <span className="text-[11px] font-mono text-[#141312]/60 flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/90 border border-[#E6DACD]">
+                <Clock className="w-3 h-3 text-amber-700" />
+                {phase.timeframe}
+              </span>
             </div>
-            <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
-              {phase.summary}
-            </p>
-          </div>
 
-          {/* Explicit Deliverables Checklist - Compact 2-column grid */}
-          <div className="space-y-2 pt-1">
-            <div className="text-[11px] font-mono text-neutral-500 uppercase tracking-wider font-medium">
-              Tangible Deliverables
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-              {phase.deliverables.map((item) => (
-                <div
-                  key={item}
-                  className="flex items-start gap-2.5 p-2.5 rounded-xl bg-white/75 border border-black/[0.04] text-xs text-neutral-700 leading-snug hover:bg-white/95 transition-all shadow-[0_2px_6px_rgba(20,19,18,0.02)] hover:shadow-[0_4px_12px_rgba(20,19,18,0.05)]"
-                >
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>{item}</span>
+            <div>
+              <div className="flex items-center gap-2.5 mb-1.5">
+                <div className="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/25 flex items-center justify-center text-amber-800 shadow-2xs group-hover:scale-105 transition-transform duration-300">
+                  <IconComponent className="w-4 h-4" />
                 </div>
-              ))}
+                <h2 className="text-xl sm:text-2xl font-bold text-[#141312] tracking-tight leading-snug">
+                  {phase.title}
+                </h2>
+              </div>
+              <p className="text-xs sm:text-[13px] text-[#141312]/75 leading-relaxed">
+                {phase.summary}
+              </p>
+            </div>
+
+            {/* Explicit Deliverables Checklist - Compact 2-column grid */}
+            <div className="space-y-1.5 pt-1">
+              <div className="text-[10px] font-mono text-[#141312]/55 uppercase tracking-wider font-bold">
+                Deliverables & Outputs
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+                {phase.deliverables.map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-center gap-2 p-2 rounded-lg bg-white/85 border border-[#E6DACD] text-xs text-[#141312]/90 leading-tight shadow-2xs hover:border-amber-500/30 transition-colors"
+                  >
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <span className="truncate">{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
           {/* Tooling Tags */}
-          <div className="space-y-1.5 pt-1">
-            <div className="text-[11px] font-mono text-neutral-500 uppercase tracking-wider font-medium">
-              Stack & Tooling
-            </div>
-            <div className="flex flex-wrap gap-1.5">
+          <div className="pt-2 border-t border-[#E6DACD]">
+            <div className="flex flex-wrap items-center gap-1.5">
+              <span className="text-[10px] font-mono text-[#141312]/55 uppercase tracking-wider font-bold mr-1">
+                Tooling:
+              </span>
               {phase.tooling.map((tool) => (
                 <span
                   key={tool}
-                  className="text-xs font-mono px-2.5 py-0.5 rounded-md bg-white/80 border border-black/[0.07] text-neutral-700 shadow-xs font-medium hover:border-amber-500/30 transition-colors"
+                  className="text-[11px] font-mono px-2 py-0.5 rounded-md bg-white border border-[#E6DACD] text-[#141312] shadow-2xs font-medium"
                 >
                   {tool}
                 </span>
@@ -106,45 +107,42 @@ export function ProcessPhaseCard({ phase, index }: ProcessPhaseCardProps) {
           </div>
         </div>
 
-        {/* Right: Client Touchpoints & Workflow (5 Cols) */}
-        <div className="lg:col-span-5">
-          <motion.div
-            animate={{
-              y: [0, -16, 0],
-              rotate: [0, -0.75, 0.75, 0],
-            }}
-            transition={{
-              duration: 1.4,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: index * 0.18,
-            }}
-            whileHover={{ y: -4, rotate: 0, transition: { duration: 0.2, ease: "easeOut" } }}
-            style={{ willChange: "transform" }}
-            className="rounded-2xl bg-gradient-to-b from-white via-[#FCFAF7] to-[#F7F3EC] border border-black/[0.08] p-5 sm:p-6 space-y-3.5 shadow-[0_12px_28px_-4px_rgba(30,20,12,0.1),0_24px_52px_-8px_rgba(217,119,6,0.16)] hover:border-amber-500/40 hover:shadow-[0_16px_36px_-4px_rgba(30,20,12,0.14),0_30px_60px_-6px_rgba(217,119,6,0.22)] transition-all duration-300"
-          >
-            <div className="flex items-center justify-between pb-2.5 border-b border-black/[0.06]">
-              <span className="text-xs font-mono text-neutral-700 flex items-center gap-2 font-medium">
+        {/* Right: Client Touchpoints & Cadence Box (5 Cols) */}
+        <div className="lg:col-span-5 flex flex-col justify-between rounded-2xl bg-white/80 border border-[#E6DACD] p-5 shadow-2xs">
+          <div className="space-y-3">
+            <div className="flex items-center justify-between pb-2.5 border-b border-[#E6DACD]">
+              <span className="text-xs font-mono text-[#141312] flex items-center gap-1.5 font-bold">
                 <Terminal className="w-3.5 h-3.5 text-amber-600" />
-                Client Cadence
+                Client Cadence & Feedback
               </span>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-800 font-semibold uppercase">
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-900 border border-amber-500/20 font-semibold uppercase">
                 Touchpoints
               </span>
             </div>
 
             <div className="space-y-2">
-              {phase.clientTouchpoints.map((tp) => (
+              {phase.clientTouchpoints.map((tp, idx) => (
                 <div
                   key={tp}
-                  className="p-2.5 rounded-xl bg-white/90 border border-black/[0.05] text-xs text-neutral-700 leading-snug flex items-start gap-2 shadow-xs hover:border-amber-500/30 transition-colors"
+                  className="p-2.5 rounded-xl bg-[#FAF8F5] border border-[#E6DACD] text-xs text-[#141312]/85 leading-snug flex items-start gap-2 shadow-2xs hover:border-amber-500/30 transition-colors"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0 mt-1.5" />
-                  <span>{tp}</span>
+                  <span className="w-5 h-5 rounded-full bg-white border border-[#E6DACD] text-[10px] font-mono font-bold text-amber-700 flex items-center justify-center shrink-0">
+                    {idx + 1}
+                  </span>
+                  <span className="pt-0.5">{tp}</span>
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
+
+          {/* Operational Assurance Pill */}
+          <div className="mt-4 pt-3 border-t border-[#E6DACD] flex items-center justify-between text-[11px] font-mono text-[#141312]/60">
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+              Direct Async Channel
+            </span>
+            <span className="text-amber-800 font-semibold">Slack / Notion / Loom</span>
+          </div>
         </div>
       </div>
     </motion.section>
