@@ -107,7 +107,7 @@ export default function WorkPage() {
         </section>
 
         {/* Case Studies / Projects Stream */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
           {ALL_PROJECTS.map((project, idx) => (
             <WorkProjectCard key={project.id} project={project} index={idx} />
           ))}
