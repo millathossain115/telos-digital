@@ -8,7 +8,7 @@ import { ServiceModuleCard } from "@/components/ServiceModuleCard";
 import { EngagementModelsSection } from "@/components/EngagementModelsSection";
 import servicesDataJson from "@/data/servicesData.json";
 import type { ServicesData } from "@/types/services";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Activity, Server, Smartphone, Database, CheckCircle2, ShieldCheck, Zap } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
 
 const servicesData: ServicesData = servicesDataJson as ServicesData;
@@ -65,155 +65,136 @@ export default function ServicesPage() {
             <div className="lg:col-span-7 space-y-6">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-black/[0.08] text-xs font-mono text-amber-800 uppercase tracking-wider shadow-xs font-medium">
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
-                <span>Full-Stack & Cloud Capabilities // v2026.1</span>
+                <span>Full-Stack Engineering // v2026.1</span>
               </div>
 
-              <h1 className="text-4xl sm:text-6xl lg:text-[68px] font-semibold tracking-tight sm:tracking-tighter text-[#141312] leading-[1.04] text-balance">
-                Systems built to withstand{" "}
+              <h1 className="text-4xl sm:text-6xl lg:text-[64px] font-semibold tracking-[-0.035em] text-[#141312] leading-[1.08] text-balance">
+                Systems built for{" "}
                 <span className="italic font-serif font-normal text-transparent bg-clip-text bg-gradient-to-r from-amber-700 via-amber-600 to-amber-500">
-                  concurrency
+                  high concurrency
                 </span>
-                , scale, &amp; time.
+                , scale, and longevity.
               </h1>
 
-              <p className="text-base sm:text-lg text-neutral-600 max-w-2xl leading-relaxed font-normal text-pretty">
-                We design and ship mission-critical production software—from raw schema models and native hardware threads to multi-region automated deployment runbooks.
+              <p className="text-base sm:text-lg text-neutral-600 max-w-xl leading-relaxed font-normal text-pretty">
+                We design and ship mission-critical software—from database schema modeling to hardware-threaded mobile cores and multi-region runbooks.
               </p>
 
-              {/* Direct Engineering Model Highlight */}
-              <div className="p-4 rounded-2xl bg-white border border-black/[0.07] shadow-xs flex items-start sm:items-center gap-3.5 max-w-xl">
-                <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0 mt-1 sm:mt-0 animate-pulse" />
-                <div className="text-xs font-mono leading-relaxed text-neutral-700">
-                  <span className="font-semibold text-[#141312] uppercase tracking-wide">Direct Principal Access: </span>
-                  Zero account executives or agency overhead. Direct commit access with principal engineers.
+              {/* Action Buttons & Trust Line */}
+              <div className="pt-1 space-y-3">
+                <div className="flex flex-wrap items-center gap-3.5">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#141312] hover:bg-amber-600 text-white font-semibold text-sm shadow-[0_4px_16px_rgba(20,19,18,0.2)] hover:shadow-[0_8px_24px_rgba(217,119,6,0.3)] hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 group"
+                  >
+                    <span>Book Technical Consult</span>
+                    <ArrowRight className="w-4 h-4 text-amber-400 group-hover:text-white transition-colors" />
+                  </Link>
+                  <a
+                    href="#engagement"
+                    className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white border border-black/[0.08] hover:border-amber-500/40 hover:text-amber-800 text-[#141312] text-sm font-semibold transition-all duration-200 shadow-xs hover:shadow-md"
+                  >
+                    <span>Compare Models</span>
+                  </a>
+                </div>
+
+                <div className="flex items-center gap-2 text-xs font-mono text-neutral-500 pt-1">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                  <span>Direct Principal Engineer dialogue • Zero account executives • 100% IP Handover</span>
                 </div>
               </div>
 
-              {/* Action Buttons & Quick Nav */}
-              <div className="pt-2 flex flex-wrap items-center gap-3.5">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#141312] hover:bg-amber-600 text-white font-semibold text-sm shadow-[0_4px_16px_rgba(20,19,18,0.2)] hover:shadow-[0_8px_24px_rgba(217,119,6,0.3)] hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 group"
-                >
-                  <span>Book Technical Consult</span>
-                  <ArrowRight className="w-4 h-4 text-amber-400 group-hover:text-white transition-colors" />
-                </Link>
-                <a
-                  href="#engagement"
-                  className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white border border-black/[0.08] hover:border-amber-500/40 hover:text-amber-800 text-[#141312] text-sm font-semibold transition-all duration-200 shadow-xs hover:shadow-md"
-                >
-                  <span>Compare Models</span>
-                </a>
-              </div>
-
-              {/* Quick Filter Anchors */}
-              <div className="pt-4 flex flex-wrap items-center gap-2 text-xs font-mono text-neutral-500">
-                <span className="uppercase tracking-wider mr-1 text-[11px] font-medium">Quick Jump:</span>
-                {[
-                  { label: "SaaS & Web", href: "#web-saas" },
-                  { label: "Mobile Native", href: "#mobile" },
-                  { label: "DevOps & Cloud", href: "#devops" },
-                  { label: "Design Systems", href: "#design" },
-                ].map((item) => (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    className="px-3 py-1 rounded-lg bg-neutral-100/80 hover:bg-white hover:text-amber-800 hover:border-amber-500/30 border border-transparent text-neutral-700 transition-all font-medium"
-                  >
-                    {item.label}
-                  </a>
-                ))}
-              </div>
             </div>
 
-            {/* Right Interactive Architecture Telemetry Card */}
+            {/* Right: Live Vector Architecture Topology Diagram */}
             <div className="lg:col-span-5 relative">
-              {/* Outer Golden Aura - Pronounced Breathing Motion */}
-              <motion.div
-                animate={{
-                  opacity: [0.35, 0.95, 0.35],
-                  scale: [0.96, 1.06, 0.96],
-                }}
-                transition={{
-                  duration: 3.2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="absolute -inset-4 bg-gradient-to-tr from-amber-500/35 via-amber-400/25 to-transparent rounded-3xl blur-2xl pointer-events-none"
-              />
-
-              <div className="p-6 sm:p-7 rounded-3xl bg-gradient-to-br from-[#1A1816]/95 via-[#141312]/95 to-[#0E0D0C]/95 text-white border border-amber-500/25 shadow-[0_20px_50px_rgba(20,19,18,0.4)] relative overflow-hidden group">
-                {/* Corner golden flare - Breathing in sync */}
-                <motion.div
-                  animate={{
-                    opacity: [0.4, 0.9, 0.4],
-                    scale: [0.95, 1.15, 0.95],
-                  }}
-                  transition={{
-                    duration: 3.2,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="absolute -top-10 -right-10 w-64 h-64 bg-radial from-amber-400/35 via-amber-500/15 to-transparent blur-2xl pointer-events-none"
-                />
-                {/* Internal golden ambient glow */}
-                <div className="absolute -bottom-10 -left-10 w-52 h-52 bg-radial from-amber-600/15 via-transparent to-transparent pointer-events-none blur-2xl" />
-
-                <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-5 relative z-10">
+              <div className="p-6 sm:p-7 rounded-3xl bg-gradient-to-br from-[#FFFDF9] via-[#FAF3EB] to-[#F2E7DC] text-[#141312] border border-[#E6DACD] ring-1 ring-inset ring-white/95 shadow-[0_20px_50px_rgba(35,28,24,0.08)] relative overflow-hidden backdrop-blur-md">
+                {/* Header */}
+                <div className="flex items-center justify-between pb-3.5 border-b border-black/[0.08] mb-4">
                   <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    <span className="text-xs font-mono text-neutral-300 uppercase tracking-wider font-semibold">
-                      Engineering Blueprint
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="text-xs font-mono font-bold text-neutral-800 uppercase tracking-wider">
+                      Live Architecture Topology
                     </span>
                   </div>
-                  <span className="text-[11px] font-mono text-amber-400 bg-amber-500/10 border border-amber-500/20 px-2.5 py-0.5 rounded-full">
-                    Production Grade
+                  <span className="text-[10px] font-mono font-bold text-emerald-800 bg-emerald-500/15 border border-emerald-500/25 px-2 py-0.5 rounded-full">
+                    Telemetry 38ms
                   </span>
                 </div>
 
-                <div className="space-y-3 relative z-10">
-                  {[
-                    {
-                      label: "01. Architecture & Schema",
-                      value: "Strict TypeScript + PostgreSQL",
-                      status: "Type-Safe",
-                    },
-                    {
-                      label: "02. Runtime Latency",
-                      value: "< 80ms P95 Edge API responses",
-                      status: "Optimized",
-                    },
-                    {
-                      label: "03. Mobile Frame Budget",
-                      value: "120Hz ProMotion Native Thread",
-                      status: "60-120 FPS",
-                    },
-                    {
-                      label: "04. Delivery Cadence",
-                      value: "14-Day Production Sprints",
-                      status: "Continuous CI",
-                    },
-                  ].map((stat, idx) => (
-                    <div
-                      key={idx}
-                      className="group/item relative p-3.5 rounded-2xl bg-white/[0.03] hover:bg-white/[0.06] backdrop-blur-md border border-white/[0.05] hover:border-white/[0.15] shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 overflow-hidden"
-                    >
-                      <div className="flex items-center justify-between text-[11px] font-mono text-neutral-400 mb-1 relative z-10">
-                        <span>{stat.label}</span>
-                        <span className="text-[10px] text-amber-300/90 bg-amber-500/10 border border-amber-500/15 px-2 py-0.5 rounded-full font-medium">
-                          {stat.status}
-                        </span>
+                {/* Vector Visual Network Nodes */}
+                <div className="space-y-3 relative">
+                  {/* Node 1: Multi-Client */}
+                  <div className="p-3 rounded-2xl bg-white border border-black/[0.06] shadow-2xs flex items-center justify-between">
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-8 h-8 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-800">
+                        <Smartphone className="w-4 h-4" />
                       </div>
-                      <div className="text-sm font-semibold text-white tracking-tight relative z-10 group-hover/item:text-amber-100 transition-colors">
-                        {stat.value}
+                      <div>
+                        <span className="text-xs font-bold text-neutral-900 block">Client Layer</span>
+                        <span className="text-[10px] font-mono text-neutral-400">Next.js 16 Web • Expo 52 iOS/Android</span>
                       </div>
                     </div>
-                  ))}
+                    <span className="text-[10px] font-mono text-emerald-700 bg-emerald-500/10 px-2 py-0.5 rounded font-bold">
+                      120Hz
+                    </span>
+                  </div>
+
+                  {/* SVG Connecting Flow Lines with Pulsing Data Dot */}
+                  <div className="h-6 flex justify-center items-center relative">
+                    <svg className="h-full w-32 overflow-visible" viewBox="0 0 100 24" fill="none">
+                      <line x1="50" y1="0" x2="50" y2="24" stroke="#D8C9B9" strokeWidth="2" strokeDasharray="3 3" />
+                      <circle cx="50" cy="12" r="3" fill="#D97706" className="animate-ping" />
+                      <circle cx="50" cy="12" r="2" fill="#D97706" />
+                    </svg>
+                  </div>
+
+                  {/* Node 2: Edge Router & Microservices */}
+                  <div className="p-3 rounded-2xl bg-white border border-amber-500/30 shadow-xs flex items-center justify-between ring-1 ring-amber-500/15">
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-8 h-8 rounded-xl bg-amber-500/20 border border-amber-500/35 flex items-center justify-center text-amber-900">
+                        <Server className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <span className="text-xs font-bold text-neutral-900 block">Edge Routing &amp; Auth Gate</span>
+                        <span className="text-[10px] font-mono text-neutral-400">WebAuthn Passkeys • Zod Contracts</span>
+                      </div>
+                    </div>
+                    <span className="text-[10px] font-mono text-amber-800 bg-amber-500/15 px-2 py-0.5 rounded font-bold">
+                      P95 &lt; 40ms
+                    </span>
+                  </div>
+
+                  {/* SVG Connecting Flow Lines */}
+                  <div className="h-6 flex justify-center items-center relative">
+                    <svg className="h-full w-32 overflow-visible" viewBox="0 0 100 24" fill="none">
+                      <line x1="50" y1="0" x2="50" y2="24" stroke="#D8C9B9" strokeWidth="2" strokeDasharray="3 3" />
+                      <circle cx="50" cy="12" r="3" fill="#10B981" className="animate-ping" />
+                      <circle cx="50" cy="12" r="2" fill="#10B981" />
+                    </svg>
+                  </div>
+
+                  {/* Node 3: Persistence Database */}
+                  <div className="p-3 rounded-2xl bg-white border border-black/[0.06] shadow-2xs flex items-center justify-between">
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-8 h-8 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-800">
+                        <Database className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <span className="text-xs font-bold text-neutral-900 block">Data Persistence</span>
+                        <span className="text-[10px] font-mono text-neutral-400">PostgreSQL Strict • TimescaleDB • Redis</span>
+                      </div>
+                    </div>
+                    <span className="text-[10px] font-mono text-emerald-700 bg-emerald-500/10 px-2 py-0.5 rounded font-bold">
+                      Multi-Tenant
+                    </span>
+                  </div>
                 </div>
 
-                <div className="mt-5 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-neutral-400 relative z-10">
-                  <span>Stack: Next.js • React Native • AWS</span>
-                  <span className="text-amber-400">100% IP Handover</span>
+                {/* Footer spec tag */}
+                <div className="mt-4 pt-3.5 border-t border-black/[0.08] flex items-center justify-between text-[11px] font-mono text-neutral-500">
+                  <span>Zero Single Point of Failure</span>
+                  <span className="text-amber-800 font-bold">Continuous CI/CD</span>
                 </div>
               </div>
             </div>
@@ -237,7 +218,11 @@ export default function ServicesPage() {
             title={
               <>
                 Have a product in mind? <br />
-                <span className="text-amber-200">Let’s map out the technical roadmap.</span>
+                Let’s map out the{" "}
+                <em className="font-serif italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-amber-300 to-amber-500">
+                  technical roadmap
+                </em>
+                .
               </>
             }
             subtitle="Book a 30-minute architectural assessment with our principal engineer. We’ll analyze feasibility, recommend the exact stack, and outline sprint milestones."
