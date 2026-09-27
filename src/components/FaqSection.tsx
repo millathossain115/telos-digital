@@ -95,12 +95,12 @@ export function FaqSection() {
             </div>
 
             {/* Direct Contact Card - Anchored at bottom with thematic gradient & ambient glow */}
-            <div className="mt-8 p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-[#FFFDF9] via-[#FAF3EA] to-[#F3E7D7] border border-amber-900/[0.1] shadow-[0_8px_24px_rgba(217,119,6,0.06)] hover:shadow-[0_12px_32px_rgba(217,119,6,0.12)] hover:border-amber-600/30 transition-all duration-400 relative overflow-hidden group">
+            <div className="mt-8 p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-[#FFFDF9] via-[#FAF3EB] to-[#F2E7DC] border border-[#E6DACD] ring-1 ring-inset ring-white/95 shadow-[0_10px_30px_-6px_rgba(35,28,24,0.06),0_1px_3px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_40px_-8px_rgba(217,119,6,0.14)] hover:border-amber-500/50 transition-all duration-300 relative overflow-hidden group">
               {/* Top ambient corner glow */}
-              <div className="pointer-events-none absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-amber-400/20 to-orange-500/10 rounded-full blur-2xl transition-transform duration-500 group-hover:scale-125" />
+              <div className="pointer-events-none absolute -top-10 -right-10 w-36 h-36 bg-gradient-to-br from-amber-400/25 to-orange-500/15 rounded-full blur-2xl transition-transform duration-500 group-hover:scale-125" />
 
               {/* Top hairline border shimmer on hover */}
-              <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-500/0 to-transparent group-hover:via-amber-500/50 transition-all duration-500" />
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-500/0 to-transparent group-hover:via-amber-500/60 transition-all duration-500" />
 
               <div className="flex items-center gap-3 mb-2.5 relative z-10">
                 <div className="w-9 h-9 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-800 shadow-xs shrink-0 group-hover:scale-105 transition-transform">
@@ -139,10 +139,10 @@ export function FaqSection() {
                 <motion.div
                   key={faq.id}
                   variants={faqItemVariants}
-                  className={`rounded-2xl border transition-all duration-400 overflow-hidden ${
+                  className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
                     isOpen
-                      ? "bg-gradient-to-br from-[#FFFDF9] via-[#FAF3EA] to-[#F5ECE0] border-amber-900/[0.12] shadow-[0_12px_32px_rgba(217,119,6,0.08)]"
-                      : "bg-white border-black/[0.07] hover:bg-gradient-to-br hover:from-white hover:via-[#FDFBF7] hover:to-[#F7F2EB] hover:border-black/[0.12] hover:shadow-[0_8px_24px_rgba(20,19,18,0.06)] hover:-translate-y-0.5 shadow-xs"
+                      ? "bg-gradient-to-br from-[#FFFDF9] via-[#FAF3EB] to-[#F3E7DB] border-amber-500/40 ring-1 ring-inset ring-amber-500/10 shadow-[0_16px_36px_-8px_rgba(217,119,6,0.12),0_2px_4px_rgba(0,0,0,0.02)]"
+                      : "bg-gradient-to-b from-white via-[#FCFBF9] to-[#F8F5F0] border-[#E8DFD5] ring-1 ring-inset ring-white/90 hover:border-amber-500/35 hover:shadow-[0_10px_26px_-6px_rgba(20,19,18,0.06)] hover:-translate-y-0.5 shadow-[0_2px_8px_rgba(20,19,18,0.03)]"
                   }`}>
                   <button
                     type="button"
@@ -150,7 +150,7 @@ export function FaqSection() {
                     className="w-full py-4.5 sm:py-5 px-6 sm:px-7 flex items-center justify-between text-left gap-4 focus:outline-none cursor-pointer select-none"
                     aria-expanded={isOpen}>
                     <div className="flex items-center gap-4">
-                      <span className="font-mono text-xs text-amber-600/80 shrink-0 font-medium">
+                      <span className="font-mono text-xs text-amber-600/90 shrink-0 font-semibold">
                         {String(idx + 1).padStart(2, "0")}
                       </span>
                       <span className="text-base sm:text-[17px] font-semibold text-[#141312] tracking-tight leading-snug">
@@ -162,7 +162,7 @@ export function FaqSection() {
                       className={`w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${
                         isOpen
                           ? "bg-[#141312] text-amber-300 border-[#141312] shadow-sm"
-                          : "bg-[#FAF8F5] text-neutral-600 border-black/[0.08] hover:bg-neutral-100"
+                          : "bg-white text-neutral-600 border-black/[0.08] shadow-2xs hover:bg-neutral-100"
                       }`}>
                       <ChevronDown
                         className={`w-4 h-4 transition-transform duration-300 ease-out ${
@@ -181,7 +181,7 @@ export function FaqSection() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                         className="overflow-hidden">
-                        <div className="px-6 sm:px-7 pb-5 pt-1 text-sm sm:text-base text-neutral-600 leading-relaxed border-t border-black/[0.05]">
+                        <div className="px-6 sm:px-7 pb-5 pt-1 text-sm sm:text-base text-neutral-600 leading-relaxed border-t border-amber-900/[0.08]">
                           <p className="pl-7 sm:pl-8">{faq.a}</p>
                         </div>
                       </motion.div>

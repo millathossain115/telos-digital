@@ -119,7 +119,7 @@ function ProcessCard({ step, index }: { step: (typeof STEPS)[0]; index: number }
         y: -6,
         transition: { type: "spring", stiffness: 380, damping: 26 },
       }}
-      className="group relative rounded-3xl bg-[#FFFFFF] border border-black/[0.08] p-7 sm:p-8 flex flex-col justify-between shadow-[0_4px_20px_rgba(20,19,18,0.04)] hover:shadow-[0_24px_50px_-12px_rgba(20,19,18,0.12)] transition-all duration-500 overflow-hidden"
+      className="group relative rounded-3xl bg-gradient-to-b from-white/95 via-[#FCFAF7]/95 to-[#F6EFE6]/95 backdrop-blur-md border border-[#E4D8CA] ring-1 ring-inset ring-white p-7 sm:p-8 flex flex-col justify-between shadow-[0_8px_30px_-6px_rgba(40,28,20,0.08),0_2px_6px_rgba(0,0,0,0.03)] hover:shadow-[0_24px_50px_-12px_rgba(40,28,20,0.14)] hover:border-amber-500/40 transition-all duration-300 overflow-hidden"
     >
       {/* Top ambient color wash */}
       <div className={`pointer-events-none absolute inset-0 bg-gradient-to-b ${step.theme.accentWash}`} />
@@ -152,7 +152,7 @@ function ProcessCard({ step, index }: { step: (typeof STEPS)[0]; index: number }
         </div>
 
         {/* Timeline badge */}
-        <div className="inline-block text-[11px] font-mono font-medium text-neutral-600 bg-[#FAF8F5] px-2.5 py-0.5 rounded-md border border-black/[0.06] mb-3">
+        <div className="inline-block text-[11px] font-mono font-medium text-neutral-600 bg-white/80 px-2.5 py-0.5 rounded-md border border-black/[0.06] mb-3">
           {step.timeline}
         </div>
 
@@ -166,8 +166,8 @@ function ProcessCard({ step, index }: { step: (typeof STEPS)[0]; index: number }
       </div>
 
       {/* Bottom deliverable footer */}
-      <div className="relative z-10 pt-5 border-t border-black/[0.06] bg-[#FAF8F5]/60 -mx-7 -mb-7 sm:-mx-8 sm:-mb-8 px-7 sm:px-8 py-5">
-        <div className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+      <div className="relative z-10 pt-4 border-t border-black/[0.06] bg-gradient-to-b from-transparent to-black/[0.02] -mx-7 -mb-7 sm:-mx-8 sm:-mb-8 px-7 sm:px-8 py-4">
+        <div className="text-[10px] font-mono text-neutral-500 uppercase tracking-wider mb-1 flex items-center gap-1.5">
           <Check className="w-3 h-3 text-emerald-600 stroke-[3]" />
           Key Deliverable:
         </div>

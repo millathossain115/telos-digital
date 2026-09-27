@@ -125,19 +125,20 @@ function ThematicCard({ service }: { service: ServiceItem }) {
         y: -6,
         transition: { type: "spring", stiffness: 350, damping: 24 },
       }}
-      className="group relative flex flex-col justify-between rounded-3xl bg-gradient-to-br from-[#F5EFEB] via-[#EFE7DF] to-[#E8DDD2] border border-[#D8C7B5]/80 p-6 sm:p-7 min-h-[460px] shadow-[0_12px_30px_rgba(20,19,18,0.06)] hover:border-amber-500/50 hover:shadow-[0_20px_45px_rgba(217,119,6,0.12)] transition-all duration-300 overflow-hidden"
+      className="group relative flex flex-col justify-between rounded-3xl bg-gradient-to-br from-[#FFFDF9] via-[#FAF3EB] to-[#F2E7DC] border border-[#E6DACD] ring-1 ring-inset ring-white/95 p-6 sm:p-7 min-h-[460px] shadow-[0_10px_30px_-6px_rgba(35,28,24,0.06),0_1px_3px_rgba(0,0,0,0.03)] hover:border-amber-500/50 hover:shadow-[0_24px_50px_-10px_rgba(217,119,6,0.14),0_8px_20px_-4px_rgba(35,28,24,0.08)] transition-all duration-300 overflow-hidden"
     >
+      {/* Permanent rich corner aura (gives warmth & dimension) */}
+      <div className="pointer-events-none absolute -top-16 -right-16 w-56 h-56 rounded-full bg-gradient-to-br from-amber-300/25 via-orange-200/20 to-transparent blur-3xl opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="pointer-events-none absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-gradient-to-tr from-amber-400/15 via-rose-200/10 to-transparent blur-2xl" />
+
       {/* Dynamic interactive spotlight gradient */}
       <div
         className="pointer-events-none absolute -inset-px rounded-3xl transition-opacity duration-300 z-10"
         style={{
           opacity: isHovered ? 1 : 0,
-          background: `radial-gradient(380px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(217, 119, 6, 0.12), transparent 70%)`,
+          background: `radial-gradient(400px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(217, 119, 6, 0.10), transparent 70%)`,
         }}
       />
-
-      {/* Warm Ambient Light */}
-      <div className="absolute top-0 right-0 w-52 h-32 bg-amber-500/[0.08] blur-xl pointer-events-none rounded-full" />
 
       {/* Main Content Area */}
       <div className="relative z-10 flex flex-col h-full justify-between">
@@ -265,7 +266,9 @@ export function ServicesBento() {
         </div>
 
         {/* Bottom Editorial Callout Strip */}
-        <div className="relative mt-12 rounded-3xl border border-[#D8C7B5]/80 bg-gradient-to-br from-[#FAF6F0] via-[#F4ECE2] to-[#ECE2D2] p-7 sm:p-10 text-[#141312] shadow-[0_14px_35px_rgba(20,19,18,0.04)] overflow-hidden">
+        <div className="relative mt-12 rounded-3xl border border-[#E6DACD] ring-1 ring-inset ring-white/95 bg-gradient-to-br from-[#FFFDF9] via-[#FAF3EB] to-[#F2E7DC] p-7 sm:p-10 text-[#141312] shadow-[0_14px_38px_-8px_rgba(35,28,24,0.06),0_1px_3px_rgba(0,0,0,0.03)] overflow-hidden">
+          {/* Subtle warm mesh glow */}
+          <div className="pointer-events-none absolute -top-20 -right-20 w-80 h-80 rounded-full bg-gradient-to-br from-amber-300/20 via-orange-100/30 to-transparent blur-3xl" />
           <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
             <div className="space-y-4 max-w-3xl">
               {/* Top provenance tag */}
