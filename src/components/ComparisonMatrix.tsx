@@ -143,7 +143,7 @@ export function ComparisonMatrix() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={headerVariants}
-          className="max-w-2xl mx-auto text-center mb-16 sm:mb-20 flex flex-col items-center"
+          className="max-w-3xl mx-auto text-center mb-16 sm:mb-20 flex flex-col items-center"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.06] border border-amber-400/25 shadow-sm mb-4 backdrop-blur-md">
             <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
@@ -152,14 +152,14 @@ export function ComparisonMatrix() {
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-medium tracking-[-0.03em] text-white leading-[1.15]">
+          <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-medium tracking-[-0.03em] text-white leading-[1.18] text-balance">
             Comparing your options to{" "}
-            <span className="font-serif italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500">
-              build and scale
-            </span>.
+            <span className="font-serif italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 whitespace-nowrap">
+              build and scale.
+            </span>
           </h2>
 
-          <p className="mt-4 text-neutral-400 text-sm sm:text-base leading-relaxed">
+          <p className="mt-4 text-neutral-400 text-sm sm:text-base leading-relaxed max-w-xl text-balance">
             See how Telos Digital stacks up against traditional agencies and freelance networks across what actually matters.
           </p>
         </motion.div>
@@ -178,48 +178,48 @@ export function ComparisonMatrix() {
                 <motion.div
                   key={card.id}
                   variants={cardVariants}
-                  className="rounded-3xl bg-gradient-to-b from-[#221C14] via-[#1A1612] to-[#141210] border-2 border-amber-500/80 p-8 sm:p-9 flex flex-col justify-between shadow-[0_24px_60px_rgba(217,119,6,0.22),0_0_35px_rgba(245,158,11,0.15)] relative overflow-hidden lg:-translate-y-2 backdrop-blur-xl"
+                  className="rounded-3xl bg-gradient-to-b from-[#221C14] via-[#1A1612] to-[#141210] border-2 border-amber-500/90 p-7 sm:p-8 flex flex-col justify-between shadow-[0_24px_60px_rgba(217,119,6,0.24),0_0_35px_rgba(245,158,11,0.20)] relative overflow-hidden backdrop-blur-xl lg:-translate-y-2 hover:border-amber-400 hover:shadow-[0_28px_70px_rgba(217,119,6,0.32),0_0_45px_rgba(245,158,11,0.28)] transition-all duration-300"
                 >
-                  <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-72 h-36 bg-amber-400/25 blur-3xl rounded-full" />
+                  <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-80 h-44 bg-amber-400/30 blur-3xl rounded-full" />
 
                   {card.badge && (
                     <div className="absolute top-0 right-8">
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-b-xl bg-gradient-to-r from-amber-500 to-amber-600 text-[#141312] font-mono text-[10px] uppercase font-bold tracking-wider shadow-md">
-                        <Award className="w-3 h-3" />
+                      <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-b-xl bg-gradient-to-r from-amber-500 to-amber-600 text-[#141312] font-mono text-[10px] uppercase font-bold tracking-wider shadow-md">
+                        <Award className="w-3 h-3 text-[#141312]" />
                         {card.badge}
                       </span>
                     </div>
                   )}
 
-                  <div className="relative z-10">
-                    <div className="pb-6 mb-6 border-b border-amber-500/20">
+                  <div className="relative z-10 flex flex-col flex-1">
+                    <div className="pb-5 mb-5 border-b border-amber-500/25 min-h-[96px] flex flex-col justify-end">
                       <div className="text-xs font-mono text-amber-400 font-semibold tracking-wider uppercase mb-1 flex items-center gap-1.5">
-                        <Zap className="w-3 h-3 text-amber-400" />
+                        <Zap className="w-3.5 h-3.5 text-amber-400" />
                         {card.tag}
                       </div>
-                      <h3 className="text-2xl font-bold text-white">{card.title}</h3>
+                      <h3 className="text-2xl font-bold text-white tracking-tight">{card.title}</h3>
                       <p className="text-xs text-neutral-300 mt-1">{card.subtitle}</p>
                     </div>
 
-                    <div className="space-y-4">
+                    <div className="space-y-2.5 flex-1 flex flex-col justify-around py-1">
                       {card.specs.map((item) => (
-                        <div key={item.label} className="flex items-start gap-3 p-2.5 rounded-xl bg-white/[0.05] border border-amber-500/20">
+                        <div key={item.label} className="flex items-start gap-3 p-2.5 rounded-xl bg-white/[0.06] border border-amber-500/25 hover:bg-amber-500/[0.12] transition-colors min-h-[58px]">
                           <span className="mt-0.5 w-4 h-4 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center shrink-0 text-emerald-400">
                             <Check className="w-2.5 h-2.5 stroke-[3]" />
                           </span>
                           <div>
                             <div className="text-xs font-bold text-white">{item.label}</div>
-                            <div className="text-xs text-amber-100/70">{item.val}</div>
+                            <div className="text-xs text-amber-100/90 leading-relaxed mt-0.5">{item.val}</div>
                           </div>
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  <div className="mt-8 pt-6 border-t border-amber-500/20 relative z-10">
+                  <div className="mt-6 pt-5 border-t border-amber-500/25 relative z-10">
                     <Link
                       href="/contact"
-                      className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 via-amber-400 to-amber-600 text-[#141312] text-xs font-bold hover:brightness-110 hover:shadow-[0_0_25px_rgba(245,158,11,0.4)] transition-all shadow-md active:scale-95"
+                      className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 via-amber-400 to-amber-600 text-[#141312] text-xs font-mono font-bold tracking-wider hover:brightness-110 hover:shadow-[0_0_28px_rgba(245,158,11,0.5)] transition-all shadow-md active:scale-[0.98]"
                     >
                       <span>Partner with Telos</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -233,33 +233,33 @@ export function ComparisonMatrix() {
               <motion.div
                 key={card.id}
                 variants={cardVariants}
-                className="rounded-3xl bg-[#171614]/80 backdrop-blur-xl border border-white/[0.08] p-8 flex flex-col justify-between shadow-[0_20px_40px_rgba(0,0,0,0.5)] hover:border-white/[0.16] transition-all"
+                className="rounded-3xl bg-white/[0.03] backdrop-blur-2xl border border-white/[0.08] ring-1 ring-inset ring-white/[0.03] p-7 sm:p-8 flex flex-col justify-between shadow-[0_16px_36px_rgba(0,0,0,0.4)] hover:border-white/[0.18] hover:bg-white/[0.05] transition-all duration-300"
               >
-                <div>
-                  <div className="pb-6 mb-6 border-b border-white/[0.08]">
+                <div className="flex flex-col flex-1">
+                  <div className="pb-5 mb-5 border-b border-white/[0.08] min-h-[96px] flex flex-col justify-end">
                     <div className="text-xs font-mono text-neutral-500 font-semibold tracking-wider uppercase mb-1">
                       {card.tag}
                     </div>
-                    <h3 className="text-xl font-bold text-white">{card.title}</h3>
+                    <h3 className="text-xl font-bold text-white tracking-tight">{card.title}</h3>
                     <p className="text-xs text-neutral-400 mt-1">{card.subtitle}</p>
                   </div>
 
-                  <div className="space-y-4">
+                  <div className="space-y-2.5 flex-1 flex flex-col justify-around py-1">
                     {card.specs.map((item) => (
-                      <div key={item.label} className="flex items-start gap-3">
+                      <div key={item.label} className="flex items-start gap-3 p-2.5 rounded-xl min-h-[58px]">
                         <span className="mt-0.5 w-4 h-4 rounded-full bg-rose-500/15 border border-rose-500/30 flex items-center justify-center shrink-0 text-rose-400">
                           <X className="w-2.5 h-2.5 stroke-[2.5]" />
                         </span>
                         <div>
                           <div className="text-xs font-semibold text-neutral-300">{item.label}</div>
-                          <div className="text-xs text-neutral-500">{item.val}</div>
+                          <div className="text-xs text-neutral-400 leading-relaxed mt-0.5">{item.val}</div>
                         </div>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-white/[0.08] text-center">
+                <div className="mt-6 pt-5 border-t border-white/[0.08] text-center min-h-[52px] flex items-center justify-center">
                   <span className="text-xs text-neutral-500 font-mono">{card.footerNote}</span>
                 </div>
               </motion.div>
