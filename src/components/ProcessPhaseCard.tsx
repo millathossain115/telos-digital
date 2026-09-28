@@ -70,18 +70,18 @@ export function ProcessPhaseCard({ phase, index }: ProcessPhaseCardProps) {
               </p>
             </div>
 
-            {/* Explicit Deliverables Checklist - Compact 2-column grid */}
+            {/* Explicit Deliverables Checklist - Clean subtle grid */}
             <div className="space-y-1.5 pt-1">
-              <div className="text-[10px] font-mono text-[#141312]/55 uppercase tracking-wider font-bold">
+              <div className="text-[10px] font-mono text-[#141312]/50 uppercase tracking-wider font-semibold">
                 Deliverables & Outputs
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
                 {phase.deliverables.map((item) => (
                   <div
                     key={item}
-                    className="flex items-center gap-2 p-2 rounded-lg bg-white/85 border border-[#E6DACD] text-xs text-[#141312]/90 leading-tight shadow-2xs hover:border-amber-500/30 transition-colors"
+                    className="flex items-center gap-2 px-2.5 py-2 rounded-xl bg-white/60 text-xs text-[#141312]/90 leading-tight hover:bg-white/90 transition-colors"
                   >
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-amber-700 shrink-0" />
                     <span className="truncate">{item}</span>
                   </div>
                 ))}
@@ -90,15 +90,15 @@ export function ProcessPhaseCard({ phase, index }: ProcessPhaseCardProps) {
           </div>
 
           {/* Tooling Tags */}
-          <div className="pt-2 border-t border-[#E6DACD]">
+          <div className="pt-2 border-t border-[#141312]/[0.06]">
             <div className="flex flex-wrap items-center gap-1.5">
-              <span className="text-[10px] font-mono text-[#141312]/55 uppercase tracking-wider font-bold mr-1">
+              <span className="text-[10px] font-mono text-[#141312]/50 uppercase tracking-wider font-semibold mr-1">
                 Tooling:
               </span>
               {phase.tooling.map((tool) => (
                 <span
                   key={tool}
-                  className="text-[11px] font-mono px-2 py-0.5 rounded-md bg-white border border-[#E6DACD] text-[#141312] shadow-2xs font-medium"
+                  className="text-[11px] font-mono px-2 py-0.5 rounded-md bg-white/70 text-[#141312]/80 font-medium"
                 >
                   {tool}
                 </span>
@@ -108,14 +108,14 @@ export function ProcessPhaseCard({ phase, index }: ProcessPhaseCardProps) {
         </div>
 
         {/* Right: Client Touchpoints & Cadence Box (5 Cols) */}
-        <div className="lg:col-span-5 flex flex-col justify-between rounded-2xl bg-white/80 border border-[#E6DACD] p-5 shadow-2xs">
+        <div className="lg:col-span-5 flex flex-col justify-between rounded-2xl bg-white/60 p-5 backdrop-blur-[2px]">
           <div className="space-y-3">
-            <div className="flex items-center justify-between pb-2.5 border-b border-[#E6DACD]">
+            <div className="flex items-center justify-between pb-2.5 border-b border-[#141312]/[0.06]">
               <span className="text-xs font-mono text-[#141312] flex items-center gap-1.5 font-bold">
                 <Terminal className="w-3.5 h-3.5 text-amber-600" />
                 Client Cadence & Feedback
               </span>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-900 border border-amber-500/20 font-semibold uppercase">
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-900 font-semibold uppercase">
                 Touchpoints
               </span>
             </div>
@@ -124,9 +124,9 @@ export function ProcessPhaseCard({ phase, index }: ProcessPhaseCardProps) {
               {phase.clientTouchpoints.map((tp, idx) => (
                 <div
                   key={tp}
-                  className="p-2.5 rounded-xl bg-[#FAF8F5] border border-[#E6DACD] text-xs text-[#141312]/85 leading-snug flex items-start gap-2 shadow-2xs hover:border-amber-500/30 transition-colors"
+                  className="p-2.5 rounded-xl bg-[#FAF8F5]/80 text-xs text-[#141312]/85 leading-snug flex items-start gap-2.5 hover:bg-white transition-colors"
                 >
-                  <span className="w-5 h-5 rounded-full bg-white border border-[#E6DACD] text-[10px] font-mono font-bold text-amber-700 flex items-center justify-center shrink-0">
+                  <span className="w-5 h-5 rounded-full bg-white text-[10px] font-mono font-bold text-amber-700 flex items-center justify-center shrink-0 shadow-2xs">
                     {idx + 1}
                   </span>
                   <span className="pt-0.5">{tp}</span>
@@ -136,7 +136,7 @@ export function ProcessPhaseCard({ phase, index }: ProcessPhaseCardProps) {
           </div>
 
           {/* Operational Assurance Pill */}
-          <div className="mt-4 pt-3 border-t border-[#E6DACD] flex items-center justify-between text-[11px] font-mono text-[#141312]/60">
+          <div className="mt-4 pt-3 border-t border-[#141312]/[0.06] flex items-center justify-between text-[11px] font-mono text-[#141312]/60">
             <span className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
               Direct Async Channel

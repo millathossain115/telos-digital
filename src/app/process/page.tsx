@@ -141,45 +141,45 @@ export default function ProcessPage() {
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2 text-xs text-neutral-200">
-                  <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/10 flex items-start gap-2">
+                  <div className="p-2.5 rounded-xl bg-white/[0.04] flex items-start gap-2">
                     <span className="text-amber-400 font-mono font-bold">✓</span>
                     <span><strong className="text-white">UI/UX & Rebrand:</strong> Modern tokens & micro-interactions.</span>
                   </div>
-                  <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/10 flex items-start gap-2">
+                  <div className="p-2.5 rounded-xl bg-white/[0.04] flex items-start gap-2">
                     <span className="text-amber-400 font-mono font-bold">✓</span>
                     <span><strong className="text-white">Stack Migration:</strong> Legacy React or WP to Next.js Turbopack.</span>
                   </div>
-                  <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/10 flex items-start gap-2">
+                  <div className="p-2.5 rounded-xl bg-white/[0.04] flex items-start gap-2">
                     <span className="text-amber-400 font-mono font-bold">✓</span>
                     <span><strong className="text-white">Performance & SEO:</strong> Sub-second Core Web Vitals & parity.</span>
                   </div>
-                  <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/10 flex items-start gap-2">
+                  <div className="p-2.5 rounded-xl bg-white/[0.04] flex items-start gap-2">
                     <span className="text-amber-400 font-mono font-bold">✓</span>
                     <span><strong className="text-white">Refactoring & Audit:</strong> Elimination of security & type debt.</span>
                   </div>
                 </div>
               </div>
 
-              <div className="lg:col-span-5 bg-white/[0.03] border border-white/10 ring-1 ring-inset ring-white/5 rounded-2xl p-5 sm:p-6 space-y-3 backdrop-blur-md">
+              <div className="lg:col-span-5 bg-white/[0.03] ring-1 ring-inset ring-white/5 rounded-2xl p-5 sm:p-6 space-y-3 backdrop-blur-md">
                 <div className="text-xs font-mono uppercase tracking-wider text-amber-400 font-bold">
                   Modernization Playbook
                 </div>
-                <div className="space-y-2.5 text-xs text-neutral-300">
-                  <div className="p-3 rounded-xl bg-black/40 border border-white/5 flex gap-3">
+                <div className="space-y-2 text-xs text-neutral-300">
+                  <div className="p-3 rounded-xl bg-black/30 flex gap-3">
                     <span className="text-amber-400 font-mono font-bold text-sm">01</span>
                     <div>
                       <strong className="text-white block text-xs">Audit & Architecture Diagnosis</strong>
                       Deep code, design, and performance inspection before touching production.
                     </div>
                   </div>
-                  <div className="p-3 rounded-xl bg-black/40 border border-white/5 flex gap-3">
+                  <div className="p-3 rounded-xl bg-black/30 flex gap-3">
                     <span className="text-amber-400 font-mono font-bold text-sm">02</span>
                     <div>
                       <strong className="text-white block text-xs">Staged Incremental Refactor</strong>
                       Module-by-module modernization with staging previews. No service interruption.
                     </div>
                   </div>
-                  <div className="p-3 rounded-xl bg-black/40 border border-white/5 flex gap-3">
+                  <div className="p-3 rounded-xl bg-black/30 flex gap-3">
                     <span className="text-amber-400 font-mono font-bold text-sm">03</span>
                     <div>
                       <strong className="text-white block text-xs">Seamless Production Cutover</strong>

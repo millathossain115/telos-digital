@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import { CheckCircle2, Loader2, Send } from "lucide-react";
+import { useState } from "react";
 
 interface FormState {
   name: string;
@@ -54,19 +54,25 @@ export function ProjectIntakeForm({
       if (res.ok) {
         setIsSubmitted(true);
       } else if (result.missingConfig) {
-        const subject = encodeURIComponent(`Project Intake: ${form.name} via Telos Digital`);
+        const subject = encodeURIComponent(
+          `Project Intake: ${form.name} via Telos Digital`,
+        );
         const body = encodeURIComponent(
-          `Name: ${form.name}\nEmail: ${form.email}\n\nProject Scope & Message:\n${form.message}`
+          `Name: ${form.name}\nEmail: ${form.email}\n\nProject Scope & Message:\n${form.message}`,
         );
         window.location.href = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
         setIsSubmitted(true);
       } else {
-        setErrorMessage(result.error || "Failed to send message. Please try again.");
+        setErrorMessage(
+          result.error || "Failed to send message. Please try again.",
+        );
       }
     } catch {
-      const subject = encodeURIComponent(`Project Intake: ${form.name} via Telos Digital`);
+      const subject = encodeURIComponent(
+        `Project Intake: ${form.name} via Telos Digital`,
+      );
       const body = encodeURIComponent(
-        `Name: ${form.name}\nEmail: ${form.email}\n\nProject Scope & Message:\n${form.message}`
+        `Name: ${form.name}\nEmail: ${form.email}\n\nProject Scope & Message:\n${form.message}`,
       );
       window.location.href = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
       setIsSubmitted(true);
@@ -76,19 +82,28 @@ export function ProjectIntakeForm({
   };
 
   return (
-    <div className="h-full flex flex-col justify-between p-7 sm:p-10 rounded-3xl bg-gradient-to-br from-[#FAF6F0] via-[#F4ECE2] to-[#E9DFD0] border border-amber-900/10 shadow-[0_20px_50px_rgba(30,20,10,0.12)] hover:shadow-[0_30px_70px_rgba(30,20,10,0.18)] hover:border-amber-900/30 transition-all duration-300 relative overflow-hidden group">
-      <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none transition-opacity duration-500 group-hover:opacity-100 group-hover:scale-110" />
+    <div className="h-full flex flex-col justify-between p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#FFFDF9] via-[#FAF3EB] to-[#F2E7DC] border border-[#E6DACD] ring-1 ring-inset ring-white/95 shadow-[0_12px_36px_rgba(20,19,18,0.04)] hover:shadow-[0_20px_50px_rgba(217,119,6,0.08)] hover:border-amber-500/40 transition-all duration-300 relative overflow-hidden group">
+      {/* Top subtle hairline amber highlight */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[1.5px] bg-gradient-to-r from-transparent via-amber-500/50 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
+
+      {/* Warm ambient corner glows */}
+      <div className="pointer-events-none absolute -top-20 -right-20 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl group-hover:bg-amber-500/20 transition-all duration-500" />
+      <div className="pointer-events-none absolute -bottom-16 -left-16 w-48 h-48 bg-amber-600/5 rounded-full blur-2xl pointer-events-none" />
 
       {isSubmitted ? (
         <div className="py-12 flex flex-col items-center text-center space-y-4 animate-in fade-in zoom-in duration-300 relative z-10">
-          <div className="w-14 h-14 rounded-2xl bg-white/90 border border-emerald-300 flex items-center justify-center text-emerald-600 shadow-sm">
+          <div className="w-14 h-14 rounded-2xl bg-white border border-emerald-300 flex items-center justify-center text-emerald-600 shadow-sm">
             <CheckCircle2 className="w-7 h-7" />
           </div>
           <h3 className="text-2xl font-semibold text-[#141312] tracking-tight">
             Message Received
           </h3>
           <p className="text-neutral-600 max-w-md text-sm leading-relaxed">
-            Thank you, <span className="text-[#141312] font-semibold">{form.name}</span>. Our lead architect will review your message and reply to <span className="text-[#141312] font-semibold">{form.email}</span> within 24 hours.
+            Thank you,{" "}
+            <span className="text-[#141312] font-semibold">{form.name}</span>.
+            Our lead architect will review your message and reply to{" "}
+            <span className="text-[#141312] font-semibold">{form.email}</span>{" "}
+            within 24 hours.
           </p>
           <button
             type="button"
@@ -96,24 +111,24 @@ export function ProjectIntakeForm({
               setIsSubmitted(false);
               setForm({ name: "", email: "", message: "" });
             }}
-            className="mt-4 px-5 py-2.5 rounded-xl bg-white/90 hover:bg-amber-600 hover:text-white hover:border-amber-600 border border-amber-900/15 text-xs font-mono text-neutral-800 transition-all cursor-pointer shadow-xs"
+            className="mt-4 px-5 py-2.5 rounded-xl bg-white hover:bg-amber-600 hover:text-white border border-[#E6DACD] text-xs font-mono text-neutral-800 transition-all cursor-pointer shadow-2xs"
           >
             Send another message
           </button>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
-          <div className="flex items-center justify-between pb-3.5 border-b border-amber-900/10">
+        <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5 relative z-10">
+          <div className="flex items-center justify-between pb-3.5 border-b border-[#141312]/[0.06]">
             <h2 className="text-lg font-semibold text-[#141312] tracking-tight">
               Project Intake
             </h2>
-            <span className="text-xs font-mono text-amber-900/80 bg-amber-500/10 border border-amber-500/20 px-2.5 py-1 rounded-full font-medium">
+            <span className="text-xs font-mono text-amber-900 bg-amber-500/10 px-2.5 py-1 rounded-full font-semibold">
               Direct to engineering
             </span>
           </div>
 
-          <div className="space-y-2">
-            <label className="text-xs font-mono text-neutral-700 flex items-center gap-1 font-medium">
+          <div className="space-y-1.5">
+            <label className="text-xs font-mono text-[#141312]/70 flex items-center gap-1 font-semibold">
               <span>Your Name</span>
               <span className="text-amber-700">*</span>
             </label>
@@ -123,12 +138,12 @@ export function ProjectIntakeForm({
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
               placeholder="e.g. Alex Vance"
-              className="w-full px-4 py-3 rounded-xl bg-[#FAF7F2]/90 hover:bg-[#FAF7F2] border border-amber-900/15 text-sm text-[#141312] placeholder-neutral-400 focus:outline-none focus:bg-white focus:border-amber-600 focus:ring-2 focus:ring-amber-500/20 shadow-inner/5 transition-all"
+              className="w-full px-4 py-2.5 sm:py-3 rounded-2xl bg-white/80 hover:bg-white focus:bg-white border border-[#141312]/[0.08] text-sm text-[#141312] placeholder-neutral-400 focus:outline-none focus:border-amber-500/60 focus:ring-2 focus:ring-amber-500/20 shadow-2xs transition-all"
             />
           </div>
 
-          <div className="space-y-2">
-            <label className="text-xs font-mono text-neutral-700 flex items-center gap-1 font-medium">
+          <div className="space-y-1.5">
+            <label className="text-xs font-mono text-[#141312]/70 flex items-center gap-1 font-semibold">
               <span>Email Address</span>
               <span className="text-amber-700">*</span>
             </label>
@@ -138,25 +153,27 @@ export function ProjectIntakeForm({
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
               placeholder="alex@company.com"
-              className="w-full px-4 py-3 rounded-xl bg-[#FAF7F2]/90 hover:bg-[#FAF7F2] border border-amber-900/15 text-sm text-[#141312] placeholder-neutral-400 focus:outline-none focus:bg-white focus:border-amber-600 focus:ring-2 focus:ring-amber-500/20 shadow-inner/5 transition-all"
+              className="w-full px-4 py-2.5 sm:py-3 rounded-2xl bg-white/80 hover:bg-white focus:bg-white border border-[#141312]/[0.08] text-sm text-[#141312] placeholder-neutral-400 focus:outline-none focus:border-amber-500/60 focus:ring-2 focus:ring-amber-500/20 shadow-2xs transition-all"
             />
           </div>
 
-          <div className="space-y-2">
-            <label className="text-xs font-mono text-neutral-700 flex items-center justify-between font-medium">
+          <div className="space-y-1.5">
+            <label className="text-xs font-mono text-[#141312]/70 flex items-center justify-between font-semibold">
               <span className="flex items-center gap-1">
                 <span>How can we help?</span>
                 <span className="text-amber-700">*</span>
               </span>
-              <span className="text-neutral-500 text-[11px] font-normal">Scope, goals or timeline</span>
+              <span className="text-neutral-500 text-[11px] font-normal">
+                Scope, goals or timeline
+              </span>
             </label>
             <textarea
               required
-              rows={5}
+              rows={4}
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
               placeholder="Tell us about the product you want to build, challenges with your existing stack, or your target launch date..."
-              className="w-full px-4 py-3 rounded-xl bg-[#FAF7F2]/90 hover:bg-[#FAF7F2] border border-amber-900/15 text-sm text-[#141312] placeholder-neutral-400 focus:outline-none focus:bg-white focus:border-amber-600 focus:ring-2 focus:ring-amber-500/20 shadow-inner/5 transition-all resize-none leading-relaxed"
+              className="w-full px-4 py-2.5 sm:py-3 rounded-2xl bg-white/80 hover:bg-white focus:bg-white border border-[#141312]/[0.08] text-sm text-[#141312] placeholder-neutral-400 focus:outline-none focus:border-amber-500/60 focus:ring-2 focus:ring-amber-500/20 shadow-2xs transition-all resize-none leading-relaxed"
             />
           </div>
 
